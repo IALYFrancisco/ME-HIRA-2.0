@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Navbar from "@/components/navbar";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -9,6 +10,145 @@ export default function Home() {
       </Head>
       <section className="homepage-container">
         <Navbar/>
+        <section className="songs-container">
+          <ul>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+            <li>
+              <div className="poster-container">
+                <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+              </div>
+              <div className="song-info">
+                <h3>Ranomasoko</h3>
+                <h4>Rootsman</h4>
+              </div>
+            </li>
+          </ul>
+        </section>
       </section>
     </>
   );
