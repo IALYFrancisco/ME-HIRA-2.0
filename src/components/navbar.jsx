@@ -11,7 +11,7 @@ export default function Navbar (){
                     </Link>
                 </li>
                 <li>
-                    <input type="text" name="song-search" id="song-search" />
+                    <input type="text" name="song-search" id="song-search" placeholder="Rechercher des chansons ..."/>
                 </li>
                 <li></li>
             </ul>

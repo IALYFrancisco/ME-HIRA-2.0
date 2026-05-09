@@ -34,7 +34,7 @@ nav ul li:nth-child(2){
 nav ul li input {
   height: 40px;
   width: 100%;
-  border-color: rgb(236, 183, 85);
+  border-color: #FEC700;
   border-style: solid;
   border-width: 2px;
   border-radius: 20px;
