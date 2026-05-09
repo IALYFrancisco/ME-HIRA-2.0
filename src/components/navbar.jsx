@@ -5,7 +5,7 @@ export default function Navbar (){
         <nav>
             <ul>
                 <li>
-                    <Image src="/images/logo-de-me-hira.png" priority width={94} height={94} alt="logo de me-hira" />
+                    <Image src="/images/logo-de-me-hira.png" priority width={94} height={94} alt="logo de me-hira" className="logo-de-me-hira" />
                 </li>
                 <li></li>
                 <li></li>
