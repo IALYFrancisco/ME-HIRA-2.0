@@ -6,8 +6,37 @@
 
 .logo-de-me-hira {
   height: auto;
+  width: 50px;
 }
 
 ul {
   list-style-type: none;
+}
+
+nav {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+}
+
+nav ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul li:nth-child(2){
+  width: 50%;
+}
+
+nav ul li input {
+  height: 40px;
+  width: 100%;
+  border-color: rgb(236, 183, 85);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 20px;
+  padding: 0 16px;
 }
