@@ -6,6 +6,9 @@ export default function Home() {
       <Head>
         <title>Me-Hira</title>
       </Head>
+      <section className="homepage-container">
+        
+      </section>
     </>
   );
 }
