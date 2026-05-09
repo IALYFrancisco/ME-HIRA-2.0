@@ -2,7 +2,6 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    /* background-color: red; */
     padding: 50px;
 }
 
@@ -15,7 +14,6 @@
 
 .songs-container ul li {
     width: 250px;
-    /* background-color: green; */
     border-radius: 10px;
     overflow: hidden;
 }
