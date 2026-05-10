@@ -49,4 +49,10 @@ nav ul li input {
   border-width: 2px;
   border-radius: 20px;
   padding: 0 16px;
+  outline: none;
+  transition: all .10s ease-in-out;
+}
+
+nav ul li input:focus {
+  border-color: #FEC700;
 }
