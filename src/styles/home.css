@@ -9,13 +9,22 @@
     height: inherit;
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 40px;
 }
 
 .songs-container ul li {
-    width: 250px;
-    border-radius: 10px;
+    width: 215px;
+}
+
+.songs-container .poster-container {
+    height: 120px;
     overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.songs-container .song-info h4 {
+    margin-top: 5px;
 }
 
 .songs-container ul li .audio-poster {
