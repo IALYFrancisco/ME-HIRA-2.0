@@ -1,5 +1,6 @@
 :root {
   --black: #191919;
+  --orange-base: #FEC700;
 }
 
 @font-face {
@@ -39,12 +40,36 @@ nav ul {
 
 nav ul li:nth-child(2){
   width: 50%;
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+
+nav ul li .filter-icone {
+  width: 25px;
+  height: auto;
+}
+
+nav ul li .filter {
+  background-color: var(--orange-base);
+  width: 50px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+nav ul li .filter:active {
+  transition: all .10s ease-in-out;
+  transform: scale(0.85);
 }
 
 nav ul li input {
   height: 40px;
   width: 100%;
-  border-color: #FEC700;
+  border-color: var(--orange-base);
   border-style: solid;
   border-width: 2px;
   border-radius: 10px;
