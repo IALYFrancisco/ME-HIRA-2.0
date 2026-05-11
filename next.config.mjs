@@ -2,6 +2,15 @@
 const nextConfig = {
   /* config options here */
   reactStrictMode: true,
+  images: {
+    unoptimized: true,
+    remotePatterns: [{
+      protocol: 'http',
+      hostname: 'localhost',
+      port: '1234',
+      pathname: "/**"
+    }]
+  },
 };
 
 export default nextConfig;
