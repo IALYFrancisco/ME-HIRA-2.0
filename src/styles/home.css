@@ -6,7 +6,7 @@
 .songs-container {
     width: 100%;
     display: flex;
-    padding: 50px;
+    padding: 50px 50px 120px 50px;
 }
 
 .songs-container ul {
