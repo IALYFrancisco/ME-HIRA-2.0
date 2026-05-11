@@ -10,7 +10,7 @@ export default function Footer(){
                     <Link href="">Mentions légales</Link>
                 </li>
                 <li>
-                    &copyright; 2026 <Link href="/">Me-Hira</Link>
+                    &copy; 2026 <Link href="/">Me-Hira</Link>
                 </li>
                 <li>
                     développée avec 💖 par <a href="https://lumini.onrender.com" target="_blank">LUMINI</a>

@@ -15,6 +15,10 @@
   font-family: Lato;
 }
 
+a {
+  text-decoration: none;
+}
+
 .logo-de-me-hira {
   height: auto;
   width: 50px;
@@ -76,4 +80,38 @@ nav ul li input {
   padding: 0 16px;
   outline: none;
   transition: all .10s ease-in-out;
+}
+
+footer {
+  max-width: 1440px;
+  margin: auto;
+  width: 100%;
+  padding: 0 50px;
+  height: 70px;
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+}
+
+footer ul {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer ul * {
+  color: gray;
+}
+
+footer ul li:nth-child(1) {
+  display: flex;
+  column-gap: 10px;
+}
+
+footer ul li a:hover {
+  color: var(--black);
+  text-decoration: underline;
+  transition: all .25s ease-in-out;
 }
