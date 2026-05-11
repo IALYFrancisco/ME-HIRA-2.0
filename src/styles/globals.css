@@ -59,8 +59,8 @@ nav ul li .filter-icone {
 
 nav ul li .filter {
   background-color: var(--orange-base);
-  width: 50px;
-  height: 42px;
+  width: 42px;
+  height: 38px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
