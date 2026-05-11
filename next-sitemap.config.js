@@ -1,4 +1,4 @@
 /** @type { import('next-sitemap').IConfig } */
 module.exports = {
-    siteUrl: 
+    siteUrl: process.env.NEXT_PUBLIC_APP_BASE_URL
 }
