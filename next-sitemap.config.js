@@ -6,5 +6,6 @@ module.exports = {
     outDir: './out',
     sitemapSize: 7000,
     changefreq: 'weekly',
-    priority: 1.0
+    priority: 1.0,
+    autoLastmod: true
 }
