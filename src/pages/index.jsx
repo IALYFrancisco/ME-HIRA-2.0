@@ -132,8 +132,8 @@ export default function Home() {
             </li>
           </ul>
         </section>
+        <Footer/>
       </section>
-      <Footer/>
     </>
   );
 }
