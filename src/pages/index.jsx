@@ -2,8 +2,21 @@ import Head from "next/head";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 import Footer from "@/components/footer";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Home() {
+
+  var [ songs, setSongs ] = useState([])
+
+  useEffect(()=>{
+
+    axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
+    .then((response) => setSongs(response.data))
+    
+
+  }, [])
+
   return (
     <>
       <Head>
