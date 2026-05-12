@@ -27,17 +27,19 @@ export default function Home() {
         <section className="songs-container">
           <ul>
             {
-              songs && songs.map((song)=>{
-                <li>
-                  <div className="poster-container">
-                    <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} controls loop></video>
-                  </div>
-                  <div className="song-info">
-                    <h3>{song.title}</h3>
-                    <h4>{song.singer}</h4>
-                  </div>
-                </li>
-              })
+              songs && songs.map((song)=>
+                <>
+                  <li>
+                    <div className="poster-container">
+                      <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} controls loop></video>
+                    </div>
+                    <div className="song-info">
+                      <h3>{song.title}</h3>
+                      <h4>{song.singer}</h4>
+                    </div>
+                  </li>
+                </>
+              )
             }
             <li>
               <div className="poster-container">
