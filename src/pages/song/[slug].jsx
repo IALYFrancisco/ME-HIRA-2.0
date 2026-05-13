@@ -5,6 +5,9 @@ export default function SongReader(){
     return(
         <>
             <Navbar/>
+            <section className="song-container">
+                
+            </section>
             <Footer/>
         </>
     )
