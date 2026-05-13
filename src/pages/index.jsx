@@ -28,8 +28,7 @@ export default function Home() {
           <ul>
             {
               songs && songs.map((song)=>
-                <>
-                  <li>
+                  <li key={song._id}>
                     <div className="poster-container">
                       { 
                         song.fileType === "video" ?
@@ -43,7 +42,6 @@ export default function Home() {
                       <p><span className="badge">{ song.fileType === 'video' ? 'vidéo' : 'audio'}</span>13 mai 2026</p>
                     </div>
                   </li>
-                </>
               )
             }
           </ul>
