@@ -1,0 +1,13 @@
+.song-container .song {
+    width: 46.5%;
+    margin: 20px auto 0 auto;
+}
+
+.song-container .song .song-poster-container {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.song-container .song .song-poster-container video {
+    width: 100%;
+}
