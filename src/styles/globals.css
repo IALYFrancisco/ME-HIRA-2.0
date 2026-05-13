@@ -30,6 +30,7 @@ ul {
 }
 
 nav {
+  max-width: 1440px;
   height: 70px;
   display: flex;
   align-items: center;
@@ -37,6 +38,7 @@ nav {
   position: sticky;
   top: 0;
   background-color: white;
+  margin: auto;
 }
 
 nav ul {
@@ -106,6 +108,10 @@ nav ul li input {
   padding: 0 45px 0 16px;
   outline: none;
   transition: all .10s ease-in-out;
+}
+
+nav > ul > li:nth-child(3) {
+    width: 50px;
 }
 
 footer {

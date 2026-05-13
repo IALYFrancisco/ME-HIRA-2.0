@@ -1,3 +1,9 @@
+import Navbar from "@/components/navbar";
+
 export default function SongReader(){
-    return(<h1>This is the page reader song ;)</h1>)
+    return(
+        <>
+            <Navbar/>            
+        </>
+    )
 }

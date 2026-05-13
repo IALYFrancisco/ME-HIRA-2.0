@@ -68,10 +68,6 @@
     height: auto;
 }
 
-#__next > section > nav > ul > li:nth-child(3) {
-    width: 50px;
-}
-
 .song-info p {
     margin-top: 10px;
     font-size: 13px;
