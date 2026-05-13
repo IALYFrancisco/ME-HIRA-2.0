@@ -4,6 +4,7 @@ import Image from "next/image";
 import Footer from "@/components/footer";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link"
 
 export default function Home() {
 
@@ -29,18 +30,20 @@ export default function Home() {
             {
               songs && songs.map((song)=>
                   <li key={song._id}>
-                    <div className="poster-container">
-                      { 
-                        song.fileType === "video" ?
-                        <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} loop></video> :
-                        <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
-                      }
-                    </div>
-                    <div className="song-info">
-                      <h3>{song.title}</h3>
-                      <h4>{song.singer}</h4>
-                      <p><span className="badge">{ song.fileType === 'video' ? 'vidéo' : 'audio'}</span>13 mai 2026</p>
-                    </div>
+                    <Link href={`/song/${song.slug}`}>
+                      <div className="poster-container">
+                        { 
+                          song.fileType === "video" ?
+                          <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} loop></video> :
+                          <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+                        }
+                      </div>
+                      <div className="song-info">
+                        <h3>{song.title}</h3>
+                        <h4>{song.singer}</h4>
+                        <p><span className="badge">{ song.fileType === 'video' ? 'vidéo' : 'audio'}</span>13 mai 2026</p>
+                      </div>
+                    </Link>
                   </li>
               )
             }
