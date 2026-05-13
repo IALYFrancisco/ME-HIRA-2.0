@@ -71,3 +71,14 @@
 #__next > section > nav > ul > li:nth-child(3) {
     width: 50px;
 }
+
+.song-info p {
+    margin-top: 10px;
+}
+
+.song-info .badge {
+    background-color: var(--orange-base);
+    padding: 3px 5px;
+    font-size: 12px;
+    border-radius: 5px;
+}

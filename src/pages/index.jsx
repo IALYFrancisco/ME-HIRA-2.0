@@ -40,6 +40,7 @@ export default function Home() {
                     <div className="song-info">
                       <h3>{song.title}</h3>
                       <h4>{song.singer}</h4>
+                      <p><span className="badge">{ song.fileType === 'video' ? 'vidéo' : 'audio'}</span></p>
                     </div>
                   </li>
                 </>
