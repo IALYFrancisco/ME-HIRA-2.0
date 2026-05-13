@@ -6,8 +6,17 @@
 .song-container .song .song-poster-container {
     border-radius: 10px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
 }
 
 .song-container .song .song-poster-container video {
     width: 100%;
+    margin: auto;
+}
+
+.song .song-info {
+    margin-top: 10px;
 }
