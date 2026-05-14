@@ -13,6 +13,7 @@ export default function SongReader(){
                     <div className="song-info">
                         <h1>Jerijery</h1>
                         <h2>FLORIDA RAPHAËL</h2>
+                        <p><span className="badge">vidéo</span>13 mai 2026</p>
                     </div>
                 </div>
             </section>

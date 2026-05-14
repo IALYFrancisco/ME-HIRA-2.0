@@ -18,5 +18,19 @@
 }
 
 .song .song-info {
-    margin-top: 10px;
+    margin-top: 15px;
+}
+
+.song .song-info h2 {
+    margin-top: 15px;
+}
+
+.song .song-info p {
+    margin-top: 20px;
+    font-size: initial;
+}
+
+.song .song-info .badge {
+    font-size: initial;
+    padding: 3px 8px;
 }
