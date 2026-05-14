@@ -2,3 +2,35 @@
     max-width: 1440px;
     margin: auto;
 }
+
+.login-page-container form {
+    max-width: 400px;
+    margin: 100px auto 0 auto;
+    border: 1px solid var(--gray);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
+}
+
+.login-page-container form input {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--gray);
+    padding: 0 10px;
+    outline: none;
+}
+
+.login-page-container form input:focus {
+    border-color: var(--orange-base);
+}
+
+.login-page-container .form-element {
+    margin-bottom: 30px;
+}
+
+.login-page-container label {
+    cursor: pointer;
+}
