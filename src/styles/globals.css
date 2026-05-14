@@ -49,6 +49,10 @@ nav ul {
   justify-content: space-between;
 }
 
+nav ul li:nth-child(1) {
+  width: 111px;
+}
+
 nav ul li:nth-child(2){
   width: 50%;
   display: flex;
@@ -62,7 +66,7 @@ nav ul li .filter-icone {
 }
 
 nav ul li .filter {
-  background-color: var(--orange-base);
+  background-color: var(--gray);
   width: 35px;
   height: 32px;
   border: none;
@@ -71,6 +75,12 @@ nav ul li .filter {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: background-color .10s ease-in-out;
+}
+
+nav ul li .filter:hover {
+  transition: background-color .10s ease-in-out;
+  background-color: var(--orange-base);
 }
 
 nav ul li .filter:active {
@@ -113,6 +123,29 @@ nav ul li input {
 nav ul li input:focus {
   transition: all .10s ease-in-out;
   border-color: var(--orange-base);
+}
+
+nav ul li:nth-child(3) a {
+  display: block;
+  border: 1px solid var(--orange-base);
+  padding: 2px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 12px;
+}
+
+nav ul li:nth-child(3) button {
+  transition: all .10s ease-in-out;
+  padding: 10px 15px;
+  background-color: var(--orange-base);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+nav ul li:nth-child(3) button:active {
+  transition: all .10s ease-in-out;
+  transform: scale(0.85);
 }
 
 footer {
