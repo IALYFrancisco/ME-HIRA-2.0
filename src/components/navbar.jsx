@@ -19,7 +19,11 @@ export default function Navbar (){
                         {/* <Image src="/images/icons8-google-play-store-48.png" priority alt="filtre des chansons de me-hira" width={48} height={48} className="filter-icone" /> */}
                     </div>
                 </li>
-                <li></li>
+                <li>
+                    <Link href="/authentication/login">
+                        <button>Se connecter</button>
+                    </Link>
+                </li>
             </ul>
         </nav>
     )
