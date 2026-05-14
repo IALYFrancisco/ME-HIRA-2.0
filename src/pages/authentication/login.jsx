@@ -28,7 +28,7 @@ export default function Login(){
                         <label htmlFor="password">Mot de passe :</label>
                         <input type="password" id="password" placeholder="choisissez un mot de passe fort" { ...register('password', { required: true }) } required />
                     </div>
-                    <Link href="/authentication/forgotten²-password">Mot de passe oublié ?</Link>
+                    <Link href="/authentication/forgotten-password">Mot de passe oublié ?</Link>
                     <div className="form-element">
                         <span className="border">
                             <button>Connexion</button>
