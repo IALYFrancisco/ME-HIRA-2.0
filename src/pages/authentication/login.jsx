@@ -1,6 +1,7 @@
 import Head from "next/head"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import Link from "next/link"
 
 export default function Login(){
     return(
@@ -18,6 +19,12 @@ export default function Login(){
                     <div className="form-element">
                         <label htmlFor="password">Mot de passe :</label>
                         <input type="password" name="password" id="password" placeholder="choisissez un mot de passe fort" required />
+                    </div>
+                    <Link href="/authentication/reset-password">Mot de passe oublié ?</Link>
+                    <div className="form-element">
+                        <span className="border">
+                            <button>Connexion</button>
+                        </span>
                     </div>
                 </form>
                 <Footer/>   
