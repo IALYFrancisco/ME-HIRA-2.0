@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import "@/styles/home.css";
 import "@/styles/songReader.css";
 import "@/styles/authentication/login.css";
+import "@/styles/authentication/resetPassword.css";
 import "@/styles/authentication/forgottenPassword.css";
 import Head from "next/head";
 
