@@ -1,6 +1,6 @@
 .song-container .song {
-    width: 46.5%;
-    margin: 20px auto 0 auto;
+    width: 47%;
+    margin: 20px auto 100px auto;
 }
 
 .song-container .song .song-poster-container {
@@ -9,12 +9,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    width: 100%;
 }
 
 .song-container .song .song-poster-container video {
     width: 100%;
-    margin: auto;
+    margin: 0;
 }
 
 .song .song-info {

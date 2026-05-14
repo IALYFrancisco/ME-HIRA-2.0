@@ -8,7 +8,7 @@ export default function SongReader(){
             <section className="song-container">
                 <div className="song">
                     <div className="song-poster-container">
-                        <video src="http://127.0.0.1:1234/songs/Antalaha_souvenir_-_Ny_Ainga(360p).mp4" autoPlay controls loop></video>
+                        <video src="http://127.0.0.1:1234/songs/FLORIDA_RAPHAËL_-_Jerijery___Official_Hymne_Festival_Jerijery_(1080p).mp4" autoPlay controls loop></video>
                     </div>
                     <div className="song-info">
                         <h1>Jerijery</h1>
