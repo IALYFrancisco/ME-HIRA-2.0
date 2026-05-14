@@ -115,10 +115,6 @@ nav ul li input:focus {
   border-color: var(--orange-base);
 }
 
-nav > ul > li:nth-child(3) {
-  width: 50px;
-}
-
 footer {
   max-width: 1440px;
   width: 100%;
