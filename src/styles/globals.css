@@ -1,6 +1,7 @@
 :root {
   --black: #191919;
   --orange-base: #FEC700;
+  --gray: #D4D4D4;
 }
 
 @font-face {
@@ -64,6 +65,7 @@ nav ul li .filter {
   background-color: var(--orange-base);
   width: 35px;
   height: 32px;
+  border: none;
   border-radius: 6px;
   display: flex;
   justify-content: center;
@@ -101,13 +103,16 @@ nav ul li:nth-child(2) span button:active {
 nav ul li input {
   height: 40px;
   width: 100%;
-  border-color: var(--orange-base);
-  border-style: solid;
-  border-width: 2px;
   border-radius: 10px;
+  border: var(--gray) solid 1px;
   padding: 0 45px 0 16px;
   outline: none;
   transition: all .10s ease-in-out;
+}
+
+nav ul li input:focus {
+  transition: all .10s ease-in-out;
+  border-color: var(--orange-base);
 }
 
 nav > ul > li:nth-child(3) {
