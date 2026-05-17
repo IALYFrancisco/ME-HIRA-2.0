@@ -212,7 +212,34 @@ aside ul ul {
   flex-direction: column;
   row-gap: 25px;
 }
-aside ul ul button {
+
+/* aside ul ul button {
   position: fixed;
   bottom: 30px;
+} */
+
+aside ul ul button {
+    transition: all .10s ease-in-out;
+    padding: 10px 15px;
+    background-color: var(--orange-base);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+aside ul ul span:active {
+  transition: all .10s ease-in-out;
+  transform: scale(0.85);
+}
+
+aside ul ul span {
+    display: block;
+    border: 1px solid var(--orange-base);
+    padding: 2px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 12px;
+    width: 100%;
+    margin-top: 30px;
 }

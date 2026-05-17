@@ -22,7 +22,9 @@ export default function Sidebar(){
                             <Link href="">Paramètres</Link>
                         </li>
                         <li className="logout">
-                            <button>Se déconnecter</button>
+                            <span>
+                                <button>Se déconnecter</button>
+                            </span>
                         </li>
                     </ul>
                 </li>
