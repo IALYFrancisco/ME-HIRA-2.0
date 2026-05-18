@@ -5,11 +5,11 @@ export default function Sidebar(){
     return(
         <aside>
             <ul>
-                <li>
+                {/* <li>
                     <Link href="/">
                         <Image src="/images/logo-de-me-hira.png" priority width={94} height={94} alt="logo de me-hira" className="logo-de-me-hira" />
                     </Link>
-                </li>
+                </li> */}
                 <li>
                     <ul>
                         <li>
