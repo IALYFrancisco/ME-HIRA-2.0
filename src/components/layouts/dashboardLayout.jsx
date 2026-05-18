@@ -1,0 +1,9 @@
+import Sidebar from "../dashboard/aside";
+
+export default function DashboardLayout({children}){
+    return(
+        <section className="dashboard-layout">
+            <Sidebar/>
+        </section>
+    )
+}

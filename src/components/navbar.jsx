@@ -11,9 +11,19 @@ export default function Navbar (){
                     </Link>
                 </li>
                 <li>
-                    <input type="text" name="song-search" id="song-search" placeholder="Rechercher des chansons ..."/>
+                    <span className="searchbar-container">
+                        <input type="text" name="song-search" id="song-search" placeholder="Rechercher des chansons ..."/>
+                        <button></button>
+                    </span>
+                    <button className="filter">
+                        {/* <Image src="/images/icons8-google-play-store-48.png" priority alt="filtre des chansons de me-hira" width={48} height={48} className="filter-icone" /> */}
+                    </button>
                 </li>
-                <li></li>
+                <li>
+                    <Link href="/authentication/login">
+                        <button>Se connecter</button>
+                    </Link>
+                </li>
             </ul>
         </nav>
     )

@@ -1,5 +1,7 @@
 :root {
   --black: #191919;
+  --orange-base: #FEC700;
+  --gray: #D4D4D4;
 }
 
 @font-face {
@@ -12,6 +14,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Lato;
+  color: var(--black);
+}
+
+a {
+  text-decoration: none;
 }
 
 .logo-de-me-hira {
@@ -24,10 +31,15 @@ ul {
 }
 
 nav {
+  max-width: 1440px;
   height: 70px;
   display: flex;
   align-items: center;
   padding: 0 50px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  margin: auto;
 }
 
 nav ul {
@@ -37,22 +49,194 @@ nav ul {
   justify-content: space-between;
 }
 
+nav ul li:nth-child(1) {
+  width: 111px;
+}
+
 nav ul li:nth-child(2){
   width: 50%;
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+
+nav ul li .filter-icone {
+  width: 25px;
+  height: auto;
+}
+
+nav ul li .filter {
+  background-color: var(--gray);
+  width: 35px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color .10s ease-in-out;
+}
+
+nav ul li .filter:hover {
+  transition: background-color .10s ease-in-out;
+  background-color: var(--orange-base);
+}
+
+nav ul li .filter:active {
+  transition: all .10s ease-in-out;
+  transform: scale(0.85);
+}
+
+nav ul li:nth-child(2) span {
+  width: 100%;
+  position: relative;
+}
+
+nav ul li:nth-child(2) span button {
+  position: absolute;
+  width: 35px;
+  height: 32px;
+  right: 4px;
+  top: 4px;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--orange-base);
+  cursor: pointer;
+}
+
+nav ul li:nth-child(2) span button:active {
+  transition: all .10s ease-in-out;
+  transform: scale(0.85);
 }
 
 nav ul li input {
   height: 40px;
   width: 100%;
-  border-color: #FEC700;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 20px;
-  padding: 0 16px;
+  border-radius: 10px;
+  border: var(--gray) solid 1px;
+  padding: 0 45px 0 16px;
   outline: none;
   transition: all .10s ease-in-out;
 }
 
 nav ul li input:focus {
-  border-color: #FEC700;
+  transition: all .10s ease-in-out;
+  border-color: var(--orange-base);
+}
+
+nav ul li:nth-child(3) a {
+  display: block;
+  border: 1px solid var(--orange-base);
+  padding: 2px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 12px;
+}
+
+nav ul li:nth-child(3) button {
+  transition: all .10s ease-in-out;
+  padding: 10px 15px;
+  background-color: var(--orange-base);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+nav ul li:nth-child(3) a:active {
+  transition: all .10s ease-in-out;
+  transform: scale(0.85);
+}
+
+footer {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 50px;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%)
+}
+
+footer ul {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer ul * {
+  color: gray;
+}
+
+footer ul li:nth-child(1) {
+  display: flex;
+  column-gap: 10px;
+}
+
+footer ul li a:hover {
+  color: var(--black);
+  text-decoration: underline;
+  transition: all .25s ease-in-out;
+}
+
+.dashboard-layout {
+  width: 100%;
+  height: 100vh;
+}
+
+aside {
+  width: 180px;
+  background-color: var(--orange-base);
+}
+
+aside ul {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  align-items: center;
+  margin: auto;
+  width: max-content;
+  padding-top: 100px;
+}
+
+aside ul button {
+  transition: all .10s ease-in-out;
+  padding: 10px 15px;
+  background-color: var(--black);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  color: white;
+}
+
+aside ul span:active {
+  transition: all .10s ease-in-out;
+  transform: scale(0.85);
+}
+
+aside ul span {
+  display: block;
+  border: 1px solid var(--black);
+  padding: 2px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 12px;
+  width: 100%;
+}
+
+aside .logout {
+  position: fixed;
+  bottom: 25px;
+}
+
+aside ul li:not(:nth-child(4)) {
+  text-align: start;
+  width: 100%;
 }
