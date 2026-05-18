@@ -191,29 +191,21 @@ footer ul li a:hover {
 
 aside {
   width: 180px;
-  height: 100%;
   background-color: var(--orange-base);
 }
 
-aside > ul {
-  padding-top: 50px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  align-items: center;
-}
-
-aside > ul > li:nth-child(2){
-  margin-top: 100px;
-}
-
-aside ul ul {
+aside ul {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   row-gap: 25px;
+  align-items: center;
+  margin: auto;
+  width: max-content;
+  padding-top: 100px;
 }
 
-aside ul ul button {
+aside ul button {
   transition: all .10s ease-in-out;
   padding: 10px 15px;
   background-color: var(--black);
@@ -224,12 +216,12 @@ aside ul ul button {
   color: white;
 }
 
-aside ul ul span:active {
+aside ul span:active {
   transition: all .10s ease-in-out;
   transform: scale(0.85);
 }
 
-aside ul ul span {
+aside ul span {
   display: block;
   border: 1px solid var(--black);
   padding: 2px;
@@ -237,5 +229,14 @@ aside ul ul span {
   height: fit-content;
   border-radius: 12px;
   width: 100%;
-  margin-top: 30px;
+}
+
+aside .logout {
+  position: fixed;
+  bottom: 25px;
+}
+
+aside ul li:not(:nth-child(4)) {
+  text-align: start;
+  width: 100%;
 }
