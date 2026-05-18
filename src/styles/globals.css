@@ -213,11 +213,6 @@ aside ul ul {
   row-gap: 25px;
 }
 
-/* aside ul ul button {
-  position: fixed;
-  bottom: 30px;
-} */
-
 aside ul ul button {
     transition: all .10s ease-in-out;
     padding: 10px 15px;
