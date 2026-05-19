@@ -45,13 +45,13 @@ export default function SongReader({ song: _song }){
     return(
         <>
             <Head>
-                <title>{song.title} - Me-Hira</title>
+                <title>{song.title} - {song.singer} - Me-Hira</title>
             </Head>
             <Navbar/>
             <section className="song-container">
                 <div className="song">
                     <div className="song-poster-container">
-                        <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.slug}`} autoPlay controls loop></video>
+                        <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} autoPlay controls loop></video>
                     </div>
                     <div className="song-info">
                         <h1>{song.title}</h1>
