@@ -65,6 +65,11 @@ nav ul li .filter-icone {
   height: auto;
 }
 
+nav ul li .search-icone {
+  width: 15px;
+  height: auto;
+}
+
 nav ul li .filter {
   background-color: var(--gray);
   width: 35px;
@@ -103,6 +108,9 @@ nav ul li:nth-child(2) span button {
   border: none;
   background-color: var(--orange-base);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav ul li:nth-child(2) span button:active {
