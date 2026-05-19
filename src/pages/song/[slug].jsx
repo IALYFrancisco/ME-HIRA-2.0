@@ -8,9 +8,9 @@ export async function getStaticPaths(){
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
     const songs = response.data
 
-    const paths = songs.map( song => {
+    const paths = songs.map( song => ({
         params: { slug: song.slug }
-    })
+    }))
 
     return {
         paths,
@@ -21,7 +21,8 @@ export async function getStaticPaths(){
 export async function getStaticProps({params}){
     const { slug } = params
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get?slug=${slug}`)
-    
+    let song = response.data
+
     return {
         props: {
             song
