@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import axios from "axios";
+import { useState } from "react";
 
 export async function getStaticPaths(){
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
@@ -16,9 +17,21 @@ export async function getStaticPaths(){
     }
 }
 
+export async function getStaticProps({params}){
+    const { slug } = params
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get?slug=${slug}`)
+    
+    return {
+        props: {
+            song
+        }
+    }
+}
 
+export default function SongReader({ song: _song }){
 
-export default function SongReader(){
+    const [ song, setSong ] = useState(_song)
+
     return(
         <>
             <Navbar/>
