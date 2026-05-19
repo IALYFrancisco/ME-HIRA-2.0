@@ -4,6 +4,7 @@ export default function DashboardLayout({children}){
     return(
         <section className="dashboard-layout">
             <Sidebar/>
+            {children}
         </section>
     )
 }

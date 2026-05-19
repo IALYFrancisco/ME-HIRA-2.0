@@ -198,7 +198,7 @@ footer ul li a:hover {
 }
 
 aside {
-  width: 180px;
+  min-width: 180px;
   background-color: var(--orange-base);
 }
 
