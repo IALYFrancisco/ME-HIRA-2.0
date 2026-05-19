@@ -16,7 +16,7 @@ export default function Navbar (){
                         <button></button>
                     </span>
                     <button className="filter">
-                        {/* <Image src="/images/icons8-google-play-store-48.png" priority alt="filtre des chansons de me-hira" width={48} height={48} className="filter-icone" /> */}
+                        <Image src="/images/filter.png" priority alt="filtre des chansons de me-hira" width={48} height={48} className="filter-icone" />
                     </button>
                 </li>
                 <li>
