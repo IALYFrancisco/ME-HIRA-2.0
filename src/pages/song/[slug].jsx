@@ -1,7 +1,8 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export async function getStaticPaths(){
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
@@ -29,8 +30,15 @@ export async function getStaticProps({params}){
 }
 
 export default function SongReader({ song: _song }){
+    const router = useRouter()
+    const { slug } = router.query
 
     const [ song, setSong ] = useState(_song)
+
+    useEffect(()=>{
+        axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get?slug=${slug}`)
+        .then((response)=>setSong(response.data))
+    }, [slug])
 
     return(
         <>
