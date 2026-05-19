@@ -16,6 +16,8 @@ export async function getStaticPaths(){
     }
 }
 
+
+
 export default function SongReader(){
     return(
         <>
