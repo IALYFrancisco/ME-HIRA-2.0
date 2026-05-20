@@ -45,7 +45,7 @@ export default function SongReader({ song: _song }){
     return(
         <>
             <Head>
-                <title>{song.title} - {song.singer} - Me-Hira</title>
+                <title>{song?.title} - {song?.singer} - Me-Hira</title>
             </Head>
             <Navbar/>
             <section className="song-container">
