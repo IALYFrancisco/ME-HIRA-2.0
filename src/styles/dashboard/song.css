@@ -125,3 +125,17 @@
     cursor: pointer;
     transition: all .10s ease-in-out;
 }
+
+.dashboard-songs-container table .song-badge {
+    padding: 3px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.dashboard-songs-container table .song-badge.yes {
+    background-color: var(--orange-base);
+}
+
+.dashboard-songs-container table .song-badge.no {
+    background-color: var(--gray);
+}

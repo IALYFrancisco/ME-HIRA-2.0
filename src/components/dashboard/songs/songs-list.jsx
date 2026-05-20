@@ -35,7 +35,19 @@ export default function SongsList(){
                             <td>Christin E.GE.BA EST</td>
                             <td>Christin E.GE.BA EST</td>
                             <td>Christin E.GE.BA EST</td>
-                            <td>Oui</td>
+                            <td>
+                                <span className="song-badge yes">Oui</span>
+                            </td>
+                            <td className="actions">Actions</td>
+                        </tr>
+                        <tr>
+                            <td>Tsy kivy</td>
+                            <td>Christin E.GE.BA EST</td>
+                            <td>Christin E.GE.BA EST</td>
+                            <td>Christin E.GE.BA EST</td>
+                            <td>
+                                <span className="song-badge no">Non</span>
+                            </td>
                             <td className="actions">Actions</td>
                         </tr>
                     </tbody>
