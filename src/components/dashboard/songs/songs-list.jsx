@@ -17,6 +17,30 @@ export default function SongsList(){
                     </span>
                 </div>
             </section>
+            <section className="body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Chanteur</th>
+                            <th>Auteur</th>
+                            <th>Compositeur</th>
+                            <th>Publiée ?</th>
+                            <th className="actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tsy kivy</td>
+                            <td>Christin E.GE.BA EST</td>
+                            <td>Christin E.GE.BA EST</td>
+                            <td>Christin E.GE.BA EST</td>
+                            <td>Oui</td>
+                            <td className="actions">Actions</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </section>
     )
 }

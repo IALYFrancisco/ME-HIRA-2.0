@@ -70,3 +70,20 @@
     height: fit-content;
     border-radius: 12px;
 }
+
+.dashboard-songs-container table {
+    width: 100%;
+}
+
+.dashboard-songs-container table thead tr th:not(:nth-last-child(1)) {
+    width: 18%;
+}
+
+.dashboard-songs-container th.actions,
+.dashboard-songs-container td.actions {
+    width: 10%;
+}
+
+.dashboard-songs-container td {
+    text-align: center;
+}
