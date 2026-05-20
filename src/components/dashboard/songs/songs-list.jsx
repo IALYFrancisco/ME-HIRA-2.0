@@ -40,28 +40,40 @@ export default function SongsList(){
                             <th className="actions">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tsy kivy</td>
-                            <td>Christin E.GE.BA EST</td>
-                            <td>Christin E.GE.BA EST</td>
-                            <td>Christin E.GE.BA EST</td>
-                            <td>
-                                <span className="song-badge yes">Oui</span>
-                            </td>
-                            <td className="actions">Actions</td>
-                        </tr>
-                        <tr>
-                            <td>Tsy kivy</td>
-                            <td>Christin E.GE.BA EST</td>
-                            <td>Christin E.GE.BA EST</td>
-                            <td>Christin E.GE.BA EST</td>
-                            <td>
-                                <span className="song-badge no">Non</span>
-                            </td>
-                            <td className="actions">Actions</td>
-                        </tr>
-                    </tbody>
+                    { songs &&
+                        <tbody>
+                            { songs.map(song=>(
+                                <>
+                                    <tr>
+                                        <td>{song.title}</td>
+                                        <td>{song.singer}</td>
+                                        <td>{song.author}</td>
+                                        <td>{song.composer}</td>
+                                        <td>
+                                            <span className="song-badge yes">Oui</span>
+                                        </td>
+                                        <td className="actions">Actions</td>
+                                    </tr>
+                                </>
+                            ))
+                            }
+                            { songs.map(song=>(
+                                <>
+                                    <tr>
+                                        <td>{song.title}</td>
+                                        <td>{song.singer}</td>
+                                        <td>{song.author}</td>
+                                        <td>{song.composer}</td>
+                                        <td>
+                                            <span className="song-badge yes">Oui</span>
+                                        </td>
+                                        <td className="actions">Actions</td>
+                                    </tr>
+                                </>
+                            ))
+                            }
+                        </tbody>
+                    }
                 </table>
             </section>
         </section>
