@@ -1,6 +1,12 @@
 import Image from "next/image"
+import { useEffect, useState } from "react"
 
 export default function SongsList(){
+
+    var [ songs, setSongs ] = useState([])
+
+    useEffect(()=>{}, [])
+
     return(
         <section className="dashboard-songs-container">
             <section className="header">
