@@ -1,3 +1,4 @@
+import axios from "axios"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 
@@ -5,7 +6,11 @@ export default function SongsList(){
 
     var [ songs, setSongs ] = useState([])
 
-    useEffect(()=>{}, [])
+    useEffect(()=>{
+        axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
+        .then((response) => setSongs(response.data))
+        .catch(()=>setSongs([]))
+    }, [])
 
     return(
         <section className="dashboard-songs-container">
