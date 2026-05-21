@@ -13,7 +13,11 @@ export default function Home() {
   useEffect(()=>{
 
     axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
-    .then((response) => setSongs(response.data))
+    .then((response) => {
+      let _songs = response.data
+      _songs = _songs.filter((s)=>{ s.published === true })
+      setSongs(_songs)
+    })
     
 
   }, [])
