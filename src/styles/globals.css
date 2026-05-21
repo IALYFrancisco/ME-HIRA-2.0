@@ -197,9 +197,14 @@ footer ul li a:hover {
   height: 100vh;
 }
 
+.aside-container {
+  width: 180px;
+}
+
 aside {
   min-width: 180px;
   background-color: var(--orange-base);
+  position: fixed;
 }
 
 aside ul {
