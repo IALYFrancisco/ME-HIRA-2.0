@@ -51,7 +51,7 @@ export default function SongsList(){
                                     <td>{song.author ? song.author : "------------"}</td>
                                     <td>{song.composer ? song.composer : "------------"}</td>
                                     <td>
-                                        <span className="song-badge yes">Oui</span>
+                                        <span className={song.published ? "song-badge yes" : "song-badge no"}>{song.published ? "Oui" : "Non"}</span>
                                     </td>
                                     <td className="actions">Actions</td>
                                 </tr>
