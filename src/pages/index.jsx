@@ -18,7 +18,6 @@ export default function Home() {
       _songs = _songs.filter((s)=>{ s.published === true })
       setSongs(_songs)
     })
-    
 
   }, [])
 
