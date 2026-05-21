@@ -48,8 +48,8 @@ export default function SongsList(){
                                 <tr key={song._id}>
                                     <td>{song.title}</td>
                                     <td>{song.singer}</td>
-                                    <td>{song.author}</td>
-                                    <td>{song.composer}</td>
+                                    <td>{song.author ? song.author : "------------"}</td>
+                                    <td>{song.composer ? song.composer : "------------"}</td>
                                     <td>
                                         <span className="song-badge yes">Oui</span>
                                     </td>
