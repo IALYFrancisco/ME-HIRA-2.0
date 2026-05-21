@@ -8,6 +8,7 @@ import Head from "next/head"
 export async function getStaticPaths(){
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
     const songs = response.data
+    songs = songs.filter((s)=>{s.published === true})
 
     const paths = songs.map( song => ({
         params: { slug: song.slug }
