@@ -56,21 +56,6 @@ export default function SongsList(){
                                     <td className="actions">Actions</td>
                                 </tr>
                             ))}
-                            {/* { songs.map(song=>(
-                                <>
-                                    <tr>
-                                        <td>{song.title}</td>
-                                        <td>{song.singer}</td>
-                                        <td>{song.author}</td>
-                                        <td>{song.composer}</td>
-                                        <td>
-                                            <span className="song-badge yes">Oui</span>
-                                        </td>
-                                        <td className="actions">Actions</td>
-                                    </tr>
-                                </>
-                            ))
-                            } */}
                         </tbody>
                     }
                 </table>
