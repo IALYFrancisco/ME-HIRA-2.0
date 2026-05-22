@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import axios from "axios"
 import Image from "next/image"
 import { useEffect, useState } from "react"
@@ -68,7 +69,15 @@ export default function SongsList(){
                 </section>
             </section>
             <div className="add-song-overlay active"></div>
-            <form onSubmit={handleSubmit(addSong)} className="modal"></form>
+            <form onSubmit={handleSubmit(addSong)} className="add-song-modal active">
+                <h2>Ajout d'une chanson :</h2>
+                <fieldset>
+                        <legend><h3>A propos du chanson :</h3></legend>
+                </fieldset>
+                <fieldset>
+                        <legend><h3>A propos du fichier :</h3></legend>
+                </fieldset>
+            </form>
         </>
     )
 }
