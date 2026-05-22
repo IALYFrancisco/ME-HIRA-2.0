@@ -1,10 +1,15 @@
 import axios from "axios"
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import { useForm } from "react-hook-form"
 
 export default function SongsList(){
 
     var [ songs, setSongs ] = useState([])
+
+    const { register, handleSubmit } = useForm()
+
+    const addSong = () => {}
 
     useEffect(()=>{
         axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
@@ -62,7 +67,8 @@ export default function SongsList(){
                     </table>
                 </section>
             </section>
-            <div className="add-song-overlay"></div>
+            <div className="add-song-overlay active"></div>
+            <form onSubmit={handleSubmit(addSong)} className="modal"></form>
         </>
     )
 }
