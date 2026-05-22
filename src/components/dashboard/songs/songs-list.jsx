@@ -96,7 +96,12 @@ export default function SongsList(){
                             </div>
                     </fieldset>
                     <fieldset>
-                            <legend><h3>A propos du fichier :</h3></legend>
+                        <legend><h3>A propos du fichier :</h3></legend>
+                        <div className="form-element">
+                            <label htmlFor="file">Fichier :</label>
+                            <input type="text" id="file" {...register('file', {required:true})} required />
+                            <input type="file" {...register('file',{required:true})} required />
+                        </div>
                     </fieldset>
                 </section>
                 <div className="form-element">

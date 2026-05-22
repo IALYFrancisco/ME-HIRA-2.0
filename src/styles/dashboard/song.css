@@ -207,7 +207,7 @@
     border: none;
 }
 
-.add-song-modal input {
+.add-song-modal input:not([type='file']) {
     display: block;
     width: 100%;
     margin-top: 10px;
@@ -216,6 +216,11 @@
     border: 1px solid var(--gray);
     padding: 0 10px;
     outline: none;
+}
+
+.add-song-modal input[type='file']{
+    margin-top: 15px;
+    height: 40px;
 }
 
 .add-song-modal input:focus {
