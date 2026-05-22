@@ -3,6 +3,7 @@ import axios from "axios"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
+import Link from "next/link"
 
 export default function SongsList(){
 
@@ -54,7 +55,9 @@ export default function SongsList(){
                 <div className="page-header-container">
                     <section className="header">
                         <div className="page-title">
-                            <Image src="/images/logo-de-me-hira.png" priority width={94} height={94} alt="logo de me-hira" className="logo-de-me-hira" />
+                            <Link href="/">
+                                <Image src="/images/logo-de-me-hira.png" priority width={94} height={94} alt="logo de me-hira" className="logo-de-me-hira" />
+                            </Link>
                             <h1>Chansons</h1>
                         </div>
                         <div className="actions-container">
