@@ -258,5 +258,12 @@ aside ul li:not(:nth-child(4)) {
   border-radius: 10px;
   box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
   border: 1px solid var(--gray);
-  
+  opacity: 0;
+  pointer-events: none;
+  transition: 300ms;
+}
+
+.home-search-modal.active {
+  pointer-events: auto;
+  opacity: 1;
 }
