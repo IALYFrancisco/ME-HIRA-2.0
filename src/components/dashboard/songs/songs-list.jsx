@@ -76,23 +76,23 @@ export default function SongsList(){
                             <legend><h3>A propos du chanson :</h3></legend>
                             <div className="form-element">
                                 <label htmlFor="title">Titre :</label>
-                                <input type="text" id="title" { ...register('title', {required: true}) } required />
+                                <input type="text" placeholder="titre du chanson" id="title" { ...register('title', {required: true}) } required />
                             </div>
                             <div className="form-element">
                                 <label htmlFor="singer">Chanteur (veuillez séparer par un virgule chaque chanteur) :</label>
-                                <input type="text" id="singer" { ...register('singer', {required: true}) } required />
+                                <input type="text" placeholder="ex: chanteur1, chanteur2, chanteur3, ..." id="singer" { ...register('singer', {required: true}) } required />
                             </div>
                             <div className="form-element">
                                 <label htmlFor="author">Auteur :</label>
-                                <input type="text" id="author" { ...register('author', {required: true}) } required/>
+                                <input type="text" placeholder="auteur du chanson" id="author" { ...register('author', {required: true}) } required/>
                             </div>
                             <div className="form-element">
                                 <label htmlFor="composer">Compositeur :</label>
-                                <input type="text" id="composer" {...register('composer', {required:true})} required/>
+                                <input type="text" placeholder="compositeur du chanson" id="composer" {...register('composer', {required:true})} required/>
                             </div>
                             <div className="form-element">
                                 <label htmlFor="album">Album :</label>
-                                <input type="text" id="album" {...register('album',{required:true})} required/>
+                                <input type="text" placeholder="l'album auquel appartien la chanson" id="album" {...register('album',{required:true})} required/>
                             </div>
                     </fieldset>
                     <fieldset>
