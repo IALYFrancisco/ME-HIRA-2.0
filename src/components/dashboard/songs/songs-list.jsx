@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import axios from "axios"
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 
 export default function SongsList(){
@@ -9,8 +9,20 @@ export default function SongsList(){
     var [ songs, setSongs ] = useState([])
 
     const { register, handleSubmit } = useForm()
+    const addSongOverlayRef = useRef(null)
+    const addSongFormRef = useRef(null)
 
     const addSong = () => {}
+
+    const openAddSongModal = ()=>{
+        addSongOverlayRef.current.classList.add('active')
+        addSongFormRef.current.classList.add('active')
+    }
+
+    const closeAddSongModal = ()=>{
+        addSongOverlayRef.current.classList.remove('active')
+        addSongFormRef.current.classList.remove('active')
+    }
 
     useEffect(()=>{
         axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
@@ -32,7 +44,7 @@ export default function SongsList(){
                                 <input type="text" name="" id="" placeholder="Rechercher des chansons ..." />
                             </div>
                             <span>
-                                <button>Ajouter une chanson</button>
+                                <button onClick={openAddSongModal}>Ajouter une chanson</button>
                             </span>
                         </div>
                     </section>
@@ -68,8 +80,8 @@ export default function SongsList(){
                     </table>
                 </section>
             </section>
-            <div className="add-song-overlay active"></div>
-            <form onSubmit={handleSubmit(addSong)} className="add-song-modal active">
+            <div className="add-song-overlay" ref={addSongOverlayRef} onClick={closeAddSongModal}></div>
+            <form onSubmit={handleSubmit(addSong)} className="add-song-modal" ref={addSongFormRef}>
                 <h2>Ajout d'une chanson :</h2>
                 <section>
                     <fieldset>
