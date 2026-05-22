@@ -251,7 +251,7 @@ aside ul li:not(:nth-child(4)) {
 
 .home-search-modal {
   width: 100%;
-  height: 70vh;
+  max-height: 70vh;
   background-color: white;
   position: absolute;
   top: 50px;
@@ -261,12 +261,19 @@ aside ul li:not(:nth-child(4)) {
   opacity: 0;
   pointer-events: none;
   transition: 300ms;
-  padding: 20px;
+  padding: 5px;
 }
 
 .home-search-modal.active {
   pointer-events: auto;
   opacity: 1;
+}
+
+.home-search-modal .singer-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  align-items: center;
 }
 
 .home-search-modal .badge {
@@ -275,4 +282,16 @@ aside ul li:not(:nth-child(4)) {
     font-size: 12px;
     border-radius: 5px;
     margin-right: 10px;
+    width: max-content;
+}
+
+.home-search-modal li {
+  padding: 10px;
+  border-radius: 5px;
+  transition: 300ms;
+}
+
+.home-search-modal li:hover {
+  background-color: rgba(172, 172, 172, 0.406);
+  transition: 300ms;
 }
