@@ -248,3 +248,15 @@ aside ul li:not(:nth-child(4)) {
   text-align: start;
   width: 100%;
 }
+
+.home-search-modal {
+  width: 100%;
+  height: 70vh;
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
+  border: 1px solid var(--gray);
+  
+}
