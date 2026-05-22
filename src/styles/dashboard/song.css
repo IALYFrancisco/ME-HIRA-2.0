@@ -199,7 +199,7 @@
 .add-song-modal section {
     display: flex;
     column-gap: 20px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .add-song-modal fieldset {
@@ -223,7 +223,7 @@
 }
 
 .add-song-modal .form-element {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .add-song-modal label {

@@ -90,7 +90,7 @@ export default function SongsList(){
                                 <label htmlFor="composer">Compositeur :</label>
                                 <input type="text" id="composer" {...register('composer', {required:true})} required/>
                             </div>
-                            <div className="album">
+                            <div className="form-element">
                                 <label htmlFor="album">Album :</label>
                                 <input type="text" id="album" {...register('album',{required:true})} required/>
                             </div>
