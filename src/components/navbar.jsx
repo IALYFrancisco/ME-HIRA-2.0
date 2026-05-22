@@ -13,6 +13,7 @@ export default function Navbar (){
                 <li>
                     <span className="searchbar-container">
                         <input type="text" name="song-search" id="song-search" placeholder="Rechercher des chansons ..."/>
+                        <div className="home-search-modal"></div>
                         <button>
                             <Image src="/images/search.png" priority alt="recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="search-icone" />
                         </button>
