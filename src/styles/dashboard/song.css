@@ -178,7 +178,7 @@
     position: fixed;
     opacity: 0;
     pointer-events: none;
-    margin: 100px auto;
+    margin: 20px auto;
     left: -50%;
     right: -50%;
     transition: 300ms;
@@ -199,7 +199,7 @@
 .add-song-modal section {
     display: flex;
     column-gap: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .add-song-modal fieldset {
@@ -216,4 +216,42 @@
     border: 1px solid var(--gray);
     padding: 0 10px;
     outline: none;
+}
+
+.add-song-modal input:focus {
+    border-color: var(--orange-base);
+}
+
+.add-song-modal .form-element {
+    margin-top: 20px;
+}
+
+.add-song-modal label {
+    cursor: pointer;
+}
+
+.add-song-modal button {
+    transition: all .10s ease-in-out;
+    padding: 10px 15px;
+    background-color: var(--orange-base);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.add-song-modal span:active {
+  transition: all .10s ease-in-out;
+  transform: scale(0.85);
+}
+
+.add-song-modal span {
+    display: block;
+    border: 1px solid var(--orange-base);
+    padding: 2px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 12px;
+    width: 20%;
+    margin-top: 30px;
 }
