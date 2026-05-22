@@ -7,8 +7,12 @@ import { useForm } from "react-hook-form"
 export default function SongsList(){
 
     var [ songs, setSongs ] = useState([])
-
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit, watch } = useForm()
+    
+    const watchAll = watch()
+    var [localFile, setLocalFile] = useState('')
+    var [localFileIsDefined, setLocalFileIsDefined] = useState(false)
+    var [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
     const addSongOverlayRef = useRef(null)
     const addSongFormRef = useRef(null)
 
@@ -23,6 +27,20 @@ export default function SongsList(){
         addSongOverlayRef.current.classList.remove('active')
         addSongFormRef.current.classList.remove('active')
     }
+
+    useEffect(()=>{
+        if(watchAll.hostedFile){
+            setHostedFileIsDefined(true)
+        }else{
+            setHostedFileIsDefined(false)
+        }
+
+        if(localFile){
+            setLocalFileIsDefined(true)
+        }else{
+            setLocalFileIsDefined(false)
+        }
+    },[localFile, watchAll])
 
     useEffect(()=>{
         axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
@@ -111,9 +129,9 @@ export default function SongsList(){
                     <fieldset>
                         <legend><h3>A propos du fichier :</h3></legend>
                         <div className="form-element">
-                            <label htmlFor="file">Fichier :</label>
-                            <input type="text" id="file" placeholder="utilisez cet champ pour un fichier déjà mis en ligne" {...register('file', {required:true})} required />
-                            <input type="file" {...register('file',{required:true})} required />
+                            <label htmlFor="hostedFile">Fichier :</label>
+                            <input disabled={localFileIsDefined} type="text" id="hostedfile" placeholder="utilisez cet champ pour un fichier déjà mis en ligne" {...register('hostedFile', {required:true})} required />
+                            <input disabled={hostedFileIsDefined} type="file" onChange={(e)=>setLocalFile(e.target.value)} required />
                         </div>
                         <div className="form-element">
                             <label htmlFor="fileType">Type du fichier :</label>
