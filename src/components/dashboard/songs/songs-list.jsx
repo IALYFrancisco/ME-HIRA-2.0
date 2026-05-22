@@ -82,6 +82,7 @@ export default function SongsList(){
             </section>
             <div className="add-song-overlay" ref={addSongOverlayRef} onClick={closeAddSongModal}></div>
             <form onSubmit={handleSubmit(addSong)} className="add-song-modal" ref={addSongFormRef}>
+                <span className="close-modal" onClick={closeAddSongModal}></span>
                 <h2>Ajout d'une chanson :</h2>
                 <section>
                     <fieldset>

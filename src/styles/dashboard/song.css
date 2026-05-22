@@ -250,7 +250,7 @@
   transform: scale(0.85);
 }
 
-.add-song-modal span {
+.add-song-modal span:has(button) {
     display: block;
     border: 1px solid var(--orange-base);
     padding: 2px;
@@ -274,4 +274,14 @@
 
 .add-song-modal select:focus {
     border-color: var(--orange-base);
+}
+
+.add-song-modal .close-modal {
+    width: 30px;
+    height: 30px;
+    background-color: var(--gray);
+    position: absolute;
+    right: 20px;
+    border-radius: 50%;
+    cursor: pointer;
 }
