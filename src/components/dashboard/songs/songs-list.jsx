@@ -71,12 +71,39 @@ export default function SongsList(){
             <div className="add-song-overlay active"></div>
             <form onSubmit={handleSubmit(addSong)} className="add-song-modal active">
                 <h2>Ajout d'une chanson :</h2>
-                <fieldset>
-                        <legend><h3>A propos du chanson :</h3></legend>
-                </fieldset>
-                <fieldset>
-                        <legend><h3>A propos du fichier :</h3></legend>
-                </fieldset>
+                <section>
+                    <fieldset>
+                            <legend><h3>A propos du chanson :</h3></legend>
+                            <div className="form-element">
+                                <label htmlFor="title">Titre :</label>
+                                <input type="text" id="title" { ...register('title', {required: true}) } required />
+                            </div>
+                            <div className="form-element">
+                                <label htmlFor="singer">Chanteur (veuillez séparer par un virgule chaque chanteur) :</label>
+                                <input type="text" id="singer" { ...register('singer', {required: true}) } required />
+                            </div>
+                            <div className="form-element">
+                                <label htmlFor="author">Auteur :</label>
+                                <input type="text" id="author" { ...register('author', {required: true}) } required/>
+                            </div>
+                            <div className="form-element">
+                                <label htmlFor="composer">Compositeur :</label>
+                                <input type="text" id="composer" {...register('composer', {required:true})} required/>
+                            </div>
+                            <div className="album">
+                                <label htmlFor="album">Album :</label>
+                                <input type="text" id="album" {...register('album',{required:true})} required/>
+                            </div>
+                    </fieldset>
+                    <fieldset>
+                            <legend><h3>A propos du fichier :</h3></legend>
+                    </fieldset>
+                </section>
+                <div className="form-element">
+                    <span className="border">
+                        <button>Soumettre</button>
+                    </span>
+                </div>
             </form>
         </>
     )
