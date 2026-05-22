@@ -61,5 +61,6 @@ export default function SongsList(){
                 </table>
             </section>
         </section>
+        <div className="add-song-overlay"></div>
     )
 }
