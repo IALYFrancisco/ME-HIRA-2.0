@@ -34,9 +34,54 @@ export default function Navbar (){
                             <ul>
                                 <li>
                                     <Link href="">
-                                        <h3>Titre du chanson</h3>
+                                        <h4>Titre du chanson</h4>
                                         <span className="singer-container">
-                                            <h4>Cahnteur du chanson</h4>
+                                            <h5>Cahnteur du chanson</h5>
+                                            <span className="badge">vidéo</span>
+                                        </span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="">
+                                        <h4>Titre du chanson</h4>
+                                        <span className="singer-container">
+                                            <h5>Cahnteur du chanson</h5>
+                                            <span className="badge">vidéo</span>
+                                        </span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="">
+                                        <h4>Titre du chanson</h4>
+                                        <span className="singer-container">
+                                            <h5>Cahnteur du chanson</h5>
+                                            <span className="badge">vidéo</span>
+                                        </span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="">
+                                        <h4>Titre du chanson</h4>
+                                        <span className="singer-container">
+                                            <h5>Cahnteur du chanson</h5>
+                                            <span className="badge">vidéo</span>
+                                        </span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="">
+                                        <h4>Titre du chanson</h4>
+                                        <span className="singer-container">
+                                            <h5>Cahnteur du chanson</h5>
+                                            <span className="badge">vidéo</span>
+                                        </span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="">
+                                        <h4>Titre du chanson</h4>
+                                        <span className="singer-container">
+                                            <h5>Cahnteur du chanson</h5>
                                             <span className="badge">vidéo</span>
                                         </span>
                                     </Link>
