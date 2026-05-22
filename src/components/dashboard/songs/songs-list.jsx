@@ -106,7 +106,7 @@ export default function SongsList(){
                             <label htmlFor="fileType">Type du fichier :</label>
                             <select id="fileType">
                                 <option value="">------</option>
-                                <option value="audio" default>Audio</option>
+                                <option value="audio">Audio</option>
                                 <option value="video">Vidéo</option>
                             </select>
                         </div>
