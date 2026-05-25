@@ -17,7 +17,9 @@ export default function SongsList(){
     const addSongOverlayRef = useRef(null)
     const addSongFormRef = useRef(null)
 
-    const addSong = (data) => {
+    const addSong = async (data) => {
+
+        console.log(data)
 
         const song = new FormData()
 
@@ -34,7 +36,7 @@ export default function SongsList(){
             song.append('file', localFile)
         }
 
-        axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song)
+        await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song)
 
     }
 
