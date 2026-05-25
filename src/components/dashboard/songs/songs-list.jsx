@@ -17,7 +17,24 @@ export default function SongsList(){
     const addSongOverlayRef = useRef(null)
     const addSongFormRef = useRef(null)
 
-    const addSong = () => {}
+    const addSong = (data) => {
+
+        const song = new FormData()
+
+        song.append('title', data.title)
+        song.append('author', data.author)
+        song.append('album', data.album)
+        song.append('composer', data.composer)
+        song.append('fileType', data.fileType)
+        song.append('singer', data.singer)
+        if(data.hostedFile){
+            song.append('fileUrl', data.hostedFile)
+        }
+        if(localFile){
+            song.append('file', localFile)
+        }
+
+    }
 
     const openAddSongModal = ()=>{
         addSongOverlayRef.current.classList.add('active')
@@ -138,7 +155,7 @@ export default function SongsList(){
                         </div>
                         <div className="form-element">
                             <label htmlFor="fileType">Type du fichier :</label>
-                            <select id="fileType">
+                            <select id="fileType" required>
                                 <option value="">------</option>
                                 <option value="audio">Audio</option>
                                 <option value="video">Vidéo</option>
