@@ -86,7 +86,10 @@ export default function SongsList(){
                                 <input type="text" name="" id="" placeholder="Rechercher des chansons ..." />
                             </div>
                             <span>
-                                <button onClick={openAddSongModal}>Ajouter une chanson</button>
+                                <button onClick={openAddSongModal}>
+                                    <Image src="/images/plus.png" priority height={16} width={16} alt="ajout de chanson"/>
+                                    Ajouter une chanson
+                                </button>
                             </span>
                         </div>
                     </section>
