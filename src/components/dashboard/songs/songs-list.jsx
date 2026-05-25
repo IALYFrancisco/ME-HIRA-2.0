@@ -34,6 +34,8 @@ export default function SongsList(){
             song.append('file', localFile)
         }
 
+        axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song)
+
     }
 
     const openAddSongModal = ()=>{
