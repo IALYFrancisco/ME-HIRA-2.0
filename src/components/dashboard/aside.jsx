@@ -14,12 +14,15 @@ export default function Sidebar(){
                     </li>
                     <li>
                         <Link href="">
-                        <Image src="/images/artist.png" alt="note melodie" width={16} height={16} priority />
-                        Artistes
+                            <Image src="/images/artist.png" alt="note melodie" width={16} height={16} priority />
+                            Artistes
                         </Link>
                     </li>
                     <li>
-                        <Link href="">Paramètres</Link>
+                        <Link href="">
+                            <Image src="/images/setting.png" alt="note melodie" width={16} height={16} priority />
+                            Paramètres
+                        </Link>
                     </li>
                     <li className="logout">
                         <span>
