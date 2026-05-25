@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Sidebar(){
     return(
@@ -6,10 +7,16 @@ export default function Sidebar(){
             <aside>
                 <ul>
                     <li>
-                        <Link href="">Chansons</Link>
+                        <Link href="">
+                            <Image src="/images/melody.png" alt="note melodie" width={16} height={16} priority />
+                            Chansons
+                        </Link>
                     </li>
                     <li>
-                        <Link href="">Artistes</Link>
+                        <Link href="">
+                        <Image src="/images/artist.png" alt="note melodie" width={16} height={16} priority />
+                        Artistes
+                        </Link>
                     </li>
                     <li>
                         <Link href="">Paramètres</Link>
