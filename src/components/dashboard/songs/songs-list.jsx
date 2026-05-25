@@ -36,7 +36,7 @@ export default function SongsList(){
             song.append('file', localFile)
         }
 
-        await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song)
+        await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song, { headers: localFile ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}})
 
     }
 
@@ -155,7 +155,7 @@ export default function SongsList(){
                         <div className="form-element">
                             <label htmlFor="hostedFile">Fichier :</label>
                             <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour un fichier déjà mis en ligne" {...register('hostedFile', {required:true})} required />
-                            <input disabled={hostedFileIsDefined} type="file" onChange={(e)=>setLocalFile(e.target.value)} required />
+                            <input disabled={hostedFileIsDefined} type="file" onChange={(e)=>setLocalFile(e.target.files[0])} required />
                         </div>
                         <div className="form-element">
                             <label htmlFor="fileType">Type du fichier :</label>
