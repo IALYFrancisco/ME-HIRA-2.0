@@ -19,8 +19,6 @@ export default function SongsList(){
 
     const addSong = async (data) => {
 
-        console.log(data)
-
         const song = new FormData()
 
         song.append('title', data.title)
@@ -36,7 +34,7 @@ export default function SongsList(){
             song.append('file', localFile)
         }
 
-        await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song, { headers: localFile ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}})
+        await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}})
 
     }
 
@@ -161,12 +159,12 @@ export default function SongsList(){
                         <legend><h3>A propos du fichier :</h3></legend>
                         <div className="form-element">
                             <label htmlFor="hostedFile">Fichier :</label>
-                            <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour un fichier déjà mis en ligne" {...register('hostedFile', {required:true})} required />
+                            <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour un fichier déjà mis en ligne" {...register('hostedFile', {required:!localFileIsDefined})} required />
                             <input disabled={hostedFileIsDefined} type="file" onChange={(e)=>setLocalFile(e.target.files[0])} required />
                         </div>
                         <div className="form-element">
                             <label htmlFor="fileType">Type du fichier :</label>
-                            <select id="fileType" required>
+                            <select id="fileType" {...register('fileType', { required: true })} required>
                                 <option value="">------</option>
                                 <option value="audio">Audio</option>
                                 <option value="video">Vidéo</option>
