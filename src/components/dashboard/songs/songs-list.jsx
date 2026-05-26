@@ -9,7 +9,7 @@ import { toast } from "sonner"
 export default function SongsList(){
 
     var [ songs, setSongs ] = useState([])
-    const { register, handleSubmit, watch } = useForm()
+    const { register, handleSubmit, watch, reset } = useForm()
     
     const watchAll = watch()
     var [localFile, setLocalFile] = useState('')
@@ -38,9 +38,9 @@ export default function SongsList(){
             }
     
             await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}})
-
             toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
-            
+            reset()
+            closeAddSongModal()
         }catch{
             toast.error(`Erreur de l'ajout du chanson, veuillez réessayer plus tard.`)
         }
@@ -137,7 +137,7 @@ export default function SongsList(){
             </section>
             <div className="add-song-overlay" ref={addSongOverlayRef} onClick={closeAddSongModal}></div>
             <form onSubmit={handleSubmit(addSong)} className="add-song-modal" ref={addSongFormRef}>
-                <span className="close-modal" onClick={closeAddSongModal}>
+                <span className="close-modal" onClick={ ()=> {closeAddSongModal(); reset()}}>
                     <Image src="/images/close.png" width={16} height={16} priority alt="fermer modal d'ajout de chanson"/>
                 </span>
                 <h2>Ajout d'une chanson :</h2>
