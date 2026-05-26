@@ -20,6 +20,10 @@ body {
   color: var(--black);
 }
 
+button, input {
+  font-family: Lato;
+}
+
 a {
   text-decoration: none;
 }
@@ -256,6 +260,7 @@ aside ul li a {
   display: flex;
   align-items: center;
   column-gap: 5px;
+  color: var(--black);
 }
 
 aside ul li a img {
