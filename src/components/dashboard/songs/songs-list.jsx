@@ -4,6 +4,7 @@ import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 import Link from "next/link"
+import { toast } from "sonner"
 
 export default function SongsList(){
 
@@ -19,22 +20,31 @@ export default function SongsList(){
 
     const addSong = async (data) => {
 
-        const song = new FormData()
+        try{
 
-        song.append('title', data.title)
-        song.append('author', data.author)
-        song.append('album', data.album)
-        song.append('composer', data.composer)
-        song.append('fileType', data.fileType)
-        song.append('singer', data.singer)
-        if(data.hostedFile){
-            song.append('fileUrl', data.hostedFile)
-        }
-        if(localFile){
-            song.append('file', localFile)
+            const song = new FormData()
+    
+            song.append('title', data.title)
+            song.append('author', data.author)
+            song.append('album', data.album)
+            song.append('composer', data.composer)
+            song.append('fileType', data.fileType)
+            song.append('singer', data.singer)
+            if(data.hostedFile){
+                song.append('fileUrl', data.hostedFile)
+            }
+            if(localFile){
+                song.append('file', localFile)
+            }
+    
+            await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}})
+
+            toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
+            
+        }catch{
+            toast.error(`Erreur de l'ajout du chanson, veuillez réessayer plus tard.`)
         }
 
-        await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}})
 
     }
 

@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
         <meta property="og:type" content="website" key="og:type" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Toaster position='top-center' richColors/>
+      <Toaster className="toast" position='top-center' richColors/>
       <Component {...pageProps} />
     </>
   )
