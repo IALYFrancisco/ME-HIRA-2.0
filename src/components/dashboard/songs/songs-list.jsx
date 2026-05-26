@@ -19,11 +19,8 @@ export default function SongsList(){
     const addSongFormRef = useRef(null)
 
     const addSong = async (data) => {
-
         try{
-
             const song = new FormData()
-    
             song.append('title', data.title)
             song.append('author', data.author)
             song.append('album', data.album)
@@ -36,7 +33,6 @@ export default function SongsList(){
             if(localFile){
                 song.append('file', localFile)
             }
-    
             await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}})
             toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
             reset()
@@ -44,8 +40,6 @@ export default function SongsList(){
         }catch{
             toast.error(`Erreur de l'ajout du chanson, veuillez réessayer plus tard.`)
         }
-
-
     }
 
     const openAddSongModal = ()=>{
