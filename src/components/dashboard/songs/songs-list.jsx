@@ -17,7 +17,28 @@ export default function SongsList(){
     const addSongOverlayRef = useRef(null)
     const addSongFormRef = useRef(null)
 
-    const addSong = () => {}
+    const addSong = async (data) => {
+
+        console.log(data)
+
+        const song = new FormData()
+
+        song.append('title', data.title)
+        song.append('author', data.author)
+        song.append('album', data.album)
+        song.append('composer', data.composer)
+        song.append('fileType', data.fileType)
+        song.append('singer', data.singer)
+        if(data.hostedFile){
+            song.append('fileUrl', data.hostedFile)
+        }
+        if(localFile){
+            song.append('file', localFile)
+        }
+
+        await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song, { headers: localFile ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}})
+
+    }
 
     const openAddSongModal = ()=>{
         addSongOverlayRef.current.classList.add('active')
@@ -65,7 +86,10 @@ export default function SongsList(){
                                 <input type="text" name="" id="" placeholder="Rechercher des chansons ..." />
                             </div>
                             <span>
-                                <button onClick={openAddSongModal}>Ajouter une chanson</button>
+                                <button onClick={openAddSongModal}>
+                                    <Image src="/images/plus.png" priority height={16} width={16} alt="ajout de chanson"/>
+                                    Ajouter une chanson
+                                </button>
                             </span>
                         </div>
                     </section>
@@ -93,7 +117,9 @@ export default function SongsList(){
                                         <td>
                                             <span className={song.published ? "song-badge yes" : "song-badge no"}>{song.published ? "Oui" : "Non"}</span>
                                         </td>
-                                        <td className="actions">Actions</td>
+                                        <td className="actions">
+                                            <Image src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -103,7 +129,9 @@ export default function SongsList(){
             </section>
             <div className="add-song-overlay" ref={addSongOverlayRef} onClick={closeAddSongModal}></div>
             <form onSubmit={handleSubmit(addSong)} className="add-song-modal" ref={addSongFormRef}>
-                <span className="close-modal" onClick={closeAddSongModal}></span>
+                <span className="close-modal" onClick={closeAddSongModal}>
+                    <Image src="/images/close.png" width={16} height={16} priority alt="fermer modal d'ajout de chanson"/>
+                </span>
                 <h2>Ajout d'une chanson :</h2>
                 <section>
                     <fieldset>
@@ -134,11 +162,11 @@ export default function SongsList(){
                         <div className="form-element">
                             <label htmlFor="hostedFile">Fichier :</label>
                             <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour un fichier déjà mis en ligne" {...register('hostedFile', {required:true})} required />
-                            <input disabled={hostedFileIsDefined} type="file" onChange={(e)=>setLocalFile(e.target.value)} required />
+                            <input disabled={hostedFileIsDefined} type="file" onChange={(e)=>setLocalFile(e.target.files[0])} required />
                         </div>
                         <div className="form-element">
                             <label htmlFor="fileType">Type du fichier :</label>
-                            <select id="fileType">
+                            <select id="fileType" required>
                                 <option value="">------</option>
                                 <option value="audio">Audio</option>
                                 <option value="video">Vidéo</option>

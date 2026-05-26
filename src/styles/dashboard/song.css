@@ -67,6 +67,14 @@
     border-radius: 10px;
     cursor: pointer;
     width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.dashboard-songs-container .actions-container button img {
+    height: auto;
+    width: 12px;
 }
 
 .dashboard-songs-container .actions-container span:active {
@@ -284,4 +292,12 @@
     right: 20px;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-song-modal .close-modal img {
+    height: auto;
+    width: 10px;
 }
