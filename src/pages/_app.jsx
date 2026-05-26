@@ -6,6 +6,7 @@ import "@/styles/authentication/login.css";
 import "@/styles/authentication/resetPassword.css";
 import "@/styles/authentication/forgottenPassword.css";
 import Head from "next/head";
+import { Toaster } from "sonner"
 
 export default function App({ Component, pageProps }) {
   return (
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps }) {
         <meta property="og:type" content="website" key="og:type" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+      <Toaster position='top-center' richColors/>
       <Component {...pageProps} />
     </>
   )
