@@ -36,9 +36,7 @@ export default function SongsList(){
             song.append('file', localFile)
         }
 
-        console.log(song)
-
-        // await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song, { headers: localFile ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}})
+        await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song, { headers: localFile ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}})
 
     }
 
