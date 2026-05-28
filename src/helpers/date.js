@@ -5,5 +5,5 @@ export function formatDateMG(dateInput){
         day: "2-digit",
         month: "short",
         year: "numeric"
-    }).format(date)
+    }).format(date).replace(".", "")
 }
