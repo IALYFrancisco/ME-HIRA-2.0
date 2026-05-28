@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head"
+import { formatDateMG } from "@/helpers/date";
 
 export async function getStaticPaths(){
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
@@ -56,7 +57,7 @@ export default function SongReader({ song: _song }){
                     <div className="song-info">
                         <h1>{song.title}</h1>
                         <h2>{song.singer}</h2>
-                        <p><span className="badge">{song.fileType}</span>13 mai 2026</p>
+                        <p><span className="badge">{song.fileType}</span>{formatDateMG(song.updatedAt)}</p>
                     </div>
                 </div>
             </section>
