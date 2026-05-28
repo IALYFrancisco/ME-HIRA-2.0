@@ -1,1 +1,3 @@
-export function formatDateMG(dateInput)
+export function formatDateMG(dateInput: Date | string){
+    
+}
