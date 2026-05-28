@@ -314,3 +314,7 @@ aside ul li a img {
   background-color: rgba(172, 172, 172, 0.406);
   transition: 300ms;
 }
+
+.home-search-modal li a {
+  color: var(--black)
+}
