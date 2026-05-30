@@ -8,7 +8,7 @@ export default function Login(){
 
     const { register, handleSubmit } = useForm()
 
-    const login = async (datat)=>{
+    const login = async (data)=>{
         
     }
 
