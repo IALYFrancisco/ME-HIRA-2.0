@@ -13,8 +13,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
   font-family: Lato;
   color: var(--black);
+}
+
+button, input {
+  font-family: Lato;
 }
 
 a {
@@ -253,6 +260,7 @@ aside ul li a {
   display: flex;
   align-items: center;
   column-gap: 5px;
+  color: var(--black);
 }
 
 aside ul li a img {
@@ -305,4 +313,8 @@ aside ul li a img {
 .home-search-modal li:hover {
   background-color: rgba(172, 172, 172, 0.406);
   transition: 300ms;
+}
+
+.home-search-modal li a {
+  color: var(--black)
 }

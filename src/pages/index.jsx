@@ -5,6 +5,7 @@ import Footer from "@/components/footer";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link"
+import { formatDateMG } from "@/helpers/date";
 
 export default function Home() {
 
@@ -44,7 +45,7 @@ export default function Home() {
                       <div className="song-info">
                         <h3>{song.title}</h3>
                         <h4>{song.singer}</h4>
-                        <p><span className="badge">{ song.fileType === 'video' ? 'vidéo' : 'audio'}</span>13 mai 2026</p>
+                        <p><span className="badge">{ song.fileType === 'video' ? 'vidéo' : 'audio'}</span>{formatDateMG(song.updatedAt)}</p>
                       </div>
                     </Link>
                   </li>
