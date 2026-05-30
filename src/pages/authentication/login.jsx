@@ -3,12 +3,24 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import Link from "next/link"
 import { useForm } from "react-hook-form"
+import axios from "axios"
 
 export default function Login(){
 
     const { register, handleSubmit } = useForm()
 
     const login = async (data)=>{
+        try{
+            let user = {
+                email: data.email,
+                password: data.password
+            }
+            const response = await axios.post('/authentication/login', user)
+        }catch(error){
+            if(error.status === 500){
+                
+            }
+        }
         
     }
 
