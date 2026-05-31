@@ -7,10 +7,11 @@ import "@/styles/authentication/resetPassword.css";
 import "@/styles/authentication/forgottenPassword.css";
 import Head from "next/head";
 import { Toaster } from "sonner"
+import { AuthProvider } from "@/contexts/AuthContext";
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <AuthProvider>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="shortcut icon" href="/images/logo-de-me-hira.png" type="image/png" />
@@ -22,6 +23,6 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Toaster className="toast" position='top-center' richColors/>
       <Component {...pageProps} />
-    </>
+    </AuthProvider>
   )
 }
