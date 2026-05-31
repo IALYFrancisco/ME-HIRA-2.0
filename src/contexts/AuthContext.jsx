@@ -11,4 +11,11 @@ export const AuthProvider = ({children}) => {
             .then(response=>setUser(response.data))
             .finally(()=>setLoading(false))
     }, [])
+    return(
+        <AuthContext.Provider value={{ user, setUser, loading, setLoading }}>
+            {children}
+        </AuthContext.Provider>
+    )
 }
+
+export const useAuth = () => useContext(AuthContext)
