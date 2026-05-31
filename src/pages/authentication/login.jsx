@@ -4,6 +4,7 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import { useForm } from "react-hook-form"
 import { api } from "@/helpers/api"
+import { toast } from "sonner"
 
 export default function Login(){
 
@@ -17,9 +18,10 @@ export default function Login(){
             }
             const response = await api.post('/authentication/login', user)
         }catch(error){
-            if(error.status === 500){
-
+            if(error.status === 401){
+                toast.error("Email ou mot de passe incorrecte.")
             }
+            toast.error("Erreur de connexion, veuillez réessayer plus tard.")
         }
         
     }
