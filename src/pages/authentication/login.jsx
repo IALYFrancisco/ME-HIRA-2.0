@@ -6,10 +6,12 @@ import { useForm } from "react-hook-form"
 import { api } from "@/helpers/api"
 import { toast } from "sonner"
 import IsNotAuthenticated from "@/components/isNotAuthenticated"
+import { useAuth } from "@/contexts/AuthContext"
 
 export default function Login(){
 
     const { register, handleSubmit } = useForm()
+    const { setUser } = useAuth()
 
     const login = async (data)=>{
         try{
@@ -17,7 +19,9 @@ export default function Login(){
                 email: data.email,
                 password: data.password
             }
-            const response = await api.post('/authentication/login', user)
+            await api.post('/authentication/login', user)
+            let response = await api.get('/user/informations')
+            setUser(response.data)
         }catch(error){
             if(error.status === 401){
                 return toast.error("Email ou mot de passe incorrecte.")
