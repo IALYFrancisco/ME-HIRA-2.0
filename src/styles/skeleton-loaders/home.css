@@ -2,5 +2,28 @@
     width: 100%;
     display: flex;
     padding: 50px 50px 120px 50px;
-    background-color: red;
+    /* background-color: red; */
+}
+
+.skeleton-songs-container ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: max-content;
+    width: inherit;
+}
+
+.skeleton-songs-container ul li {
+    width: calc((100% - 80px) / 5);
+    padding: 2px;
+    border-radius: 11px;
+}
+
+.skeleton-songs-container ul li:hover {
+    cursor: pointer;
+}
+
+.skeleton-songs-container ul li:hover .poster-container {
+    border: #fec70081 solid 2px;
+    transition: border .5s ease-in-out;
 }
