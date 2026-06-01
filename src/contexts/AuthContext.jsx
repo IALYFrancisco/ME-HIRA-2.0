@@ -8,7 +8,11 @@ export const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true)
     useEffect(()=>{
         api.get('/user/informations')
-            .then(response=>setUser(response.data))
+            .then((response)=>{
+                if(response.status === 200){
+                    setUser(response.data)
+                }
+            })
             .finally(()=>setLoading(false))
     }, [])
     return(
