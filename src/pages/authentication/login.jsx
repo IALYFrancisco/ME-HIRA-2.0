@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useForm } from "react-hook-form"
 import { api } from "@/helpers/api"
 import { toast } from "sonner"
+import IsNotAuthenticated from "@/components/isNotAuthenticated"
 
 export default function Login(){
 
@@ -27,7 +28,7 @@ export default function Login(){
     }
 
     return(
-        <>
+        <IsNotAuthenticated>
             <Head>
                 <title>Connexion à un compte Me-Hira</title>
             </Head>
@@ -51,6 +52,6 @@ export default function Login(){
                 </form>
                 <Footer/>   
             </section>
-        </>
+        </IsNotAuthenticated>
     )
 }
