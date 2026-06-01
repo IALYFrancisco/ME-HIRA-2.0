@@ -16,7 +16,7 @@ api.interceptors.request.use((config)=>{
 api.interceptors.response.use((response)=>{
     const at_sid = response.data?.at_sid
     if(at_sid){
-        localStorage.setItem("at.sid")
+        localStorage.setItem("at.sid", at_sid)
     }
     return response
 }, (error)=>Promise.reject(error))
