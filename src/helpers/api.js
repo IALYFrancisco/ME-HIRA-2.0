@@ -12,3 +12,11 @@ api.interceptors.request.use((config)=>{
     }
     return config
 })
+
+api.interceptors.response.use((response)=>{
+    const tk_sid = response.data?.tk_sid
+    if(tk_sid){
+        localStorage.setItem("tk.sid")
+    }
+    return response
+}, (error)=>Promise.reject(error))
