@@ -3,8 +3,7 @@
     margin: auto;
 }
 
-.songs-container,
-.skeleton-songs-container {
+.songs-container {
     width: 100%;
     display: flex;
     padding: 50px 50px 120px 50px;
