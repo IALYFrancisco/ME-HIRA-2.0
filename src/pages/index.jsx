@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link"
 import { formatDateMG } from "@/helpers/date";
+import HomeSkeletonLoader from "@/components/skeleton-loaders/home";
 
 export default function Home() {
 
@@ -29,6 +30,7 @@ export default function Home() {
       </Head>
       <section className="homepage-container">
         <Navbar/>
+        <HomeSkeletonLoader/>
         <section className="songs-container">
           <ul>
             {
