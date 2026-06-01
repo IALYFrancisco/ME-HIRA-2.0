@@ -6,9 +6,9 @@ export const api = axios.create({
 })
 
 api.interceptors.request.use((config)=>{
-    const tk_sid = localStorage.getItem("tk.sid")
-    if(token){
-        config.headers.Authorization = `Bearer ${tk_sid}`
+    const at_sid = localStorage.getItem("at.sid")
+    if(at_sid){
+        config.headers.Authorization = `Bearer ${at_sid}`
     }
     return config
 })
