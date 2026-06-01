@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function HomeSkeletonLoader(){
     return(
-        <section className="songs-container">
+        <section className="skeleton-songs-container">
             <ul>
                 <li>
                     <div className="poster-container">
