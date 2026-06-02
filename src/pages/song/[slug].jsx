@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head"
 import { formatDateMG } from "@/helpers/date";
+import SongReaderSkeletonLoader from "@/components/skeleton-loaders/songReader";
 
 export async function getStaticPaths(){
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
@@ -49,6 +50,7 @@ export default function SongReader({ song: _song }){
                 <title>{song?.title} - {song?.singer} - Me-Hira</title>
             </Head>
             <Navbar/>
+            <SongReaderSkeletonLoader/>
             <section className="song-container">
                 <div className="song">
                     <div className="song-poster-container">
