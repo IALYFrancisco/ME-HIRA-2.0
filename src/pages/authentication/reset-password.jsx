@@ -29,11 +29,11 @@ export default function ResetPassword(){
                         </div>
                         <div className="form-element">
                             <label htmlFor="password">Confirmez le nouveau mot de passe :</label>
-                            <input type="password" id="password" placeholder="Le même mot de passe que le dessus" { ...register('password', { required: true }) } required />
+                            <input type="password" id="password" placeholder="Le même mot de passe que le dessus" { ...register('password', { required: true }) } required disabled={loading}/>
                         </div>
                         <div className="form-element">
-                            <span className="border">
-                                <button>Soumettre</button>
+                            <span className={loading?"border disabled":"border"}>
+                                <button disabled={loading}>Soumettre</button>
                             </span>
                         </div>
                     </form>
