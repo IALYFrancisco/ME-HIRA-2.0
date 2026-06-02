@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-import axios from "axios"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
@@ -8,6 +7,7 @@ import { toast } from "sonner"
 import SongsListSkeleton from "@/components/skeleton-loaders/songsListSkeleton"
 import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
+import { RefreshToken } from "@/helpers/authentication"
 
 export default function SongsList(){
 
@@ -38,10 +38,20 @@ export default function SongsList(){
             if(localFile){
                 song.append('file', localFile)
             }
-            await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}})
-            toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
-            reset()
-            closeAddSongModal()
+            const response = await api.post('/song/add', song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"} })
+            if(response.status === 209) RefreshToken(
+                api.post('/song/add', song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"} })
+                .then(()=>{
+                    toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
+                    reset()
+                    closeAddSongModal()
+                })
+            );
+            if(response.status === 200){
+                toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
+                reset()
+                closeAddSongModal()
+            }
         }catch{
             toast.error(`Erreur de l'ajout du chanson, veuillez réessayer plus tard.`)
         }
