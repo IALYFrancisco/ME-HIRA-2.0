@@ -1,0 +1,36 @@
+.song-container .song {
+    width: 47%;
+    margin: 20px auto 100px auto;
+}
+
+.song-container .song .song-poster-container {
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.song-container .song .song-poster-container video {
+    width: 100%;
+    margin: 0;
+}
+
+.song .song-info {
+    margin-top: 15px;
+}
+
+.song .song-info h2 {
+    margin-top: 15px;
+}
+
+.song .song-info p {
+    margin-top: 20px;
+    font-size: initial;
+}
+
+.song .song-info .badge {
+    font-size: initial;
+    padding: 3px 8px;
+}
