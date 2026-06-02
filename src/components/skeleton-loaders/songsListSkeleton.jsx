@@ -1,85 +1,85 @@
 export default function SongsListSkeleton(){
     return(
-        <tbody>
+        <tbody className="songs-list-skeleton">
             <tr>
-                <td>Titre du chanson</td>
-                <td>Chanteur(s)/euses</td>
-                <td>Auteur(s)</td>
-                <td>Composer(s)</td>
+                <td><p>Titre du chanson</p></td>
+                <td><p>Chanteur(s)/euses</p></td>
+                <td><p>Auteur(s)</p></td>
+                <td><p>Composer(s)</p></td>
                 <td>
-                    <span className="song-badge"></span>
+                    <span className="song-badge">Badge</span>
                 </td>
-                <td className="actions">Actions</td>
+                <td className="actions"><p>Actions</p></td>
             </tr>
             <tr>
-                <td>Titre du chanson</td>
-                <td>Chanteur(s)/euses</td>
-                <td>Auteur(s)</td>
-                <td>Composer(s)</td>
+                <td><p>Titre du chanson</p></td>
+                <td><p>Chanteur(s)/euses</p></td>
+                <td><p>Auteur(s)</p></td>
+                <td><p>Composer(s)</p></td>
                 <td>
-                    <span className="song-badge"></span>
+                    <span className="song-badge">Badge</span>
                 </td>
-                <td className="actions">Actions</td>
+                <td className="actions"><p>Actions</p></td>
             </tr>
             <tr>
-                <td>Titre du chanson</td>
-                <td>Chanteur(s)/euses</td>
-                <td>Auteur(s)</td>
-                <td>Composer(s)</td>
+                <td><p>Titre du chanson</p></td>
+                <td><p>Chanteur(s)/euses</p></td>
+                <td><p>Auteur(s)</p></td>
+                <td><p>Composer(s)</p></td>
                 <td>
-                    <span className="song-badge"></span>
+                    <span className="song-badge">Badge</span>
                 </td>
-                <td className="actions">Actions</td>
+                <td className="actions"><p>Actions</p></td>
             </tr>
             <tr>
-                <td>Titre du chanson</td>
-                <td>Chanteur(s)/euses</td>
-                <td>Auteur(s)</td>
-                <td>Composer(s)</td>
+                <td><p>Titre du chanson</p></td>
+                <td><p>Chanteur(s)/euses</p></td>
+                <td><p>Auteur(s)</p></td>
+                <td><p>Composer(s)</p></td>
                 <td>
-                    <span className="song-badge"></span>
+                    <span className="song-badge">Badge</span>
                 </td>
-                <td className="actions">Actions</td>
+                <td className="actions"><p>Actions</p></td>
             </tr>
             <tr>
-                <td>Titre du chanson</td>
-                <td>Chanteur(s)/euses</td>
-                <td>Auteur(s)</td>
-                <td>Composer(s)</td>
+                <td><p>Titre du chanson</p></td>
+                <td><p>Chanteur(s)/euses</p></td>
+                <td><p>Auteur(s)</p></td>
+                <td><p>Composer(s)</p></td>
                 <td>
-                    <span className="song-badge"></span>
+                    <span className="song-badge">Badge</span>
                 </td>
-                <td className="actions">Actions</td>
+                <td className="actions"><p>Actions</p></td>
             </tr>
             <tr>
-                <td>Titre du chanson</td>
-                <td>Chanteur(s)/euses</td>
-                <td>Auteur(s)</td>
-                <td>Composer(s)</td>
+                <td><p>Titre du chanson</p></td>
+                <td><p>Chanteur(s)/euses</p></td>
+                <td><p>Auteur(s)</p></td>
+                <td><p>Composer(s)</p></td>
                 <td>
-                    <span className="song-badge"></span>
+                    <span className="song-badge">Badge</span>
                 </td>
-                <td className="actions">Actions</td>
+                <td className="actions"><p>Actions</p></td>
             </tr>
             <tr>
-                <td>Titre du chanson</td>
-                <td>Chanteur(s)/euses</td>
-                <td>Auteur(s)</td>
-                <td>Composer(s)</td>
+                <td><p>Titre du chanson</p></td>
+                <td><p>Chanteur(s)/euses</p></td>
+                <td><p>Auteur(s)</p></td>
+                <td><p>Composer(s)</p></td>
                 <td>
-                    <span className="song-badge"></span>
+                    <span className="song-badge">Badge</span>
                 </td>
-                <td className="actions">Actions</td>
+                <td className="actions"><p>Actions</p></td>
             </tr>
             <tr>
-                <td>Titre du chanson</td>
-                <td>Chanteur(s)/euses</td>
-                <td>Auteur(s)</td>
-                <td>Composer(s)</td>
+                <td><p>Titre du chanson</p></td>
+                <td><p>Chanteur(s)/euses</p></td>
+                <td><p>Auteur(s)</p></td>
+                <td><p>Composer(s)</p></td>
                 <td>
-                    <span className="song-badge"></span>
+                    <span className="song-badge">Badge</span>
                 </td>
-                <td className="actions">Actions</td>
+                <td className="actions"><p>Actions</p></td>
             </tr>
         </tbody>
     )
