@@ -6,11 +6,14 @@ import { useForm } from "react-hook-form"
 import Link from "next/link"
 import { toast } from "sonner"
 import SongsListSkeleton from "@/components/skeleton-loaders/songsListSkeleton"
+import { useAuth } from "@/contexts/AuthContext"
 
 export default function SongsList(){
 
     var [ songs, setSongs ] = useState([])
+    var [fetchSongsLoading, setfetchSongsLoading] = useState(false)
     const { register, handleSubmit, watch, reset } = useForm()
+    const { loading } = useAuth()
     
     const watchAll = watch()
     var [localFile, setLocalFile] = useState('')
@@ -68,9 +71,11 @@ export default function SongsList(){
     },[localFile, watchAll])
 
     useEffect(()=>{
+        setfetchSongsLoading(true)
         axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
         .then((response) => setSongs(response.data))
         .catch(()=>setSongs([]))
+        .finally(()=>setfetchSongsLoading(false))
     }, [])
 
     return(
@@ -109,8 +114,8 @@ export default function SongsList(){
                                 <th className="actions">Actions</th>
                             </tr>
                         </thead>
-                        <SongsListSkeleton/>
-                        { songs &&
+                        { ( loading || fetchSongsLoading) && <SongsListSkeleton/> }
+                        { !loading && !fetchSongsLoading && songs &&
                             <tbody>
                                 { songs.map(song=>(
                                     <tr key={song._id}>
