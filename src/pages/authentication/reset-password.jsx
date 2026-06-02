@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form"
 import IsNotAuthenticated from "@/components/isNotAuthenticated"
 import { useAuth } from "@/contexts/AuthContext"
 import { useState } from "react"
+import { toast } from "sonner"
 
 export default function ResetPassword(){
 
@@ -12,8 +13,16 @@ export default function ResetPassword(){
     const { loading } = useAuth()
     var [resetPasswordLoading, setResetPasswordLoading] = useState(false)
 
-    const resetPassword = ()=>{
-
+    const resetPassword = (data)=>{
+        try{
+            if(data.newPassword !== data.password){
+                return toast.warning("Le mot de passe des deux champs doivent se correspondre.")
+            }
+            setResetPasswordLoading(true)
+        }
+        finally{
+            setResetPasswordLoading(false)
+        }
     }
 
     return(
