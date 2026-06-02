@@ -4,14 +4,21 @@ import Footer from "@/components/footer"
 import { useForm } from "react-hook-form"
 import IsNotAuthenticated from "@/components/isNotAuthenticated"
 import { useAuth } from "@/contexts/AuthContext"
+import { useState } from "react"
 
 export default function ForgottenPassword(){
 
     const { register, handleSubmit } = useForm()
     const { loading } = useAuth()
+    var [ sendLinkToResetPasswordIsLoading, setSendLinkToResetPasswordIsLoading ] = useState(false)
 
     const sendLinkToResetPassword = ()=>{
-
+        try{
+            setSendLinkToResetPasswordIsLoading(true)
+        }
+        finally{
+            setSendLinkToResetPasswordIsLoading(false)
+        }
     }
 
     return(
@@ -28,8 +35,8 @@ export default function ForgottenPassword(){
                         <input type="email" id="email" placeholder="ex: name@exemple.com" { ...register('email', { required: true }) } required disabled={loading}/>
                     </div>
                     <div className="form-element">
-                        <span className="border">
-                            <button>Envoyer le lien</button>
+                        <span className={loading?"border disabled":"border"}>
+                            <button disabled={loading}>Envoyer le lien</button>
                         </span>
                     </div>
                 </form>
