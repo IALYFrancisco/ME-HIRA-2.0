@@ -11,7 +11,7 @@ import { useAuth } from "@/contexts/AuthContext"
 export default function Login(){
 
     const { register, handleSubmit } = useForm()
-    const { setUser } = useAuth()
+    const { setUser, loading } = useAuth()
 
     const login = async (data)=>{
         try{
@@ -41,15 +41,15 @@ export default function Login(){
                 <form onSubmit={handleSubmit(login)}>
                     <div className="form-element">
                         <label htmlFor="email">Adresse email :</label>
-                        <input type="email" id="email" placeholder="ex: name@exemple.com" { ...register('email', { required: true }) } required />
+                        <input type="email" id="email" placeholder="ex: name@exemple.com" { ...register('email', { required: true }) } required  disabled={loading}/>
                     </div>
                     <div className="form-element">
                         <label htmlFor="password">Mot de passe :</label>
-                        <input type="password" id="password" placeholder="choisissez un mot de passe fort" { ...register('password', { required: true }) } required />
+                        <input type="password" id="password" placeholder="choisissez un mot de passe fort" { ...register('password', { required: true }) } required  disabled={loading}/>
                     </div>
                     <Link href="/authentication/forgotten-password">Mot de passe oublié ?</Link>
                     <div className="form-element">
-                        <span className="border">
+                        <span className={loading?"border disabled":"border"}>
                             <button>Connexion</button>
                         </span>
                     </div>
