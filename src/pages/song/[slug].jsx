@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import Head from "next/head"
 import { formatDateMG } from "@/helpers/date";
 import SongReaderSkeletonLoader from "@/components/skeleton-loaders/songReader";
+import { useAuth } from "@/contexts/AuthContext";
 
 export async function getStaticPaths(){
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
@@ -38,10 +39,15 @@ export default function SongReader({ song: _song }){
     const { slug } = router.query
 
     const [ song, setSong ] = useState(_song)
+    const { loading } = useAuth()
+    var [fetchSongLoading, setFetchSongLoading] = useState(true)
+
+    var _loadersState = (loading || fetchSongLoading)
 
     useEffect(()=>{
         axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get?slug=${slug}`)
         .then((response)=>setSong(response.data))
+        .finally(()=>setFetchSongLoading(false))
     }, [slug])
 
     return(
@@ -50,8 +56,8 @@ export default function SongReader({ song: _song }){
                 <title>{song?.title} - {song?.singer} - Me-Hira</title>
             </Head>
             <Navbar/>
-            <SongReaderSkeletonLoader/>
-            {/* <section className="song-container">
+            { _loadersState && <SongReaderSkeletonLoader/>}
+            {!_loadersState && <section className="song-container">
                 <div className="song">
                     <div className="song-poster-container">
                         <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} autoPlay controls loop></video>
@@ -62,7 +68,7 @@ export default function SongReader({ song: _song }){
                         <p><span className="badge">{song.fileType}</span>{formatDateMG(song.updatedAt)}</p>
                     </div>
                 </div>
-            </section> */}
+            </section> }
             <Footer/>
         </>
     )

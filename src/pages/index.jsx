@@ -34,7 +34,7 @@ export default function Home() {
       </Head>
       <section className="homepage-container">
         <Navbar/>
-        { loading && fetchingSongLoading && <HomeSkeletonLoader/>}
+        { (loading || fetchingSongLoading) && <HomeSkeletonLoader/>}
         {
           !loading && !fetchingSongLoading &&
           <section className="songs-container">
