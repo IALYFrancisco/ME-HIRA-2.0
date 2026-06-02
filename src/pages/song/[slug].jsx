@@ -51,7 +51,7 @@ export default function SongReader({ song: _song }){
             </Head>
             <Navbar/>
             <SongReaderSkeletonLoader/>
-            <section className="song-container">
+            {/* <section className="song-container">
                 <div className="song">
                     <div className="song-poster-container">
                         <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} autoPlay controls loop></video>
@@ -62,7 +62,7 @@ export default function SongReader({ song: _song }){
                         <p><span className="badge">{song.fileType}</span>{formatDateMG(song.updatedAt)}</p>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <Footer/>
         </>
     )

@@ -1,6 +1,6 @@
 export default function SongReaderSkeletonLoader(){
     return(
-        <section className="song-container">
+        <section className="skeleton-song-container">
             <div className="song">
                 <div className="song-poster-container">
                 </div>

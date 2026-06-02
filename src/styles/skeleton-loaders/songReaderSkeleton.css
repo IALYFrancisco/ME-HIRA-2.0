@@ -1,4 +1,9 @@
-.song-container .song {
+.skeleton-song-container {
+    background-color: red;
+    height: calc(100vh - 160px);
+}
+
+.skeleton-song-container .song {
     width: 47%;
     margin: 20px auto 100px auto;
 }
