@@ -50,7 +50,7 @@ export default function Login(){
                     <Link href="/authentication/forgotten-password">Mot de passe oublié ?</Link>
                     <div className="form-element">
                         <span className={loading?"border disabled":"border"}>
-                            <button>Connexion</button>
+                            <button disabled={loading}>Connexion</button>
                         </span>
                     </div>
                 </form>
