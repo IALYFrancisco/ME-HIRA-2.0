@@ -16,5 +16,7 @@ export default function IsAuthenticated({ children }) {
 
   if (!user) return null;
 
-  return children;
+  if(!loading && user && user.status === "superuser"){
+      return children;
+  }
 }
