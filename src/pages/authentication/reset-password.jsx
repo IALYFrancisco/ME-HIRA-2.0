@@ -2,6 +2,7 @@ import Head from "next/head"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { useForm } from "react-hook-form"
+import IsNotAuthenticated from "@/components/isNotAuthenticated"
 
 export default function ResetPassword(){
 
@@ -12,7 +13,7 @@ export default function ResetPassword(){
     }
 
     return(
-        <>
+        <IsNotAuthenticated>
             <Head>
                 <title>Réinitialisation de mot de passe</title>
             </Head>
@@ -36,6 +37,6 @@ export default function ResetPassword(){
                     </form>
                 <Footer/>
             </section>
-        </>
+        </IsNotAuthenticated>
     )
 }
