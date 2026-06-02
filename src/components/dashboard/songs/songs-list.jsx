@@ -47,7 +47,7 @@ export default function SongsList(){
                     closeAddSongModal()
                 })
             );
-            if(response.status === 200){
+            if(response.status === 201){
                 toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
                 reset()
                 closeAddSongModal()
