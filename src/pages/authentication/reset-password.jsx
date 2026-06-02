@@ -13,12 +13,12 @@ export default function ResetPassword(){
     const { loading } = useAuth()
     var [resetPasswordLoading, setResetPasswordLoading] = useState(false)
 
-    const resetPassword = (data)=>{
+    const resetPassword = async (data)=>{
         try{
+            setResetPasswordLoading(true)
             if(data.newPassword !== data.password){
                 return toast.warning("Le mot de passe des deux champs doivent se correspondre.")
             }
-            setResetPasswordLoading(true)
         }
         finally{
             setResetPasswordLoading(false)
