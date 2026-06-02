@@ -7,6 +7,7 @@ import "@/styles/authentication/resetPassword.css";
 import "@/styles/authentication/forgottenPassword.css";
 import "@/styles/skeleton-loaders/home.css"
 import "@/styles/skeleton-loaders/songReaderSkeleton.css"
+import "@/styles/skeleton-loaders/songsListSkeleton.css"
 import Head from "next/head";
 import { Toaster } from "sonner"
 import { AuthProvider } from "@/contexts/AuthContext";
