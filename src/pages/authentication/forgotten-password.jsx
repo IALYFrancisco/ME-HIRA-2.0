@@ -32,11 +32,11 @@ export default function ForgottenPassword(){
                     <p>Nous vous enverrons à votre email un lien vous redirigeant sur la page de changement de mot de passe.</p>
                     <div className="form-element">
                         <label htmlFor="email">Adresse email :</label>
-                        <input type="email" id="email" placeholder="ex: name@exemple.com" { ...register('email', { required: true }) } required disabled={loading}/>
+                        <input type="email" id="email" placeholder="ex: name@exemple.com" { ...register('email', { required: true }) } required disabled={loading || sendLinkToResetPasswordIsLoading}/>
                     </div>
                     <div className="form-element">
-                        <span className={loading?"border disabled":"border"}>
-                            <button disabled={loading}>Envoyer le lien</button>
+                        <span className={(loading || sendLinkToResetPasswordIsLoading)?"border disabled":"border"}>
+                            <button disabled={loading || sendLinkToResetPasswordIsLoading}>Envoyer le lien</button>
                         </span>
                     </div>
                 </form>
