@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 import Link from "next/link"
 import { toast } from "sonner"
+import SongsListSkeleton from "@/components/skeleton-loaders/songsListSkeleton"
 
 export default function SongsList(){
 
@@ -108,6 +109,7 @@ export default function SongsList(){
                                 <th className="actions">Actions</th>
                             </tr>
                         </thead>
+                        <SongsListSkeleton/>
                         { songs &&
                             <tbody>
                                 { songs.map(song=>(
