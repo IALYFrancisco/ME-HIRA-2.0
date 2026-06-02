@@ -1,6 +1,14 @@
-.skeleton-song-container {
-    background-color: red;
+.skeleton-song-container.enabled {
+    background-color: white;
     height: calc(100vh - 160px);
+    opacity: 1;
+    pointer-events: auto;
+    transition: 250ms;
+}
+
+.skeleton-song-container.disabled {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .skeleton-song-container .song {
@@ -8,34 +16,27 @@
     margin: 20px auto 100px auto;
 }
 
-.song-container .song .song-poster-container {
+.skeleton-song-container .song .song-poster-container {
+    width: 100%;
+    height: 300px;
     border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    background-color: var(--gray);
 }
 
-.song-container .song .song-poster-container video {
-    width: 100%;
-    margin: 0;
-}
-
-.song .song-info {
+.skeleton-song-container .song .song-info {
     margin-top: 15px;
 }
 
-.song .song-info h2 {
+.skeleton-song-container .song .song-info h2 {
     margin-top: 15px;
 }
 
-.song .song-info p {
+.skeleton-song-container .song .song-info p {
     margin-top: 20px;
     font-size: initial;
 }
 
-.song .song-info .badge {
+.skeleton-song-container .song .song-info .badge {
     font-size: initial;
     padding: 3px 8px;
 }
