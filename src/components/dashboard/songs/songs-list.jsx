@@ -7,6 +7,7 @@ import Link from "next/link"
 import { toast } from "sonner"
 import SongsListSkeleton from "@/components/skeleton-loaders/songsListSkeleton"
 import { useAuth } from "@/contexts/AuthContext"
+import { api } from "@/helpers/api"
 
 export default function SongsList(){
 
@@ -72,7 +73,7 @@ export default function SongsList(){
 
     useEffect(()=>{
         setfetchSongsLoading(true)
-        axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
+        api.get('/song/get')
         .then((response) => setSongs(response.data))
         .catch(()=>setSongs([]))
         .finally(()=>setfetchSongsLoading(false))
