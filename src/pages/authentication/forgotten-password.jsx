@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form"
 import IsNotAuthenticated from "@/components/isNotAuthenticated"
 import { useAuth } from "@/contexts/AuthContext"
 import { useState } from "react"
+import Image from "next/image"
 
 export default function ForgottenPassword(){
 
@@ -36,7 +37,9 @@ export default function ForgottenPassword(){
                     </div>
                     <div className="form-element">
                         <span className={(loading || sendLinkToResetPasswordIsLoading)?"border disabled":"border"}>
-                            <button disabled={loading || sendLinkToResetPasswordIsLoading}>Envoyer le lien</button>
+                            <button disabled={loading || sendLinkToResetPasswordIsLoading}>
+                                {(loading || sendLinkToResetPasswordIsLoading) ? <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> : "Envoyer le lien"}
+                            </button>
                         </span>
                     </div>
                 </form>
