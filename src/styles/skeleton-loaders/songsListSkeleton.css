@@ -1,0 +1,16 @@
+.songs-list-skeleton td p {
+    width: max-content;
+    color: transparent;
+    border-radius: 5px;
+    animation: skeleton 1s linear infinite alternate;
+    margin: auto;
+}
+
+.songs-list-skeleton td span {
+    color: transparent;
+    animation: skeleton 1s linear infinite alternate;
+}
+
+.dashboard-songs-container table tbody.songs-list-skeleton tr:hover {
+    background-color: transparent;
+}

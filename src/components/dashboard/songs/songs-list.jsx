@@ -1,15 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
-import axios from "axios"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 import Link from "next/link"
 import { toast } from "sonner"
+import SongsListSkeleton from "@/components/skeleton-loaders/songsListSkeleton"
+import { useAuth } from "@/contexts/AuthContext"
+import { api } from "@/helpers/api"
+import { RefreshToken } from "@/helpers/authentication"
 
 export default function SongsList(){
 
     var [ songs, setSongs ] = useState([])
+    var [fetchSongsLoading, setfetchSongsLoading] = useState(false)
     const { register, handleSubmit, watch, reset } = useForm()
+    const { loading } = useAuth()
     
     const watchAll = watch()
     var [localFile, setLocalFile] = useState('')
@@ -33,10 +38,20 @@ export default function SongsList(){
             if(localFile){
                 song.append('file', localFile)
             }
-            await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/add`, song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}})
-            toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
-            reset()
-            closeAddSongModal()
+            const response = await api.post('/song/add', song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"} })
+            if(response.status === 209) RefreshToken(
+                api.post('/song/add', song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"} })
+                .then(()=>{
+                    toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
+                    reset()
+                    closeAddSongModal()
+                })
+            );
+            if(response.status === 201){
+                toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
+                reset()
+                closeAddSongModal()
+            }
         }catch{
             toast.error(`Erreur de l'ajout du chanson, veuillez réessayer plus tard.`)
         }
@@ -67,9 +82,11 @@ export default function SongsList(){
     },[localFile, watchAll])
 
     useEffect(()=>{
-        axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
+        setfetchSongsLoading(true)
+        api.get('/song/get')
         .then((response) => setSongs(response.data))
         .catch(()=>setSongs([]))
+        .finally(()=>setfetchSongsLoading(false))
     }, [])
 
     return(
@@ -108,7 +125,8 @@ export default function SongsList(){
                                 <th className="actions">Actions</th>
                             </tr>
                         </thead>
-                        { songs &&
+                        { ( loading || fetchSongsLoading) && <SongsListSkeleton/> }
+                        { !loading && !fetchSongsLoading && songs &&
                             <tbody>
                                 { songs.map(song=>(
                                     <tr key={song._id}>

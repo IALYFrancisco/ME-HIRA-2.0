@@ -1,10 +1,13 @@
 import Sidebar from "../dashboard/aside";
+import IsAuthenticated from "../isAuthenticated";
 
 export default function DashboardLayout({children}){
     return(
-        <section className="dashboard-layout">
-            <Sidebar/>
-            {children}
-        </section>
+        <IsAuthenticated>
+            <section className="dashboard-layout">
+                <Sidebar/>
+                {children}
+            </section>
+        </IsAuthenticated>
     )
 }

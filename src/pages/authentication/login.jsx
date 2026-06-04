@@ -7,14 +7,17 @@ import { api } from "@/helpers/api"
 import { toast } from "sonner"
 import IsNotAuthenticated from "@/components/isNotAuthenticated"
 import { useAuth } from "@/contexts/AuthContext"
+import { useState } from "react"
 
 export default function Login(){
 
     const { register, handleSubmit } = useForm()
-    const { setUser } = useAuth()
+    const { setUser, loading } = useAuth()
+    var [loginIsLoading, setLoginIsLoading] = useState(false)
 
     const login = async (data)=>{
         try{
+            setLoginIsLoading(true)
             let user = {
                 email: data.email,
                 password: data.password
@@ -27,6 +30,9 @@ export default function Login(){
                 return toast.error("Email ou mot de passe incorrecte.")
             }
             toast.error("Erreur de connexion, veuillez réessayer plus tard.")
+        }
+        finally{
+            setLoginIsLoading(false)
         }
         
     }
@@ -41,16 +47,16 @@ export default function Login(){
                 <form onSubmit={handleSubmit(login)}>
                     <div className="form-element">
                         <label htmlFor="email">Adresse email :</label>
-                        <input type="email" id="email" placeholder="ex: name@exemple.com" { ...register('email', { required: true }) } required />
+                        <input type="email" id="email" placeholder="ex: name@exemple.com" { ...register('email', { required: true }) } required  disabled={loading || loginIsLoading}/>
                     </div>
                     <div className="form-element">
                         <label htmlFor="password">Mot de passe :</label>
-                        <input type="password" id="password" placeholder="choisissez un mot de passe fort" { ...register('password', { required: true }) } required />
+                        <input type="password" id="password" placeholder="choisissez un mot de passe fort" { ...register('password', { required: true }) } required  disabled={loading || loginIsLoading}/>
                     </div>
                     <Link href="/authentication/forgotten-password">Mot de passe oublié ?</Link>
                     <div className="form-element">
-                        <span className="border">
-                            <button>Connexion</button>
+                        <span className={(loading || loginIsLoading)?"border disabled":"border"}>
+                            <button disabled={loading || loginIsLoading}>Connexion</button>
                         </span>
                     </div>
                 </form>

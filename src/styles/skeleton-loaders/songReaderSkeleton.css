@@ -1,0 +1,57 @@
+.skeleton-song-container.enabled {
+    background-color: white;
+    height: calc(100vh - 160px);
+    opacity: 1;
+    pointer-events: auto;
+    transition: 250ms;
+}
+
+.skeleton-song-container.disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.skeleton-song-container .song {
+    width: 47%;
+    margin: 20px auto 100px auto;
+}
+
+.skeleton-song-container .song .song-poster-container {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    animation: skeleton 1s linear infinite alternate;
+}
+
+.skeleton-song-container .song .song-info {
+    margin-top: 15px;
+}
+
+.skeleton-song-container .song .song-info h1 {
+    width: max-content;
+    color: transparent;
+    border-radius: 5px;
+    animation: skeleton 1s linear infinite alternate;
+}
+
+.skeleton-song-container .song .song-info h2 {
+    margin-top: 15px;
+    width: max-content;
+    color: transparent;
+    border-radius: 5px;
+    animation: skeleton 1s linear infinite alternate;
+}
+
+.skeleton-song-container .song .song-info p {
+    margin-top: 20px;
+    font-size: initial;
+    width: max-content;
+    color: transparent;
+    border-radius: 5px;
+    animation: skeleton 1s linear infinite alternate;
+}
+
+.skeleton-song-container .song .song-info .badge {
+    font-size: initial;
+    padding: 3px 8px;
+}

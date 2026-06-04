@@ -1,7 +1,24 @@
 import Link from "next/link"
 import Image from "next/image"
+import { useAuth } from "@/contexts/AuthContext"
+import { toast } from "sonner"
+import { api } from "@/helpers/api"
 
 export default function Sidebar(){
+
+    const { setUser } = useAuth()
+
+    const logout = async ()=>{
+        try{
+            await api.post('/authentication/logout')
+            setUser(null)
+            localStorage.removeItem("at.sid")
+        }
+        catch{
+            toast.error("Erreur de déconnexion à votre compte, veuillez réessayer plus tard.")
+        }
+    }
+
     return(
         <span className="aside-container">
             <aside>
@@ -26,7 +43,7 @@ export default function Sidebar(){
                     </li>
                     <li className="logout">
                         <span>
-                            <button>Se déconnecter</button>
+                            <button onClick={logout}>Se déconnecter</button>
                         </span>
                     </li>
                 </ul>

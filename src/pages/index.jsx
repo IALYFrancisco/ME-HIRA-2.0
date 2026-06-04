@@ -6,10 +6,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link"
 import { formatDateMG } from "@/helpers/date";
+import HomeSkeletonLoader from "@/components/skeleton-loaders/home";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function Home() {
 
   var [ songs, setSongs ] = useState([])
+  var [ fetchingSongLoading, setFetchingSongLoading ] = useState(true)
+  const { loading } = useAuth()
 
   useEffect(()=>{
 
@@ -19,6 +23,7 @@ export default function Home() {
       _songs = _songs.filter(s=>s.published === true)
       setSongs(_songs)
     })
+    .finally(()=>setFetchingSongLoading(false))
 
   }, [])
 
@@ -29,30 +34,34 @@ export default function Home() {
       </Head>
       <section className="homepage-container">
         <Navbar/>
-        <section className="songs-container">
-          <ul>
-            {
-              songs && songs.map((song)=>
-                  <li key={song._id}>
-                    <Link href={`/song/${song.slug}`}>
-                      <div className="poster-container">
-                        { 
-                          song.fileType === "video" ?
-                          <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} loop></video> :
-                          <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
-                        }
-                      </div>
-                      <div className="song-info">
-                        <h3>{song.title}</h3>
-                        <h4>{song.singer}</h4>
-                        <p><span className="badge">{ song.fileType === 'video' ? 'vidéo' : 'audio'}</span>{formatDateMG(song.updatedAt)}</p>
-                      </div>
-                    </Link>
-                  </li>
-              )
-            }
-          </ul>
-        </section>
+        { (loading || fetchingSongLoading) && <HomeSkeletonLoader/>}
+        {
+          !loading && !fetchingSongLoading &&
+          <section className="songs-container">
+            <ul>
+              {
+                songs && songs.map((song)=>
+                    <li key={song._id}>
+                      <Link href={`/song/${song.slug}`}>
+                        <div className="poster-container">
+                          { 
+                            song.fileType === "video" ?
+                            <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} loop></video> :
+                            <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
+                          }
+                        </div>
+                        <div className="song-info">
+                          <h3>{song.title}</h3>
+                          <h4>{song.singer}</h4>
+                          <p><span className="badge">{ song.fileType === 'video' ? 'vidéo' : 'audio'}</span>{formatDateMG(song.updatedAt)}</p>
+                        </div>
+                      </Link>
+                    </li>
+                )
+              }
+            </ul>
+          </section>
+        }
         <Footer/>
       </section>
     </>
