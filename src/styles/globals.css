@@ -230,6 +230,7 @@ aside ul button {
   cursor: pointer;
   width: 100%;
   color: white;
+  height: 34px;
 }
 
 aside ul span:active {
