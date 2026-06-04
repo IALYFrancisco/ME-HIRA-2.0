@@ -58,8 +58,7 @@ export default function Login(){
                     <div className="form-element">
                         <span className={(loading || loginIsLoading)?"border disabled":"border"}>
                             <button disabled={loading || loginIsLoading}>
-                                {/* Connexion */}
-                                <Image src="/images/white-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/>
+                                {(loading || loginIsLoading) ? <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> : "Connexion"}
                             </button>
                         </span>
                     </div>
