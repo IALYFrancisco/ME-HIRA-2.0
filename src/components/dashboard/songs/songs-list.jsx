@@ -13,6 +13,7 @@ export default function SongsList(){
 
     var [ songs, setSongs ] = useState([])
     var [fetchSongsLoading, setfetchSongsLoading] = useState(false)
+    var [addSongIsLoading, setAddSongIsLoading] = useState(false)
     const { register, handleSubmit, watch, reset } = useForm()
     const { loading } = useAuth()
     
@@ -25,6 +26,7 @@ export default function SongsList(){
 
     const addSong = async (data) => {
         try{
+            setAddSongIsLoading(true)
             const song = new FormData()
             song.append('title', data.title)
             song.append('author', data.author)
@@ -54,6 +56,8 @@ export default function SongsList(){
             }
         }catch{
             toast.error(`Erreur de l'ajout du chanson, veuillez réessayer plus tard.`)
+        }finally{
+            setAddSongIsLoading(false)
         }
     }
 
@@ -195,8 +199,10 @@ export default function SongsList(){
                     </fieldset>
                 </section>
                 <div className="form-element">
-                    <span className="border">
-                        <button>Soumettre</button>
+                    <span className={addSongIsLoading?"border disabled":"border"}>
+                        <button disabled={addSongIsLoading}>
+                            {addSongIsLoading ? <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> : "Soumettre"}
+                        </button>
                     </span>
                 </div>
             </form>

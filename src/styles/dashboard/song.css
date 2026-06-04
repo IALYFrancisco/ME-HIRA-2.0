@@ -252,7 +252,23 @@
     border-radius: 10px;
     cursor: pointer;
     width: 100%;
+    overflow: hidden;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.add-song-modal button:disabled {
+    background-color: var(--gray);
+}
+
+.add-song-modal button img {
+    color: transparent;
+    width: 30px;
+    height: auto;
+}
+
 
 .add-song-modal span:active {
   transition: all .10s ease-in-out;
@@ -268,6 +284,10 @@
     border-radius: 12px;
     width: 20%;
     margin-top: 20px;
+}
+
+.add-song-modal span:has(button:disabled){
+    border-color: var(--gray)
 }
 
 .add-song-modal select {
