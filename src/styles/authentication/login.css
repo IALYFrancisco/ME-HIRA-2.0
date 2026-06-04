@@ -44,6 +44,17 @@
     border-radius: 10px;
     cursor: pointer;
     width: 100%;
+    overflow: hidden;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-page-container button img {
+    color: transparent;
+    width: 30px;
+    height: auto;
 }
 
 .login-page-container form span:active {

@@ -8,6 +8,7 @@ import { toast } from "sonner"
 import IsNotAuthenticated from "@/components/isNotAuthenticated"
 import { useAuth } from "@/contexts/AuthContext"
 import { useState } from "react"
+import Image from "next/image"
 
 export default function Login(){
 
@@ -56,7 +57,9 @@ export default function Login(){
                     <Link href="/authentication/forgotten-password">Mot de passe oublié ?</Link>
                     <div className="form-element">
                         <span className={(loading || loginIsLoading)?"border disabled":"border"}>
-                            <button disabled={loading || loginIsLoading}>Connexion</button>
+                            <button disabled={loading || loginIsLoading}>
+                                {(loading || loginIsLoading) ? <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> : "Connexion"}
+                            </button>
                         </span>
                     </div>
                 </form>

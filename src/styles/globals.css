@@ -156,6 +156,7 @@ nav ul li:nth-child(3) button {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  height: 34px;
 }
 
 nav ul li:nth-child(3) a:active {
@@ -229,7 +230,19 @@ aside ul button {
   cursor: pointer;
   width: 100%;
   color: white;
+  height: 34px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+aside ul button img {
+    color: transparent;
+    width: 30px;
+    height: auto;
+}
+
 
 aside ul span:active {
   transition: all .10s ease-in-out;
