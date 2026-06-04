@@ -6,6 +6,7 @@ import IsNotAuthenticated from "@/components/isNotAuthenticated"
 import { useAuth } from "@/contexts/AuthContext"
 import { useState } from "react"
 import { toast } from "sonner"
+import Image from "next/image"
 
 export default function ResetPassword(){
 
@@ -44,7 +45,9 @@ export default function ResetPassword(){
                         </div>
                         <div className="form-element">
                             <span className={(loading || resetPasswordLoading)?"border disabled":"border"}>
-                                <button disabled={loading || resetPasswordLoading}>Soumettre</button>
+                                <button disabled={loading || resetPasswordLoading}>
+                                    {(loading || resetPasswordLoading) ? <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> : "Soumettre"}
+                                </button>
                             </span>
                         </div>
                     </form>
