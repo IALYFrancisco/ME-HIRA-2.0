@@ -231,7 +231,18 @@ aside ul button {
   width: 100%;
   color: white;
   height: 34px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+aside ul button img {
+    color: transparent;
+    width: 30px;
+    height: auto;
+}
+
 
 aside ul span:active {
   transition: all .10s ease-in-out;
