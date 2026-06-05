@@ -54,7 +54,7 @@ export default function SongReader({ song: _song }){
     return(
         <>
             <Head>
-                <title>{song?.title} - {song?.singer} - Me-Hira</title>
+                <title>{song?.title} - {`${JSON.stringify(FormatSongSinger(song?.singer))}`} - Me-Hira</title>
             </Head>
             <Navbar/>
             { _loadersState && <SongReaderSkeletonLoader/>}
