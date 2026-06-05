@@ -8,6 +8,7 @@ import SongsListSkeleton from "@/components/skeleton-loaders/songsListSkeleton"
 import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
 import { RefreshToken } from "@/helpers/authentication"
+import { FormatSongSinger } from "@/helpers/song"
 
 export default function SongsList(){
 
@@ -135,7 +136,7 @@ export default function SongsList(){
                                 { songs.map(song=>(
                                     <tr key={song._id}>
                                         <td>{song.title}</td>
-                                        <td>{song.singer}</td>
+                                        <td>{FormatSongSinger(song.singer)}</td>
                                         <td>{song.author ? song.author : "------------"}</td>
                                         <td>{song.composer ? song.composer : "------------"}</td>
                                         <td>
