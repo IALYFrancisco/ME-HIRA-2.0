@@ -7,6 +7,7 @@ import Head from "next/head"
 import { formatDateMG } from "@/helpers/date";
 import SongReaderSkeletonLoader from "@/components/skeleton-loaders/songReader";
 import { useAuth } from "@/contexts/AuthContext";
+import { FormatSongSinger } from "@/helpers/song";
 
 export async function getStaticPaths(){
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
@@ -64,7 +65,7 @@ export default function SongReader({ song: _song }){
                     </div>
                     <div className="song-info">
                         <h1>{song.title}</h1>
-                        <h2>{song.singer}</h2>
+                        <h2>{FormatSongSinger(song.singer)}</h2>
                         <p><span className="badge">{song.fileType}</span>{formatDateMG(song.updatedAt)}</p>
                     </div>
                 </div>
