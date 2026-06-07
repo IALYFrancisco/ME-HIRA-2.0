@@ -32,8 +32,7 @@ api.interceptors.response.use(
 
                 try {
 
-                    const refreshResponse =
-                        await api.post("/authentication/refresh-token");
+                    const refreshResponse = await api.post("/authentication/refresh-token");
 
                     const newToken = refreshResponse.data.at_sid;
 
