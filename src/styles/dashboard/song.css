@@ -106,7 +106,7 @@
     z-index: 10;
 }
 
-.dashboard-songs-container .page-header-container .header .custom {
+.dashboard-songs-container .page-header-container .header .empty-container {
     width: 100%;
     height: 30px;
     position: sticky;

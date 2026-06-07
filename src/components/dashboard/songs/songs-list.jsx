@@ -116,7 +116,7 @@ export default function SongsList(){
                                 </button>
                             </span>
                         </div>
-                        <div className="custom">
+                        <div className="empty-container">
                         </div>
                     </section>
                 </div>
