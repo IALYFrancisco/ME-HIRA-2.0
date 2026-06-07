@@ -14,47 +14,48 @@ api.interceptors.request.use((config)=>{
 })
 
 api.interceptors.response.use(
-    (response) => {
+    async (response) => {
 
         const at_sid = response.data?.at_sid;
+
         if (at_sid) {
             localStorage.setItem("at.sid", at_sid);
+        }
+
+        if (response.status === 209) {
+
+            const originalRequest = response.config;
+
+            if (!originalRequest._retry) {
+
+                originalRequest._retry = true;
+
+                try {
+
+                    const refreshResponse =
+                        await api.post("/authentication/refresh-token");
+
+                    const newToken = refreshResponse.data.at_sid;
+
+                    localStorage.setItem("at.sid", newToken);
+
+                    originalRequest.headers.Authorization = `Bearer ${newToken}`;
+
+                    return api(originalRequest);
+
+                } catch (err) {
+
+                    localStorage.removeItem("at.sid");
+
+                    return Promise.reject(err);
+                }
+            }
         }
 
         return response;
     },
 
-    async (error) => {
-
-        const originalRequest = error.config;
-
-        if (
-            error.response?.status === 209 &&
-            !originalRequest._retry &&
-            originalRequest.url !== "/authentication/refresh-token"
-        ) {
-
-            originalRequest._retry = true;
-
-            try {
-
-                const refreshResponse = await api.post("/authentication/refresh-token");
-
-                const newToken = refreshResponse.data.at_sid;
-                localStorage.setItem("at.sid", newToken);
-
-                originalRequest.headers.Authorization = `Bearer ${newToken}`;
-
-                return api(originalRequest);
-
-            } catch (err) {
-
-                localStorage.removeItem("at.sid");
-
-                return Promise.reject(err);
-            }
-        }
-
+    (error) => {
         return Promise.reject(error);
     }
 );
