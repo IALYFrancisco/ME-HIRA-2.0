@@ -50,7 +50,6 @@ api.interceptors.response.use(
             } catch (err) {
 
                 localStorage.removeItem("at.sid");
-                // setUser(null) via logout handler
 
                 return Promise.reject(err);
             }
