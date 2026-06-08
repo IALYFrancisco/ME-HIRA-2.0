@@ -1,4 +1,5 @@
 import axios from "axios";
+import { logout } from "@/helpers/authentication";
 
 export const api = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
@@ -51,9 +52,7 @@ api.interceptors.response.use(
 
             } catch (err) {
 
-                localStorage.removeItem("at.sid");
-
-                logout(); // setUser(null)
+                logout();
 
                 return Promise.reject(err);
             }
