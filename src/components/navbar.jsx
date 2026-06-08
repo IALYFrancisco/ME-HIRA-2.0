@@ -1,11 +1,15 @@
+import { api } from "@/helpers/api"
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useForm } from "react-hook-form"
 
 export default function Navbar (){
 
     const { register, watch } = useForm()
+    const [prompt, setPrompt] = useState("")
+    const [results, setResults] = useState([])
+    const [searchIsLoading, setSearchIsLoading] = useState(false)
 
     const watchAll = watch()
 
@@ -18,6 +22,15 @@ export default function Navbar (){
             searchSongModalRef.current.classList.remove('active')
         }
     },[watchAll])
+
+    useEffect(()=>{
+        const timer = setTimeout(()=>{
+            if(prompt.length < 2){
+                api.post("/song/get", { prompt: prompt })
+            }
+        }, 300)
+        return ()=>clearTimeout(timer)
+    },[prompt])
 
     return(
         <nav>
