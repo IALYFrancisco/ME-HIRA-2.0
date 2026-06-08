@@ -34,13 +34,18 @@ api.interceptors.response.use(
 
                     const refreshResponse = await api.post("/authentication/refresh-token");
 
-                    const newToken = refreshResponse.data.at_sid;
+                    if(refreshResponse.status === 200){
 
-                    localStorage.setItem("at.sid", newToken);
+                        const newToken = refreshResponse.data.at_sid;
+    
+                        localStorage.setItem("at.sid", newToken);
+    
+                        originalRequest.headers.Authorization = `Bearer ${newToken}`;
+    
+                        return api(originalRequest);
+                        
+                    }
 
-                    originalRequest.headers.Authorization = `Bearer ${newToken}`;
-
-                    return api(originalRequest);
 
                 } catch (err) {
 
