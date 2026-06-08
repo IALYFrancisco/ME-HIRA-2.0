@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { api } from "@/helpers/api"
 import Image from "next/image"
 import Link from "next/link"
@@ -11,9 +12,9 @@ export default function Navbar (){
     const [results, setResults] = useState([])
     const [searchIsLoading, setSearchIsLoading] = useState(false)
 
-    const watchAll = watch()
-
     var searchSongModalRef = useRef(null)
+
+    const searchSongs = async (p) => api.post('/song/get', p)
 
     useEffect(()=>{
         if(watchAll.songSearch){
@@ -23,14 +24,28 @@ export default function Navbar (){
         }
     },[watchAll])
 
+
+    const fetchSongs = async (value)=>{
+        try {
+            setSearchIsLoading(true)
+            const response = await searchSongs(value)
+            setResults(response.data)
+        }
+        finally{
+            setSearchIsLoading(false)
+        }
+    }
+
     useEffect(()=>{
         const timer = setTimeout(()=>{
             if(prompt.length < 2){
-                api.post("/song/get", { prompt: prompt })
+                setResults([])
+                return
             }
+            fetchSongs(p)
         }, 300)
         return ()=>clearTimeout(timer)
-    },[prompt])
+    },[fetchSongs, prompt])
 
     return(
         <nav>
@@ -42,54 +57,9 @@ export default function Navbar (){
                 </li>
                 <li>
                     <span className="searchbar-container">
-                        <input type="text" id="songSearch" placeholder="Rechercher des chansons ..." {...register('songSearch')}/>
+                        <input type="text" id="songSearch" placeholder="Rechercher des chansons ..." value={prompt} onChange={(e)=>{setPrompt(e.target.value)}}/>
                         <div className="home-search-modal" ref={searchSongModalRef}>
                             <ul>
-                                <li>
-                                    <Link href="">
-                                        <h4>Titre du chanson</h4>
-                                        <span className="singer-container">
-                                            <h5>Cahnteur du chanson</h5>
-                                            <span className="badge">vidéo</span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="">
-                                        <h4>Titre du chanson</h4>
-                                        <span className="singer-container">
-                                            <h5>Cahnteur du chanson</h5>
-                                            <span className="badge">vidéo</span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="">
-                                        <h4>Titre du chanson</h4>
-                                        <span className="singer-container">
-                                            <h5>Cahnteur du chanson</h5>
-                                            <span className="badge">vidéo</span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="">
-                                        <h4>Titre du chanson</h4>
-                                        <span className="singer-container">
-                                            <h5>Cahnteur du chanson</h5>
-                                            <span className="badge">vidéo</span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="">
-                                        <h4>Titre du chanson</h4>
-                                        <span className="singer-container">
-                                            <h5>Cahnteur du chanson</h5>
-                                            <span className="badge">vidéo</span>
-                                        </span>
-                                    </Link>
-                                </li>
                                 <li>
                                     <Link href="">
                                         <h4>Titre du chanson</h4>
