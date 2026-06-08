@@ -16,7 +16,7 @@ export default function Navbar (){
 
     var searchSongModalRef = useRef(null)
 
-    const searchSongs = async (p) => api.post('/song/get', p)
+    const searchSongs = async (p) => api.get('/song/get', p)
 
     useEffect(()=>{
         if(watchAll.songSearch){
