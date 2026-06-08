@@ -24,7 +24,7 @@ export default function Navbar (){
         }else{
             searchSongModalRef.current.classList.remove('active')
         }
-    },[watchAll])
+    },[prompt])
 
 
     const fetchSongs = async (value)=>{
