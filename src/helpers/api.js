@@ -22,7 +22,7 @@ api.interceptors.response.use(
             localStorage.setItem("at.sid", at_sid);
         }
 
-        if (response.status === 209) {
+        if (response.status === 209 && response.config.url !== "/authentication/refresh-token") {
 
             const originalRequest = response.config;
 
