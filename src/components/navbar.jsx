@@ -44,7 +44,7 @@ export default function Navbar (){
                 setResults([])
                 return
             }
-            fetchSongs(p)
+            fetchSongs(prompt)
         }, 300)
         return ()=>clearTimeout(timer)
     },[fetchSongs, prompt])
