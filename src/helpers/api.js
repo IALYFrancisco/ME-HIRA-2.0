@@ -22,44 +22,45 @@ api.interceptors.response.use(
             localStorage.setItem("at.sid", at_sid);
         }
 
-        if (response.status === 209 && response.config.url !== "/authentication/refresh-token") {
+        const originalRequest = response.config;
 
-            const originalRequest = response.config;
+        if (
+            response.status === 209 &&
+            !originalRequest._retry &&
+            !originalRequest.url?.includes("/authentication/refresh-token")
+        ) {
 
-            if (!originalRequest._retry) {
+            originalRequest._retry = true;
 
-                originalRequest._retry = true;
+            try {
 
-                try {
+                const refreshResponse =
+                    await api.post("/authentication/refresh-token");
 
-                    const refreshResponse = await api.post("/authentication/refresh-token");
+                const newToken = refreshResponse.data.at_sid;
 
-                    if(refreshResponse.status === 200){
+                localStorage.setItem("at.sid", newToken);
 
-                        const newToken = refreshResponse.data.at_sid;
-    
-                        localStorage.setItem("at.sid", newToken);
-    
-                        originalRequest.headers.Authorization = `Bearer ${newToken}`;
-    
-                        return api(originalRequest);
-                        
-                    }
+                originalRequest.headers =
+                    originalRequest.headers || {};
 
+                originalRequest.headers.Authorization =
+                    `Bearer ${newToken}`;
 
-                } catch (err) {
+                return api(originalRequest);
 
-                    localStorage.removeItem("at.sid");
+            } catch (err) {
 
-                    return Promise.reject(err);
-                }
+                localStorage.removeItem("at.sid");
+
+                logout(); // setUser(null)
+
+                return Promise.reject(err);
             }
         }
 
         return response;
     },
 
-    (error) => {
-        return Promise.reject(error);
-    }
+    (error) => Promise.reject(error)
 );
