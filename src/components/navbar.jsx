@@ -9,17 +9,17 @@ import { useForm } from "react-hook-form"
 export default function Navbar (){
 
     const { watch } = useForm()
-     const watchAll = watch()
-    const [prompt, setPrompt] = useState("")
-    const [results, setResults] = useState([])
-    const [searchIsLoading, setSearchIsLoading] = useState(false)
+    const watchAll = watch()
+    var [prompt, setPrompt] = useState("")
+    var [results, setResults] = useState([])
+    var [searchIsLoading, setSearchIsLoading] = useState(false)
 
     var searchSongModalRef = useRef(null)
 
-    const searchSongs = async (p) => api.get('/song/get', p)
+    const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
 
     useEffect(()=>{
-        if(watchAll.songSearch){
+        if(prompt){
             searchSongModalRef.current.classList.add('active')
         }else{
             searchSongModalRef.current.classList.remove('active')
@@ -47,7 +47,7 @@ export default function Navbar (){
             fetchSongs(prompt)
         }, 300)
         return ()=>clearTimeout(timer)
-    },[fetchSongs, prompt])
+    },[prompt])
 
     return(
         <nav>
