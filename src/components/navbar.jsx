@@ -8,7 +8,8 @@ import { useForm } from "react-hook-form"
 
 export default function Navbar (){
 
-    const { register, watch } = useForm()
+    const { watch } = useForm()
+     const watchAll = watch()
     const [prompt, setPrompt] = useState("")
     const [results, setResults] = useState([])
     const [searchIsLoading, setSearchIsLoading] = useState(false)
