@@ -1,4 +1,5 @@
 import axios from "axios";
+import { logout } from "@/helpers/authentication";
 
 export const api = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
@@ -14,48 +15,51 @@ api.interceptors.request.use((config)=>{
 })
 
 api.interceptors.response.use(
-    (response) => {
+    async (response) => {
 
         const at_sid = response.data?.at_sid;
+
         if (at_sid) {
             localStorage.setItem("at.sid", at_sid);
         }
 
-        return response;
-    },
-
-    async (error) => {
-
-        const originalRequest = error.config;
+        const originalRequest = response.config;
 
         if (
-            error.response?.status === 209 &&
+            response.status === 209 &&
             !originalRequest._retry &&
-            originalRequest.url !== "/authentication/refresh-token"
+            !originalRequest.url?.includes("/authentication/refresh-token")
         ) {
 
             originalRequest._retry = true;
 
             try {
 
-                const refreshResponse = await api.post("/authentication/refresh-token");
+                const refreshResponse =
+                    await api.post("/authentication/refresh-token");
 
                 const newToken = refreshResponse.data.at_sid;
+
                 localStorage.setItem("at.sid", newToken);
 
-                originalRequest.headers.Authorization = `Bearer ${newToken}`;
+                originalRequest.headers =
+                    originalRequest.headers || {};
+
+                originalRequest.headers.Authorization =
+                    `Bearer ${newToken}`;
 
                 return api(originalRequest);
 
             } catch (err) {
 
-                localStorage.removeItem("at.sid");
-                // setUser(null) via logout handler
+                logout();
 
                 return Promise.reject(err);
             }
         }
 
-        return Promise.reject(error);
-    }
+        return response;
+    },
+
+    (error) => Promise.reject(error)
 );

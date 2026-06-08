@@ -7,7 +7,6 @@ import { toast } from "sonner"
 import SongsListSkeleton from "@/components/skeleton-loaders/songsListSkeleton"
 import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
-import { RefreshToken } from "@/helpers/authentication"
 import { FormatSongSinger } from "@/helpers/song"
 
 export default function SongsList(){
@@ -42,14 +41,6 @@ export default function SongsList(){
                 song.append('file', localFile)
             }
             const response = await api.post('/song/add', song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"} })
-            if(response.status === 209) RefreshToken(
-                api.post('/song/add', song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"} })
-                .then(()=>{
-                    toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
-                    reset()
-                    closeAddSongModal()
-                })
-            );
             if(response.status === 201){
                 toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
                 reset()
