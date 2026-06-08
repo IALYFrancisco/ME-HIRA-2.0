@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { api } from "@/helpers/api"
+import { FormatSongSinger } from "@/helpers/song"
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
@@ -60,15 +61,17 @@ export default function Navbar (){
                         <input type="text" id="songSearch" placeholder="Rechercher des chansons ..." value={prompt} onChange={(e)=>{setPrompt(e.target.value)}}/>
                         <div className="home-search-modal" ref={searchSongModalRef}>
                             <ul>
-                                <li>
-                                    <Link href="">
-                                        <h4>Titre du chanson</h4>
-                                        <span className="singer-container">
-                                            <h5>Cahnteur du chanson</h5>
-                                            <span className="badge">vidéo</span>
-                                        </span>
-                                    </Link>
-                                </li>
+                                { results.map((song)=>{
+                                    <li key={song._id}>
+                                        <Link href={`/song/${song.slug}`}>
+                                            <h4>{song.title}</h4>
+                                            <span className="singer-container">
+                                                <h5>{FormatSongSinger(song.singer)}</h5>
+                                                <span className="badge">{song.fileType}</span>
+                                            </span>
+                                        </Link>
+                                    </li>
+                                }) }
                             </ul>
                         </div>
                         <button>
