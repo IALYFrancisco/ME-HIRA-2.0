@@ -32,10 +32,7 @@ export default function Navbar (){
             setResults([])
         }
         if(prompt && prompt.trim() !== ""){
-            const timer = setTimeout(()=>{
-                fetchSongs(prompt)
-            }, 300)
-            return ()=>clearTimeout(timer)
+            fetchSongs(prompt)
         }
     },[prompt])
 
@@ -50,7 +47,7 @@ export default function Navbar (){
                 <li>
                     <span className="searchbar-container">
                         <input type="text" id="songSearch" placeholder="Rechercher des chansons ..." value={prompt} onChange={(e)=>{setPrompt(e.target.value)}}/>
-                        <div className={results ? "home-search-modal active" : "home-search-modal"}>
+                        <div className={(prompt && !searchIsLoading)? "home-search-modal active" : "home-search-modal"}>
                             <ul>
                                 { results.map((song)=>(
                                     <li key={song._id}>
