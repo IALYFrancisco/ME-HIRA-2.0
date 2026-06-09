@@ -1,23 +1,53 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { api } from "@/helpers/api"
+import { FormatSongSinger } from "@/helpers/song"
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useForm } from "react-hook-form"
 
 export default function Navbar (){
 
-    const { register, watch } = useForm()
-
+    const { watch } = useForm()
     const watchAll = watch()
+    var [prompt, setPrompt] = useState("")
+    var [results, setResults] = useState([])
+    var [searchIsLoading, setSearchIsLoading] = useState(false)
 
     var searchSongModalRef = useRef(null)
 
+    const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
+
     useEffect(()=>{
-        if(watchAll.songSearch){
+        if(prompt){
             searchSongModalRef.current.classList.add('active')
         }else{
             searchSongModalRef.current.classList.remove('active')
         }
-    },[watchAll])
+    },[prompt])
+
+
+    const fetchSongs = async (value)=>{
+        try {
+            setSearchIsLoading(true)
+            const response = await searchSongs(value)
+            setResults(response.data)
+        }
+        finally{
+            setSearchIsLoading(false)
+        }
+    }
+
+    useEffect(()=>{
+        const timer = setTimeout(()=>{
+            if(prompt.length < 2){
+                setResults([])
+                return
+            }
+            fetchSongs(prompt)
+        }, 300)
+        return ()=>clearTimeout(timer)
+    },[prompt])
 
     return(
         <nav>
@@ -29,63 +59,20 @@ export default function Navbar (){
                 </li>
                 <li>
                     <span className="searchbar-container">
-                        <input type="text" id="songSearch" placeholder="Rechercher des chansons ..." {...register('songSearch')}/>
+                        <input type="text" id="songSearch" placeholder="Rechercher des chansons ..." value={prompt} onChange={(e)=>{setPrompt(e.target.value)}}/>
                         <div className="home-search-modal" ref={searchSongModalRef}>
                             <ul>
-                                <li>
-                                    <Link href="">
-                                        <h4>Titre du chanson</h4>
-                                        <span className="singer-container">
-                                            <h5>Cahnteur du chanson</h5>
-                                            <span className="badge">vidéo</span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="">
-                                        <h4>Titre du chanson</h4>
-                                        <span className="singer-container">
-                                            <h5>Cahnteur du chanson</h5>
-                                            <span className="badge">vidéo</span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="">
-                                        <h4>Titre du chanson</h4>
-                                        <span className="singer-container">
-                                            <h5>Cahnteur du chanson</h5>
-                                            <span className="badge">vidéo</span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="">
-                                        <h4>Titre du chanson</h4>
-                                        <span className="singer-container">
-                                            <h5>Cahnteur du chanson</h5>
-                                            <span className="badge">vidéo</span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="">
-                                        <h4>Titre du chanson</h4>
-                                        <span className="singer-container">
-                                            <h5>Cahnteur du chanson</h5>
-                                            <span className="badge">vidéo</span>
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="">
-                                        <h4>Titre du chanson</h4>
-                                        <span className="singer-container">
-                                            <h5>Cahnteur du chanson</h5>
-                                            <span className="badge">vidéo</span>
-                                        </span>
-                                    </Link>
-                                </li>
+                                { results.map((song)=>{
+                                    <li key={song._id}>
+                                        <Link href={`/song/${song.slug}`}>
+                                            <h4>{song.title}</h4>
+                                            <span className="singer-container">
+                                                <h5>{FormatSongSinger(song.singer)}</h5>
+                                                <span className="badge">{song.fileType}</span>
+                                            </span>
+                                        </Link>
+                                    </li>
+                                }) }
                             </ul>
                         </div>
                         <button>
