@@ -62,7 +62,7 @@ export default function Navbar (){
                         <input type="text" id="songSearch" placeholder="Rechercher des chansons ..." value={prompt} onChange={(e)=>{setPrompt(e.target.value)}}/>
                         <div className="home-search-modal" ref={searchSongModalRef}>
                             <ul>
-                                { results.map((song)=>{
+                                { results.map((song)=>(
                                     <li key={song._id}>
                                         <Link href={`/song/${song.slug}`}>
                                             <h4>{song.title}</h4>
@@ -72,7 +72,7 @@ export default function Navbar (){
                                             </span>
                                         </Link>
                                     </li>
-                                }) }
+                                )) }
                             </ul>
                         </div>
                         <button>
