@@ -294,6 +294,20 @@ aside ul li a img {
   /* transition: 300ms; */
   padding: 5px;
   display: none;
+  overflow: auto;
+}
+
+.home-search-modal::-webkit-scrollbar {
+  width: 5px;
+}
+
+.home-search-modal::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 5px;
+}
+
+.home-search-modal::-webkit-scrollbar-button {
+  width: 0px;
 }
 
 .home-search-modal.active {
