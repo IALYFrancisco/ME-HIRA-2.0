@@ -19,7 +19,7 @@ export default function Navbar (){
     const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
 
     useEffect(()=>{
-        if(prompt){
+        if(prompt && results){
             searchSongModalRef.current.classList.add('active')
         }else{
             searchSongModalRef.current.classList.remove('active')
@@ -39,10 +39,15 @@ export default function Navbar (){
     }
 
     useEffect(()=>{
-        const timer = setTimeout(()=>{
-            fetchSongs(prompt)
-        }, 300)
-        return ()=>clearTimeout(timer)
+        if(prompt === ""){
+            setResults([])
+        }
+        if(prompt && prompt.trim() !== ""){
+            const timer = setTimeout(()=>{
+                fetchSongs(prompt)
+            }, 300)
+            return ()=>clearTimeout(timer)
+        }
     },[prompt])
 
     return(
