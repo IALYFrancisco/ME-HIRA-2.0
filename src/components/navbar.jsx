@@ -40,10 +40,6 @@ export default function Navbar (){
 
     useEffect(()=>{
         const timer = setTimeout(()=>{
-            if(prompt.length < 2){
-                setResults([])
-                return
-            }
             fetchSongs(prompt)
         }, 300)
         return ()=>clearTimeout(timer)
