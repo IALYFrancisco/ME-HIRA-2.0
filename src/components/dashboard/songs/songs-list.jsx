@@ -27,16 +27,13 @@ export default function SongsList(){
     const addSong = async (data) => {
         try{
             setAddSongIsLoading(true)
-
-            let singer = data.singer.split(",")
-
             const song = new FormData()
             song.append('title', data.title)
             song.append('author', data.author)
             song.append('album', data.album)
             song.append('composer', data.composer)
             song.append('fileType', data.fileType)
-            song.append('singer', singer)
+            song.append('singer', data.singer)
             if(data.hostedFile){
                 song.append('fileUrl', data.hostedFile)
             }
