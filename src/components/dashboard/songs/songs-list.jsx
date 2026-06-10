@@ -29,7 +29,6 @@ export default function SongsList(){
             setAddSongIsLoading(true)
 
             let singer = data.singer.split(",")
-            console.log(singer)
 
             const song = new FormData()
             song.append('title', data.title)
