@@ -14,18 +14,7 @@ export default function Navbar (){
     var [results, setResults] = useState([])
     var [searchIsLoading, setSearchIsLoading] = useState(false)
 
-    var searchSongModalRef = useRef(null)
-
     const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
-
-    useEffect(()=>{
-        if(prompt){
-            searchSongModalRef.current.classList.add('active')
-        }else{
-            searchSongModalRef.current.classList.remove('active')
-        }
-    },[prompt])
-
 
     const fetchSongs = async (value)=>{
         try {
@@ -39,14 +28,12 @@ export default function Navbar (){
     }
 
     useEffect(()=>{
-        const timer = setTimeout(()=>{
-            if(prompt.length < 2){
-                setResults([])
-                return
-            }
+        if(prompt === ""){
+            setResults([])
+        }
+        if(prompt && prompt.trim() !== ""){
             fetchSongs(prompt)
-        }, 300)
-        return ()=>clearTimeout(timer)
+        }
     },[prompt])
 
     return(
@@ -60,7 +47,7 @@ export default function Navbar (){
                 <li>
                     <span className="searchbar-container">
                         <input type="text" id="songSearch" placeholder="Rechercher des chansons ..." value={prompt} onChange={(e)=>{setPrompt(e.target.value)}}/>
-                        <div className="home-search-modal" ref={searchSongModalRef}>
+                        <div className={((prompt && results.length > 0)) ? "home-search-modal active" : "home-search-modal"}>
                             <ul>
                                 { results.map((song)=>(
                                     <li key={song._id}>

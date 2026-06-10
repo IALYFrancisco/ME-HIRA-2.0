@@ -289,15 +289,31 @@ aside ul li a img {
   border-radius: 10px;
   box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
   border: 1px solid var(--gray);
-  opacity: 0;
-  pointer-events: none;
-  transition: 300ms;
+  /* opacity: 0; */
+  /* pointer-events: none; */
+  /* transition: 300ms; */
   padding: 5px;
+  display: none;
+  overflow: auto;
+}
+
+.home-search-modal::-webkit-scrollbar {
+  width: 5px;
+}
+
+.home-search-modal::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 5px;
+}
+
+.home-search-modal::-webkit-scrollbar-button {
+  width: 0px;
 }
 
 .home-search-modal.active {
-  pointer-events: auto;
-  opacity: 1;
+  /* pointer-events: auto; */
+  /* opacity: 1; */
+  display: block;
 }
 
 .home-search-modal .singer-container {
