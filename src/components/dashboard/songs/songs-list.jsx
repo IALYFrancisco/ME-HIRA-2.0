@@ -36,7 +36,7 @@ export default function SongsList(){
             song.append('album', data.album)
             song.append('composer', data.composer)
             song.append('fileType', data.fileType)
-            song.append('singer', data.singer)
+            song.append('singer', singer)
             if(data.hostedFile){
                 song.append('fileUrl', data.hostedFile)
             }
