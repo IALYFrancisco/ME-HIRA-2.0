@@ -43,12 +43,12 @@ export default function SongsList(){
             if(localFile){
                 song.append('file', localFile)
             }
-            // const response = await api.post('/song/add', song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"} })
-            // if(response.status === 201){
-            //     toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
-            //     reset()
-            //     closeAddSongModal()
-            // }
+            const response = await api.post('/song/add', song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"} })
+            if(response.status === 201){
+                toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
+                reset()
+                closeAddSongModal()
+            }
         }catch{
             toast.error(`Erreur de l'ajout du chanson, veuillez réessayer plus tard.`)
         }finally{
