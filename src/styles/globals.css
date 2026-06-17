@@ -345,13 +345,24 @@ aside ul li a img {
 }
 
 nav .filter-type-popup {
-  width: 100px;
-  height: 200px;
-  background: red;
+  background: white;
   position: absolute;
   top: 40px;
   left: 0px;
   display: none;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
+  border: 1px solid var(--gray);
+  padding: 10px;
+}
+
+nav .filter-type-popup label {
+  font-size: 14px;
+}
+
+nav .filter-type-popup select {
+  margin-top: 8px;
+  
 }
 
 nav .filter-type-popup.active {
