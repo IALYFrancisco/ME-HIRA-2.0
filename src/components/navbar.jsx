@@ -76,6 +76,7 @@ export default function Navbar (){
                     </Link>
                 </li>
             </ul>
+            <div className="filter-type-overlay"></div>
         </nav>
     )
 }
