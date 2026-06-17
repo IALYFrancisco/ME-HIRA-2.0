@@ -346,13 +346,13 @@ aside ul li a img {
 .filter-type-overlay {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
   position: fixed;
   opacity: 0;
   pointer-events: none;
-  transition: 250ms;
   z-index: 1;
   top: 0;
+  left: 0;
 }
 
 .filter-type-overlay.active {
