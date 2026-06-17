@@ -120,6 +120,7 @@
 .dashboard-songs-container th.actions,
 .dashboard-songs-container td.actions {
     width: 10%;
+    position: relative;
 }
 
 .dashboard-songs-container td {
@@ -327,4 +328,20 @@
 .add-song-modal .close-modal img {
     height: auto;
     width: 10px;
+}
+
+.song-actions {
+    background-color: white;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    display: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
+    border: 1px solid var(--gray);
+    padding: 10px;
+}
+
+.song-actions.active {
+    display: block;
 }

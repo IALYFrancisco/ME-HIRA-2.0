@@ -154,7 +154,7 @@ export default function SongsList(){
                                             <span className={song.published ? "song-badge yes" : "song-badge no"}>{song.published ? "Oui" : "Non"}</span>
                                         </td>
                                         <td className="actions">
-                                            <ul className="song-actions">
+                                            <ul className="song-actions active">
                                                 <li>Publier</li>
                                                 <li>Modifier</li>
                                                 <li>Supprimer</li>
