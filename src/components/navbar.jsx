@@ -83,7 +83,14 @@ export default function Navbar (){
                         <button className="filter" onClick={toggleFilterTypePopUp}>
                             <Image src="/images/filter.png" priority alt="filtre des chansons de me-hira" width={48} height={48} className="filter-icone" />
                         </button>
-                        <div className={ filterTypePopUpIsActive ? "filter-type-popup active" : "filter-type-popup" }></div>
+                        <div className={ filterTypePopUpIsActive ? "filter-type-popup active" : "filter-type-popup" }>
+                            <label htmlFor="fileType">Type de fichier :</label>
+                            <select name="fileType" id="fileType">
+                                <option value="">Tout type de fichier</option>
+                                <option value="video">Vidéos</option>
+                                <option value="audio">Audios</option>
+                            </select>
+                        </div>
                     </div>
                 </li>
                 <li>
