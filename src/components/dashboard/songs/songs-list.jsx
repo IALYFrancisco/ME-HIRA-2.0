@@ -38,6 +38,10 @@ export default function SongsList(){
         }
     }, [])
 
+    const toggleActionsPopUp = (songId) => {
+        setActivePopUp((prev)=>(prev === songId ? null : songId))
+    }
+
     const addSong = async (data) => {
         try{
             setAddSongIsLoading(true)
