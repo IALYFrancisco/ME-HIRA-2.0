@@ -159,7 +159,7 @@ export default function SongsList(){
                                                 <li>Modifier</li>
                                                 <li>Supprimer</li>
                                             </ul>
-                                            <Image ref={popUpActionsRef} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
+                                            <Image onClick={()=>toggleActionsPopUp(song._id)} ref={popUpActionsRef} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
                                         </td>
                                     </tr>
                                 ))}
