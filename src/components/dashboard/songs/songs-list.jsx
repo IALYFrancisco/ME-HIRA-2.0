@@ -23,6 +23,7 @@ export default function SongsList(){
     var [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
     const addSongOverlayRef = useRef(null)
     const addSongFormRef = useRef(null)
+    var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
 
     useEffect(()=>{
