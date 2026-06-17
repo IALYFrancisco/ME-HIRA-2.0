@@ -362,7 +362,11 @@ nav .filter-type-popup label {
 
 nav .filter-type-popup select {
   margin-top: 8px;
-  
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--gray);
+  padding: 0 10px;
+  outline: none;
 }
 
 nav .filter-type-popup.active {
