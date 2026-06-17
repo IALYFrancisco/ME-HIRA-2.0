@@ -358,6 +358,7 @@ nav .filter-type-popup {
 
 nav .filter-type-popup label {
   font-size: 14px;
+  cursor: pointer;
 }
 
 nav .filter-type-popup select {
@@ -367,6 +368,10 @@ nav .filter-type-popup select {
   border: 1px solid var(--gray);
   padding: 0 10px;
   outline: none;
+}
+
+nav .filter-type-popup select:focus {
+  border-color: var(--orange-base);
 }
 
 nav .filter-type-popup.active {
