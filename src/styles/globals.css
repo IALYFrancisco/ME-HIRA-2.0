@@ -351,4 +351,9 @@ nav .filter-type-popup {
   position: absolute;
   top: 40px;
   left: 0px;
+  display: none;
+}
+
+nav .filter-type-popup.active {
+  display: block;
 }
