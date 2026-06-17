@@ -357,5 +357,5 @@ aside ul li a img {
 
 .filter-type-overlay.active {
   opacity: 1;
-  pointer-events: none;
+  pointer-events: auto;
 }
