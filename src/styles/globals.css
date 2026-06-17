@@ -359,6 +359,7 @@ aside ul li a img {
 
 .filter-type-overlay.active {
   opacity: 1;
+  pointer-events: none;
 }
 
 nav .filter-type-popup {

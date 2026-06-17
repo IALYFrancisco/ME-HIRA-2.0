@@ -41,6 +41,10 @@ export default function Navbar (){
         setFilterTypeOverlayIsActive(true)
     }
 
+    const closeFilterTypeOvarlay = () => {
+        setFilterTypeOverlayIsActive(false)
+    }
+
     return(
         <>
             <nav>
@@ -84,7 +88,7 @@ export default function Navbar (){
                     </li>
                 </ul>
             </nav>
-            <div className={ filterTypeOverlayIsActive ? "filter-type-overlay active" : "filter-type-overlay" }></div>
+            <div className={ filterTypeOverlayIsActive ? "filter-type-overlay active" : "filter-type-overlay" } onClick={closeFilterTypeOvarlay}></div>
         </>
     )
 }
