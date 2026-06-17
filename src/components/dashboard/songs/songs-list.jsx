@@ -154,6 +154,11 @@ export default function SongsList(){
                                             <span className={song.published ? "song-badge yes" : "song-badge no"}>{song.published ? "Oui" : "Non"}</span>
                                         </td>
                                         <td className="actions">
+                                            <ul className="song-actions">
+                                                <li>Publier</li>
+                                                <li>Modifier</li>
+                                                <li>Supprimer</li>
+                                            </ul>
                                             <Image src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
                                         </td>
                                     </tr>
