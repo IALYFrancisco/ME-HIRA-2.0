@@ -13,6 +13,7 @@ export default function Navbar (){
     var [prompt, setPrompt] = useState("")
     var [results, setResults] = useState([])
     var [searchIsLoading, setSearchIsLoading] = useState(false)
+    var [ filterTypeOverlayIsActive, setFilterTypeOverlayIsActive] = useState(false)
 
     const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
 
@@ -35,6 +36,10 @@ export default function Navbar (){
             fetchSongs(prompt)
         }
     },[prompt])
+
+    const openFilterTypeOvarlay = () => {
+        setFilterTypeOverlayIsActive(true)
+    }
 
     return(
         <>
@@ -67,7 +72,7 @@ export default function Navbar (){
                                 <Image src="/images/search.png" priority alt="recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="search-icone" />
                             </button>
                         </span>
-                        <button className="filter">
+                        <button className="filter" onClick={openFilterTypeOvarlay}>
                             <Image src="/images/filter.png" priority alt="filtre des chansons de me-hira" width={48} height={48} className="filter-icone" />
                             <div className="filter-type-popup"></div>
                         </button>
@@ -79,7 +84,7 @@ export default function Navbar (){
                     </li>
                 </ul>
             </nav>
-            <div className="filter-type-overlay active"></div>
+            <div className={ filterTypeOverlayIsActive ? "filter-type-overlay active" : "filter-type-overlay" }></div>
         </>
     )
 }
