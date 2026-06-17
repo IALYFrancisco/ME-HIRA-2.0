@@ -25,6 +25,12 @@ export default function SongsList(){
     const addSongFormRef = useRef(null)
     const popUpActionsRef = useRef(null)
 
+    useEffect(()=>{
+        const handleClickOutside = (event) => {
+            if(popUpActionsRef.current && !popUpActionsRef.current.contains(event.target)){}
+        }
+    }, [])
+
     const addSong = async (data) => {
         try{
             setAddSongIsLoading(true)
