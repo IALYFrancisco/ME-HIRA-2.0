@@ -28,7 +28,13 @@ export default function SongsList(){
 
     useEffect(()=>{
         const handleClickOutside = (event) => {
-            if(popUpActionsRef.current && !popUpActionsRef.current.contains(event.target)){}
+            if(popUpActionsRef.current && !popUpActionsRef.current.contains(event.target)){
+                setActivePopUp(null)
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside)
+        return ()=>{
+            document.removeEventListener("mousedown", handleClickOutside)
         }
     }, [])
 
