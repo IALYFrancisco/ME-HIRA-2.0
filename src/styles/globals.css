@@ -357,3 +357,7 @@ nav .filter-type-popup {
 nav .filter-type-popup.active {
   display: block;
 }
+
+nav .filter-type-container {
+  position: relative;
+}

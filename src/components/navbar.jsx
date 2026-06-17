@@ -37,6 +37,10 @@ export default function Navbar (){
         }
     },[prompt])
 
+    const toggleFilterTypePopUp = () => {
+        filterTypePopUpIsActive ? setFilterTypePopUpIsActive(false) : setFilterTypePopUpIsActive(true)
+    }
+
     const openFilterTypePopUp = () => {
         setFilterTypePopUpIsActive(true)
     }
@@ -75,10 +79,12 @@ export default function Navbar (){
                             <Image src="/images/search.png" priority alt="recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="search-icone" />
                         </button>
                     </span>
-                    <button className="filter">
-                        <Image src="/images/filter.png" priority alt="filtre des chansons de me-hira" width={48} height={48} className="filter-icone" />
+                    <div className="filter-type-container">
+                        <button className="filter" onClick={toggleFilterTypePopUp}>
+                            <Image src="/images/filter.png" priority alt="filtre des chansons de me-hira" width={48} height={48} className="filter-icone" />
+                        </button>
                         <div className={ filterTypePopUpIsActive ? "filter-type-popup active" : "filter-type-popup" }></div>
-                    </button>
+                    </div>
                 </li>
                 <li>
                     <Link href="/authentication/login">
