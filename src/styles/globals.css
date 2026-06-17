@@ -88,6 +88,7 @@ nav ul li .filter {
   align-items: center;
   cursor: pointer;
   transition: background-color .10s ease-in-out;
+  position: relative;
 }
 
 nav ul li .filter:hover {
@@ -358,5 +359,13 @@ aside ul li a img {
 
 .filter-type-overlay.active {
   opacity: 1;
-  pointer-events: auto;
+}
+
+nav .filter-type-popup {
+  width: 100px;
+  height: 200px;
+  background: red;
+  position: absolute;
+  top: 40px;
+  left: 0px;
 }

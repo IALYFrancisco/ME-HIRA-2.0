@@ -69,6 +69,7 @@ export default function Navbar (){
                         </span>
                         <button className="filter">
                             <Image src="/images/filter.png" priority alt="filtre des chansons de me-hira" width={48} height={48} className="filter-icone" />
+                            <div className="filter-type-popup"></div>
                         </button>
                     </li>
                     <li>
