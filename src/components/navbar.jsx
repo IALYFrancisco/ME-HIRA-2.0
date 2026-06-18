@@ -21,7 +21,8 @@ export default function Navbar (){
         try {
             setSearchIsLoading(true)
             const response = await searchSongs(value)
-            setResults(response.data)
+            let _song = response.data?.filter(s=>s.published===true)
+            setResults(_song)
         }
         finally{
             setSearchIsLoading(false)
