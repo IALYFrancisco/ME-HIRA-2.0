@@ -50,6 +50,9 @@ export default function Home() {
                             <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} loop></video> :
                             <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
                           }
+                          <span className="duration">
+                            01:30:15
+                          </span>
                         </div>
                         <div className="song-info">
                           <h3>{song.title}</h3>
