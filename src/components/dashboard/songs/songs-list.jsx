@@ -49,12 +49,7 @@ export default function SongsList(){
     }
 
     useEffect(()=>{
-        if(prompt === ""){
-            return
-        }
-        if(prompt && prompt.trim() !== ""){
-            fetchSongs(prompt)
-        }
+        fetchSongs(prompt)
     },[fetchSongs, prompt])
 
     const toggleActionsPopUp = (songId) => {
