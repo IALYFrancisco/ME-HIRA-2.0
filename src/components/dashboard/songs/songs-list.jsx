@@ -45,8 +45,7 @@ export default function SongsList(){
 
     const fetchSongs = async (value)=>{
         const response = await searchSongs(value)
-        let _song = response.data?.filter(s=>s.published===true)
-        setSongs(_song)
+        setSongs(response.data)
     }
 
     useEffect(()=>{
