@@ -40,6 +40,7 @@
     margin-bottom: 10px;
     border: 2px transparent solid;
     position: relative;
+    z-index: -1;
 }
 
 .songs-container .poster-container .duration {
