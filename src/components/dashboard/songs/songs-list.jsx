@@ -155,7 +155,7 @@ export default function SongsList(){
                                         </td>
                                         <td className="actions">
                                             <ul className={ activePopUp === song._id ? "song-actions active" : "song-actions" }>
-                                                <li>Publier</li>
+                                                <li>{ song.published ? "Dépublier" : "Publier" }</li>
                                                 <li>Modifier</li>
                                                 <li>Supprimer</li>
                                             </ul>
