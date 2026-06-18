@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react-hooks/exhaustive-deps */
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
@@ -23,6 +24,37 @@ export default function SongsList(){
     var [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
     const addSongOverlayRef = useRef(null)
     const addSongFormRef = useRef(null)
+    var [ activePopUp, setActivePopUp ] = useState(null)
+    const popUpActionsRef = useRef(null)
+
+    var [ prompt, setPrompt ] = useState("")
+
+    useEffect(()=>{
+        const handleClickOutside = (event) => {
+            if(popUpActionsRef.current && !popUpActionsRef.current.contains(event.target)){
+                setActivePopUp(null)
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside)
+        return ()=>{
+            document.removeEventListener("mousedown", handleClickOutside)
+        }
+    }, [])
+
+    const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
+
+    const fetchSongs = async (value)=>{
+        const response = await searchSongs(value)
+        setSongs(response.data)
+    }
+
+    useEffect(()=>{
+        fetchSongs(prompt)
+    },[fetchSongs, prompt])
+
+    const toggleActionsPopUp = (songId) => {
+        setActivePopUp((prev)=>(prev === songId ? null : songId))
+    }
 
     const addSong = async (data) => {
         try{
@@ -85,6 +117,22 @@ export default function SongsList(){
         .finally(()=>setfetchSongsLoading(false))
     }, [])
 
+    const songPublication = async (song) => {
+        try{
+            let response = await api.patch('/song/update', { song: song._id, update: song?.published ? { published: false } : { published: true }})
+            if(response.status === 200){
+                toast.info(`La chanson intitulée ${song?.title} est actuellement disponible en publique.`)
+                api.get('/song/get')
+                    .then((response) => {
+                        setSongs(response.data)
+                    })
+                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des chansons."))
+            }
+        }catch{
+            toast.error("Erreur de mise à jour du chanson, veuillez réessayer plus tard.")
+        }
+    }
+
     return(
         <>
             <section className="dashboard-songs-container">
@@ -98,7 +146,7 @@ export default function SongsList(){
                         </div>
                         <div className="actions-container">
                             <div className="filters-container">
-                                <input type="text" name="" id="" placeholder="Rechercher des chansons ..." />
+                                <input type="text" name="" id="" placeholder="Rechercher des chansons ..." value={prompt} onChange={(e)=>setPrompt(e.target.value)} />
                             </div>
                             <span>
                                 <button onClick={openAddSongModal}>
@@ -136,7 +184,12 @@ export default function SongsList(){
                                             <span className={song.published ? "song-badge yes" : "song-badge no"}>{song.published ? "Oui" : "Non"}</span>
                                         </td>
                                         <td className="actions">
-                                            <Image src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
+                                            <ul className={ activePopUp === song._id ? "song-actions active" : "song-actions" }>
+                                                <li onClick={()=>songPublication(song)}>{ song.published ? "Dépublier" : "Publier" }</li>
+                                                <li>Modifier</li>
+                                                <li>Supprimer</li>
+                                            </ul>
+                                            <Image onClick={()=>toggleActionsPopUp(song._id)} ref={popUpActionsRef} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
                                         </td>
                                     </tr>
                                 ))}

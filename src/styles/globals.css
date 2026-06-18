@@ -88,6 +88,7 @@ nav ul li .filter {
   align-items: center;
   cursor: pointer;
   transition: background-color .10s ease-in-out;
+  position: relative;
 }
 
 nav ul li .filter:hover {
@@ -289,9 +290,6 @@ aside ul li a img {
   border-radius: 10px;
   box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
   border: 1px solid var(--gray);
-  /* opacity: 0; */
-  /* pointer-events: none; */
-  /* transition: 300ms; */
   padding: 5px;
   display: none;
   overflow: auto;
@@ -311,8 +309,6 @@ aside ul li a img {
 }
 
 .home-search-modal.active {
-  /* pointer-events: auto; */
-  /* opacity: 1; */
   display: block;
 }
 
@@ -346,4 +342,42 @@ aside ul li a img {
 
 .home-search-modal li a {
   color: var(--black)
+}
+
+nav .filter-type-popup {
+  background: white;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  display: none;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
+  border: 1px solid var(--gray);
+  padding: 10px;
+}
+
+nav .filter-type-popup label {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+nav .filter-type-popup select {
+  margin-top: 8px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--gray);
+  padding: 0 10px;
+  outline: none;
+}
+
+nav .filter-type-popup select:focus {
+  border-color: var(--orange-base);
+}
+
+nav .filter-type-popup.active {
+  display: block;
+}
+
+nav .filter-type-container {
+  position: relative;
 }

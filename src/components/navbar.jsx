@@ -13,6 +13,7 @@ export default function Navbar (){
     var [prompt, setPrompt] = useState("")
     var [results, setResults] = useState([])
     var [searchIsLoading, setSearchIsLoading] = useState(false)
+    var [ filterTypePopUpIsActive, setFilterTypePopUpIsActive] = useState(false)
 
     const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
 
@@ -20,7 +21,8 @@ export default function Navbar (){
         try {
             setSearchIsLoading(true)
             const response = await searchSongs(value)
-            setResults(response.data)
+            let _song = response.data?.filter(s=>s.published===true)
+            setResults(_song)
         }
         finally{
             setSearchIsLoading(false)
@@ -35,6 +37,18 @@ export default function Navbar (){
             fetchSongs(prompt)
         }
     },[prompt])
+
+    const toggleFilterTypePopUp = () => {
+        filterTypePopUpIsActive ? setFilterTypePopUpIsActive(false) : setFilterTypePopUpIsActive(true)
+    }
+
+    const openFilterTypePopUp = () => {
+        setFilterTypePopUpIsActive(true)
+    }
+
+    const closeFilterTypePopUp = () => {
+        setFilterTypePopUpIsActive(false)
+    }
 
     return(
         <nav>
@@ -66,9 +80,19 @@ export default function Navbar (){
                             <Image src="/images/search.png" priority alt="recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="search-icone" />
                         </button>
                     </span>
-                    <button className="filter">
-                        <Image src="/images/filter.png" priority alt="filtre des chansons de me-hira" width={48} height={48} className="filter-icone" />
-                    </button>
+                    <div className="filter-type-container">
+                        <button className="filter" onClick={toggleFilterTypePopUp}>
+                            <Image src="/images/filter.png" priority alt="filtre des chansons de me-hira" width={48} height={48} className="filter-icone" />
+                        </button>
+                        <div className={ filterTypePopUpIsActive ? "filter-type-popup active" : "filter-type-popup" }>
+                            <label htmlFor="fileType">Type de fichier :</label>
+                            <select name="fileType" id="fileType">
+                                <option value="">Tout type de fichier</option>
+                                <option value="video">Vidéos</option>
+                                <option value="audio">Audios</option>
+                            </select>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <Link href="/authentication/login">

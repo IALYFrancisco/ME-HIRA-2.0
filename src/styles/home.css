@@ -39,6 +39,19 @@
     border-radius: 10px;
     margin-bottom: 10px;
     border: 2px transparent solid;
+    position: relative;
+    z-index: -1;
+}
+
+.songs-container .poster-container .duration {
+    color: white;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.504);
+    padding: 3px 6px;
+    border-radius: 5px;
 }
 
 .songs-container .poster-container video {
