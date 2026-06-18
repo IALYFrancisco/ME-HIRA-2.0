@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react-hooks/exhaustive-deps */
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
@@ -26,6 +27,8 @@ export default function SongsList(){
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
 
+    var [ prompt, setPrompt ] = useState([])
+
     useEffect(()=>{
         const handleClickOutside = (event) => {
             if(popUpActionsRef.current && !popUpActionsRef.current.contains(event.target)){
@@ -43,8 +46,17 @@ export default function SongsList(){
     const fetchSongs = async (value)=>{
         const response = await searchSongs(value)
         let _song = response.data?.filter(s=>s.published===true)
-        setResults(_song)
+        setSongs(_song)
     }
+
+    useEffect(()=>{
+        if(prompt === ""){
+            setResults([])
+        }
+        if(prompt && prompt.trim() !== ""){
+            fetchSongs(prompt)
+        }
+    },[fetchSongs, prompt])
 
     const toggleActionsPopUp = (songId) => {
         setActivePopUp((prev)=>(prev === songId ? null : songId))
