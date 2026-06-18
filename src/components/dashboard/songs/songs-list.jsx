@@ -103,6 +103,14 @@ export default function SongsList(){
         .finally(()=>setfetchSongsLoading(false))
     }, [])
 
+    const songPublication = async (song) => {
+        try{
+            let response = await api.patch('/song/update', { song: song._id, update: song?.published ? { published: false } : { published: true }})
+        }catch{
+
+        }
+    }
+
     return(
         <>
             <section className="dashboard-songs-container">
