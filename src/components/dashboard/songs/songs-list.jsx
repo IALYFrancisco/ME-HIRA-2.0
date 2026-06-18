@@ -110,8 +110,9 @@ export default function SongsList(){
                 toast.info(`La chanson intitulée ${song?.title} est actuellement disponible en publique.`)
                 api.get('/song/get')
                     .then((response) => {
-                        
+                        setSongs(response.data)
                     })
+                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des chansons."))
             }
         }catch{
             toast.error("Erreur de mise à jour du chanson, veuillez réessayer plus tard.")
