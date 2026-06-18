@@ -51,7 +51,7 @@ export default function SongsList(){
 
     useEffect(()=>{
         if(prompt === ""){
-            setResults([])
+            return
         }
         if(prompt && prompt.trim() !== ""){
             fetchSongs(prompt)
