@@ -132,7 +132,7 @@ export default function SongsList(){
                         </div>
                         <div className="actions-container">
                             <div className="filters-container">
-                                <input type="text" name="" id="" placeholder="Rechercher des chansons ..." />
+                                <input type="text" name="" id="" placeholder="Rechercher des chansons ..." { ...register("prompt") } />
                             </div>
                             <span>
                                 <button onClick={openAddSongModal}>
