@@ -38,6 +38,18 @@ export default function SongsList(){
         }
     }, [])
 
+    const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
+
+    const fetchSongs = async (value)=>{
+        try {
+            const response = await searchSongs(value)
+            let _song = response.data?.filter(s=>s.published===true)
+            setResults(_song)
+        }catch{
+            
+        }
+    }
+
     const toggleActionsPopUp = (songId) => {
         setActivePopUp((prev)=>(prev === songId ? null : songId))
     }
