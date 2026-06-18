@@ -27,7 +27,7 @@ export default function SongsList(){
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
 
-    var [ prompt, setPrompt ] = useState([])
+    var [ prompt, setPrompt ] = useState("")
 
     useEffect(()=>{
         const handleClickOutside = (event) => {
