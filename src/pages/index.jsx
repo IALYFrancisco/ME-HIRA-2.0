@@ -51,7 +51,7 @@ export default function Home() {
                             <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
                           }
                           <span className="duration">
-                            01:30:15
+                            01 : 30 : 15
                           </span>
                         </div>
                         <div className="song-info">

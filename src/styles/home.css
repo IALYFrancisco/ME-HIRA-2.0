@@ -43,10 +43,14 @@
 }
 
 .songs-container .poster-container .duration {
-    color: red;
+    color: white;
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 5px;
+    bottom: 5px;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.504);
+    padding: 3px 6px;
+    border-radius: 5px;
 }
 
 .songs-container .poster-container video {
