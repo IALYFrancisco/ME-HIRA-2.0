@@ -78,7 +78,7 @@ export default function Navbar (){
                         </div>
                         <button>
                             {/* <Image src="/images/search.png" priority alt="recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="search-icone" /> */}
-                            <Image src="/images/spinner (2).svg" priority alt="recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
+                            <Image src="/images/spinner.svg" priority alt="recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
                         </button>
                     </span>
                     <div className="filter-type-container">
