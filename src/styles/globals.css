@@ -77,6 +77,11 @@ nav ul li .search-icone {
   height: auto;
 }
 
+nav ul li .loader-search-icone {
+  width: 19px;
+  height: auto;
+}
+
 nav ul li .filter {
   background-color: var(--gray);
   width: 35px;
