@@ -51,6 +51,10 @@ export default function Navbar (){
         setFilterTypePopUpIsActive(false)
     }
 
+    const handleFileTypeChange = (event) => {
+        setFileType(e.target.value)
+    }
+
     return(
         <nav>
             <ul>
