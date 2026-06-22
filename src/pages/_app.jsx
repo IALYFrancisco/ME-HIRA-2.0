@@ -22,6 +22,8 @@ export default function App({ Component, pageProps }) {
         <meta property="og:site_name" content="Me-Hira"/>
         <meta property="og:locale" content="fr_MG"/>
         <meta property="og:type" content="website" key="og:type" />
+        <meta property="og:image" content="/images/me-hira-share-image.png" key="og:image" />
+        <meta name="twitter:image" content="/images/me-hira-share-image.png" key="twitter:image" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Toaster className="toast" position='top-center' richColors/>
