@@ -133,6 +133,36 @@ export default function SongsList(){
         }
     }
 
+    const handleFileChange = (e) => {
+
+        const file = e.target.files[0]
+
+        if(!file){
+            return
+        }
+
+        const allowedTypes = [
+            "audio/mpeg",
+            "audio/mp3",
+            "audio/wav",
+            "audio/ogg",
+            "audio/x-wav",
+            "video/mp4",
+            "video/webm",
+            "video/ogg",
+            "video/x-msvideo",
+            "video/quicktime"
+        ]
+
+        if(!allowedTypes.includes(file.type)){
+            toast.error("Seuls les fichiers audio et vidéo sont autorisés.")
+            e.target.value = ""
+            return
+        }
+
+        setLocalFile(file)
+    }
+
     return(
         <>
             <section className="dashboard-songs-container">
