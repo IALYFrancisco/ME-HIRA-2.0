@@ -92,7 +92,7 @@ export default function Navbar (){
                         </button>
                         <div className={ filterTypePopUpIsActive ? "filter-type-popup active" : "filter-type-popup" }>
                             <label htmlFor="fileType">Type de fichier :</label>
-                            <select name="fileType" id="fileType">
+                            <select name="fileType" id="fileType" onChange={handleFileTypeChange}>
                                 <option value="">Tout type de fichier</option>
                                 <option value="video">Vidéos</option>
                                 <option value="audio">Audios</option>
