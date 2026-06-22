@@ -263,7 +263,7 @@ export default function SongsList(){
                         <div className="form-element">
                             <label htmlFor="hostedFile">Fichier :</label>
                             <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour un fichier déjà mis en ligne" {...register('hostedFile', {required:!localFileIsDefined})} required />
-                            <input disabled={hostedFileIsDefined} type="file" onChange={(e)=>setLocalFile(e.target.files[0])} required />
+                            <input disabled={hostedFileIsDefined} type="file" accept="audio/*,video/*" onChange={(e)=>setLocalFile(e.target.files[0])} required />
                         </div>
                         <div className="form-element">
                             <label htmlFor="fileType">Type du fichier :</label>
