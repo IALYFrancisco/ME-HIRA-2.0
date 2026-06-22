@@ -16,7 +16,9 @@ export default function Navbar (){
     var [ filterTypePopUpIsActive, setFilterTypePopUpIsActive] = useState(false)
     var [ fileType, setFileType ] = useState("")
 
-    const searchSongs = async (p) => api.get(`/song/get?prompt=${p}&fileType=${fileType}`)
+    const searchSongs = async (p) => api.get(
+        fileType ? `/song/get?prompt=${p}&fileType=${fileType}` : `/song/get?prompt=${p}`
+    )
 
     const fetchSongs = async (value)=>{
         try {
