@@ -133,6 +133,36 @@ export default function SongsList(){
         }
     }
 
+    const handleFileChange = (e) => {
+
+        const file = e.target.files[0]
+
+        if(!file){
+            return
+        }
+
+        const allowedTypes = [
+            "audio/mpeg",
+            "audio/mp3",
+            "audio/wav",
+            "audio/ogg",
+            "audio/x-wav",
+            "video/mp4",
+            "video/webm",
+            "video/ogg",
+            "video/x-msvideo",
+            "video/quicktime"
+        ]
+
+        if(!allowedTypes.includes(file.type)){
+            toast.error("Seuls les fichiers audio et vidéo sont autorisés.")
+            e.target.value = ""
+            return
+        }
+
+        setLocalFile(file)
+    }
+
     return(
         <>
             <section className="dashboard-songs-container">
@@ -233,7 +263,7 @@ export default function SongsList(){
                         <div className="form-element">
                             <label htmlFor="hostedFile">Fichier :</label>
                             <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour un fichier déjà mis en ligne" {...register('hostedFile', {required:!localFileIsDefined})} required />
-                            <input disabled={hostedFileIsDefined} type="file" onChange={(e)=>setLocalFile(e.target.files[0])} required />
+                            <input disabled={hostedFileIsDefined} type="file" accept="audio/*,video/*" onChange={handleFileChange} required />
                         </div>
                         <div className="form-element">
                             <label htmlFor="fileType">Type du fichier :</label>
