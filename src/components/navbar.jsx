@@ -14,8 +14,11 @@ export default function Navbar (){
     var [results, setResults] = useState([])
     var [searchIsLoading, setSearchIsLoading] = useState(false)
     var [ filterTypePopUpIsActive, setFilterTypePopUpIsActive] = useState(false)
+    var [ fileType, setFileType ] = useState("")
 
-    const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
+    const searchSongs = async (p) => api.get(
+        fileType ? `/song/get?prompt=${p}&fileType=${fileType}` : `/song/get?prompt=${p}`
+    )
 
     const fetchSongs = async (value)=>{
         try {
@@ -48,6 +51,10 @@ export default function Navbar (){
 
     const closeFilterTypePopUp = () => {
         setFilterTypePopUpIsActive(false)
+    }
+
+    const handleFileTypeChange = (event) => {
+        setFileType(e.target.value)
     }
 
     return(
@@ -87,7 +94,7 @@ export default function Navbar (){
                         </button>
                         <div className={ filterTypePopUpIsActive ? "filter-type-popup active" : "filter-type-popup" }>
                             <label htmlFor="fileType">Type de fichier :</label>
-                            <select name="fileType" id="fileType">
+                            <select name="fileType" id="fileType" onChange={handleFileTypeChange}>
                                 <option value="">Tout type de fichier</option>
                                 <option value="video">Vidéos</option>
                                 <option value="audio">Audios</option>
