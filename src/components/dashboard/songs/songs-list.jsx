@@ -257,7 +257,7 @@ export default function SongsList(){
                             </div>
                             <div className="form-element">
                                 <label htmlFor="album">Album :</label>
-                                <input type="text" placeholder="l'album auquel appartien la chanson" id="album" {...register('album',{required:true})} required/>
+                                <input type="text" placeholder="l'album auquel appartient la chanson" id="album" {...register('album',{required:true})} required/>
                             </div>
                     </fieldset>
                     <fieldset>
