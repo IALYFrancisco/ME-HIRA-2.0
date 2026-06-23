@@ -216,12 +216,12 @@ export default function SongsList(){
                                             <span className={song.published ? "song-badge yes" : "song-badge no"}>{song.published ? "Oui" : "Non"}</span>
                                         </td>
                                         <td className="actions">
-                                            <ul className={ activePopUp === song._id ? "song-actions active" : "song-actions" }>
+                                            <ul ref={ activePopUp === song._id ? popUpActionsRef : null } className={ activePopUp === song._id ? "song-actions active" : "song-actions" }>
                                                 <li onClick={()=>songPublication(song)}>{ song.published ? "Dépublier" : "Publier" }</li>
                                                 <li>Modifier</li>
                                                 <li>Supprimer</li>
                                             </ul>
-                                            <Image onClick={()=>toggleActionsPopUp(song._id)} ref={popUpActionsRef} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
+                                            <Image onClick={()=>toggleActionsPopUp(song._id)} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
                                         </td>
                                     </tr>
                                 ))}
