@@ -36,10 +36,10 @@ export default function Navbar (){
         if(prompt === ""){
             setResults([])
         }
-        if(prompt && prompt.trim() !== ""){
+        if((prompt && prompt.trim() !== "") || (fileType && prompt.trim() !== "")){
             fetchSongs(prompt)
         }
-    },[prompt])
+    },[prompt, fileType])
 
     const toggleFilterTypePopUp = () => {
         filterTypePopUpIsActive ? setFilterTypePopUpIsActive(false) : setFilterTypePopUpIsActive(true)
