@@ -54,7 +54,7 @@ export default function Navbar (){
     }
 
     const handleFileTypeChange = (event) => {
-        setFileType(e.target.value)
+        setFileType(event.target.value)
     }
 
     return(
