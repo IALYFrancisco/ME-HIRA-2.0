@@ -144,7 +144,8 @@ export default function SongsList(){
         }catch{
             toast.error("Erreur de mise à jour du chanson, veuillez réessayer plus tard.")
         }finally{
-
+            publicationSongModalRef.current.classList.remove('active')
+            addSongOverlayRef.current.classList.remove('active')
         }
     }
 
