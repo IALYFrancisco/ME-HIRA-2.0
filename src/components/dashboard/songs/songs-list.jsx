@@ -122,16 +122,18 @@ export default function SongsList(){
         .finally(()=>setfetchSongsLoading(false))
     }, [])
 
-    const openSongPublicationModal = ()=>{
+    const openSongPublicationModal = (song)=>{
         addSongOverlayRef.current.classList.add('active')
         publicationSongModalRef.current.classList.add('active')
-        publicationSongModalRef.current.
+        if(song.published){
+            setCurrentSongIsPublished(true)
+        }
     }
 
     const songPublication = async (song) => {
         try{
             
-            openSongPublicationModal()
+            openSongPublicationModal(song)
 
             // let response = await api.patch('/song/update', { song: song._id, update: song?.published ? { published: false } : { published: true }})
             // if(response.status === 200){
@@ -298,7 +300,7 @@ export default function SongsList(){
                 </div>
             </form>
             <div ref={publicationSongModalRef} className="publication-song-modal">
-                <h3>Publication d'une chanson.</h3>
+                <h3>{ `${ currentSongIsPublished ? 'Dépublication' : 'Publication'} d'une chanson.` }</h3>
                 <p>Êtes-vous sure</p>
             </div>
         </>
