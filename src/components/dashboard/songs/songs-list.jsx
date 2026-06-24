@@ -249,7 +249,7 @@ export default function SongsList(){
                                             <ul ref={ activePopUp === song._id ? popUpActionsRef : null } className={ activePopUp === song._id ? "song-actions active" : "song-actions" }>
                                                 <li onClick={()=>openSongPublicationModal(song)}>{ song.published ? "Dépublier" : "Publier" }</li>
                                                 <li>Modifier</li>
-                                                <li>Supprimer</li>
+                                                <li onClick={()=>openSongRemoveModal(song)}>Supprimer</li>
                                             </ul>
                                             <Image onClick={()=>toggleActionsPopUp(song._id)} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
                                         </td>
