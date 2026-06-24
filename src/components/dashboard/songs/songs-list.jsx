@@ -344,7 +344,7 @@ export default function SongsList(){
                         " ?"
                     </p>
                 }
-                <div className="publication-song-choices">
+                <div className="remove-song-choices">
                     <span onClick={handleClickNoButton}><button disabled={songActionIsLoading} className="no">Non</button></span>
                     <span>
                         <button disabled={songActionIsLoading} onClick={()=>songPublication(songToDoAction)} className="yes">

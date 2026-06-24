@@ -481,14 +481,14 @@
     margin-bottom: 20px;
 }
 
-.remove-song-modal .publication-song-choices {
+.remove-song-modal .remove-song-choices {
     display: flex;
     align-items: center;
     column-gap: 10px;
     margin-top: 20px;
 }
 
-.remove-song-modal .publication-song-choices button {
+.remove-song-modal .remove-song-choices button {
     transition: all .10s ease-in-out;
     padding: 10px 15px;
     border: none;
@@ -500,22 +500,22 @@
     height: 34px;
 }
 
-.remove-song-modal .publication-song-choices button.yes:disabled,
-.remove-song-modal .publication-song-choices button.no:disabled {
+.remove-song-modal .remove-song-choices button.yes:disabled,
+.remove-song-modal .remove-song-choices button.no:disabled {
     background-color: var(--gray);
     color: var(--black);
 }
 
-.remove-song-modal .publication-song-choices button.yes {
+.remove-song-modal .remove-song-choices button.yes {
     background-color: var(--orange-base);
 }
 
-.remove-song-modal .publication-song-choices button.yes img {
+.remove-song-modal .remove-song-choices button.yes img {
     width: 19px;
     height: auto;
 }
 
-.remove-song-modal .publication-song-choices button.no {
+.remove-song-modal .remove-song-choices button.no {
     background-color: var(--black);
     color: white;
 }
