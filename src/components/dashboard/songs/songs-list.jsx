@@ -29,6 +29,7 @@ export default function SongsList(){
     const publicationSongModalRef = useRef(null)
     const [ songPublicationChoice, setSongPublicationChoice ] = useState(false)
     const [ currentSongIsPublished, setCurrentSongIsPublished ] = useState(false)
+    const [ songToDoAction, setSongToDoAction ] = useState(null)
 
     var [ prompt, setPrompt ] = useState("")
 
@@ -159,6 +160,10 @@ export default function SongsList(){
         addSongOverlayRef.current.classList.remove('active')
     }
 
+    const handleClickYesButton = () => {
+        setSongPublicationChoice(true)
+    }
+
     const handleFileChange = (e) => {
 
         const file = e.target.files[0]
@@ -241,7 +246,7 @@ export default function SongsList(){
                                         </td>
                                         <td className="actions">
                                             <ul ref={ activePopUp === song._id ? popUpActionsRef : null } className={ activePopUp === song._id ? "song-actions active" : "song-actions" }>
-                                                <li onClick={openSongPublicationModal(song)}>{ song.published ? "Dépublier" : "Publier" }</li>
+                                                <li onClick={()=>openSongPublicationModal(song)}>{ song.published ? "Dépublier" : "Publier" }</li>
                                                 <li>Modifier</li>
                                                 <li>Supprimer</li>
                                             </ul>
