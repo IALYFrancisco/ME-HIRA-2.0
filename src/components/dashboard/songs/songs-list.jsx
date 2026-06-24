@@ -308,7 +308,7 @@ export default function SongsList(){
             </form>
             <div ref={publicationSongModalRef} className="publication-song-modal">
                 <h3>{ `${ currentSongIsPublished ? 'Dépublication' : 'Publication'} d'une chanson.` }</h3>
-                <p>Êtes-vous sure</p>
+                <p>{ `Êtes-vous sûr(e) de vouloir ${ currentSongIsPublished ? 'dépublier' : 'publier'} cette chanson ?` }</p>
             </div>
         </>
     )
