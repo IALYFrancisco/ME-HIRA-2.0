@@ -340,14 +340,14 @@ export default function SongsList(){
                 </div>
             </div>
             <div ref={removeSongModalRef} className="remove-song-modal">
-                <h3>"Suppression d'une chanson."</h3>
+                <h3>Suppression d'une chanson.</h3>
                 { songToDoAction &&
                     <p>
-                        "Êtes-vous sûr(e) de vouloir supprimer la chanson intitulée "
-                        <strong>{songToDoAction.title}</strong>
-                        " chantée par "
-                        <strong>{FormatSongSinger(songToDoAction.singer)}</strong>
-                        " ?"
+                        Êtes-vous sûr(e) de vouloir supprimer la chanson intitulée
+                        <strong> {songToDoAction.title} </strong>
+                        chantée par
+                        <strong> {FormatSongSinger(songToDoAction.singer)} </strong>
+                        ?
                     </p>
                 }
                 <div className="remove-song-choices">
