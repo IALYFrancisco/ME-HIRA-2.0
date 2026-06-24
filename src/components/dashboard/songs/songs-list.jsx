@@ -427,7 +427,7 @@ export default function SongsList(){
                 </section>
                 <div className="form-element">
                     <span className={addSongIsLoading?"border disabled":"border"}>
-                        <button disabled={addSongIsLoading}>
+                        <button disabled={addSongIsLoading || (updatingSongFormIsActive && !isModified)}>
                             {addSongIsLoading ? <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> : "Soumettre"}
                         </button>
                     </span>
