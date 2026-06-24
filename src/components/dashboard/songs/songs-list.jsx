@@ -231,9 +231,30 @@ export default function SongsList(){
         }
     }
 
-    const updateSong = async (song) => {
+    const updateSong = async (data) => {
         try{
-            let response = await api.patch('/song/update', { song: song._id, update: ""})
+
+            const update = new FormData()
+            if(songToDoAction.title !== data.title){
+                update.append('title', data.title)
+            }
+            if(songToDoAction.author !== data.author){
+                update.append('author', data.author)
+            }
+            if(songToDoAction.album !== data.album){
+                update.append('album', data.album)
+            }
+            if(songToDoAction.composer !== data.composer){
+                update.append('composer', data.composer)
+            }
+            if(songToDoAction.fileType !== data.fileType){
+                update.append('fileType', data.fileType)
+            }
+            if(FormatSongSinger(songToDoAction.singer) !== FormatSongSinger(data.singer)){
+                update.append('singer', data.singer)
+            }
+
+            let response = await api.patch('/song/update', { song: songToDoAction._id, update: ""})
             if(response.status === 200){
                 toast.info(`La chanson intitulée ${song?.title} a été bien modifiée.`)
                 api.get('/song/get')
