@@ -200,6 +200,27 @@ export default function SongsList(){
         removeSongModalRef.current.classList.add('active')
     }
 
+    const removeSong = async (song) => {
+        try{
+            setSongActionIsLoading(true)
+            let response = await api.patch('/song/update', { song: song._id, update: song?.published ? { published: false } : { published: true }})
+            if(response.status === 200){
+                toast.info(`La chanson intitulée ${song?.title} est actuellement ${song?.published ? 'indisponible' : 'disponible'} en publique.`)
+                api.get('/song/get')
+                    .then((response) => {
+                        setSongs(response.data)
+                    })
+                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des chansons."))
+            }
+        }catch{
+            toast.error("Erreur de mise à jour du chanson, veuillez réessayer plus tard.")
+        }finally{
+            setSongActionIsLoading(false)
+            publicationSongModalRef.current.classList.remove('active')
+            addSongOverlayRef.current.classList.remove('active')
+        }
+    }
+
     return(
         <>
             <section className="dashboard-songs-container">
