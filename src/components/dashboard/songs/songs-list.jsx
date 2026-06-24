@@ -241,7 +241,7 @@ export default function SongsList(){
                                         </td>
                                         <td className="actions">
                                             <ul ref={ activePopUp === song._id ? popUpActionsRef : null } className={ activePopUp === song._id ? "song-actions active" : "song-actions" }>
-                                                <li>{ song.published ? "Dépublier" : "Publier" }</li>
+                                                <li onClick={openSongPublicationModal(song)}>{ song.published ? "Dépublier" : "Publier" }</li>
                                                 <li>Modifier</li>
                                                 <li>Supprimer</li>
                                             </ul>
