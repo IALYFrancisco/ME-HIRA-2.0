@@ -155,7 +155,12 @@ export default function SongsList(){
     }
 
     const handleClickNoButton = () => {
-        publicationSongModalRef.current.classList.remove('active')
+        if(publicationSongModalRef.current){
+            publicationSongModalRef.current.classList.remove('active')
+        }
+        if(removeSongModalRef.current){
+            removeSongModalRef.current.classList.remove('active')
+        }
         addSongOverlayRef.current.classList.remove('active')
     }
 
