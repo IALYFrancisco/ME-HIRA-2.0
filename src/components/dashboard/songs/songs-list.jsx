@@ -98,6 +98,9 @@ export default function SongsList(){
     const closeAddSongModal = ()=>{
         addSongOverlayRef.current.classList.remove('active')
         addSongFormRef.current.classList.remove('active')
+        if(publicationSongModalRef.current){
+            closeSongPublicationModal()
+        }
     }
 
     useEffect(()=>{
@@ -128,6 +131,10 @@ export default function SongsList(){
         if(song.published){
             setCurrentSongIsPublished(true)
         }
+    }
+
+    const closeSongPublicationModal = ()=>{
+        publicationSongModalRef.current.classList.remove('active')
     }
 
     const songPublication = async (song) => {
