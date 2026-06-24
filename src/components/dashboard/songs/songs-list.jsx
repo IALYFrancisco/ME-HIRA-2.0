@@ -28,6 +28,7 @@ export default function SongsList(){
     const popUpActionsRef = useRef(null)
     const publicationSongModalRef = useRef(null)
     const [ songPublicationChoice, setSongPublicationChoice ] = useState(false)
+    const [ currentSongIsPublished, setCurrentSongIsPublished ] = useState(false)
 
     var [ prompt, setPrompt ] = useState("")
 
@@ -124,6 +125,7 @@ export default function SongsList(){
     const openSongPublicationModal = ()=>{
         addSongOverlayRef.current.classList.add('active')
         publicationSongModalRef.current.classList.add('active')
+        publicationSongModalRef.current.
     }
 
     const songPublication = async (song) => {
