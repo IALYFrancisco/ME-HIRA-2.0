@@ -316,7 +316,7 @@ export default function SongsList(){
                 <h3>{ `${ currentSongIsPublished ? 'Dépublication' : 'Publication'} d'une chanson.` }</h3>
                 <p>{ `Êtes-vous sûr(e) de vouloir ${ currentSongIsPublished ? 'dépublier' : 'publier'} cette chanson ?` }</p>
                 <div className="publication-song-choices">
-                    <span><button className="no">Non</button></span>
+                    <span onClick={handleClickNoButton}><button className="no">Non</button></span>
                     <span><button className="yes">Oui</button></span>
                 </div>
             </div>
