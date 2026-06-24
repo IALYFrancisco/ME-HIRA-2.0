@@ -29,7 +29,7 @@ export default function SongsList(){
     const publicationSongModalRef = useRef(null)
     const [ songToDoAction, setSongToDoAction ] = useState(null)
     const [ songActionIsLoading, setSongActionIsLoading ] = useState(false)
-    const [ updatingSongFormIsActive, updatingSongFormIsActive ] = useState(false)
+    const [ updatingSongFormIsActive, setUpdatingSongFormIsActive ] = useState(false)
 
     const removeSongModalRef = useRef(null)
 
