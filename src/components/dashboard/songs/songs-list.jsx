@@ -203,7 +203,7 @@ export default function SongsList(){
     const removeSong = async (song) => {
         try{
             setSongActionIsLoading(true)
-            let response = await api.delete('/song/remove', { song: song._id })
+            let response = await api.delete('/song/remove', { data: { song: song._id } })
             if(response.status === 200){
                 toast.info(`La chanson intitulée ${song?.title} a été supprimée.`)
                 api.get('/song/get')
