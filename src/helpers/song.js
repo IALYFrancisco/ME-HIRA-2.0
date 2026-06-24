@@ -1,5 +1,4 @@
 export function FormatSongSinger(array){
-    console.log(array)
     return array.join(", ")
 }
 
