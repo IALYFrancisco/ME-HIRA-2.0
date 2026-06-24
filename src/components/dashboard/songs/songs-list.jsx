@@ -119,6 +119,8 @@ export default function SongsList(){
         .finally(()=>setfetchSongsLoading(false))
     }, [])
 
+    const openSongPublicationModal = ()=>{}
+
     const songPublication = async (song) => {
         try{
             let response = await api.patch('/song/update', { song: song._id, update: song?.published ? { published: false } : { published: true }})
