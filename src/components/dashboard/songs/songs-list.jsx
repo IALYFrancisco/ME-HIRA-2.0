@@ -98,7 +98,7 @@ export default function SongsList(){
         addSongOverlayRef.current.classList.remove('active')
         addSongFormRef.current.classList.remove('active')
         if(publicationSongModalRef.current){
-            closeSongPublicationModal()
+            publicationSongModalRef.current.classList.remove('active')
         }
     }
 
@@ -130,10 +130,6 @@ export default function SongsList(){
         publicationSongModalRef.current.classList.add('active')
     }
 
-    const closeSongPublicationModal = ()=>{
-        publicationSongModalRef.current.classList.remove('active')
-    }
-
     const songPublication = async (song) => {
         try{
             let response = await api.patch('/song/update', { song: song._id, update: song?.published ? { published: false } : { published: true }})
@@ -147,11 +143,13 @@ export default function SongsList(){
             }
         }catch{
             toast.error("Erreur de mise à jour du chanson, veuillez réessayer plus tard.")
+        }finally{
+
         }
     }
 
     const handleClickNoButton = () => {
-        closeSongPublicationModal()
+        publicationSongModalRef.current.classList.remove('active')
         addSongOverlayRef.current.classList.remove('active')
     }
 
@@ -318,7 +316,7 @@ export default function SongsList(){
                 }
                 <div className="publication-song-choices">
                     <span onClick={handleClickNoButton}><button className="no">Non</button></span>
-                    <span><button className="yes">Oui</button></span>
+                    <span><button onClick={()=>songPublication(songToDoAction)} className="yes">Oui</button></span>
                 </div>
             </div>
         </>
