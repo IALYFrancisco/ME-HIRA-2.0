@@ -320,6 +320,10 @@ export default function SongsList(){
                     <span>
                         <button onClick={()=>songPublication(songToDoAction)} className="yes">
                             Oui
+                            {/* {  */}
+                                {/* // searchIsLoading && */}
+                                <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
+                            {/* } */}
                         </button>
                     </span>
                 </div>

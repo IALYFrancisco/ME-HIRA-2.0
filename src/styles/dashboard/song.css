@@ -410,6 +410,11 @@
     background-color: var(--orange-base);
 }
 
+.publication-song-modal .publication-song-choices button.yes img {
+    width: 19px;
+    height: auto;
+}
+
 .publication-song-modal .publication-song-choices button.no {
     background-color: var(--black);
     color: white;
