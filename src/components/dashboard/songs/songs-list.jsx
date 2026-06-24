@@ -243,6 +243,8 @@ export default function SongsList(){
         }
     }
 
+    const handleUpdateSongActionClick = () => {}
+
     return(
         <>
             <section className="dashboard-songs-container">
@@ -296,7 +298,7 @@ export default function SongsList(){
                                         <td className="actions">
                                             <ul ref={ activePopUp === song._id ? popUpActionsRef : null } className={ activePopUp === song._id ? "song-actions active" : "song-actions" }>
                                                 <li onClick={()=>openSongPublicationModal(song)}>{ song.published ? "Dépublier" : "Publier" }</li>
-                                                <li onClick={()=>updateSong(song)}>Modifier</li>
+                                                <li onClick={()=>openAddSongModal(song)}>Modifier</li>
                                                 <li onClick={()=>openSongRemoveModal(song)}>Supprimer</li>
                                             </ul>
                                             <Image onClick={()=>toggleActionsPopUp(song._id)} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
