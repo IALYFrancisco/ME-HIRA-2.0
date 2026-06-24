@@ -409,3 +409,33 @@
 .publication-song-modal .publication-song-choices button.yes {
     background-color: var(--orange-base);
 }
+
+.publication-song-modal .publication-song-choices button.no {
+    background-color: var(--black);
+    color: white;
+}
+
+.add-song-modal span:active {
+  transition: all .10s ease-in-out;
+  transform: scale(0.85);
+}
+
+.publication-song-choices span:has(button) {
+    display: block;
+    padding: 2px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 12px;
+}
+
+.publication-song-choices span:has(button.yes) {
+    border: 1px solid var(--orange-base);
+}
+
+.publication-song-choices span:has(button.no) {
+    border: 1px solid var(--black);
+}
+
+.add-song-modal span:has(button:disabled){
+    border-color: var(--gray)
+}
