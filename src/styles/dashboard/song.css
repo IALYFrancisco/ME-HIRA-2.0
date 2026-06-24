@@ -479,6 +479,7 @@
 
 .remove-song-modal h3 {
     margin-bottom: 20px;
+    color: red;
 }
 
 .remove-song-modal .remove-song-choices {
@@ -507,7 +508,8 @@
 }
 
 .remove-song-modal .remove-song-choices button.yes {
-    background-color: var(--orange-base);
+    background-color: red;
+    color: white;
 }
 
 .remove-song-modal .remove-song-choices button.yes img {
@@ -534,7 +536,7 @@
 }
 
 .remove-song-choices span:has(button.yes) {
-    border: 1px solid var(--orange-base);
+    border: 1px solid red;
 }
 
 .remove-song-choices span:has(button.no) {
