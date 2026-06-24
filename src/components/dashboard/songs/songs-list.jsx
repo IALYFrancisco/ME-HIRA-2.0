@@ -156,6 +156,12 @@ export default function SongsList(){
         }
     }
 
+    const handleClickNoButton = () => {
+        setSongPublicationChoice(false)
+        closeSongPublicationModal()
+        addSongOverlayRef.current.classList.remove('active')
+    }
+
     const handleFileChange = (e) => {
 
         const file = e.target.files[0]
