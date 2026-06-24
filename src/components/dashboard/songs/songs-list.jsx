@@ -247,12 +247,14 @@ export default function SongsList(){
         }finally{
             setSongActionIsLoading(false)
             closeAddSongModal()
+            setSongToDoAction(null)
         }
     }
 
     const handleUpdateSongActionClick = (song) => {
         setUpdatingSongFormIsActive(true)
         openAddSongModal()
+        setSongToDoAction(song)
         reset({
             title: song.title,
             singer: FormatSongSinger(song.singer),
