@@ -265,9 +265,9 @@ export default function SongsList(){
                 }
             }
 
-            let response = await api.patch('/song/update', { song: songToDoAction._id, update: ""})
+            let response = await api.patch('/song/update', { song: songToDoAction._id, update: update})
             if(response.status === 200){
-                toast.info(`La chanson intitulée ${song?.title} a été bien modifiée.`)
+                toast.info(`La chanson intitulée ${songToDoAction?.title} a été bien modifiée.`)
                 api.get('/song/get')
                     .then((response) => {
                         setSongs(response.data)
