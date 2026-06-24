@@ -113,6 +113,7 @@ export default function SongsList(){
         if(publicationSongModalRef.current){
             publicationSongModalRef.current.classList.remove('active')
         }
+        setUpdatingSongFormIsActive(false)
     }
 
     useEffect(()=>{
