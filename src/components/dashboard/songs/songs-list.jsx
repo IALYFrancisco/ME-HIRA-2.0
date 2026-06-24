@@ -312,7 +312,7 @@ export default function SongsList(){
                         <strong>{songToDoAction.title}</strong>
                         {' chantée par '}
                         <strong>{FormatSongSinger(songToDoAction.singer)}</strong>
-                        {'?'}
+                        {' ?'}
                     </p>
                 }
                 <div className="publication-song-choices">
