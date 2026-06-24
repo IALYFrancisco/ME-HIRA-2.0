@@ -253,11 +253,16 @@ export default function SongsList(){
             if(FormatSongSinger(songToDoAction.singer) !== FormatSongSinger(data.singer)){
                 update.append('singer', data.singer)
             }
+            let localFileUrl = (
+                songToDoAction.fileUrl.startsWith('https://') ||
+                songToDoAction.fileUrl.startsWith('http://')
+            ) ? songToDoAction.fileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+songToDoAction.fileUrl
+
             if(
-                (songToDoAction.fileUrl !== data.hostedFile)
+                (localFileUrl !== data.hostedFile)
                 ||(localFile)
             ){    
-                if(songToDoAction.fileUrl !== data.hostedFile){
+                if(localFileUrl !== data.hostedFile){
                     update.append('fileUrl', data.hostedFile)
                 }
                 if(localFile){
