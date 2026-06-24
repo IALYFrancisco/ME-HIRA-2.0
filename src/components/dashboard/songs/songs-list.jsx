@@ -335,7 +335,12 @@ export default function SongsList(){
                 </section>
             </section>
             <div className="add-song-overlay" ref={addSongOverlayRef} onClick={closeAddSongModal}></div>
-            <form onSubmit={handleSubmit(addSong)} className="add-song-modal" ref={addSongFormRef}>
+            <form onSubmit={
+                handleSubmit(
+                    updatingSongFormIsActive ? updateSong : addSong
+                )}
+                className="add-song-modal" ref={addSongFormRef}
+            >
                 <span className="close-modal" onClick={ ()=> {closeAddSongModal(); reset()}}>
                     <Image src="/images/close.png" width={16} height={16} priority alt="fermer modal d'ajout de chanson"/>
                 </span>
