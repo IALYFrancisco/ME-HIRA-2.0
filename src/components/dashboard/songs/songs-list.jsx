@@ -155,9 +155,6 @@ export default function SongsList(){
         addSongOverlayRef.current.classList.remove('active')
     }
 
-    const handleClickYesButton = () => {
-    }
-
     const handleFileChange = (e) => {
 
         const file = e.target.files[0]
