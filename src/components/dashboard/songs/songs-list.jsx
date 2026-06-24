@@ -353,15 +353,15 @@ export default function SongsList(){
                             </div>
                             <div className="form-element">
                                 <label htmlFor="author">Auteur :</label>
-                                <input type="text" placeholder="auteur du chanson" id="author" { ...register('author', {required: true}) } required/>
+                                <input type="text" placeholder="auteur du chanson" id="author" { ...register('author') }/>
                             </div>
                             <div className="form-element">
                                 <label htmlFor="composer">Compositeur :</label>
-                                <input type="text" placeholder="compositeur du chanson" id="composer" {...register('composer', {required:true})} required/>
+                                <input type="text" placeholder="compositeur du chanson" id="composer" {...register('composer')} />
                             </div>
                             <div className="form-element">
                                 <label htmlFor="album">Album :</label>
-                                <input type="text" placeholder="l'album auquel appartient la chanson" id="album" {...register('album',{required:true})} required/>
+                                <input type="text" placeholder="l'album auquel appartient la chanson" id="album" {...register('album')} />
                             </div>
                     </fieldset>
                     <fieldset>
