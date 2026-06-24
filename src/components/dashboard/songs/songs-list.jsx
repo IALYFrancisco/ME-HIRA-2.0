@@ -222,6 +222,27 @@ export default function SongsList(){
         }
     }
 
+    const updateSong = async (song) => {
+        try{
+            setSongActionIsLoading(true)
+            let response = await api.delete('/song/remove', { data: { song: song._id } })
+            if(response.status === 200){
+                toast.info(`La chanson intitulée ${song?.title} a été supprimée.`)
+                api.get('/song/get')
+                    .then((response) => {
+                        setSongs(response.data)
+                    })
+                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des chansons."))
+            }
+        }catch{
+            toast.error("Erreur de suppression du chanson, veuillez réessayer plus tard.")
+        }finally{
+            setSongActionIsLoading(false)
+            removeSongModalRef.current.classList.remove('active')
+            addSongOverlayRef.current.classList.remove('active')
+        }
+    }
+
     return(
         <>
             <section className="dashboard-songs-container">
