@@ -333,15 +333,15 @@ export default function SongsList(){
                     </span>
                 </div>
             </div>
-            <div ref={publicationSongModalRef} className="publication-song-modal">
-                <h3>{ `${ songToDoAction?.published ? 'Dépublication' : 'Publication'} d'une chanson.` }</h3>
+            <div ref={removeSongModalRef} className="remove-song-modal">
+                <h3>"Suppression d'une chanson."</h3>
                 { songToDoAction &&
                     <p>
-                        {`Êtes-vous sûr(e) de vouloir ${ songToDoAction.published ? 'dépublier' : 'publier'} la chanson intitulée `}
+                        "Êtes-vous sûr(e) de vouloir supprimer la chanson intitulée "
                         <strong>{songToDoAction.title}</strong>
-                        {' chantée par '}
+                        " chantée par "
                         <strong>{FormatSongSinger(songToDoAction.singer)}</strong>
-                        {' ?'}
+                        " ?"
                     </p>
                 }
                 <div className="publication-song-choices">
