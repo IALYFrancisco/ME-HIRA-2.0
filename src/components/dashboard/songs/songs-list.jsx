@@ -222,7 +222,7 @@ export default function SongsList(){
         }
     }
 
-    const songPublication = async (song) => {
+    const updateSong = async (song) => {
         try{
             setSongActionIsLoading(true)
             let response = await api.patch('/song/update', { song: song._id, update: song?.published ? { published: false } : { published: true }})
