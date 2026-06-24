@@ -189,7 +189,8 @@ export default function SongsList(){
         setLocalFile(file)
     }
 
-    const openRemoveSongModal = ()=>{
+    const openSongRemoveModal = (song)=>{
+        setSongToDoAction(song)
         addSongOverlayRef.current.classList.add('active')
         removeSongModalRef.current.classList.add('active')
     }
