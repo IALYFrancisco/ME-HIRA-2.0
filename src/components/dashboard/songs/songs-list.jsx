@@ -28,7 +28,6 @@ export default function SongsList(){
     const popUpActionsRef = useRef(null)
     const publicationSongModalRef = useRef(null)
     const [ songPublicationChoice, setSongPublicationChoice ] = useState(false)
-    const [ currentSongIsPublished, setCurrentSongIsPublished ] = useState(false)
     const [ songToDoAction, setSongToDoAction ] = useState(null)
 
     var [ prompt, setPrompt ] = useState("")
@@ -129,9 +128,6 @@ export default function SongsList(){
     const openSongPublicationModal = (song)=>{
         addSongOverlayRef.current.classList.add('active')
         publicationSongModalRef.current.classList.add('active')
-        if(song.published){
-            setCurrentSongIsPublished(true)
-        }
     }
 
     const closeSongPublicationModal = ()=>{
@@ -315,8 +311,8 @@ export default function SongsList(){
                 </div>
             </form>
             <div ref={publicationSongModalRef} className="publication-song-modal">
-                <h3>{ `${ currentSongIsPublished ? 'Dépublication' : 'Publication'} d'une chanson.` }</h3>
-                <p>{ `Êtes-vous sûr(e) de vouloir ${ currentSongIsPublished ? 'dépublier' : 'publier'} cette chanson ?` }</p>
+                <h3>{ `${ songToDoAction.published ? 'Dépublication' : 'Publication'} d'une chanson.` }</h3>
+                <p>{ `Êtes-vous sûr(e) de vouloir ${ songToDoAction.published ? 'dépublier' : 'publier'} cette chanson ?` }</p>
                 <div className="publication-song-choices">
                     <span onClick={handleClickNoButton}><button className="no">Non</button></span>
                     <span><button className="yes">Oui</button></span>
