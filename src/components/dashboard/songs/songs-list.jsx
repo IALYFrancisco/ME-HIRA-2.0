@@ -126,6 +126,7 @@ export default function SongsList(){
     }, [])
 
     const openSongPublicationModal = (song)=>{
+        setSongToDoAction(song)
         addSongOverlayRef.current.classList.add('active')
         publicationSongModalRef.current.classList.add('active')
     }
@@ -311,8 +312,16 @@ export default function SongsList(){
                 </div>
             </form>
             <div ref={publicationSongModalRef} className="publication-song-modal">
-                <h3>{ `${ songToDoAction.published ? 'Dépublication' : 'Publication'} d'une chanson.` }</h3>
-                <p>{ `Êtes-vous sûr(e) de vouloir ${ songToDoAction.published ? 'dépublier' : 'publier'} cette chanson ?` }</p>
+                <h3>{ `${ songToDoAction?.published ? 'Dépublication' : 'Publication'} d'une chanson.` }</h3>
+                { songToDoAction &&
+                    <p>
+                        {`Êtes-vous sûr(e) de vouloir ${ songToDoAction.published ? 'dépublier' : 'publier'} la chanson intitulée `}
+                        <strong>{songToDoAction.title}</strong>
+                        {' chantée par '}
+                        <strong>{FormatSongSinger(songToDoAction.singer)}</strong>
+                        {'?'}
+                    </p>
+                }
                 <div className="publication-song-choices">
                     <span onClick={handleClickNoButton}><button className="no">Non</button></span>
                     <span><button className="yes">Oui</button></span>
