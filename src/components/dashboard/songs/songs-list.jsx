@@ -319,9 +319,9 @@ export default function SongsList(){
                     </p>
                 }
                 <div className="publication-song-choices">
-                    <span onClick={handleClickNoButton}><button className="no">Non</button></span>
+                    <span onClick={handleClickNoButton}><button disabled={songActionIsLoading} className="no">Non</button></span>
                     <span>
-                        <button onClick={()=>songPublication(songToDoAction)} className="yes">
+                        <button disabled={songActionIsLoading} onClick={()=>songPublication(songToDoAction)} className="yes">
                             { 
                                 songActionIsLoading ?
                                 <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />

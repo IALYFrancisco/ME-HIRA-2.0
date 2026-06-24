@@ -441,6 +441,6 @@
     border: 1px solid var(--black);
 }
 
-.add-song-modal span:has(button:disabled){
+.publication-song-choices span:has(button:disabled){
     border-color: var(--gray)
 }
