@@ -26,6 +26,7 @@ export default function SongsList(){
     const addSongFormRef = useRef(null)
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
+    const publicationSongModalRef = useRef(null)
 
     var [ prompt, setPrompt ] = useState("")
 
