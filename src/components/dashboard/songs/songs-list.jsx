@@ -27,7 +27,6 @@ export default function SongsList(){
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
     const publicationSongModalRef = useRef(null)
-    const [ songPublicationChoice, setSongPublicationChoice ] = useState(false)
     const [ songToDoAction, setSongToDoAction ] = useState(null)
 
     var [ prompt, setPrompt ] = useState("")
@@ -152,13 +151,11 @@ export default function SongsList(){
     }
 
     const handleClickNoButton = () => {
-        setSongPublicationChoice(false)
         closeSongPublicationModal()
         addSongOverlayRef.current.classList.remove('active')
     }
 
     const handleClickYesButton = () => {
-        setSongPublicationChoice(true)
     }
 
     const handleFileChange = (e) => {
