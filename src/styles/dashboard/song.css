@@ -406,6 +406,12 @@
     height: 34px;
 }
 
+.publication-song-modal .publication-song-choices button.yes:disabled,
+.publication-song-modal .publication-song-choices button.no:disabled {
+    background-color: var(--gray);
+    color: var(--black);
+}
+
 .publication-song-modal .publication-song-choices button.yes {
     background-color: var(--orange-base);
 }
@@ -442,5 +448,6 @@
 }
 
 .publication-song-choices span:has(button:disabled){
-    border-color: var(--gray)
+    border-color: var(--gray);
+    transform: none;
 }
