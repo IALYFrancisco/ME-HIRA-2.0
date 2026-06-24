@@ -30,6 +30,8 @@ export default function SongsList(){
     const [ songToDoAction, setSongToDoAction ] = useState(null)
     const [ songActionIsLoading, setSongActionIsLoading ] = useState(false)
 
+    const removeSongModalRef = useRef(null)
+
     var [ prompt, setPrompt ] = useState("")
 
     useEffect(()=>{
@@ -307,6 +309,30 @@ export default function SongsList(){
                     </span>
                 </div>
             </form>
+            <div ref={publicationSongModalRef} className="publication-song-modal">
+                <h3>{ `${ songToDoAction?.published ? 'Dépublication' : 'Publication'} d'une chanson.` }</h3>
+                { songToDoAction &&
+                    <p>
+                        {`Êtes-vous sûr(e) de vouloir ${ songToDoAction.published ? 'dépublier' : 'publier'} la chanson intitulée `}
+                        <strong>{songToDoAction.title}</strong>
+                        {' chantée par '}
+                        <strong>{FormatSongSinger(songToDoAction.singer)}</strong>
+                        {' ?'}
+                    </p>
+                }
+                <div className="publication-song-choices">
+                    <span onClick={handleClickNoButton}><button disabled={songActionIsLoading} className="no">Non</button></span>
+                    <span>
+                        <button disabled={songActionIsLoading} onClick={()=>songPublication(songToDoAction)} className="yes">
+                            { 
+                                songActionIsLoading ?
+                                <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
+                                : "Oui"
+                            }
+                        </button>
+                    </span>
+                </div>
+            </div>
             <div ref={publicationSongModalRef} className="publication-song-modal">
                 <h3>{ `${ songToDoAction?.published ? 'Dépublication' : 'Publication'} d'une chanson.` }</h3>
                 { songToDoAction &&
