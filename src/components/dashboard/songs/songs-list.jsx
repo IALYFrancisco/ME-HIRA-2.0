@@ -317,7 +317,11 @@ export default function SongsList(){
                 }
                 <div className="publication-song-choices">
                     <span onClick={handleClickNoButton}><button className="no">Non</button></span>
-                    <span><button onClick={()=>songPublication(songToDoAction)} className="yes">Oui</button></span>
+                    <span>
+                        <button onClick={()=>songPublication(songToDoAction)} className="yes">
+                            Oui
+                        </button>
+                    </span>
                 </div>
             </div>
         </>
