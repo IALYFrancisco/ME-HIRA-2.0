@@ -253,6 +253,17 @@ export default function SongsList(){
             if(FormatSongSinger(songToDoAction.singer) !== FormatSongSinger(data.singer)){
                 update.append('singer', data.singer)
             }
+            if(
+                (songToDoAction.fileUrl !== data.hostedFile)
+                ||(localFile)
+            ){    
+                if(songToDoAction.fileUrl !== data.hostedFile){
+                    update.append('fileUrl', data.hostedFile)
+                }
+                if(localFile){
+                    update.append('file', localFile)
+                }
+            }
 
             let response = await api.patch('/song/update', { song: songToDoAction._id, update: ""})
             if(response.status === 200){
