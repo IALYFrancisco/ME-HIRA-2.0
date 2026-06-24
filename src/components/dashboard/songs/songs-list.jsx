@@ -296,7 +296,8 @@ export default function SongsList(){
                 </div>
             </form>
             <div ref={publicationSongModalRef} className="publication-song-modal">
-                <h2>Publication d'une chanson.</h2>
+                <h3>Publication d'une chanson.</h3>
+                <p>Êtes-vous sure</p>
             </div>
         </>
     )
