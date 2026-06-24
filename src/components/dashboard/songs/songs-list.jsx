@@ -119,7 +119,9 @@ export default function SongsList(){
         .finally(()=>setfetchSongsLoading(false))
     }, [])
 
-    const openSongPublicationModal = ()=>{}
+    const openSongPublicationModal = ()=>{
+        addSongOverlayRef.current.classList.add('active')
+    }
 
     const songPublication = async (song) => {
         try{
