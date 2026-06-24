@@ -101,7 +101,10 @@ export default function SongsList(){
     const closeAddSongModal = ()=>{
         addSongOverlayRef.current.classList.remove('active')
         addSongFormRef.current.classList.remove('active')
-        reset({})
+        reset({
+            title: "",
+            singer: "",
+        })
         if(publicationSongModalRef.current){
             publicationSongModalRef.current.classList.remove('active')
         }
@@ -248,7 +251,16 @@ export default function SongsList(){
         setUpdatingSongFormIsActive(true)
         openAddSongModal()
         reset({
-            title: song.title
+            title: song.title,
+            singer: FormatSongSinger(song.singer),
+            author: song.author,
+            composer: song.composer,
+            album: song.album,
+            hostedFile: (
+                song.fileUrl.startsWith('http://') ||
+                song.fileUrl.startsWith('https://')
+            ) ? song.fileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+song.fileUrl,
+            fileType: song.fileType
         })
     }
 
