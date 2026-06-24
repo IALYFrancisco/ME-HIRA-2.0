@@ -318,7 +318,7 @@ export default function SongsList(){
                 <span className="close-modal" onClick={ ()=> {closeAddSongModal(); reset()}}>
                     <Image src="/images/close.png" width={16} height={16} priority alt="fermer modal d'ajout de chanson"/>
                 </span>
-                <h2>Ajout d'une chanson :</h2>
+                <h2>{ updatingSongFormIsActive ? "Modification" : "Ajout" } d'une chanson :</h2>
                 <section>
                     <fieldset>
                             <legend><h3>A propos du chanson :</h3></legend>
