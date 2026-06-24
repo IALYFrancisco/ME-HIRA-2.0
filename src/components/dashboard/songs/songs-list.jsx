@@ -104,6 +104,11 @@ export default function SongsList(){
         reset({
             title: "",
             singer: "",
+            author: "",
+            composer: "",
+            album: "",
+            hostedFile: "",
+            fileType: ""
         })
         if(publicationSongModalRef.current){
             publicationSongModalRef.current.classList.remove('active')
