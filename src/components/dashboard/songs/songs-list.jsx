@@ -15,7 +15,7 @@ export default function SongsList(){
     var [ songs, setSongs ] = useState([])
     var [fetchSongsLoading, setfetchSongsLoading] = useState(false)
     var [addSongIsLoading, setAddSongIsLoading] = useState(false)
-    const { register, handleSubmit, watch, reset } = useForm()
+    const { register, handleSubmit, watch, reset, formState: { isDirty } } = useForm()
     const { loading } = useAuth()
     
     const watchAll = watch()
@@ -230,6 +230,8 @@ export default function SongsList(){
             addSongOverlayRef.current.classList.remove('active')
         }
     }
+
+    const isModified = isDirty || localFile
 
     const updateSong = async (data) => {
         try{
