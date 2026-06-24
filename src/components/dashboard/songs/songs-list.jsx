@@ -189,6 +189,11 @@ export default function SongsList(){
         setLocalFile(file)
     }
 
+    const openRemoveSongModal = ()=>{
+        addSongOverlayRef.current.classList.add('active')
+        removeSongModalRef.current.classList.add('active')
+    }
+
     return(
         <>
             <section className="dashboard-songs-container">
