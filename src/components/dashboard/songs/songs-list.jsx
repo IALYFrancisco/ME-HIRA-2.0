@@ -82,6 +82,11 @@ export default function SongsList(){
             }
             const response = await api.post('/song/add', song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"} })
             if(response.status === 201){
+                api.get('/song/get')
+                    .then((response) => {
+                        setSongs(response.data)
+                    })
+                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des chansons."))
                 toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
                 reset()
                 closeAddSongModal()
