@@ -18,6 +18,18 @@ export default function Navbar (){
     const [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
 
+    useEffect(()=>{
+        const handleClickOutside = (event) => {
+            if(popUpActionsRef.current && !popUpActionsRef.current.contains(event.target)){
+                setActivePopUp(null)
+            }
+            document.addEventListener("mousedown", handleClickOutside)
+            return ()=>{
+                document.removeEventListener("mousedown", handleClickOutside)
+            }
+        }
+    },[])
+
     const searchSongs = async (p) => api.get(
         fileType ? `/song/get?prompt=${p}&fileType=${fileType}` : `/song/get?prompt=${p}`
     )
