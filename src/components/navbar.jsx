@@ -15,6 +15,24 @@ export default function Navbar (){
     var [searchIsLoading, setSearchIsLoading] = useState(false)
     var [ filterTypePopUpIsActive, setFilterTypePopUpIsActive] = useState(false)
     var [ fileType, setFileType ] = useState("")
+    const [ activePopUp, setActivePopUp ] = useState(null)
+    const popUpActionsRef = useRef(null)
+
+    useEffect(()=>{
+        const handleClickOutside = (event) => {
+            if(popUpActionsRef.current && !popUpActionsRef.current.contains(event.target)){
+                setActivePopUp(null)
+            }
+            document.addEventListener("mousedown", handleClickOutside)
+            return ()=>{
+                document.removeEventListener("mousedown", handleClickOutside)
+            }
+        }
+    },[])
+
+    const toggleActionsPopUp = (actionName) => {
+        setActivePopUp((prev)=>{prev === actionName ? null : actionName})
+    }
 
     const searchSongs = async (p) => api.get(
         fileType ? `/song/get?prompt=${p}&fileType=${fileType}` : `/song/get?prompt=${p}`
@@ -36,10 +54,10 @@ export default function Navbar (){
         if(prompt === ""){
             setResults([])
         }
-        if(prompt && prompt.trim() !== ""){
+        if((prompt && prompt.trim() !== "") || (fileType && prompt.trim() !== "")){
             fetchSongs(prompt)
         }
-    },[prompt])
+    },[prompt, fileType])
 
     const toggleFilterTypePopUp = () => {
         filterTypePopUpIsActive ? setFilterTypePopUpIsActive(false) : setFilterTypePopUpIsActive(true)
@@ -54,7 +72,7 @@ export default function Navbar (){
     }
 
     const handleFileTypeChange = (event) => {
-        setFileType(e.target.value)
+        setFileType(event.target.value)
     }
 
     return(
