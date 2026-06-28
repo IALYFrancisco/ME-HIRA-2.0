@@ -85,8 +85,9 @@ export default function SongsList(){
                         setSongs(response.data)
                     })
                     .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des chansons."))
-                toast.info(`La chanson intitulée ${data.title} a été ajoutée dans le base de donnée.`)
+                toast.info(`La chanson intitulée ${data.title} a été ajoutée dans la base de donnée.`)
                 reset()
+                setLocalFile(null)
                 closeAddSongModal()
             }
         }catch{
