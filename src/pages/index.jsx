@@ -3,12 +3,12 @@ import Navbar from "@/components/navbar";
 import Image from "next/image";
 import Footer from "@/components/footer";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import Link from "next/link"
 import { formatDateMG } from "@/helpers/date";
 import HomeSkeletonLoader from "@/components/skeleton-loaders/home";
 import { useAuth } from "@/contexts/AuthContext";
 import { FormatSongSinger } from "@/helpers/song";
+import { api } from "@/helpers/api";
 
 export default function Home() {
 
@@ -18,7 +18,7 @@ export default function Home() {
 
   useEffect(()=>{
 
-    axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
+    api.get('/song/get')
     .then((response) => {
       let _songs = response.data
       _songs = _songs.filter(s=>s.published === true)
