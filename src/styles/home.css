@@ -21,7 +21,6 @@
     width: calc((100% - 80px) / 5);
     padding: 2px;
     border-radius: 11px;
-    z-index: 0;
 }
 
 .songs-container ul li:hover {
