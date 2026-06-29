@@ -257,7 +257,7 @@ export default function SongsList(){
             if(songToDoAction.fileType !== data.fileType){
                 update.append('fileType', data.fileType)
             }
-            if(FormatSongSinger(songToDoAction.singer) !== FormatSongSinger(data.singer)){
+            if(FormatSongSinger(songToDoAction.singer) !== data.singer){
                 update.append('singer', data.singer)
             }
             let localFileUrl = (
