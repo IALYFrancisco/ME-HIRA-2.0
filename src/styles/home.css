@@ -25,11 +25,8 @@
 
 .songs-container ul li:hover {
     cursor: pointer;
-}
-
-.songs-container ul li:hover .poster-container {
-    border: #fec70081 solid 2px;
-    transition: border .5s ease-in-out;
+    background-color: #fec70081;
+    transition: background-color .5s ease-in-out;
 }
 
 .songs-container .poster-container {
@@ -38,9 +35,9 @@
     overflow: hidden;
     border-radius: 10px;
     margin-bottom: 10px;
-    border: 2px transparent solid;
     position: relative;
     z-index: -1;
+    background-color: black;
 }
 
 .songs-container .poster-container .duration {
