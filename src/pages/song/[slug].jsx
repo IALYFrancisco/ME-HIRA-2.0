@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import axios from "axios";
+import { api } from "@/helpers/api";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head"
@@ -10,7 +10,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { FormatSongSinger } from "@/helpers/song";
 
 export async function getStaticPaths(){
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
+    const response = await api.get('/song/get')
     const songs = response.data.filter(s => s.published === true)
 
     const paths = songs.map( song => ({
