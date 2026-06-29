@@ -46,7 +46,7 @@ export default function SongReader({ song: _song }){
     var _loadersState = (loading || fetchSongLoading)
 
     useEffect(()=>{
-        axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get?slug=${slug}`)
+        api.get(`/song/get?slug=${slug}`)
         .then((response)=>setSong(response.data))
         .finally(()=>setFetchSongLoading(false))
     }, [slug])
