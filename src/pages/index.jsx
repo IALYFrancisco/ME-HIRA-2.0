@@ -7,7 +7,7 @@ import Link from "next/link"
 import { formatDateMG } from "@/helpers/date";
 import HomeSkeletonLoader from "@/components/skeleton-loaders/home";
 import { useAuth } from "@/contexts/AuthContext";
-import { FormatSongSinger } from "@/helpers/song";
+import { FormatSongDuration, FormatSongSinger } from "@/helpers/song";
 import { api } from "@/helpers/api";
 
 export default function Home() {
@@ -53,7 +53,7 @@ export default function Home() {
                             } width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
                           }
                           <span className="duration">
-                            01 : 30 : 15
+                            {FormatSongDuration(song.duration)}
                           </span>
                         </div>
                         <div className="song-info">
