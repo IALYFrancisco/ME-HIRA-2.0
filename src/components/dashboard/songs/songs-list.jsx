@@ -9,6 +9,7 @@ import SongsListSkeleton from "@/components/skeleton-loaders/songsListSkeleton"
 import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
 import { FormatSongSinger } from "@/helpers/song"
+import { formToJSON } from "axios"
 
 export default function SongsList(){
 
@@ -278,7 +279,7 @@ export default function SongsList(){
                 }
             }
 
-            let response = await api.patch('/song/update', { song: songToDoAction._id, update: update})
+            let response = await api.patch('/song/update', { song: songToDoAction._id, update: formToJSON(update)})
             if(response.status === 200){
                 toast.info(`La chanson intitulée ${songToDoAction?.title} a été bien modifiée.`)
                 api.get('/song/get')
