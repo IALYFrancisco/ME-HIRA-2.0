@@ -47,7 +47,7 @@ export default function Home() {
                         <div className="poster-container">
                           <Image src={(song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
                             song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
-                          } width={250} height={150} priority alt={song.title} className="thumbnail"/>
+                          } width={250} height={150} priority alt={song.title} className={ song.fileType === "video" ? "thumbnail video" : "thumbnail audio" }/>
                           <span className="duration">
                             {FormatSongDuration(song.duration)}
                           </span>
