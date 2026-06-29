@@ -77,7 +77,7 @@
     text-overflow: ellipsis;
 }
 
-.songs-container ul li .audio-poster {
+.songs-container ul li .thumbnail {
     height: auto;
 }
 
