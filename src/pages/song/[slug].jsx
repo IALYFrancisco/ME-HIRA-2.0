@@ -64,7 +64,8 @@ export default function SongReader({ song: _song }){
                         <video src={
                             ( song.fileUrl.startsWith('https://') || song.fileUrl.startsWith('http://') ) ?
                             song.fileUrl :
-                            `${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} autoPlay controls loop></video>
+                            `${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`
+                        } autoPlay controls loop></video>
                     </div>
                     <div className="song-info">
                         <h1>{song.title}</h1>
