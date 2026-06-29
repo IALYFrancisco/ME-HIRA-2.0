@@ -241,6 +241,7 @@ export default function SongsList(){
 
     const updateSong = async (data) => {
         try{
+            setSongActionIsLoading(true)
 
             const update = new FormData()
 
@@ -434,8 +435,8 @@ export default function SongsList(){
                 </section>
                 <div className="form-element">
                     <span className={addSongIsLoading?"border disabled":"border"}>
-                        <button disabled={addSongIsLoading || (updatingSongFormIsActive && !isModified)}>
-                            {addSongIsLoading ? <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> : "Soumettre"}
+                        <button disabled={addSongIsLoading || (updatingSongFormIsActive && !isModified) || songActionIsLoading}>
+                            {( addSongIsLoading || songActionIsLoading ) ? <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> : "Soumettre"}
                         </button>
                     </span>
                 </div>
