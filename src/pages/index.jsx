@@ -45,13 +45,9 @@ export default function Home() {
                     <li key={song._id}>
                       <Link href={`/song/${song.slug}`}>
                         <div className="poster-container">
-                          { 
-                            song.fileType === "video" ?
-                            <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} loop></video> :
-                            <Image src={(song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
-                              song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
-                            } width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
-                          }
+                          <Image src={(song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
+                            song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
+                          } width={250} height={150} priority alt={song.title} className="audio-poster"/>
                           <span className="duration">
                             {FormatSongDuration(song.duration)}
                           </span>
