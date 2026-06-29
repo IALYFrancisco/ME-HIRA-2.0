@@ -242,6 +242,7 @@ export default function SongsList(){
         try{
 
             const update = new FormData()
+
             if(songToDoAction.title !== data.title){
                 update.append('title', data.title)
             }
