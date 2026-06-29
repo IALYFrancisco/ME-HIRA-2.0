@@ -295,6 +295,7 @@ export default function SongsList(){
             setSongActionIsLoading(false)
             closeAddSongModal()
             setSongToDoAction(null)
+            setLocal
         }
     }
 
@@ -490,5 +491,4 @@ export default function SongsList(){
                 </div>
             </div>
         </>
-    )
-}
+   
