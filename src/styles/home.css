@@ -38,6 +38,10 @@
     background-color: black;
 }
 
+.songs-container .poster-container:has(.thumbnail.audio) {
+    background-color: var(--orange-base);
+}
+
 .songs-container .poster-container .duration {
     color: white;
     position: absolute;
@@ -72,13 +76,7 @@
     text-overflow: ellipsis;
 }
 
-.songs-container ul li .thumbnail.audio {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.songs-container ul li .thumbnail.video {
+.songs-container ul li .thumbnail {
     width: 100%;
     height: 100%;
     object-fit: contain;
