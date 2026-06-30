@@ -103,3 +103,12 @@
         width: calc((100% - 61px) / 4);
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .songs-container {
+        padding: 10px 10px 120px;
+    }
+    .songs-container ul li {
+        width: calc((100% - 40px) / 3);
+    }
+}
