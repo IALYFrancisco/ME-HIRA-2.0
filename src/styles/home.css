@@ -112,3 +112,9 @@
         width: calc((100% - 40px) / 3);
     }
 }
+
+@media only screen and (max-width: 560px) {
+    .songs-container ul li {
+        width: calc((100% - 20px) / 2);
+    }
+}
