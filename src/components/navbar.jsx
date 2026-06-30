@@ -121,9 +121,9 @@ export default function Navbar (){
                     </div>
                 </li>
                 <li>
-                    <Link href="/authentication/login">
+                    {/* <Link href="/authentication/login">
                         <button>Se connecter</button>
-                    </Link>
+                    </Link> */}
                 </li>
             </ul>
         </nav>
