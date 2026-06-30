@@ -100,6 +100,6 @@
         padding: 25px 25px 120px;
     }
     .songs-container ul li {
-        width: calc((100% - 60px) / 4);
+        width: calc((100% - 61px) / 4);
     }
 }
