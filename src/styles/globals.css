@@ -394,7 +394,13 @@ nav .filter-type-container {
 }
 
 @media only screen and (max-width: 1024px) {
+    
     nav {
       padding: 25px;
     }
+    
+    footer {
+      padding: 0 25px;
+    }
+
 }
