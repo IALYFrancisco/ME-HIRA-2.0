@@ -404,3 +404,15 @@ nav .filter-type-container {
     }
 
 }
+
+@media only screen and (max-width: 768px) {
+    
+    nav {
+      padding: 10px;
+    }
+    
+    footer {
+      padding: 0 10px;
+    }
+
+}
