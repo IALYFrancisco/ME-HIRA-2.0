@@ -13,6 +13,8 @@ import { formToJSON } from "axios"
 
 export default function SongsList(){
 
+    const [ serverRequestIsRunning, setServerRequestIsRunning] = useState(false)
+
     var [ songs, setSongs ] = useState([])
     var [fetchSongsLoading, setfetchSongsLoading] = useState(false)
     var [addSongIsLoading, setAddSongIsLoading] = useState(false)
