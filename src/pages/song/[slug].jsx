@@ -8,9 +8,10 @@ import { formatDateMG } from "@/helpers/date";
 import SongReaderSkeletonLoader from "@/components/skeleton-loaders/songReader";
 import { useAuth } from "@/contexts/AuthContext";
 import { FormatSongSinger } from "@/helpers/song";
+import axios from "axios";
 
 export async function getStaticPaths(){
-    const response = await api.get('/song/get')
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
     const songs = response.data.filter(s => s.published === true)
 
     const paths = songs.map( song => ({
@@ -25,7 +26,7 @@ export async function getStaticPaths(){
 
 export async function getStaticProps({params}){
     const { slug } = params
-    const response = await api.get(`/song/get?slug=${slug}`)
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get?slug=${slug}`)
     let song = response.data
 
     return {
