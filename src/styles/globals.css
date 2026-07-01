@@ -206,6 +206,9 @@ footer ul * {
 footer ul li:nth-child(1) {
   display: flex;
   column-gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 10px;
 }
 
 footer ul li a:hover {
@@ -428,3 +431,7 @@ nav .filter-type-container {
     }
 
 }
+
+
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--gray);
