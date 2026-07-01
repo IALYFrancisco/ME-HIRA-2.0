@@ -445,6 +445,10 @@ nav .filter-type-container {
     width: 45px;
   }
 
+  nav > ul > li:nth-child(2){
+    column-gap: 10px;
+  }
+
   footer ul li:nth-child(1) {
     padding-bottom: 10px;
     border-bottom: 1px solid var(--gray);
