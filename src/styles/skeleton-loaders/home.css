@@ -63,3 +63,27 @@
         background-color: #f0f0f0;
     }
 }
+
+@media only screen and (max-width: 1024px) {
+    .skeleton-songs-container {
+        padding: 25px 25px 120px;
+    }
+    .skeleton-songs-container ul li {
+        width: calc((100% - 61px) / 4);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .skeleton-songs-container {
+        padding: 10px 10px 120px;
+    }
+    .skeleton-songs-container ul li {
+        width: calc((100% - 40px) / 3);
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .skeleton-songs-container ul li {
+        width: calc((100% - 20px) / 2);
+    }
+}
