@@ -432,6 +432,9 @@ nav .filter-type-container {
 
 }
 
-
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--gray);
+@media only screen and (max-width: 560px) {
+    footer ul li:nth-child(1) {
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--gray);
+    }
+}
