@@ -427,6 +427,11 @@ nav .filter-type-container {
     nav > ul > li:nth-child(2){
       width: 70%;
     }
+
+    nav .filter-type-popup {
+      left: initial;
+      right: 0;
+    }
     
     footer {
       padding: 15px 10px;
