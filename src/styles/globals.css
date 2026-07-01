@@ -402,7 +402,13 @@ nav .filter-type-container {
     }
     
     footer {
-      padding: 0 25px;
+      padding: 15px 25px 15px 25px;
+      height: max-content;
+    }
+
+    footer ul {
+      justify-content: space-evenly;
+      row-gap: 15px;
     }
 
 }
