@@ -4,7 +4,9 @@ import Head from "next/head";
 export default function Artist(){
     return(
         <DashboardLayout>
-            <Head>Artistes - Me-Hira</Head>
+            <Head>
+                <title>Artistes - Me-Hira</title>
+            </Head>
         </DashboardLayout>
     )
 }
