@@ -330,7 +330,7 @@ export default function ArtistsList(){
                         </div>
                         <div className="actions-container">
                             <div className="filters-container">
-                                <input type="text" name="" id="" placeholder="Rechercher des chansons ..." value={prompt} onChange={(e)=>setPrompt(e.target.value)} />
+                                <input type="text" name="" id="" placeholder="Rechercher des artistes ..." value={prompt} onChange={(e)=>setPrompt(e.target.value)} />
                             </div>
                             <span>
                                 <button onClick={openAddSongModal}>
