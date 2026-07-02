@@ -11,7 +11,7 @@ import { api } from "@/helpers/api"
 import { FormatSongSinger } from "@/helpers/song"
 import { formToJSON } from "axios"
 
-export default function SongsList(){
+export default function ArtistsList(){
 
     var [ songs, setSongs ] = useState([])
     var [fetchSongsLoading, setfetchSongsLoading] = useState(false)
