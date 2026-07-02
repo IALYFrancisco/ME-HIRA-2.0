@@ -143,12 +143,6 @@ export default function ArtistsList(){
         .finally(()=>setfetchSongsLoading(false))
     }, [])
 
-    const openSongPublicationModal = (song)=>{
-        setSongToDoAction(song)
-        addSongOverlayRef.current.classList.add('active')
-        publicationSongModalRef.current.classList.add('active')
-    }
-
     const songPublication = async (song) => {
         try{
             setSongActionIsLoading(true)
@@ -369,7 +363,6 @@ export default function ArtistsList(){
                                         </td>
                                         <td className="actions">
                                             <ul ref={ activePopUp === song._id ? popUpActionsRef : null } className={ activePopUp === song._id ? "song-actions active" : "song-actions" }>
-                                                <li onClick={()=>openSongPublicationModal(song)}>{ song.published ? "Dépublier" : "Publier" }</li>
                                                 <li onClick={()=>handleUpdateSongActionClick(song)}>Modifier</li>
                                                 <li onClick={()=>openSongRemoveModal(song)}>Supprimer</li>
                                             </ul>
