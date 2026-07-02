@@ -1,5 +1,10 @@
+import DashboardLayout from "@/components/layouts/dashboardLayout";
+import Head from "next/head";
+
 export default function Artist(){
     return(
-        <h1>This the artists page in the dashboard.</h1>
+        <DashboardLayout>
+            <Head>Artistes - Me-Hira</Head>
+        </DashboardLayout>
     )
 }
