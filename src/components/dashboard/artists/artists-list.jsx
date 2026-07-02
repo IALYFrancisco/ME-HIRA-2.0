@@ -326,7 +326,7 @@ export default function ArtistsList(){
                             <Link href="/">
                                 <Image src="/images/logo-de-me-hira.png" priority width={94} height={94} alt="logo de me-hira" className="logo-de-me-hira" />
                             </Link>
-                            <h1>Chansons</h1>
+                            <h1>Artistes</h1>
                         </div>
                         <div className="actions-container">
                             <div className="filters-container">
