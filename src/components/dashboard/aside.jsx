@@ -36,7 +36,7 @@ export default function Sidebar(){
                         </Link>
                     </li>
                     <li>
-                        <Link href="">
+                        <Link href="/dashboard/artists">
                             <Image src="/images/artist.png" alt="note melodie" width={16} height={16} priority />
                             Artistes
                         </Link>
