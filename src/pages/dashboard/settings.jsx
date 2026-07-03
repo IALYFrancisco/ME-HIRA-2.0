@@ -17,8 +17,8 @@ export default function Settings(){
                         <div className="page-title">
                             <Link href="/">
                                 <Image src="/images/logo-de-me-hira.png" priority width={94} height={94} alt="logo de me-hira" className="logo-de-me-hira" />
-                                <h1>Paramètres</h1>
                             </Link>
+                            <h1>Paramètres</h1>
                         </div>
                     </section>
                 </div>

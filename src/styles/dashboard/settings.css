@@ -4,3 +4,24 @@
     padding: 0 20px;
     position: relative;
 }
+
+.dashboard-settings-container .page-header-container {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    background-color: white;
+}
+
+.dashboard-settings-container .header {
+    width: 100%;
+}
+
+.dashboard-settings-container .header .page-title {
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-settings-container .header h1 {
+    margin-left: 15px;
+}
