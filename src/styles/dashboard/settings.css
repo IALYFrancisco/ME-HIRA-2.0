@@ -1,0 +1,6 @@
+.dashboard-settings-container {
+    width: calc(100% - 180px);
+    height: max-content;
+    padding: 0 20px;
+    position: relative;
+}
