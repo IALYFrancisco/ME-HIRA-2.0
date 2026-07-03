@@ -42,7 +42,7 @@ export default function Sidebar(){
                         </Link>
                     </li>
                     <li>
-                        <Link href="">
+                        <Link href="/dashboard/settings">
                             <Image src="/images/setting.png" alt="note melodie" width={16} height={16} priority />
                             Paramètres
                         </Link>
