@@ -30,7 +30,7 @@ export default function Sidebar(){
             <aside>
                 <ul>
                     <li>
-                        <Link href="">
+                        <Link href="/dashboard">
                             <Image src="/images/melody.png" alt="note melodie" width={16} height={16} priority />
                             Chansons
                         </Link>
