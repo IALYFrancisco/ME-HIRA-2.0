@@ -9,6 +9,7 @@ export default function Settings(){
                     Paramètres - Me-Hira
                 </title>
             </Head>
+            <section className="dashboard-settings-container"></section>
         </DashboardLayout>
     )
 }
