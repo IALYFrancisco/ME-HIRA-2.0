@@ -52,3 +52,16 @@
     padding: 0 10px;
     outline: none;
 }
+
+.dashboard-settings-container form input:focus {
+    border-color: var(--orange-base);
+}
+
+.dashboard-settings-container form .form-element:nth-child(2) {
+    margin-top: 30px;
+}
+
+.dashboard-settings-container form .form-element:nth-child(3) {
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
