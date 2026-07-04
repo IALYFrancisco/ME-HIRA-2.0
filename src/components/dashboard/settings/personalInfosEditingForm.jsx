@@ -1,13 +1,12 @@
 import { useForm } from "react-hook-form";
 import { useAuth } from "@/contexts/AuthContext";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export default function PersonalInfosEditingForm(){
 
     const { register, reset, handleSubmit } = useForm()
     const { user } = useAuth()
-    const overlayRef = useRef(null)
-
+    
     useEffect(()=>{
         reset({
             name: user.name,

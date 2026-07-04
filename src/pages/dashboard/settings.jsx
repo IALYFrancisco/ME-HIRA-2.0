@@ -3,8 +3,12 @@ import PersonalInfosEditingForm from "@/components/dashboard/settings/personalIn
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { useRef } from "react";
 
 export default function Settings(){
+    
+    const overlayRef = useRef(null)
+
     return(
         <DashboardLayout>
             <Head>
@@ -31,6 +35,7 @@ export default function Settings(){
                     </section>
                 </div>
             </section>
+            <div className="settings-overlay" ref={overlayRef}></div>
         </DashboardLayout>
     )
 }
