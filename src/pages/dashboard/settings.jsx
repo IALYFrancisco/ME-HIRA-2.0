@@ -1,4 +1,5 @@
 import DashboardLayout from "@/components/layouts/dashboardLayout";
+import PersonalInfosEditingForm from "@/components/dashboard/settings/personalInfosEditingForm";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -24,7 +25,7 @@ export default function Settings(){
                     </section>
                     <section className="body">
                         <div className="left">
-                            
+                            <PersonalInfosEditingForm/>
                         </div>
                         <div className="right"></div>
                     </section>
