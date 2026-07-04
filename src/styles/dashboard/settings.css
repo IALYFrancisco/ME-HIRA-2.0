@@ -86,8 +86,36 @@
     justify-content: center;
 }
 
+.dashboard-settings-container button:disabled {
+    background-color: var(--gray);
+}
+
 .dashboard-settings-container button img {
     color: transparent;
     width: 30px;
     height: auto;
+}
+
+.dashboard-settings-container form span {
+    display: block;
+    border: 1px solid var(--orange-base);
+    padding: 2px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 12px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.dashboard-settings-container form span:active {
+  transition: all .10s ease-in-out;
+  transform: scale(0.85);
+}
+
+.dashboard-settings-container form span.disabled {
+    border-color: var(--gray);
+}
+
+.dashboard-settings-container form span:active:has(button:disabled) {
+  transform: none;
 }
