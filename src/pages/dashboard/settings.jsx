@@ -20,6 +20,7 @@ export default function Settings(){
                             </Link>
                             <h1>Paramètres</h1>
                         </div>
+                        <p>Vous pouvez changer vos préféreces selon les formulaires suivants :</p>
                     </section>
                 </div>
             </section>
