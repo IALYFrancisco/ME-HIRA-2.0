@@ -27,11 +27,17 @@
 }
 
 .dashboard-settings-container .body {
-    margin-top: 50px
+    margin-top: 50px;
+    display: flex;
+    column-gap: 20px;
+}
+
+.dashboard-settings-container .body .left,
+.dashboard-settings-container .body .right {
+    width: 50%;
 }
 
 .dashboard-settings-container form {
-    max-width: 400px;
     border: 1px solid var(--gray);
     padding: 20px;
     border-radius: 10px;
