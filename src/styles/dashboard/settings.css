@@ -95,10 +95,6 @@
     background-color: var(--orange-base);
 }
 
-.dashboard-settings-container button:disabled {
-    background-color: var(--gray);
-}
-
 .dashboard-settings-container button img {
     color: transparent;
     width: 30px;
@@ -119,14 +115,6 @@
 .dashboard-settings-container form span:active {
   transition: all .10s ease-in-out;
   transform: scale(0.85);
-}
-
-.dashboard-settings-container form span.disabled {
-    border-color: var(--gray);
-}
-
-.dashboard-settings-container form span:active:has(button:disabled) {
-  transform: none;
 }
 
 .dashboard-settings-container form span:has(button:hover) {
