@@ -13,7 +13,7 @@ export default function PersonalInfosEditingForm(){
             </div>
             <div className="form-element">
                 <label htmlFor="email">Votre email :</label>
-                <input type="email" name="email" id="email" placeholder="veuillez saisir votre adresse email"/>
+                <input type="email" id="email" placeholder="veuillez saisir votre adresse email" { ...register("email", { required: true }) } required/>
             </div>
         </form>
     )
