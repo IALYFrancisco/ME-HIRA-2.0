@@ -1,10 +1,15 @@
+import { useForm } from "react-hook-form";
+
 export default function PersonalInfosEditingForm(){
+
+    const { register } = useForm()
+
     return(
         <form>
             <h2>Informations personnelles :</h2>
             <div className="form-element">
                 <label htmlFor="name">Votre nom :</label>
-                <input type="text" name="name" id="name" placeholder="veuillez saisir votre nom complet"/>
+                <input type="text" id="name" placeholder="veuillez saisir votre nom complet" { ...register("name", { required: true }) } required/>
             </div>
             <div className="form-element">
                 <label htmlFor="email">Votre email :</label>
