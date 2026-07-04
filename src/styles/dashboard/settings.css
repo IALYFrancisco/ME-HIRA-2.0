@@ -66,3 +66,28 @@
     margin-top: 30px;
     margin-bottom: 5px;
 }
+
+.dashboard-settings-container label {
+    cursor: pointer;
+}
+
+.dashboard-settings-container button {
+    transition: all .10s ease-in-out;
+    padding: 10px 15px;
+    background-color: var(--orange-base);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-settings-container button img {
+    color: transparent;
+    width: 30px;
+    height: auto;
+}
