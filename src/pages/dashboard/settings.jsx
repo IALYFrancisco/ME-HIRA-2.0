@@ -22,6 +22,9 @@ export default function Settings(){
                         </div>
                         <p>Vous pouvez changer vos préféreces selon les formulaires suivants :</p>
                     </section>
+                    <section className="body">
+                        
+                    </section>
                 </div>
             </section>
         </DashboardLayout>
