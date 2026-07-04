@@ -4,7 +4,7 @@ export default function PersonalInfosEditingForm(){
             <h2>Informations personnelles :</h2>
             <div className="form-element">
                 <label htmlFor="name">Votre nom :</label>
-                <input type="text" name="name" id="name"/>
+                <input type="text" name="name" id="name" placeholder="Veuillez saisir votre nom complet."/>
             </div>
         </form>
     )
