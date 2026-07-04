@@ -38,6 +38,10 @@
     box-shadow: 3px 3px 10px #acacac00, -3px -3px 10px #acacac00;
 }
 
+.dashboard-settings-container form:hover {
+    border-color: var(--orange-base);
+}
+
 .dashboard-settings-container form input {
     display: block;
     width: 100%;
