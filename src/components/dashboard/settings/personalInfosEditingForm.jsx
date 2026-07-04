@@ -25,6 +25,14 @@ export default function PersonalInfosEditingForm(){
                 <label htmlFor="email">Votre email :</label>
                 <input disabled={true} type="email" id="email" placeholder="veuillez saisir votre adresse email" { ...register("email", { required: true }) } required/>
             </div>
+            <div className="form-element">
+                <span className="border" >
+                    <button disabled={true}>
+                        {/* <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> */}
+                        Changer mon information personnelle
+                    </button>
+                </span>
+            </div>
         </form>
     )
 }
