@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function PersonalInfosEditingForm(){
 
-    const { register, reset } = useForm()
+    const { register, reset, handleSubmit } = useForm()
     const { user } = useAuth()
 
     useEffect(()=>{
@@ -14,8 +14,12 @@ export default function PersonalInfosEditingForm(){
         })
     },[user])
 
+    const changeCurrentUserInfo = () => {
+        return
+    } 
+
     return(
-        <form>
+        <form onSubmit={handleSubmit(changeCurrentUserInfo)}>
             <h2>Informations personnelles :</h2>
             <div className="form-element">
                 <label htmlFor="name">Votre nom :</label>
