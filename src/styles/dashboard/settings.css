@@ -25,3 +25,7 @@
 .dashboard-settings-container .header h1 {
     margin-left: 15px;
 }
+
+.dashboard-settings-container .body {
+    background-color: red;
+}
