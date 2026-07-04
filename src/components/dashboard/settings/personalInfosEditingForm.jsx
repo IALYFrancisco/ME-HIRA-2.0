@@ -27,7 +27,7 @@ export default function PersonalInfosEditingForm(){
             </div>
             <div className="form-element">
                 <span className="border" >
-                    <button disabled={true}>
+                    <button>
                         {/* <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> */}
                         Changer mon information personnelle
                     </button>

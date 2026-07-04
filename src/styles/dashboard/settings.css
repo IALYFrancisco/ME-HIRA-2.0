@@ -74,7 +74,6 @@
 .dashboard-settings-container button {
     transition: all .10s ease-in-out;
     padding: 10px 15px;
-    background-color: var(--orange-base);
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -84,6 +83,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.dashboard-settings-container button:hover {
+    background-color: var(--orange-base);
 }
 
 .dashboard-settings-container button:disabled {
@@ -98,7 +101,7 @@
 
 .dashboard-settings-container form span {
     display: block;
-    border: 1px solid var(--orange-base);
+    border: 1px solid var(--gray);
     padding: 2px;
     width: fit-content;
     height: fit-content;
