@@ -23,7 +23,10 @@ export default function Settings(){
                         <p>Vous pouvez changer vos préféreces selon les formulaires suivants :</p>
                     </section>
                     <section className="body">
-                        
+                        <div className="left">
+                            
+                        </div>
+                        <div className="right"></div>
                     </section>
                 </div>
             </section>
