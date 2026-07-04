@@ -122,3 +122,7 @@
 .dashboard-settings-container form span:active:has(button:disabled) {
   transform: none;
 }
+
+.dashboard-settings-container form span:has(button:hover) {
+    border-color: var(--orange-base);
+}
