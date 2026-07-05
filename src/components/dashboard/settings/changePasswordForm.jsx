@@ -18,6 +18,11 @@ export default function ChangePasswordForm(){
                 <label htmlFor="password">Votre mot de passe actuel :</label>
                 <input type="password" id="password" { ...register("password", {required:true}) } required placeholder="veuillez choisir un mot de passe fort" />
             </div>
+            <div className="form-element">
+                <span className="border">
+                    <button>Changer mon mot de passe</button>
+                </span>
+            </div>
         </form>
     )
 }
