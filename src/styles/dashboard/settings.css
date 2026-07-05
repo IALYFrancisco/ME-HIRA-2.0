@@ -28,6 +28,7 @@
 
 .dashboard-settings-container .body {
     margin-top: 50px;
+    padding-bottom: 50px;
     display: flex;
     column-gap: 20px;
 }
