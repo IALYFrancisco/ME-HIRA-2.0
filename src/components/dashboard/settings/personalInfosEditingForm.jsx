@@ -12,7 +12,7 @@ export default function PersonalInfosEditingForm(){
             name: user.name,
             email: user.email
         })
-    },[user])
+    },[reset, user])
 
     const changeCurrentUserInfo = () => {
         return
