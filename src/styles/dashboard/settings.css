@@ -37,6 +37,10 @@
     width: 50%;
 }
 
+.dashboard-settings-container .body .left form:nth-child(2) {
+    margin-top: 30px;
+}
+
 .dashboard-settings-container form {
     border: 1px solid var(--gray);
     padding: 20px;
