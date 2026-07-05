@@ -1,5 +1,6 @@
 import DashboardLayout from "@/components/layouts/dashboardLayout";
 import PersonalInfosEditingForm from "@/components/dashboard/settings/personalInfosEditingForm";
+import ChangePasswordForm from "@/components/dashboard/settings/changePasswordForm";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -30,6 +31,7 @@ export default function Settings(){
                     <section className="body">
                         <div className="left">
                             <PersonalInfosEditingForm/>
+                            <ChangePasswordForm/>
                         </div>
                         <div className="right"></div>
                     </section>
