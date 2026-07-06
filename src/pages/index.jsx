@@ -3,12 +3,12 @@ import Navbar from "@/components/navbar";
 import Image from "next/image";
 import Footer from "@/components/footer";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import Link from "next/link"
 import { formatDateMG } from "@/helpers/date";
 import HomeSkeletonLoader from "@/components/skeleton-loaders/home";
 import { useAuth } from "@/contexts/AuthContext";
-import { FormatSongSinger } from "@/helpers/song";
+import { FormatSongDuration, FormatSongSinger } from "@/helpers/song";
+import { api } from "@/helpers/api";
 
 export default function Home() {
 
@@ -18,7 +18,7 @@ export default function Home() {
 
   useEffect(()=>{
 
-    axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
+    api.get('/song/get')
     .then((response) => {
       let _songs = response.data
       _songs = _songs.filter(s=>s.published === true)
@@ -43,15 +43,13 @@ export default function Home() {
               {
                 songs && songs.map((song)=>
                     <li key={song._id}>
-                      <Link href={`/song/${song.slug}`}>
+                      <Link href={song.fileType === 'video' ? `/song/${song.slug}` : ''}>
                         <div className="poster-container">
-                          { 
-                            song.fileType === "video" ?
-                            <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} loop></video> :
-                            <Image src="/images/Application-mobile.jpg" width={250} height={150} priority alt="poster pour les fichiers audio" className="audio-poster"/>
-                          }
+                          <Image src={(song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
+                            song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
+                          } width={250} height={150} priority alt={song.title} className={ song.fileType === "video" ? "thumbnail video" : "thumbnail audio" }/>
                           <span className="duration">
-                            01 : 30 : 15
+                            {FormatSongDuration(song.duration)}
                           </span>
                         </div>
                         <div className="song-info">

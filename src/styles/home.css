@@ -27,20 +27,19 @@
     cursor: pointer;
 }
 
-.songs-container ul li:hover .poster-container {
-    border: #fec70081 solid 2px;
-    transition: border .5s ease-in-out;
-}
-
 .songs-container .poster-container {
     width: 100%;
     height: 120px;
     overflow: hidden;
     border-radius: 10px;
     margin-bottom: 10px;
-    border: 2px transparent solid;
     position: relative;
     z-index: -1;
+    background-color: black;
+}
+
+.songs-container .poster-container:has(.thumbnail.audio) {
+    background-color: var(--orange-base);
 }
 
 .songs-container .poster-container .duration {
@@ -77,8 +76,10 @@
     text-overflow: ellipsis;
 }
 
-.songs-container ul li .audio-poster {
-    height: auto;
+.songs-container ul li .thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .song-info p {
@@ -92,4 +93,28 @@
     font-size: 12px;
     border-radius: 5px;
     margin-right: 10px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .songs-container {
+        padding: 25px 25px 120px;
+    }
+    .songs-container ul li {
+        width: calc((100% - 61px) / 4);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .songs-container {
+        padding: 10px 10px 120px;
+    }
+    .songs-container ul li {
+        width: calc((100% - 40px) / 3);
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .songs-container ul li {
+        width: calc((100% - 20px) / 2);
+    }
 }

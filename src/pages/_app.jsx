@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import "@/styles/home.css";
 import "@/styles/songReader.css";
 import "@/styles/dashboard/song.css";
+import "@/styles/dashboard/settings.css";
 import "@/styles/authentication/login.css";
 import "@/styles/authentication/resetPassword.css";
 import "@/styles/authentication/forgottenPassword.css";
@@ -22,8 +23,8 @@ export default function App({ Component, pageProps }) {
         <meta property="og:site_name" content="Me-Hira"/>
         <meta property="og:locale" content="fr_MG"/>
         <meta property="og:type" content="website" key="og:type" />
-        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_APP_BASE_URL}/images/me-hira-share-image.png`} key="og:image" />
-        <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_APP_BASE_URL}/images/me-hira-share-image.png`} key="twitter:image" />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_APP_BASE_URL}/images/me-hira-socials-medias-share-image.png`} key="og:image" />
+        <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_APP_BASE_URL}/images/me-hira-socials-medias-share-image.png`} key="twitter:image" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Toaster className="toast" position='top-center' richColors/>

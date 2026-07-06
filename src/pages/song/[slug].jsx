@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import axios from "axios";
+import { api } from "@/helpers/api";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head"
@@ -8,6 +8,7 @@ import { formatDateMG } from "@/helpers/date";
 import SongReaderSkeletonLoader from "@/components/skeleton-loaders/songReader";
 import { useAuth } from "@/contexts/AuthContext";
 import { FormatSongSinger } from "@/helpers/song";
+import axios from "axios";
 
 export async function getStaticPaths(){
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
@@ -46,7 +47,7 @@ export default function SongReader({ song: _song }){
     var _loadersState = (loading || fetchSongLoading)
 
     useEffect(()=>{
-        axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get?slug=${slug}`)
+        api.get(`/song/get?slug=${slug}`)
         .then((response)=>setSong(response.data))
         .finally(()=>setFetchSongLoading(false))
     }, [slug])
@@ -61,7 +62,11 @@ export default function SongReader({ song: _song }){
             {!_loadersState && <section className="song-container">
                 <div className="song">
                     <div className="song-poster-container">
-                        <video src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`} autoPlay controls loop></video>
+                        <video src={
+                            ( song.fileUrl.startsWith('https://') || song.fileUrl.startsWith('http://') ) ?
+                            song.fileUrl :
+                            `${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`
+                        } autoPlay controls loop></video>
                     </div>
                     <div className="song-info">
                         <h1>{song.title}</h1>

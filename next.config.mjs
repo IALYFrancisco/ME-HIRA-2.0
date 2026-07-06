@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
-  allowedDevOrigins: ['127.0.0.1'],
+  allowedDevOrigins: ['127.0.0.1', '10.37.100.188'],
   reactStrictMode: true,
   images: {
     unoptimized: true,

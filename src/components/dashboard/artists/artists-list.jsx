@@ -11,7 +11,7 @@ import { api } from "@/helpers/api"
 import { FormatSongSinger } from "@/helpers/song"
 import { formToJSON } from "axios"
 
-export default function SongsList(){
+export default function ArtistsList(){
 
     var [ songs, setSongs ] = useState([])
     var [fetchSongsLoading, setfetchSongsLoading] = useState(false)
@@ -143,11 +143,6 @@ export default function SongsList(){
         .finally(()=>setfetchSongsLoading(false))
     }, [])
 
-    const openSongPublicationModal = (song)=>{
-        setSongToDoAction(song)
-        addSongOverlayRef.current.classList.add('active')
-        publicationSongModalRef.current.classList.add('active')
-    }
 
     const songPublication = async (song) => {
         try{
@@ -326,16 +321,16 @@ export default function SongsList(){
                             <Link href="/">
                                 <Image src="/images/logo-de-me-hira.png" priority width={94} height={94} alt="logo de me-hira" className="logo-de-me-hira" />
                             </Link>
-                            <h1>Chansons</h1>
+                            <h1>Artistes</h1>
                         </div>
                         <div className="actions-container">
                             <div className="filters-container">
-                                <input type="text" name="" id="" placeholder="Rechercher des chansons ..." value={prompt} onChange={(e)=>setPrompt(e.target.value)} />
+                                <input type="text" name="" id="" placeholder="Rechercher des artistes ..." value={prompt} onChange={(e)=>setPrompt(e.target.value)} />
                             </div>
                             <span>
                                 <button onClick={openAddSongModal}>
                                     <Image src="/images/plus.png" priority height={16} width={16} alt="ajout de chanson"/>
-                                    Ajouter une chanson
+                                    Créer un document artiste 
                                 </button>
                             </span>
                         </div>

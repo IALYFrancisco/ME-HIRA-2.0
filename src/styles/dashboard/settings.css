@@ -1,0 +1,125 @@
+.dashboard-settings-container {
+    width: calc(100% - 180px);
+    height: max-content;
+    padding: 0 20px;
+    position: relative;
+}
+
+.dashboard-settings-container .page-header-container {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    background-color: white;
+}
+
+.dashboard-settings-container .header {
+    width: 100%;
+}
+
+.dashboard-settings-container .header .page-title {
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-settings-container .header h1 {
+    margin-left: 15px;
+}
+
+.dashboard-settings-container .body {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    column-gap: 20px;
+}
+
+.dashboard-settings-container .body .left,
+.dashboard-settings-container .body .right {
+    width: 50%;
+}
+
+.dashboard-settings-container .body .left form:nth-child(2) {
+    margin-top: 30px;
+}
+
+.dashboard-settings-container form {
+    border: 1px solid var(--gray);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #acacac00, -3px -3px 10px #acacac00;
+}
+
+.dashboard-settings-container form:hover {
+    border-color: var(--orange-base);
+}
+
+.dashboard-settings-container form input {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--gray);
+    padding: 0 10px;
+    outline: none;
+}
+
+.dashboard-settings-container form input:focus {
+    border-color: var(--orange-base);
+}
+
+.dashboard-settings-container form .form-element:nth-child(2),
+.dashboard-settings-container form .form-element:nth-child(3) {
+    margin-top: 30px;
+}
+
+.dashboard-settings-container form .form-element:nth-child(4) {
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.dashboard-settings-container label {
+    cursor: pointer;
+}
+
+.dashboard-settings-container button {
+    transition: all .10s ease-in-out;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-settings-container button:hover {
+    background-color: var(--orange-base);
+}
+
+.dashboard-settings-container button img {
+    color: transparent;
+    width: 30px;
+    height: auto;
+}
+
+.dashboard-settings-container form span {
+    display: block;
+    border: 1px solid var(--gray);
+    padding: 2px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.dashboard-settings-container form span:active {
+  transition: all .10s ease-in-out;
+  transform: scale(0.85);
+}
+
+.dashboard-settings-container form span:has(button:hover) {
+    border-color: var(--orange-base);
+}

@@ -294,7 +294,8 @@
 }
 
 .add-song-modal span:has(button:disabled){
-    border-color: var(--gray)
+    border-color: var(--gray);
+    transform: none;
 }
 
 .add-song-modal select {
