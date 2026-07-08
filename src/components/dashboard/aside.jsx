@@ -37,13 +37,13 @@ export default function Sidebar(){
                     </li>
                     <li>
                         <Link href="/dashboard/artists">
-                            <Image src="/images/artist.png" alt="note melodie" width={16} height={16} priority />
+                            <Image src="/images/artist.png" alt="artistes" width={16} height={16} priority />
                             Artistes
                         </Link>
                     </li>
                     <li>
                         <Link href="/dashboard/settings">
-                            <Image src="/images/setting.png" alt="note melodie" width={16} height={16} priority />
+                            <Image src="/images/setting.png" alt="engrénage pour les paramètres" width={16} height={16} priority />
                             Paramètres
                         </Link>
                     </li>
