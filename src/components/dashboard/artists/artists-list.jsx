@@ -342,11 +342,11 @@ export default function ArtistsList(){
                     <table>
                         <thead>
                             <tr>
-                                <th>Titre</th>
-                                <th>Chanteur</th>
-                                <th>Auteur</th>
-                                <th>Compositeur</th>
-                                <th>Publiée ?</th>
+                                <th>Nom complet</th>
+                                <th>Nom d'artiste</th>
+                                <th>Rôles</th>
+                                <th>Adresse</th>
+                                <th>Date et lieu de naissance</th>
                                 <th className="actions">Actions</th>
                             </tr>
                         </thead>
