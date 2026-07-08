@@ -245,6 +245,7 @@ aside ul li:not(:last-child) {
   padding: 5px 8px;
   border-radius: 5px;
   box-shadow: 3px 3px 10px #acacac00, -3px -3px 10px #acacac00;
+  cursor: pointer;
 }
 
 aside ul button {
