@@ -242,7 +242,9 @@ aside ul {
 
 aside ul li:not(:last-child) {
   background-color: white;
-  padding: 10px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px #acacac00, -3px -3px 10px #acacac00;
 }
 
 aside ul button {
