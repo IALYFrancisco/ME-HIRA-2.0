@@ -247,6 +247,7 @@ aside ul li.actif:not(:last-child) {
   box-shadow: 3px 3px 10px #acacac00, -3px -3px 10px #acacac00;
   cursor: pointer;
   transition: all .10s ease-in-out;
+  border: 1px solid var(--gray);
 }
 
 aside ul button {
