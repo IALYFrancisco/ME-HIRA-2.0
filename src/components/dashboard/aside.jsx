@@ -4,9 +4,11 @@ import { useAuth } from "@/contexts/AuthContext"
 import { toast } from "sonner"
 import { api } from "@/helpers/api"
 import { useState } from "react"
+import { useRouter } from "next/router"
 
 export default function Sidebar(){
 
+    const router = useRouter()
     const { setUser } = useAuth()
     var [logoutIsLoading, setLogoutIsLoading] = useState(false)
 
