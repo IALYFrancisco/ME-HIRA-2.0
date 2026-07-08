@@ -13,7 +13,7 @@ import { formToJSON } from "axios"
 
 export default function ArtistsList(){
 
-    var [ artists, setArtists ] = useState([])
+    var [ songs, setSongs ] = useState([])
     var [fetchSongsLoading, setfetchSongsLoading] = useState(false)
     var [addSongIsLoading, setAddSongIsLoading] = useState(false)
     const { register, handleSubmit, watch, reset, formState: { isDirty } } = useForm()
