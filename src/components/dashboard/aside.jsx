@@ -31,7 +31,7 @@ export default function Sidebar(){
         <span className="aside-container">
             <aside>
                 <ul>
-                    <li>
+                    <li className={ router.pathname === "/dashboard" ? "actif" : "" }>
                         <Link href="/dashboard">
                             <Image src="/images/melody.png" alt="note melodie" width={16} height={16} priority />
                             Chansons
