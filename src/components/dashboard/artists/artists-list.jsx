@@ -13,7 +13,7 @@ import { formToJSON } from "axios"
 
 export default function ArtistsList(){
 
-    var [ songs, setSongs ] = useState([])
+    var [ artists, setArtists ] = useState([])
     var [fetchSongsLoading, setfetchSongsLoading] = useState(false)
     var [addSongIsLoading, setAddSongIsLoading] = useState(false)
     const { register, handleSubmit, watch, reset, formState: { isDirty } } = useForm()
@@ -48,16 +48,16 @@ export default function ArtistsList(){
         }
     }, [])
 
-    const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
+    // const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
 
-    const fetchSongs = async (value)=>{
-        const response = await searchSongs(value)
-        setSongs(response.data)
-    }
+    // const fetchSongs = async (value)=>{
+    //     const response = await searchSongs(value)
+    //     setSongs(response.data)
+    // }
 
-    useEffect(()=>{
-        fetchSongs(prompt)
-    },[prompt])
+    // useEffect(()=>{
+    //     fetchSongs(prompt)
+    // },[prompt])
 
     const toggleActionsPopUp = (songId) => {
         setActivePopUp((prev)=>(prev === songId ? null : songId))
@@ -135,13 +135,13 @@ export default function ArtistsList(){
         }
     },[localFile, watchAll])
 
-    useEffect(()=>{
-        setfetchSongsLoading(true)
-        api.get('/song/get')
-        .then((response) => setSongs(response.data))
-        .catch(()=>setSongs([]))
-        .finally(()=>setfetchSongsLoading(false))
-    }, [])
+    // useEffect(()=>{
+    //     setfetchSongsLoading(true)
+    //     api.get('/song/get')
+    //     .then((response) => setSongs(response.data))
+    //     .catch(()=>setSongs([]))
+    //     .finally(()=>setfetchSongsLoading(false))
+    // }, [])
 
 
     const songPublication = async (song) => {
@@ -351,24 +351,24 @@ export default function ArtistsList(){
                             </tr>
                         </thead>
                         { ( loading || fetchSongsLoading) && <SongsListSkeleton/> }
-                        { !loading && !fetchSongsLoading && songs &&
+                        { !loading && !fetchSongsLoading && artists &&
                             <tbody>
-                                { songs.map(song=>(
-                                    <tr key={song._id}>
-                                        <td>{song.title}</td>
-                                        <td>{FormatSongSinger(song.singer)}</td>
-                                        <td>{song.author ? song.author : "------------"}</td>
-                                        <td>{song.composer ? song.composer : "------------"}</td>
+                                { artists.map(artist=>(
+                                    <tr key={artist._id}>
+                                        <td>{artist.title}</td>
+                                        <td>{FormatSongSinger(artist.singer)}</td>
+                                        <td>{artist.author ? artist.author : "------------"}</td>
+                                        <td>{artist.composer ? artist.composer : "------------"}</td>
                                         <td>
-                                            <span className={song.published ? "song-badge yes" : "song-badge no"}>{song.published ? "Oui" : "Non"}</span>
+                                            <span className={artist.published ? "song-badge yes" : "song-badge no"}>{artist.published ? "Oui" : "Non"}</span>
                                         </td>
                                         <td className="actions">
-                                            <ul ref={ activePopUp === song._id ? popUpActionsRef : null } className={ activePopUp === song._id ? "song-actions active" : "song-actions" }>
-                                                <li onClick={()=>openSongPublicationModal(song)}>{ song.published ? "Dépublier" : "Publier" }</li>
-                                                <li onClick={()=>handleUpdateSongActionClick(song)}>Modifier</li>
-                                                <li onClick={()=>openSongRemoveModal(song)}>Supprimer</li>
+                                            <ul ref={ activePopUp === artist._id ? popUpActionsRef : null } className={ activePopUp === artist._id ? "song-actions active" : "song-actions" }>
+                                                <li onClick={()=>openSongPublicationModal(artist)}>{ artist.published ? "Dépublier" : "Publier" }</li>
+                                                <li onClick={()=>handleUpdateSongActionClick(artist)}>Modifier</li>
+                                                <li onClick={()=>openSongRemoveModal(artist)}>Supprimer</li>
                                             </ul>
-                                            <Image onClick={()=>toggleActionsPopUp(song._id)} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
+                                            <Image onClick={()=>toggleActionsPopUp(artist._id)} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
                                         </td>
                                     </tr>
                                 ))}
