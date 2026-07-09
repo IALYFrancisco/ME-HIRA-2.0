@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import "@/styles/home.css";
 import "@/styles/songReader.css";
 import "@/styles/dashboard/song.css";
+import "@/styles/dashboard/artist.css";
 import "@/styles/dashboard/settings.css";
 import "@/styles/authentication/login.css";
 import "@/styles/authentication/resetPassword.css";
