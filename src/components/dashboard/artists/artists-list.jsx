@@ -14,7 +14,7 @@ import { formToJSON } from "axios"
 export default function ArtistsList(){
 
     var [ artists, setArtists ] = useState([])
-    var [fetchSongsLoading, setfetchSongsLoading] = useState(false)
+    var [fetchArtistIsLoading, setfetchArtistsIsLoading] = useState(false)
     var [addSongIsLoading, setAddSongIsLoading] = useState(false)
     const { register, handleSubmit, watch, reset, formState: { isDirty } } = useForm()
     const { loading } = useAuth()
@@ -350,8 +350,8 @@ export default function ArtistsList(){
                                 <th className="actions">Actions</th>
                             </tr>
                         </thead>
-                        { ( loading || fetchSongsLoading) && <SongsListSkeleton/> }
-                        { !loading && !fetchSongsLoading && artists &&
+                        { ( loading || fetchArtistIsLoading) && <SongsListSkeleton/> }
+                        { !loading && !fetchArtistIsLoading && artists &&
                             <tbody>
                                 { artists.map(artist=>(
                                     <tr key={artist._id}>
