@@ -360,12 +360,12 @@ export default function ArtistsList(){
                 <section>
                     <fieldset>
                             <div className="form-element">
-                                <label htmlFor="title">Nom :</label>
+                                <label htmlFor="name">Nom :</label>
                                 <input type="text" placeholder="vrai nom complet de l'artiste" id="name" { ...register('name', {required: true}) } required />
                             </div>
                             <div className="form-element">
                                 <label htmlFor="artistName">Nom d'artiste (nom sur scène ou autre) :</label>
-                                <input type="text" placeholder="ex: john Doe" id="singer" { ...register('artistName', {required: true}) } required />
+                                <input type="text" placeholder="ex: john Doe" id="artistName" { ...register('artistName', {required: true}) } required />
                             </div>
                             <div className="form-element">
                                 <label htmlFor="roles">Rôles :</label>
