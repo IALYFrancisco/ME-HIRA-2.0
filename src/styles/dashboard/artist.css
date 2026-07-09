@@ -8,3 +8,7 @@
     padding: 10px;
     outline: none;
 }
+
+.add-song-modal textarea:focus {
+    border-color: var(--orange-base);
+}
