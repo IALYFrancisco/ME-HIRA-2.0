@@ -356,15 +356,15 @@ export default function ArtistsList(){
                 <span className="close-modal" onClick={ ()=> {closeAddSongModal(); reset()}}>
                     <Image src="/images/close.png" width={16} height={16} priority alt="fermer modal d'ajout de chanson"/>
                 </span>
-                <h2>{ updatingSongFormIsActive ? "Modification" : "Ajout" } d'une chanson :</h2>
+                <h2>{ updatingSongFormIsActive ? "Modification" : "Création" } d'un document artiste :</h2>
                 <section>
                     <fieldset>
                             <div className="form-element">
-                                <label htmlFor="title">Titre :</label>
-                                <input type="text" placeholder="titre du chanson" id="title" { ...register('title', {required: true}) } required />
+                                <label htmlFor="title">Nom :</label>
+                                <input type="text" placeholder="vrai nom complet de l'artiste" id="name" { ...register('name', {required: true}) } required />
                             </div>
                             <div className="form-element">
-                                <label htmlFor="singer">Chanteur (veuillez séparer par un virgule chaque chanteur) :</label>
+                                <label htmlFor="singer">Nom d'artiste (veuillez séparer par un virgule chaque chanteur) :</label>
                                 <input type="text" placeholder="ex: chanteur1, chanteur2, chanteur3, ..." id="singer" { ...register('singer', {required: true}) } required />
                             </div>
                             <div className="form-element">
