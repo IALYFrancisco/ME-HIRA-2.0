@@ -1,0 +1,10 @@
+.add-song-modal textarea {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    resize: none;
+    border-radius: 10px;
+    border: 1px solid var(--gray);
+    padding: 10px;
+    outline: none;
+}
