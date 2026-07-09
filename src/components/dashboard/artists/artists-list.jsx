@@ -372,12 +372,12 @@ export default function ArtistsList(){
                                 <input type="text" placeholder="les rôles dont occupe l'artiste dans le monde artistique" id="roles" { ...register('roles') }/>
                             </div>
                             <div className="form-element">
-                                <label htmlFor="composer">Compositeur :</label>
-                                <input type="text" placeholder="compositeur du chanson" id="composer" {...register('composer')} />
+                                <label htmlFor="adress">Addresse (on vous sollicite de mettre une addresse complète) :</label>
+                                <input type="text" placeholder="pays, province, région, quartier, logement, ..." id="adress" {...register('adress')} />
                             </div>
                             <div className="form-element">
-                                <label htmlFor="album">Album :</label>
-                                <input type="text" placeholder="l'album auquel appartient la chanson" id="album" {...register('album')} />
+                                <label htmlFor="birthDayAndPlace">Date et lieu de naissance :</label>
+                                <input type="text" placeholder="veuillez saisir la date et le lieu de naissance" id="birthDayAndPlace" {...register('birthDayAndPlace')} />
                             </div>
                     </fieldset>
                     <fieldset>
