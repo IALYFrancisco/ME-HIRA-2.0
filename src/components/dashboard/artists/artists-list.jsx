@@ -394,6 +394,10 @@ export default function ArtistsList(){
                                 <option value="video">Vidéo</option>
                             </select>
                         </div>
+                        <div className="form-element">
+                            <label htmlFor="about">A propos de l'artiste :</label>
+                            <textarea placeholder="On peut ajouter ici ce qui ne sont pas dits à propos de l'artiste" id="about" { ...register('about', {required: true}) } required></textarea>
+                        </div>
                     </fieldset>
                 </section>
                 <div className="form-element">
