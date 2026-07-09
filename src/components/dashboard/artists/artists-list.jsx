@@ -382,7 +382,7 @@ export default function ArtistsList(){
                     </fieldset>
                     <fieldset>
                         <div className="form-element">
-                            <label htmlFor="hostedFile">Fichier :</label>
+                            <label htmlFor="hostedFile">Photo de l'artiste :</label>
                             <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour un fichier déjà mis en ligne" {...register('hostedFile', {required:!localFileIsDefined})} required />
                             <input disabled={hostedFileIsDefined} type="file" accept="audio/*,video/*" onChange={handleFileChange} required />
                         </div>
