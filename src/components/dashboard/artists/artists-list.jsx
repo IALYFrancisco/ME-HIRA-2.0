@@ -364,12 +364,12 @@ export default function ArtistsList(){
                                 <input type="text" placeholder="vrai nom complet de l'artiste" id="name" { ...register('name', {required: true}) } required />
                             </div>
                             <div className="form-element">
-                                <label htmlFor="singer">Nom d'artiste (veuillez séparer par un virgule chaque chanteur) :</label>
-                                <input type="text" placeholder="ex: chanteur1, chanteur2, chanteur3, ..." id="singer" { ...register('singer', {required: true}) } required />
+                                <label htmlFor="artistName">Nom d'artiste (nom sur scène ou autre) :</label>
+                                <input type="text" placeholder="ex: john Doe" id="singer" { ...register('artistName', {required: true}) } required />
                             </div>
                             <div className="form-element">
-                                <label htmlFor="author">Auteur :</label>
-                                <input type="text" placeholder="auteur du chanson" id="author" { ...register('author') }/>
+                                <label htmlFor="roles">Rôles :</label>
+                                <input type="text" placeholder="les rôles dont occupe l'artiste dans le monde artistique" id="roles" { ...register('roles') }/>
                             </div>
                             <div className="form-element">
                                 <label htmlFor="composer">Compositeur :</label>
