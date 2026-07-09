@@ -130,13 +130,13 @@ export default function ArtistsList(){
         }
     },[localFile, watchAll])
 
-    // useEffect(()=>{
-    //     setfetchSongsLoading(true)
-    //     api.get('/song/get')
-    //     .then((response) => setSongs(response.data))
-    //     .catch(()=>setSongs([]))
-    //     .finally(()=>setfetchSongsLoading(false))
-    // }, [])
+    useEffect(()=>{
+        setfetchArtistsIsLoading(true)
+        api.get('/artist/get')
+        .then((response) => setArtists(response.data))
+        .catch(()=>setArtists([]))
+        .finally(()=>setfetchArtistsIsLoading(false))
+    }, [])
 
     const handleClickNoButton = () => {
         if(removeSongModalRef.current){
