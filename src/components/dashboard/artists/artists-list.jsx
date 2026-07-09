@@ -359,7 +359,6 @@ export default function ArtistsList(){
                 <h2>{ updatingSongFormIsActive ? "Modification" : "Ajout" } d'une chanson :</h2>
                 <section>
                     <fieldset>
-                            <legend><h3>A propos du chanson :</h3></legend>
                             <div className="form-element">
                                 <label htmlFor="title">Titre :</label>
                                 <input type="text" placeholder="titre du chanson" id="title" { ...register('title', {required: true}) } required />
@@ -382,7 +381,6 @@ export default function ArtistsList(){
                             </div>
                     </fieldset>
                     <fieldset>
-                        <legend><h3>A propos du fichier :</h3></legend>
                         <div className="form-element">
                             <label htmlFor="hostedFile">Fichier :</label>
                             <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour un fichier déjà mis en ligne" {...register('hostedFile', {required:!localFileIsDefined})} required />
