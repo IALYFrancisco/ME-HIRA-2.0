@@ -392,8 +392,8 @@ export default function ArtistsList(){
                                 <input type="text" placeholder="les rôles dont occupe l'artiste dans le monde artistique" id="roles" { ...register('roles') }/>
                             </div>
                             <div className="form-element">
-                                <label htmlFor="adress">Addresse (on vous sollicite de mettre une addresse complète) :</label>
-                                <input type="text" placeholder="pays, province, région, quartier, logement, ..." id="adress" {...register('adress')} />
+                                <label htmlFor="address">Adresse (on vous sollicite de mettre une adresse complète) :</label>
+                                <input type="text" placeholder="pays, province, région, quartier, logement, ..." id="address" {...register('address')} />
                             </div>
                             <div className="form-element">
                                 <label htmlFor="birthDayAndPlace">Date et lieu de naissance :</label>
