@@ -61,6 +61,14 @@ export default function ArtistsList(){
     //     fetchSongs(prompt)
     // },[prompt])
 
+    const toggleContactPhoneNumber = () => {
+        if(contactPhoneNumberIsActif){
+            setContactPhoneNumberIsActif(false)
+        }else{
+            setContactPhoneNumberIsActif(true)
+        }
+    }
+
     const toggleActionsPopUp = (songId) => {
         setActivePopUp((prev)=>(prev === songId ? null : songId))
     }
