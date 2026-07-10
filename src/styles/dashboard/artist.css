@@ -63,5 +63,4 @@
 
 .add-song-modal .form-element .input-container:focus-within span {
     background-color: var(--orange-base);
-    /* transition:  all .10s ease-in-out; */
 }
