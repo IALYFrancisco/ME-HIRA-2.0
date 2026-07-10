@@ -70,7 +70,7 @@ export default function ArtistsList(){
     }
 
     const toggleContactEmail = () => {
-        if(contactPhoneEmailIsActif){
+        if(contactEmailIsActif){
             setContactEmailIsActif(false)
         }else{
             setContactEmailIsActif(true)
@@ -412,7 +412,7 @@ export default function ArtistsList(){
                                 <li onClick={toggleContactPhoneNumber} className={ contactPhoneNumberIsActif ? "actif" : "" }>
                                     <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
                                 </li>
-                                <li className={ contactEmailIsActif ? "actif" : "" }>
+                                <li onClick={toggleContactEmail} className={ contactEmailIsActif ? "actif" : "" }>
                                     <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
                                 </li>
                             </ul>
