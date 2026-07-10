@@ -392,6 +392,12 @@ export default function ArtistsList(){
                                 <li>
                                     <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
                                 </li>
+                                <li>
+                                    <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
+                                </li>
+                            </ul>
+                            <ul className="inputs-container">
+                                <input type="tel" name="numberPhone" id="numberPhone" />
                             </ul>
                         </div>
                         <div className="form-element">
