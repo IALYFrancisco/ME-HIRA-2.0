@@ -387,12 +387,7 @@ export default function ArtistsList(){
                             <input disabled={hostedFileIsDefined} type="file" accept="audio/*,video/*" onChange={handleFileChange} required />
                         </div>
                         <div className="form-element">
-                            <label htmlFor="fileType">Type du fichier :</label>
-                            <select id="fileType" {...register('fileType', { required: true })} required>
-                                <option value="">------</option>
-                                <option value="audio">Audio</option>
-                                <option value="video">Vidéo</option>
-                            </select>
+                            <label htmlFor="contacts">Contacts :</label>
                         </div>
                         <div className="form-element">
                             <label htmlFor="about">A propos de l'artiste :</label>
