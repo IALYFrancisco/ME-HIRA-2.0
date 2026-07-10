@@ -420,11 +420,17 @@ export default function ArtistsList(){
                                 { 
                                     contactPhoneNumberIsActif &&
                                     <div className="input-container">
-                                        <span className={ contactEmailIsActif ? "actif" : "" }></span>
+                                        <span></span>
                                         <input type="tel" name="numberPhone" id="numberPhone" placeholder="numéro téléphone de l'artiste" title="Numéro téléphone"/>
                                     </div>
                                 }
-                                { contactEmailIsActif && <input type="email" name="email" id="email" placeholder="adresse email de l'artiste" title="Adresse email"/>}
+                                { 
+                                    contactEmailIsActif && 
+                                    <div className="input-container">
+                                        <span></span>
+                                        <input type="email" name="email" id="email" placeholder="adresse email de l'artiste" title="Adresse email"/>
+                                    </div>
+                                }
                             </div>
                         </div>
                         <div className="form-element">
