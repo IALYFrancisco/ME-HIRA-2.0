@@ -12,6 +12,9 @@ import { formToJSON } from "axios"
 
 export default function ArtistsList(){
 
+    var [ contactPhoneNumberIsActif, setContactPhoneNumberIsActif ] = useState(false)
+    var [ contactPhoneNumberValue, setContactPhoneNumberValue ] = useState("")
+
     var [ artists, setArtists ] = useState([])
     var [fetchArtistIsLoading, setfetchArtistsIsLoading] = useState(false)
     var [addSongIsLoading, setAddSongIsLoading] = useState(false)
