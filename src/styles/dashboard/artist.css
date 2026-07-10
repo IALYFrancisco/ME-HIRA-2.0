@@ -13,7 +13,7 @@
     border-color: var(--orange-base);
 }
 
-.add-song-modal .form-element ul {
+.add-song-modal .form-element ul:nth-child(2) {
     margin-top: 10px;
     display: flex;
     column-gap: 13px;
