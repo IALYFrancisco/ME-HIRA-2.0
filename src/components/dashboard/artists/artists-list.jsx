@@ -69,6 +69,14 @@ export default function ArtistsList(){
         }
     }
 
+    const toggleContactEmail = () => {
+        if(contactPhoneEmailIsActif){
+            setContactEmailIsActif(false)
+        }else{
+            setContactEmailIsActif(true)
+        }
+    }
+
     const toggleActionsPopUp = (songId) => {
         setActivePopUp((prev)=>(prev === songId ? null : songId))
     }
