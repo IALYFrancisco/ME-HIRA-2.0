@@ -397,8 +397,8 @@ export default function ArtistsList(){
                                 </li>
                             </ul>
                             <ul className="inputs-container">
-                                <input type="tel" name="numberPhone" id="numberPhone" />
-                                <input type="email" name="email" id="email" />
+                                <input type="tel" name="numberPhone" id="numberPhone" placeholder="numéro téléphone de l'artiste"/>
+                                <input type="email" name="email" id="email" placeholder="adresse email de l'artiste"/>
                             </ul>
                         </div>
                         <div className="form-element">
