@@ -396,7 +396,7 @@ export default function ArtistsList(){
                                 <li className={ contactPhoneNumberIsActif ? "actif" : "" }>
                                     <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
                                 </li>
-                                <li>
+                                <li className={ contactEmailIsActif ? "actif" : "" }>
                                     <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
                                 </li>
                             </ul>

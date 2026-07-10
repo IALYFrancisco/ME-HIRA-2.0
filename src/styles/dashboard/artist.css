@@ -30,6 +30,10 @@
     cursor: pointer;
 }
 
+.add-song-modal .form-element ul li.actif {
+    background-color: var(--orange-base);
+}
+
 .add-song-modal .form-element ul li:active {
     transform: scale(.9);
 }
