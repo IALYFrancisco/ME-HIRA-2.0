@@ -409,10 +409,10 @@ export default function ArtistsList(){
                         <div className="form-element">
                             <label htmlFor="contacts">Contacts :</label>
                             <ul className="contacts-container">
-                                <li onClick={toggleContactPhoneNumber} className={ contactPhoneNumberIsActif ? "actif" : "" }>
+                                <li onClick={toggleContactPhoneNumber} className={ contactPhoneNumberIsActif ? "actif" : "" } title="Numéro téléphone">
                                     <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
                                 </li>
-                                <li onClick={toggleContactEmail} className={ contactEmailIsActif ? "actif" : "" }>
+                                <li onClick={toggleContactEmail} className={ contactEmailIsActif ? "actif" : "" } title="Adresse email">
                                     <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
                                 </li>
                             </ul>
