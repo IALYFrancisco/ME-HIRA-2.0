@@ -41,3 +41,21 @@
 .add-song-modal .form-element ul li img {
     height: auto;
 }
+
+.add-song-modal .form-element .input-container {
+    position: relative;
+}
+
+.add-song-modal .form-element .inputs-container input {
+    padding-left: 45px;
+}
+
+.add-song-modal .form-element .input-container span {
+    width: 33px;
+    height: 32px;
+    background-color: var(--gray);
+    position: absolute;
+    border-radius: 7px;
+    top: 4px;
+    left: 4px;
+}
