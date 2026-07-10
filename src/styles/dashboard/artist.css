@@ -12,3 +12,26 @@
 .add-song-modal textarea:focus {
     border-color: var(--orange-base);
 }
+
+.add-song-modal .form-element ul {
+    margin-top: 10px;
+}
+
+.add-song-modal .form-element ul li {
+    background-color: var(--gray);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-song-modal .form-element ul li:active {
+    transform: scale(.9);
+}
+
+.add-song-modal .form-element ul li img {
+    height: auto;
+}
