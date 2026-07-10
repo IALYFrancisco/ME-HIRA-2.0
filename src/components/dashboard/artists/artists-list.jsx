@@ -417,8 +417,8 @@ export default function ArtistsList(){
                                 </li>
                             </ul>
                             <ul className="inputs-container">
-                                { contactPhoneNumberIsActif && <input type="tel" name="numberPhone" id="numberPhone" placeholder="numéro téléphone de l'artiste"/> }
-                                { contactEmailIsActif && <input type="email" name="email" id="email" placeholder="adresse email de l'artiste"/>}
+                                { contactPhoneNumberIsActif && <input type="tel" name="numberPhone" id="numberPhone" placeholder="numéro téléphone de l'artiste" title="Numéro téléphone"/> }
+                                { contactEmailIsActif && <input type="email" name="email" id="email" placeholder="adresse email de l'artiste" title="Adresse email"/>}
                             </ul>
                         </div>
                         <div className="form-element">
