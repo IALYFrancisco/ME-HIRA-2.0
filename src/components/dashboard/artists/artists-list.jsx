@@ -420,7 +420,7 @@ export default function ArtistsList(){
                                 { 
                                     contactPhoneNumberIsActif &&
                                     <div className="input-container">
-                                        <span></span>
+                                        <span className={ contactEmailIsActif ? "actif" : "" }></span>
                                         <input type="tel" name="numberPhone" id="numberPhone" placeholder="numéro téléphone de l'artiste" title="Numéro téléphone"/>
                                     </div>
                                 }

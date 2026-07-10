@@ -58,4 +58,10 @@
     border-radius: 7px;
     top: 4px;
     left: 4px;
+    transition: all .10s ease-in-out;
+}
+
+.add-song-modal .form-element .input-container span.actif {
+    background-color: var(--orange-base);
+    transition: all .10s ease-in-out;
 }
