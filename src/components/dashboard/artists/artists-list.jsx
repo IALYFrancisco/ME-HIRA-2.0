@@ -416,10 +416,16 @@ export default function ArtistsList(){
                                     <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
                                 </li>
                             </ul>
-                            <ul className="inputs-container">
-                                { contactPhoneNumberIsActif && <input type="tel" name="numberPhone" id="numberPhone" placeholder="numéro téléphone de l'artiste" title="Numéro téléphone"/> }
+                            <div className="inputs-container">
+                                { 
+                                    contactPhoneNumberIsActif &&
+                                    <div className="input-container">
+                                        <span></span>
+                                        <input type="tel" name="numberPhone" id="numberPhone" placeholder="numéro téléphone de l'artiste" title="Numéro téléphone"/>
+                                    </div>
+                                }
                                 { contactEmailIsActif && <input type="email" name="email" id="email" placeholder="adresse email de l'artiste" title="Adresse email"/>}
-                            </ul>
+                            </div>
                         </div>
                         <div className="form-element">
                             <label htmlFor="about">A propos de l'artiste :</label>
