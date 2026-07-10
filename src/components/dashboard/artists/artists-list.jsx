@@ -388,6 +388,11 @@ export default function ArtistsList(){
                         </div>
                         <div className="form-element">
                             <label htmlFor="contacts">Contacts :</label>
+                            <ul className="contacts-container">
+                                <li>
+                                    <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
+                                </li>
+                            </ul>
                         </div>
                         <div className="form-element">
                             <label htmlFor="about">A propos de l'artiste :</label>
