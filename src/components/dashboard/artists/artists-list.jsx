@@ -98,17 +98,17 @@ export default function ArtistsList(){
             }
             
             // Artist document object création
-            song.append('name', data.name)
-            song.append('artistName', data.artistName)
-            song.append('roles', data.roles)
-            song.append('about', data.about)
-            song.append('address', data.address)
-            song.append('birthDayAndPlace', data.birthDayAndPlace)
+            artistDocument.append('name', data.name)
+            artistDocument.append('artistName', data.artistName)
+            artistDocument.append('roles', data.roles)
+            artistDocument.append('about', data.about)
+            artistDocument.append('address', data.address)
+            artistDocument.append('birthDayAndPlace', data.birthDayAndPlace)
             if(data.hostedFile){
-                song.append('image', data.hostedFile)
+                artistDocument.append('image', data.hostedFile)
             }
             if(localFile){
-                song.append('file', localFile)
+                artistDocument.append('file', localFile)
             }
             const response = await api.post(
                 '/artist/create-document',
@@ -131,7 +131,8 @@ export default function ArtistsList(){
                 setLocalFile(null)
                 closeAddSongModal()
             }
-        }catch{
+        }catch(error){
+            console.log(error)
             toast.error(`Erreur de l'ajout du chanson, veuillez réessayer plus tard.`)
         }finally{
             setCreateArtistDocumentIsLoading(false)
