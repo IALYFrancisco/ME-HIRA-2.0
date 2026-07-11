@@ -348,10 +348,8 @@ export default function ArtistsList(){
                                         <td>{artist.name}</td>
                                         <td>{artist.artistName}</td>
                                         <td>{artist.author ? artist.author : "------------"}</td>
-                                        <td>{artist.composer ? artist.composer : "------------"}</td>
-                                        <td>
-                                            <span className={artist.published ? "song-badge yes" : "song-badge no"}>{artist.published ? "Oui" : "Non"}</span>
-                                        </td>
+                                        <td>{artist.address}</td>
+                                        <td>{artist.birthDayAndPlace}</td>
                                         <td className="actions">
                                             <ul ref={ activePopUp === artist._id ? popUpActionsRef : null } className={ activePopUp === artist._id ? "song-actions active" : "song-actions" }>
                                                 <li onClick={()=>handleUpdateSongActionClick(artist)}>Modifier</li>
