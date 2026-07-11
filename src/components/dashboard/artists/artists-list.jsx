@@ -345,7 +345,7 @@ export default function ArtistsList(){
                             <tbody>
                                 { artists.map(artist=>(
                                     <tr key={artist._id}>
-                                        <td>{artist.title}</td>
+                                        <td>{artist.name}</td>
                                         <td>{artist.artistName}</td>
                                         <td>{artist.author ? artist.author : "------------"}</td>
                                         <td>{artist.composer ? artist.composer : "------------"}</td>
