@@ -89,7 +89,10 @@ export default function ArtistsList(){
             const artistDocument = new FormData()
             const artistContact = new FormData()
 
-
+            // Artist contacts object creation
+            if(data.phoneNumber){
+                artistContact.append("phoneNumber")
+            }
             
             song.append('name', data.name)
             song.append('artistName', data.artistName)
@@ -433,7 +436,7 @@ export default function ArtistsList(){
                                     contactPhoneNumberIsActif &&
                                     <div className="input-container">
                                         <span></span>
-                                        <input type="tel" id="numberPhone" placeholder="numéro téléphone de l'artiste" title="Numéro téléphone" { ...register("numberPhone") }/>
+                                        <input type="tel" id="numberPhone" placeholder="numéro téléphone de l'artiste" title="Numéro téléphone" { ...register("phoneNumber") }/>
                                     </div>
                                 }
                                 { 
