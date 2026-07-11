@@ -18,7 +18,7 @@ export default function ArtistsList(){
     
     var [ artists, setArtists ] = useState([])
     var [fetchArtistIsLoading, setfetchArtistsIsLoading] = useState(false)
-    var [addSongIsLoading, setAddSongIsLoading] = useState(false)
+    var [createArtistDocumentIsLoading, setCreateArtistDocumentIsLoading] = useState(false)
     const { register, handleSubmit, watch, reset, formState: { isDirty } } = useForm()
     const { loading } = useAuth()
     
@@ -83,7 +83,7 @@ export default function ArtistsList(){
 
     const createArtistDocument = async (data) => {
         try{
-            setAddSongIsLoading(true)
+            setCreateArtistDocumentIsLoading(true)
             const song = new FormData()
             song.append('title', data.title)
             song.append('author', data.author)
@@ -112,7 +112,7 @@ export default function ArtistsList(){
         }catch{
             toast.error(`Erreur de l'ajout du chanson, veuillez réessayer plus tard.`)
         }finally{
-            setAddSongIsLoading(false)
+            setCreateArtistDocumentIsLoading(false)
         }
     }
 
