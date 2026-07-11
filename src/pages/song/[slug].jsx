@@ -7,7 +7,7 @@ import Head from "next/head"
 import { formatDateMG } from "@/helpers/date";
 import SongReaderSkeletonLoader from "@/components/skeleton-loaders/songReader";
 import { useAuth } from "@/contexts/AuthContext";
-import { FormatSongSinger } from "@/helpers/song";
+import { JoinArrayItems } from "@/helpers/song";
 import axios from "axios";
 
 export async function getStaticPaths(){
@@ -55,7 +55,7 @@ export default function SongReader({ song: _song }){
     return(
         <>
             <Head>
-                <title>{`${song?.title} - ${FormatSongSinger(song?.singer)} - Me-Hira`}</title>
+                <title>{`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`}</title>
             </Head>
             <Navbar/>
             { _loadersState && <SongReaderSkeletonLoader/>}
@@ -70,7 +70,7 @@ export default function SongReader({ song: _song }){
                     </div>
                     <div className="song-info">
                         <h1>{song.title}</h1>
-                        <h2>{FormatSongSinger(song.singer)}</h2>
+                        <h2>{JoinArrayItems(song.singer)}</h2>
                         <p><span className="badge">{song.fileType}</span>{formatDateMG(song.updatedAt)}</p>
                     </div>
                 </div>

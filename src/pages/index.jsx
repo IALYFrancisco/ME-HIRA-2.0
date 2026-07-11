@@ -7,7 +7,7 @@ import Link from "next/link"
 import { formatDateMG } from "@/helpers/date";
 import HomeSkeletonLoader from "@/components/skeleton-loaders/home";
 import { useAuth } from "@/contexts/AuthContext";
-import { FormatSongDuration, FormatSongSinger } from "@/helpers/song";
+import { FormatSongDuration, JoinArrayItems } from "@/helpers/song";
 import { api } from "@/helpers/api";
 
 export default function Home() {
@@ -54,7 +54,7 @@ export default function Home() {
                         </div>
                         <div className="song-info">
                           <h3>{song.title}</h3>
-                          <h4>{FormatSongSinger(song.singer)}</h4>
+                          <h4>{JoinArrayItems(song.singer)}</h4>
                           <p><span className="badge">{ song.fileType === 'video' ? 'vidéo' : 'audio'}</span>{formatDateMG(song.updatedAt)}</p>
                         </div>
                       </Link>

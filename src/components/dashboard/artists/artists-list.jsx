@@ -7,7 +7,7 @@ import { toast } from "sonner"
 import SongsListSkeleton from "@/components/skeleton-loaders/songsListSkeleton"
 import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
-import { FormatSongSinger } from "@/helpers/song"
+import { JoinArrayItems } from "@/helpers/song"
 import { formToJSON } from "axios"
 
 export default function ArtistsList(){
@@ -245,7 +245,7 @@ export default function ArtistsList(){
             if(songToDoAction.fileType !== data.fileType){
                 update.append('fileType', data.fileType)
             }
-            if(FormatSongSinger(songToDoAction.singer) !== data.singer){
+            if(JoinArrayItems(songToDoAction.singer) !== data.singer){
                 update.append('singer', data.singer)
             }
             let localFileUrl = (
@@ -290,7 +290,7 @@ export default function ArtistsList(){
         setSongToDoAction(song)
         reset({
             title: song.title,
-            singer: FormatSongSinger(song.singer),
+            singer: JoinArrayItems(song.singer),
             author: song.author,
             composer: song.composer,
             album: song.album,
@@ -452,7 +452,7 @@ export default function ArtistsList(){
                         Êtes-vous sûr(e) de vouloir supprimer la chanson intitulée
                         <strong> {songToDoAction.title} </strong>
                         chantée par
-                        <strong> {FormatSongSinger(songToDoAction.singer)} </strong>
+                        <strong> {JoinArrayItems(songToDoAction.singer)} </strong>
                         ?
                     </p>
                 }
