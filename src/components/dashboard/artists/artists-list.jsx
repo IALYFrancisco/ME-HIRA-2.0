@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable react-hooks/exhaustive-deps */
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
@@ -8,14 +7,18 @@ import { toast } from "sonner"
 import SongsListSkeleton from "@/components/skeleton-loaders/songsListSkeleton"
 import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
-import { FormatSongSinger } from "@/helpers/song"
+import { JoinArrayItems } from "@/helpers/song"
 import { formToJSON } from "axios"
 
 export default function ArtistsList(){
 
-    var [ songs, setSongs ] = useState([])
-    var [fetchSongsLoading, setfetchSongsLoading] = useState(false)
-    var [addSongIsLoading, setAddSongIsLoading] = useState(false)
+    var [ contactPhoneNumberIsActif, setContactPhoneNumberIsActif ] = useState(false)
+    
+    var [ contactEmailIsActif, setContactEmailIsActif ] = useState(false)
+    
+    var [ artists, setArtists ] = useState([])
+    var [fetchArtistIsLoading, setfetchArtistsIsLoading] = useState(false)
+    var [createArtistDocumentIsLoading, setCreateArtistDocumentIsLoading] = useState(false)
     const { register, handleSubmit, watch, reset, formState: { isDirty } } = useForm()
     const { loading } = useAuth()
     
@@ -27,7 +30,6 @@ export default function ArtistsList(){
     const addSongFormRef = useRef(null)
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
-    const publicationSongModalRef = useRef(null)
     const [ songToDoAction, setSongToDoAction ] = useState(null)
     const [ songActionIsLoading, setSongActionIsLoading ] = useState(false)
     const [ updatingSongFormIsActive, setUpdatingSongFormIsActive ] = useState(false)
@@ -48,45 +50,83 @@ export default function ArtistsList(){
         }
     }, [])
 
-    const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
+    // const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
 
-    const fetchSongs = async (value)=>{
-        const response = await searchSongs(value)
-        setSongs(response.data)
+    // const fetchSongs = async (value)=>{
+    //     const response = await searchSongs(value)
+    //     setSongs(response.data)
+    // }
+
+    // useEffect(()=>{
+    //     fetchSongs(prompt)
+    // },[prompt])
+
+    const toggleContactPhoneNumber = () => {
+        if(contactPhoneNumberIsActif){
+            setContactPhoneNumberIsActif(false)
+        }else{
+            setContactPhoneNumberIsActif(true)
+        }
     }
 
-    useEffect(()=>{
-        fetchSongs(prompt)
-    },[prompt])
+    const toggleContactEmail = () => {
+        if(contactEmailIsActif){
+            setContactEmailIsActif(false)
+        }else{
+            setContactEmailIsActif(true)
+        }
+    }
 
     const toggleActionsPopUp = (songId) => {
         setActivePopUp((prev)=>(prev === songId ? null : songId))
     }
 
-    const addSong = async (data) => {
+    const createArtistDocument = async (data) => {
         try{
-            setAddSongIsLoading(true)
-            const song = new FormData()
-            song.append('title', data.title)
-            song.append('author', data.author)
-            song.append('album', data.album)
-            song.append('composer', data.composer)
-            song.append('fileType', data.fileType)
-            song.append('singer', data.singer)
+
+            setCreateArtistDocumentIsLoading(true)
+            
+            const artistDocument = new FormData()
+            const artistContact = new FormData()
+
+            // Artist contacts object creation
+            if(data.phoneNumber){
+                artistContact.append("phoneNumber", data.phoneNumber)
+            }
+            if(data.email){
+                artistContact.append("email", data.email)
+            }
+            
+            // Artist document object création
+            artistDocument.append('name', data.name)
+            artistDocument.append('artistName', data.artistName)
+            artistDocument.append('roles', data.roles)
+            artistDocument.append('about', data.about)
+            artistDocument.append('address', data.address)
+            artistDocument.append('birthDayAndPlace', data.birthDayAndPlace)
             if(data.hostedFile){
-                song.append('fileUrl', data.hostedFile)
+                artistDocument.append('image', data.hostedFile)
             }
             if(localFile){
-                song.append('file', localFile)
+                artistDocument.append('file', localFile)
             }
-            const response = await api.post('/song/add', song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"} })
+            const response = await api.post(
+                '/artist/create-document',
+                { 
+                    artist: formToJSON(artistDocument),
+                    contact: formToJSON(artistContact)
+                },
+                {
+                    headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}
+                })
+            
             if(response.status === 201){
-                api.get('/song/get')
+                api.get('/artist/get')
                     .then((response) => {
-                        setSongs(response.data)
+                        setArtists(response.data)
                     })
-                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des chansons."))
-                toast.info(`La chanson intitulée ${data.title} a été ajoutée dans la base de donnée.`)
+                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
+                toast.info(`Le document artiste de ${data.artistName} est créé dans la base de donnée.`)
                 reset()
                 setLocalFile(null)
                 closeAddSongModal()
@@ -94,7 +134,7 @@ export default function ArtistsList(){
         }catch{
             toast.error(`Erreur de l'ajout du chanson, veuillez réessayer plus tard.`)
         }finally{
-            setAddSongIsLoading(false)
+            setCreateArtistDocumentIsLoading(false)
         }
     }
 
@@ -115,9 +155,6 @@ export default function ArtistsList(){
             hostedFile: "",
             fileType: ""
         })
-        if(publicationSongModalRef.current){
-            publicationSongModalRef.current.classList.remove('active')
-        }
         setUpdatingSongFormIsActive(false)
     }
 
@@ -136,39 +173,14 @@ export default function ArtistsList(){
     },[localFile, watchAll])
 
     useEffect(()=>{
-        setfetchSongsLoading(true)
-        api.get('/song/get')
-        .then((response) => setSongs(response.data))
-        .catch(()=>setSongs([]))
-        .finally(()=>setfetchSongsLoading(false))
+        setfetchArtistsIsLoading(true)
+        api.get('/artist/get')
+        .then((response) => setArtists(response.data))
+        .catch(()=>setArtists([]))
+        .finally(()=>setfetchArtistsIsLoading(false))
     }, [])
 
-
-    const songPublication = async (song) => {
-        try{
-            setSongActionIsLoading(true)
-            let response = await api.patch('/song/publication', { song: song._id, update: song?.published ? { published: false } : { published: true }})
-            if(response.status === 200){
-                toast.info(`La chanson intitulée ${song?.title} est actuellement ${song?.published ? 'indisponible' : 'disponible'} en publique.`)
-                api.get('/song/get')
-                    .then((response) => {
-                        setSongs(response.data)
-                    })
-                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des chansons."))
-            }
-        }catch{
-            toast.error("Erreur de mise à jour du chanson, veuillez réessayer plus tard.")
-        }finally{
-            setSongActionIsLoading(false)
-            publicationSongModalRef.current.classList.remove('active')
-            addSongOverlayRef.current.classList.remove('active')
-        }
-    }
-
     const handleClickNoButton = () => {
-        if(publicationSongModalRef.current){
-            publicationSongModalRef.current.classList.remove('active')
-        }
         if(removeSongModalRef.current){
             removeSongModalRef.current.classList.remove('active')
         }
@@ -255,7 +267,7 @@ export default function ArtistsList(){
             if(songToDoAction.fileType !== data.fileType){
                 update.append('fileType', data.fileType)
             }
-            if(FormatSongSinger(songToDoAction.singer) !== data.singer){
+            if(JoinArrayItems(songToDoAction.singer) !== data.singer){
                 update.append('singer', data.singer)
             }
             let localFileUrl = (
@@ -300,7 +312,7 @@ export default function ArtistsList(){
         setSongToDoAction(song)
         reset({
             title: song.title,
-            singer: FormatSongSinger(song.singer),
+            singer: JoinArrayItems(song.singer),
             author: song.author,
             composer: song.composer,
             album: song.album,
@@ -342,33 +354,30 @@ export default function ArtistsList(){
                     <table>
                         <thead>
                             <tr>
-                                <th>Titre</th>
-                                <th>Chanteur</th>
-                                <th>Auteur</th>
-                                <th>Compositeur</th>
-                                <th>Publiée ?</th>
+                                <th>Nom complet</th>
+                                <th>Nom d'artiste</th>
+                                <th>Rôles</th>
+                                <th>Adresse</th>
+                                <th>Date et lieu de naissance</th>
                                 <th className="actions">Actions</th>
                             </tr>
                         </thead>
-                        { ( loading || fetchSongsLoading) && <SongsListSkeleton/> }
-                        { !loading && !fetchSongsLoading && songs &&
+                        { ( loading || fetchArtistIsLoading) && <SongsListSkeleton/> }
+                        { !loading && !fetchArtistIsLoading && artists &&
                             <tbody>
-                                { songs.map(song=>(
-                                    <tr key={song._id}>
-                                        <td>{song.title}</td>
-                                        <td>{FormatSongSinger(song.singer)}</td>
-                                        <td>{song.author ? song.author : "------------"}</td>
-                                        <td>{song.composer ? song.composer : "------------"}</td>
-                                        <td>
-                                            <span className={song.published ? "song-badge yes" : "song-badge no"}>{song.published ? "Oui" : "Non"}</span>
-                                        </td>
+                                { artists.map(artist=>(
+                                    <tr key={artist._id}>
+                                        <td>{artist.name}</td>
+                                        <td>{artist.artistName}</td>
+                                        <td>{JoinArrayItems(artist.roles)}</td>
+                                        <td>{artist.address}</td>
+                                        <td>{artist.birthDayAndPlace}</td>
                                         <td className="actions">
-                                            <ul ref={ activePopUp === song._id ? popUpActionsRef : null } className={ activePopUp === song._id ? "song-actions active" : "song-actions" }>
-                                                <li onClick={()=>openSongPublicationModal(song)}>{ song.published ? "Dépublier" : "Publier" }</li>
-                                                <li onClick={()=>handleUpdateSongActionClick(song)}>Modifier</li>
-                                                <li onClick={()=>openSongRemoveModal(song)}>Supprimer</li>
+                                            <ul ref={ activePopUp === artist._id ? popUpActionsRef : null } className={ activePopUp === artist._id ? "song-actions active" : "song-actions" }>
+                                                <li onClick={()=>handleUpdateSongActionClick(artist)}>Modifier</li>
+                                                <li onClick={()=>openSongRemoveModal(artist)}>Supprimer</li>
                                             </ul>
-                                            <Image onClick={()=>toggleActionsPopUp(song._id)} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
+                                            <Image onClick={()=>toggleActionsPopUp(artist._id)} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
                                         </td>
                                     </tr>
                                 ))}
@@ -380,87 +389,84 @@ export default function ArtistsList(){
             <div className="add-song-overlay" ref={addSongOverlayRef} onClick={closeAddSongModal}></div>
             <form onSubmit={
                 handleSubmit(
-                    updatingSongFormIsActive ? updateSong : addSong
+                    updatingSongFormIsActive ? updateSong : createArtistDocument
                 )}
                 className="add-song-modal" ref={addSongFormRef}
             >
                 <span className="close-modal" onClick={ ()=> {closeAddSongModal(); reset()}}>
                     <Image src="/images/close.png" width={16} height={16} priority alt="fermer modal d'ajout de chanson"/>
                 </span>
-                <h2>{ updatingSongFormIsActive ? "Modification" : "Ajout" } d'une chanson :</h2>
+                <h2>{ updatingSongFormIsActive ? "Modification" : "Création" } d'un document artiste :</h2>
                 <section>
                     <fieldset>
-                            <legend><h3>A propos du chanson :</h3></legend>
                             <div className="form-element">
-                                <label htmlFor="title">Titre :</label>
-                                <input type="text" placeholder="titre du chanson" id="title" { ...register('title', {required: true}) } required />
+                                <label htmlFor="name">Nom :</label>
+                                <input type="text" placeholder="vrai nom complet de l'artiste" id="name" { ...register('name') }/>
                             </div>
                             <div className="form-element">
-                                <label htmlFor="singer">Chanteur (veuillez séparer par un virgule chaque chanteur) :</label>
-                                <input type="text" placeholder="ex: chanteur1, chanteur2, chanteur3, ..." id="singer" { ...register('singer', {required: true}) } required />
+                                <label htmlFor="artistName">Nom d'artiste (nom sur scène ou autre) :</label>
+                                <input type="text" placeholder="ex: john Doe" id="artistName" { ...register('artistName', {required: true}) } required />
                             </div>
                             <div className="form-element">
-                                <label htmlFor="author">Auteur :</label>
-                                <input type="text" placeholder="auteur du chanson" id="author" { ...register('author') }/>
+                                <label htmlFor="roles">Rôles :</label>
+                                <input type="text" placeholder="les rôles dont occupe l'artiste dans le monde artistique" id="roles" { ...register('roles', {required:true}) } required/>
                             </div>
                             <div className="form-element">
-                                <label htmlFor="composer">Compositeur :</label>
-                                <input type="text" placeholder="compositeur du chanson" id="composer" {...register('composer')} />
+                                <label htmlFor="address">Adresse (on vous sollicite de mettre une adresse complète) :</label>
+                                <input type="text" placeholder="pays, province, région, quartier, logement, ..." id="address" {...register('address')} />
                             </div>
                             <div className="form-element">
-                                <label htmlFor="album">Album :</label>
-                                <input type="text" placeholder="l'album auquel appartient la chanson" id="album" {...register('album')} />
+                                <label htmlFor="birthDayAndPlace">Date et lieu de naissance :</label>
+                                <input type="text" placeholder="veuillez saisir la date et le lieu de naissance" id="birthDayAndPlace" {...register('birthDayAndPlace')} />
                             </div>
                     </fieldset>
                     <fieldset>
-                        <legend><h3>A propos du fichier :</h3></legend>
                         <div className="form-element">
-                            <label htmlFor="hostedFile">Fichier :</label>
-                            <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour un fichier déjà mis en ligne" {...register('hostedFile', {required:!localFileIsDefined})} required />
-                            <input disabled={hostedFileIsDefined} type="file" accept="audio/*,video/*" onChange={handleFileChange} required />
+                            <label htmlFor="hostedFile">Photo de l'artiste :</label>
+                            <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour une photo déjà mis en ligne" {...register('hostedFile')}/>
+                            <input disabled={hostedFileIsDefined} type="file" accept="audio/*,video/*" onChange={handleFileChange}/>
                         </div>
                         <div className="form-element">
-                            <label htmlFor="fileType">Type du fichier :</label>
-                            <select id="fileType" {...register('fileType', { required: true })} required>
-                                <option value="">------</option>
-                                <option value="audio">Audio</option>
-                                <option value="video">Vidéo</option>
-                            </select>
+                            <label htmlFor="contacts">Contacts :</label>
+                            <ul className="contacts-container">
+                                <li onClick={toggleContactPhoneNumber} className={ contactPhoneNumberIsActif ? "actif" : "" } title="Numéro téléphone">
+                                    <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
+                                </li>
+                                <li onClick={toggleContactEmail} className={ contactEmailIsActif ? "actif" : "" } title="Adresse email">
+                                    <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
+                                </li>
+                            </ul>
+                            <div className="inputs-container">
+                                { 
+                                    contactPhoneNumberIsActif &&
+                                    <div className="input-container">
+                                        <span></span>
+                                        <input type="tel" id="numberPhone" placeholder="numéro téléphone de l'artiste" title="Numéro téléphone" { ...register("phoneNumber") }/>
+                                    </div>
+                                }
+                                { 
+                                    contactEmailIsActif && 
+                                    <div className="input-container">
+                                        <span></span>
+                                        <input type="email" id="email" placeholder="adresse email de l'artiste" title="Adresse email" { ...register("email") }/>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div className="form-element">
+                            <label htmlFor="about">A propos de l'artiste :</label>
+                            <textarea placeholder="On peut ajouter ici ce qui ne sont pas dits à propos de l'artiste." id="about" { ...register('about') }></textarea>
                         </div>
                     </fieldset>
                 </section>
                 <div className="form-element">
-                    <span className={addSongIsLoading?"border disabled":"border"}>
-                        <button disabled={addSongIsLoading || (updatingSongFormIsActive && !isModified) || songActionIsLoading}>
-                            {( addSongIsLoading || songActionIsLoading ) ? <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> : "Soumettre"}
+                    <span className={createArtistDocumentIsLoading?"border disabled":"border"}>
+                        <button disabled={createArtistDocumentIsLoading || (updatingSongFormIsActive && !isModified) || songActionIsLoading}>
+                            {( createArtistDocumentIsLoading || songActionIsLoading ) ? <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> : "Soumettre"}
                         </button>
                     </span>
                 </div>
             </form>
-            <div ref={publicationSongModalRef} className="publication-song-modal">
-                <h3>{ `${ songToDoAction?.published ? 'Dépublication' : 'Publication'} d'une chanson.` }</h3>
-                { songToDoAction &&
-                    <p>
-                        {`Êtes-vous sûr(e) de vouloir ${ songToDoAction.published ? 'dépublier' : 'publier'} la chanson intitulée `}
-                        <strong>{songToDoAction.title}</strong>
-                        {' chantée par '}
-                        <strong>{FormatSongSinger(songToDoAction.singer)}</strong>
-                        {' ?'}
-                    </p>
-                }
-                <div className="publication-song-choices">
-                    <span onClick={handleClickNoButton}><button disabled={songActionIsLoading} className="no">Non</button></span>
-                    <span>
-                        <button disabled={songActionIsLoading} onClick={()=>songPublication(songToDoAction)} className="yes">
-                            { 
-                                songActionIsLoading ?
-                                <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
-                                : "Oui"
-                            }
-                        </button>
-                    </span>
-                </div>
-            </div>
             <div ref={removeSongModalRef} className="remove-song-modal">
                 <h3>Suppression d'une chanson.</h3>
                 { songToDoAction &&
@@ -468,7 +474,7 @@ export default function ArtistsList(){
                         Êtes-vous sûr(e) de vouloir supprimer la chanson intitulée
                         <strong> {songToDoAction.title} </strong>
                         chantée par
-                        <strong> {FormatSongSinger(songToDoAction.singer)} </strong>
+                        <strong> {JoinArrayItems(songToDoAction.singer)} </strong>
                         ?
                     </p>
                 }

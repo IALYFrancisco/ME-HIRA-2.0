@@ -4,9 +4,11 @@ import { useAuth } from "@/contexts/AuthContext"
 import { toast } from "sonner"
 import { api } from "@/helpers/api"
 import { useState } from "react"
+import { useRouter } from "next/router"
 
 export default function Sidebar(){
 
+    const router = useRouter()
     const { setUser } = useAuth()
     var [logoutIsLoading, setLogoutIsLoading] = useState(false)
 
@@ -29,21 +31,21 @@ export default function Sidebar(){
         <span className="aside-container">
             <aside>
                 <ul>
-                    <li>
+                    <li className={ router.pathname === "/dashboard" ? "actif" : "" }>
                         <Link href="/dashboard">
                             <Image src="/images/melody.png" alt="note melodie" width={16} height={16} priority />
                             Chansons
                         </Link>
                     </li>
-                    <li>
+                    <li className={ router.pathname === "/dashboard/artists" ? "actif" : "" }>
                         <Link href="/dashboard/artists">
-                            <Image src="/images/artist.png" alt="note melodie" width={16} height={16} priority />
+                            <Image src="/images/artist.png" alt="artistes" width={16} height={16} priority />
                             Artistes
                         </Link>
                     </li>
-                    <li>
+                    <li className={ router.pathname === "/dashboard/settings" ? "actif" : "" }>
                         <Link href="/dashboard/settings">
-                            <Image src="/images/setting.png" alt="note melodie" width={16} height={16} priority />
+                            <Image src="/images/setting.png" alt="engrénage pour les paramètres" width={16} height={16} priority />
                             Paramètres
                         </Link>
                     </li>

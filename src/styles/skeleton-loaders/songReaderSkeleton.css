@@ -55,3 +55,17 @@
     font-size: initial;
     padding: 3px 8px;
 }
+
+@media only screen and (max-width: 1024px) {
+    .skeleton-song-container .song {
+        width: 100%;
+        padding: 0 25px;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .skeleton-song-container .song {
+        padding: 0 10px;
+    }
+}

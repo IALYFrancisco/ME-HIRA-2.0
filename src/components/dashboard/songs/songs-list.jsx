@@ -8,7 +8,7 @@ import { toast } from "sonner"
 import SongsListSkeleton from "@/components/skeleton-loaders/songsListSkeleton"
 import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
-import { FormatSongSinger } from "@/helpers/song"
+import { JoinArrayItems } from "@/helpers/song"
 import { formToJSON } from "axios"
 
 export default function SongsList(){
@@ -260,7 +260,7 @@ export default function SongsList(){
             if(songToDoAction.fileType !== data.fileType){
                 update.append('fileType', data.fileType)
             }
-            if(FormatSongSinger(songToDoAction.singer) !== data.singer){
+            if(JoinArrayItems(songToDoAction.singer) !== data.singer){
                 update.append('singer', data.singer)
             }
             let localFileUrl = (
@@ -305,7 +305,7 @@ export default function SongsList(){
         setSongToDoAction(song)
         reset({
             title: song.title,
-            singer: FormatSongSinger(song.singer),
+            singer: JoinArrayItems(song.singer),
             author: song.author,
             composer: song.composer,
             album: song.album,
@@ -361,7 +361,7 @@ export default function SongsList(){
                                 { songs.map(song=>(
                                     <tr key={song._id}>
                                         <td>{song.title}</td>
-                                        <td>{FormatSongSinger(song.singer)}</td>
+                                        <td>{JoinArrayItems(song.singer)}</td>
                                         <td>{song.author ? song.author : "------------"}</td>
                                         <td>{song.composer ? song.composer : "------------"}</td>
                                         <td>
@@ -449,7 +449,7 @@ export default function SongsList(){
                         {`Êtes-vous sûr(e) de vouloir ${ songToDoAction.published ? 'dépublier' : 'publier'} la chanson intitulée `}
                         <strong>{songToDoAction.title}</strong>
                         {' chantée par '}
-                        <strong>{FormatSongSinger(songToDoAction.singer)}</strong>
+                        <strong>{JoinArrayItems(songToDoAction.singer)}</strong>
                         {' ?'}
                     </p>
                 }
@@ -473,7 +473,7 @@ export default function SongsList(){
                         Êtes-vous sûr(e) de vouloir supprimer la chanson intitulée
                         <strong> {songToDoAction.title} </strong>
                         chantée par
-                        <strong> {FormatSongSinger(songToDoAction.singer)} </strong>
+                        <strong> {JoinArrayItems(songToDoAction.singer)} </strong>
                         ?
                     </p>
                 }

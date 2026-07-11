@@ -1,4 +1,4 @@
-export function FormatSongSinger(array){
+export function JoinArrayItems(array){
     return array.join(", ")
 }
 

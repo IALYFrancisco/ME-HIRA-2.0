@@ -240,6 +240,18 @@ aside ul {
   padding-top: 128px;
 }
 
+aside ul li:not(:last-child) {
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px #acacac00, -3px -3px 10px #acacac00;
+  cursor: pointer;
+  transition: all .10s ease-in-out;
+}
+
+aside ul li.actif:not(:last-child) {
+  background-color: white;
+}
+
 aside ul button {
   transition: all .10s ease-in-out;
   padding: 10px 15px;

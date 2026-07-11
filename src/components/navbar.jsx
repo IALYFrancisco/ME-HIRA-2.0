@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { api } from "@/helpers/api"
-import { FormatSongSinger } from "@/helpers/song"
+import { JoinArrayItems } from "@/helpers/song"
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
@@ -93,7 +93,7 @@ export default function Navbar (){
                                         <Link href={`/song/${song.slug}`}>
                                             <h4>{song.title}</h4>
                                             <span className="singer-container">
-                                                <h5>{FormatSongSinger(song.singer)}</h5>
+                                                <h5>{JoinArrayItems(song.singer)}</h5>
                                                 <span className="badge">{song.fileType}</span>
                                             </span>
                                         </Link>
