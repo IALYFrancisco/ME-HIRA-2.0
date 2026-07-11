@@ -84,10 +84,10 @@ export default function ArtistsList(){
     const createArtistDocument = async (data) => {
         try{
             setCreateArtistDocumentIsLoading(true)
-            const song = new FormData()
-            song.append('title', data.title)
-            song.append('author', data.author)
-            song.append('album', data.album)
+            const artistDocument = new FormData()
+            song.append('name', data.name)
+            song.append('artistName', data.artistName)
+            song.append('roles', data.roles)
             song.append('composer', data.composer)
             song.append('fileType', data.fileType)
             song.append('singer', data.singer)
