@@ -91,7 +91,10 @@ export default function ArtistsList(){
 
             // Artist contacts object creation
             if(data.phoneNumber){
-                artistContact.append("phoneNumber")
+                artistContact.append("phoneNumber", data.phoneNumber)
+            }
+            if(data.email){
+                artistContact.append("email", data.email)
             }
             
             song.append('name', data.name)
