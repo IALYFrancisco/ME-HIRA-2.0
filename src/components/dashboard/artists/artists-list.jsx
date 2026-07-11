@@ -455,7 +455,7 @@ export default function ArtistsList(){
                         </div>
                         <div className="form-element">
                             <label htmlFor="about">A propos de l'artiste :</label>
-                            <textarea placeholder="On peut ajouter ici ce qui ne sont pas dits à propos de l'artiste." id="about" { ...register('about', {required: true}) } required></textarea>
+                            <textarea placeholder="On peut ajouter ici ce qui ne sont pas dits à propos de l'artiste." id="about" { ...register('about') }></textarea>
                         </div>
                     </fieldset>
                 </section>
