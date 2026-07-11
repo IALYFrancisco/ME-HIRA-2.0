@@ -346,7 +346,7 @@ export default function ArtistsList(){
                                 { artists.map(artist=>(
                                     <tr key={artist._id}>
                                         <td>{artist.title}</td>
-                                        <td>{FormatSongSinger(artist.singer)}</td>
+                                        <td>{artist.artistName}</td>
                                         <td>{artist.author ? artist.author : "------------"}</td>
                                         <td>{artist.composer ? artist.composer : "------------"}</td>
                                         <td>
