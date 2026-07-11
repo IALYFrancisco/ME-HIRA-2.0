@@ -409,7 +409,7 @@ export default function ArtistsList(){
                             </div>
                             <div className="form-element">
                                 <label htmlFor="roles">Rôles :</label>
-                                <input type="text" placeholder="les rôles dont occupe l'artiste dans le monde artistique" id="roles" { ...register('roles') }/>
+                                <input type="text" placeholder="les rôles dont occupe l'artiste dans le monde artistique" id="roles" { ...register('roles', {required:true}) } required/>
                             </div>
                             <div className="form-element">
                                 <label htmlFor="address">Adresse (on vous sollicite de mettre une adresse complète) :</label>
@@ -423,8 +423,8 @@ export default function ArtistsList(){
                     <fieldset>
                         <div className="form-element">
                             <label htmlFor="hostedFile">Photo de l'artiste :</label>
-                            <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour une photo déjà mis en ligne" {...register('hostedFile', {required:!localFileIsDefined})} required />
-                            <input disabled={hostedFileIsDefined} type="file" accept="audio/*,video/*" onChange={handleFileChange} required />
+                            <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour une photo déjà mis en ligne" {...register('hostedFile')}/>
+                            <input disabled={hostedFileIsDefined} type="file" accept="audio/*,video/*" onChange={handleFileChange}/>
                         </div>
                         <div className="form-element">
                             <label htmlFor="contacts">Contacts :</label>
