@@ -83,8 +83,14 @@ export default function ArtistsList(){
 
     const createArtistDocument = async (data) => {
         try{
+
             setCreateArtistDocumentIsLoading(true)
+            
             const artistDocument = new FormData()
+            const artistContact = new FormData()
+
+            
+            
             song.append('name', data.name)
             song.append('artistName', data.artistName)
             song.append('roles', data.roles)
@@ -97,7 +103,15 @@ export default function ArtistsList(){
             if(localFile){
                 song.append('file', localFile)
             }
-            const response = await api.post('/song/add', song, { headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"} })
+            const response = await api.post(
+                '/artist/create-document',
+                { 
+                    artist: artistDocument,
+                },
+                {
+                    headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}
+                })
+            
             if(response.status === 201){
                 api.get('/song/get')
                     .then((response) => {
