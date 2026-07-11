@@ -347,7 +347,7 @@ export default function ArtistsList(){
                                     <tr key={artist._id}>
                                         <td>{artist.name}</td>
                                         <td>{artist.artistName}</td>
-                                        <td>{artist.author ? artist.author : "------------"}</td>
+                                        <td>{JoinArrayItems(artist.roles)}</td>
                                         <td>{artist.address}</td>
                                         <td>{artist.birthDayAndPlace}</td>
                                         <td className="actions">
