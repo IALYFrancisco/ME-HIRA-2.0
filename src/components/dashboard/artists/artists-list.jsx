@@ -123,7 +123,7 @@ export default function ArtistsList(){
             if(response.status === 201){
                 api.get('/artist/get')
                     .then((response) => {
-                        setSongs(response.data)
+                        setArtists(response.data)
                     })
                     .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
                 toast.info(`Le document artiste de ${data.artistName} est créé dans la base de donnée.`)
