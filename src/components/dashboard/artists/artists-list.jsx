@@ -113,8 +113,8 @@ export default function ArtistsList(){
             const response = await api.post(
                 '/artist/create-document',
                 { 
-                    artist: artistDocument,
-                    contact: artistContact
+                    artist: formToJSON(artistDocument),
+                    contact: formToJSON(artistContact)
                 },
                 {
                     headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}
@@ -131,8 +131,7 @@ export default function ArtistsList(){
                 setLocalFile(null)
                 closeAddSongModal()
             }
-        }catch(error){
-            console.log(error)
+        }catch{
             toast.error(`Erreur de l'ajout du chanson, veuillez réessayer plus tard.`)
         }finally{
             setCreateArtistDocumentIsLoading(false)
