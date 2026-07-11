@@ -90,10 +90,9 @@ export default function ArtistsList(){
             song.append('roles', data.roles)
             song.append('about', data.about)
             song.append('address', data.address)
-            song.append('image', data.singer)
             song.append('birthDayAndPlace', data.birthDayAndPlace)
             if(data.hostedFile){
-                song.append('fileUrl', data.hostedFile)
+                song.append('image', data.hostedFile)
             }
             if(localFile){
                 song.append('file', localFile)
