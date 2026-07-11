@@ -81,7 +81,7 @@ export default function ArtistsList(){
         setActivePopUp((prev)=>(prev === songId ? null : songId))
     }
 
-    const addSong = async (data) => {
+    const createArtistDocument = async (data) => {
         try{
             setAddSongIsLoading(true)
             const song = new FormData()
@@ -367,7 +367,7 @@ export default function ArtistsList(){
             <div className="add-song-overlay" ref={addSongOverlayRef} onClick={closeAddSongModal}></div>
             <form onSubmit={
                 handleSubmit(
-                    updatingSongFormIsActive ? updateSong : addSong
+                    updatingSongFormIsActive ? updateSong : createArtistDocument
                 )}
                 className="add-song-modal" ref={addSongFormRef}
             >
