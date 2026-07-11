@@ -97,6 +97,7 @@ export default function ArtistsList(){
                 artistContact.append("email", data.email)
             }
             
+            // Artist document object création
             song.append('name', data.name)
             song.append('artistName', data.artistName)
             song.append('roles', data.roles)
@@ -113,6 +114,7 @@ export default function ArtistsList(){
                 '/artist/create-document',
                 { 
                     artist: artistDocument,
+                    contact: artistContact
                 },
                 {
                     headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}
