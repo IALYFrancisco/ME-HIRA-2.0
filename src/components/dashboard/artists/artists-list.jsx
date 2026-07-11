@@ -121,12 +121,12 @@ export default function ArtistsList(){
                 })
             
             if(response.status === 201){
-                api.get('/song/get')
+                api.get('/artist/get')
                     .then((response) => {
                         setSongs(response.data)
                     })
-                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des chansons."))
-                toast.info(`La chanson intitulée ${data.title} a été ajoutée dans la base de donnée.`)
+                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
+                toast.info(`Le document artiste de ${data.artistName} est créé dans la base de donnée.`)
                 reset()
                 setLocalFile(null)
                 closeAddSongModal()
