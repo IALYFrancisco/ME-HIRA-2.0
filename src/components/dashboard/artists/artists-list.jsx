@@ -61,7 +61,7 @@ export default function ArtistsList(){
 
     useEffect(()=>{
         fetchArtists(prompt)
-    },[fetchArtists, prompt])
+    },[prompt])
 
     const toggleContactPhoneNumber = () => {
         if(contactPhoneNumberIsActif){
