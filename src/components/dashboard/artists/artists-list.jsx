@@ -148,6 +148,7 @@ export default function ArtistsList(){
     const closeAddSongModal = ()=>{
         addSongOverlayRef.current.classList.remove('active')
         addSongFormRef.current.classList.remove('active')
+        removeSongModalRef.current.classList.remove('active')
         reset({
             title: "",
             singer: "",
