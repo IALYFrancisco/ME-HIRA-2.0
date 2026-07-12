@@ -478,7 +478,7 @@ export default function ArtistsList(){
                 { documentToDoAction &&
                     <>
                         <p>
-                            Êtes-vous sûr(e) de vouloir supprimer le document artiste de
+                            Êtes-vous sûr(e) de vouloir supprimer les documents artiste de
                             <strong> {documentToDoAction.artistName} </strong>
                             ?
                         </p>
