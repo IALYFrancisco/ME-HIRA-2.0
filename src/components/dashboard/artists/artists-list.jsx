@@ -225,20 +225,20 @@ export default function ArtistsList(){
         removeSongModalRef.current.classList.add('active')
     }
 
-    const removeDocumentArtist = async (song) => {
+    const removeDocumentArtist = async (artist) => {
         try{
             setSongActionIsLoading(true)
-            let response = await api.delete('/artist/delete', { data: { song: song._id } })
+            let response = await api.delete('/artist/delete', { data: { docId: artist._id } })
             if(response.status === 200){
-                toast.info(`La chanson intitulée ${song?.title} a été supprimée.`)
-                api.get('/song/get')
+                toast.info(`Le document artiste de ${artist?.artistName} a été supprimé.`)
+                api.get('/artist/get')
                     .then((response) => {
-                        setSongs(response.data)
+                        setArtists(response.data)
                     })
-                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des chansons."))
+                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
             }
         }catch{
-            toast.error("Erreur de suppression du chanson, veuillez réessayer plus tard.")
+            toast.error("Erreur de suppression du document artiste, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
             removeSongModalRef.current.classList.remove('active')
