@@ -59,6 +59,9 @@
     top: 4px;
     left: 4px;
     transition:  all .10s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .add-song-modal .form-element .input-container:focus-within span {
