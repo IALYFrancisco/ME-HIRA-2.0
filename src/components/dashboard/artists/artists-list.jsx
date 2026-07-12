@@ -482,7 +482,7 @@ export default function ArtistsList(){
                             <strong> {documentToDoAction.artistName} </strong>
                             ?
                         </p>
-                        <p>Faite attention, cette action est irréversible</p>
+                        <p>Faite attention, cette action est irréversible.</p>
                     </>
                 }
                 <div className="remove-song-choices">

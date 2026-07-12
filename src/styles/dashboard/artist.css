@@ -67,3 +67,8 @@
 .add-song-modal .form-element .input-container:focus-within span {
     background-color: var(--orange-base);
 }
+
+.remove-song-modal p:nth-child(3) {
+    margin-top: 15px;
+    color: red;
+}
