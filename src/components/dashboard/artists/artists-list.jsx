@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
@@ -59,7 +60,7 @@ export default function ArtistsList(){
 
     useEffect(()=>{
         fetchArtists(prompt)
-    },[prompt])
+    },[fetchArtists, prompt])
 
     const toggleContactPhoneNumber = () => {
         if(contactPhoneNumberIsActif){
