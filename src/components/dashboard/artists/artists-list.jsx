@@ -488,7 +488,7 @@ export default function ArtistsList(){
                 <div className="remove-song-choices">
                     <span onClick={handleClickNoButton}><button disabled={songActionIsLoading} className="no">Non</button></span>
                     <span>
-                        <button disabled={songActionIsLoading} onClick={()=>removeDocumentArtist(songToDoAction)} className="yes">
+                        <button disabled={songActionIsLoading} onClick={()=>removeDocumentArtist(documentToDoAction)} className="yes">
                             { 
                                 songActionIsLoading ?
                                 <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
