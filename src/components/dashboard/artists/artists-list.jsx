@@ -433,7 +433,7 @@ export default function ArtistsList(){
                                     <Image src="/images/phone.png" width={20} height={20} alt="email input" priority/>
                                 </li>
                                 <li onClick={toggleContactEmail} className={ contactEmailIsActif ? "actif" : "" } title="Adresse email">
-                                    <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
+                                    <Image src="/images/email.png" width={20} height={20} alt="email input" priority/>
                                 </li>
                             </ul>
                             <div className="inputs-container">
@@ -449,7 +449,9 @@ export default function ArtistsList(){
                                 { 
                                     contactEmailIsActif && 
                                     <div className="input-container">
-                                        <span></span>
+                                        <span>
+                                    <Image src="/images/email.png" width={20} height={20} alt="email input" priority/>
+                                        </span>
                                         <input type="email" id="email" placeholder="adresse email de l'artiste" title="Adresse email" { ...register("email") }/>
                                     </div>
                                 }
