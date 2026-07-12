@@ -50,16 +50,16 @@ export default function ArtistsList(){
         }
     }, [])
 
-    // const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
+    const searchArtists = async (p) => api.get(`/artist/get?prompt=${p}`)
 
-    // const fetchSongs = async (value)=>{
-    //     const response = await searchSongs(value)
-    //     setSongs(response.data)
-    // }
+    const fetchArtists = async (value)=>{
+        const response = await searchArtists(value)
+        setArtists(response.data)
+    }
 
-    // useEffect(()=>{
-    //     fetchSongs(prompt)
-    // },[prompt])
+    useEffect(()=>{
+        fetchArtists(prompt)
+    },[prompt])
 
     const toggleContactPhoneNumber = () => {
         if(contactPhoneNumberIsActif){
