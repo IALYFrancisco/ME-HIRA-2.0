@@ -32,7 +32,7 @@ export default function ArtistsList(){
     const addSongFormRef = useRef(null)
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
-    const [ songToDoAction, setSongToDoAction ] = useState(null)
+    const [ documentToDoAction, setDocumentToDoAction ] = useState(null)
     const [ songActionIsLoading, setSongActionIsLoading ] = useState(false)
     const [ updatingSongFormIsActive, setUpdatingSongFormIsActive ] = useState(false)
 
@@ -219,8 +219,8 @@ export default function ArtistsList(){
         setLocalFile(file)
     }
 
-    const openSongRemoveModal = (song)=>{
-        setSongToDoAction(song)
+    const openSongRemoveModal = (document)=>{
+        setDocumentToDoAction(document)
         addSongOverlayRef.current.classList.add('active')
         removeSongModalRef.current.classList.add('active')
     }
@@ -254,28 +254,28 @@ export default function ArtistsList(){
 
             const update = new FormData()
 
-            if(songToDoAction.title !== data.title){
+            if(documentToDoAction.title !== data.title){
                 update.append('title', data.title)
             }
-            if(songToDoAction.author !== data.author){
+            if(documentToDoAction.author !== data.author){
                 update.append('author', data.author)
             }
-            if(songToDoAction.album !== data.album){
+            if(documentToDoAction.album !== data.album){
                 update.append('album', data.album)
             }
-            if(songToDoAction.composer !== data.composer){
+            if(documentToDoAction.composer !== data.composer){
                 update.append('composer', data.composer)
             }
-            if(songToDoAction.fileType !== data.fileType){
+            if(documentToDoAction.fileType !== data.fileType){
                 update.append('fileType', data.fileType)
             }
-            if(JoinArrayItems(songToDoAction.singer) !== data.singer){
+            if(JoinArrayItems(documentToDoAction.singer) !== data.singer){
                 update.append('singer', data.singer)
             }
             let localFileUrl = (
-                songToDoAction.fileUrl.startsWith('https://') ||
-                songToDoAction.fileUrl.startsWith('http://')
-            ) ? songToDoAction.fileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+songToDoAction.fileUrl
+                documentToDoAction.fileUrl.startsWith('https://') ||
+                documentToDoAction.fileUrl.startsWith('http://')
+            ) ? documentToDoAction.fileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+documentToDoAction.fileUrl
 
             if(
                 (localFileUrl !== data.hostedFile)
@@ -289,9 +289,9 @@ export default function ArtistsList(){
                 }
             }
 
-            let response = await api.patch('/song/update', { song: songToDoAction._id, update: formToJSON(update)})
+            let response = await api.patch('/song/update', { song: documentToDoAction._id, update: formToJSON(update)})
             if(response.status === 200){
-                toast.info(`La chanson intitulée ${songToDoAction?.title} a été bien modifiée.`)
+                toast.info(`La chanson intitulée ${documentToDoAction?.title} a été bien modifiée.`)
                 api.get('/song/get')
                     .then((response) => {
                         setSongs(response.data)
@@ -303,7 +303,7 @@ export default function ArtistsList(){
         }finally{
             setSongActionIsLoading(false)
             closeAddSongModal()
-            setSongToDoAction(null)
+            setDocumentToDoAction(null)
             setLocalFile(null)
         }
     }
@@ -311,7 +311,7 @@ export default function ArtistsList(){
     const handleUpdateSongActionClick = (song) => {
         setUpdatingSongFormIsActive(true)
         openAddSongModal()
-        setSongToDoAction(song)
+        setDocumentToDoAction(song)
         reset({
             title: song.title,
             singer: JoinArrayItems(song.singer),
@@ -475,12 +475,15 @@ export default function ArtistsList(){
             </form>
             <div ref={removeSongModalRef} className="remove-song-modal">
                 <h3>Suppression d'une chanson.</h3>
-                { songToDoAction &&
-                    <p>
-                        Êtes-vous sûr(e) de vouloir supprimer le document artiste de
-                        <strong> {songToDoAction.artistName} </strong>
-                        ?
-                    </p>
+                { documentToDoAction &&
+                    <>
+                        <p>
+                            Êtes-vous sûr(e) de vouloir supprimer le document artiste de
+                            <strong> {documentToDoAction.artistName} </strong>
+                            ?
+                        </p>
+                        <p>Faite attention, cette action est ireversible</p>
+                    </>
                 }
                 <div className="remove-song-choices">
                     <span onClick={handleClickNoButton}><button disabled={songActionIsLoading} className="no">Non</button></span>
