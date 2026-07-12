@@ -477,10 +477,8 @@ export default function ArtistsList(){
                 <h3>Suppression d'une chanson.</h3>
                 { songToDoAction &&
                     <p>
-                        Êtes-vous sûr(e) de vouloir supprimer la chanson intitulée
-                        <strong> {songToDoAction.title} </strong>
-                        chantée par
-                        <strong> {JoinArrayItems(songToDoAction.singer)} </strong>
+                        Êtes-vous sûr(e) de vouloir supprimer le document artiste de
+                        <strong> {songToDoAction.artistName} </strong>
                         ?
                     </p>
                 }
