@@ -225,10 +225,10 @@ export default function ArtistsList(){
         removeSongModalRef.current.classList.add('active')
     }
 
-    const removeSong = async (song) => {
+    const removeDocumentArtist = async (song) => {
         try{
             setSongActionIsLoading(true)
-            let response = await api.delete('/song/remove', { data: { song: song._id } })
+            let response = await api.delete('/artist/delete', { data: { song: song._id } })
             if(response.status === 200){
                 toast.info(`La chanson intitulée ${song?.title} a été supprimée.`)
                 api.get('/song/get')
@@ -487,7 +487,7 @@ export default function ArtistsList(){
                 <div className="remove-song-choices">
                     <span onClick={handleClickNoButton}><button disabled={songActionIsLoading} className="no">Non</button></span>
                     <span>
-                        <button disabled={songActionIsLoading} onClick={()=>removeSong(songToDoAction)} className="yes">
+                        <button disabled={songActionIsLoading} onClick={()=>removeDocumentArtist(songToDoAction)} className="yes">
                             { 
                                 songActionIsLoading ?
                                 <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
