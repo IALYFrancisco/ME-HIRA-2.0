@@ -430,7 +430,7 @@ export default function ArtistsList(){
                             <label htmlFor="contacts">Contacts :</label>
                             <ul className="contacts-container">
                                 <li onClick={toggleContactPhoneNumber} className={ contactPhoneNumberIsActif ? "actif" : "" } title="Numéro téléphone">
-                                    <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
+                                    <Image src="/images/phone.png" width={20} height={20} alt="email input" priority/>
                                 </li>
                                 <li onClick={toggleContactEmail} className={ contactEmailIsActif ? "actif" : "" } title="Adresse email">
                                     <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
@@ -440,7 +440,9 @@ export default function ArtistsList(){
                                 { 
                                     contactPhoneNumberIsActif &&
                                     <div className="input-container">
-                                        <span></span>
+                                        <span>
+                                            <Image src="/images/phone.png" width={20} height={20} alt="email input" priority/>
+                                        </span>
                                         <input type="tel" id="numberPhone" placeholder="numéro téléphone de l'artiste" title="Numéro téléphone" { ...register("phoneNumber") }/>
                                     </div>
                                 }
