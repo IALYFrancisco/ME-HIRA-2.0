@@ -474,7 +474,7 @@ export default function ArtistsList(){
                 </div>
             </form>
             <div ref={removeSongModalRef} className="remove-song-modal">
-                <h3>Suppression d'une chanson.</h3>
+                <h3>Suppression d'un document artiste.</h3>
                 { documentToDoAction &&
                     <>
                         <p>
