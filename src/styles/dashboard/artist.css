@@ -59,8 +59,16 @@
     top: 4px;
     left: 4px;
     transition:  all .10s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .add-song-modal .form-element .input-container:focus-within span {
     background-color: var(--orange-base);
+}
+
+.remove-song-modal p:nth-child(3) {
+    margin-top: 15px;
+    color: red;
 }

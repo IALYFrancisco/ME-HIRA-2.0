@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/incompatible-library */
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
@@ -30,7 +32,7 @@ export default function ArtistsList(){
     const addSongFormRef = useRef(null)
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
-    const [ songToDoAction, setSongToDoAction ] = useState(null)
+    const [ documentToDoAction, setDocumentToDoAction ] = useState(null)
     const [ songActionIsLoading, setSongActionIsLoading ] = useState(false)
     const [ updatingSongFormIsActive, setUpdatingSongFormIsActive ] = useState(false)
 
@@ -50,16 +52,16 @@ export default function ArtistsList(){
         }
     }, [])
 
-    // const searchSongs = async (p) => api.get(`/song/get?prompt=${p}`)
+    const searchArtists = async (p) => api.get(`/artist/get?prompt=${p}`)
 
-    // const fetchSongs = async (value)=>{
-    //     const response = await searchSongs(value)
-    //     setSongs(response.data)
-    // }
+    const fetchArtists = async (value)=>{
+        const response = await searchArtists(value)
+        setArtists(response.data)
+    }
 
-    // useEffect(()=>{
-    //     fetchSongs(prompt)
-    // },[prompt])
+    useEffect(()=>{
+        fetchArtists(prompt)
+    },[prompt])
 
     const toggleContactPhoneNumber = () => {
         if(contactPhoneNumberIsActif){
@@ -146,6 +148,7 @@ export default function ArtistsList(){
     const closeAddSongModal = ()=>{
         addSongOverlayRef.current.classList.remove('active')
         addSongFormRef.current.classList.remove('active')
+        removeSongModalRef.current.classList.remove('active')
         reset({
             title: "",
             singer: "",
@@ -217,26 +220,26 @@ export default function ArtistsList(){
         setLocalFile(file)
     }
 
-    const openSongRemoveModal = (song)=>{
-        setSongToDoAction(song)
+    const openSongRemoveModal = (document)=>{
+        setDocumentToDoAction(document)
         addSongOverlayRef.current.classList.add('active')
         removeSongModalRef.current.classList.add('active')
     }
 
-    const removeSong = async (song) => {
+    const removeDocumentArtist = async (artist) => {
         try{
             setSongActionIsLoading(true)
-            let response = await api.delete('/song/remove', { data: { song: song._id } })
+            let response = await api.delete('/artist/delete', { data: { docId: artist._id } })
             if(response.status === 200){
-                toast.info(`La chanson intitulée ${song?.title} a été supprimée.`)
-                api.get('/song/get')
+                toast.info(`Le document artiste de ${artist?.artistName} a été supprimé.`)
+                api.get('/artist/get')
                     .then((response) => {
-                        setSongs(response.data)
+                        setArtists(response.data)
                     })
-                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des chansons."))
+                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
             }
         }catch{
-            toast.error("Erreur de suppression du chanson, veuillez réessayer plus tard.")
+            toast.error("Erreur de suppression du document artiste, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
             removeSongModalRef.current.classList.remove('active')
@@ -252,28 +255,28 @@ export default function ArtistsList(){
 
             const update = new FormData()
 
-            if(songToDoAction.title !== data.title){
+            if(documentToDoAction.title !== data.title){
                 update.append('title', data.title)
             }
-            if(songToDoAction.author !== data.author){
+            if(documentToDoAction.author !== data.author){
                 update.append('author', data.author)
             }
-            if(songToDoAction.album !== data.album){
+            if(documentToDoAction.album !== data.album){
                 update.append('album', data.album)
             }
-            if(songToDoAction.composer !== data.composer){
+            if(documentToDoAction.composer !== data.composer){
                 update.append('composer', data.composer)
             }
-            if(songToDoAction.fileType !== data.fileType){
+            if(documentToDoAction.fileType !== data.fileType){
                 update.append('fileType', data.fileType)
             }
-            if(JoinArrayItems(songToDoAction.singer) !== data.singer){
+            if(JoinArrayItems(documentToDoAction.singer) !== data.singer){
                 update.append('singer', data.singer)
             }
             let localFileUrl = (
-                songToDoAction.fileUrl.startsWith('https://') ||
-                songToDoAction.fileUrl.startsWith('http://')
-            ) ? songToDoAction.fileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+songToDoAction.fileUrl
+                documentToDoAction.fileUrl.startsWith('https://') ||
+                documentToDoAction.fileUrl.startsWith('http://')
+            ) ? documentToDoAction.fileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+documentToDoAction.fileUrl
 
             if(
                 (localFileUrl !== data.hostedFile)
@@ -287,9 +290,9 @@ export default function ArtistsList(){
                 }
             }
 
-            let response = await api.patch('/song/update', { song: songToDoAction._id, update: formToJSON(update)})
+            let response = await api.patch('/song/update', { song: documentToDoAction._id, update: formToJSON(update)})
             if(response.status === 200){
-                toast.info(`La chanson intitulée ${songToDoAction?.title} a été bien modifiée.`)
+                toast.info(`La chanson intitulée ${documentToDoAction?.title} a été bien modifiée.`)
                 api.get('/song/get')
                     .then((response) => {
                         setSongs(response.data)
@@ -301,7 +304,7 @@ export default function ArtistsList(){
         }finally{
             setSongActionIsLoading(false)
             closeAddSongModal()
-            setSongToDoAction(null)
+            setDocumentToDoAction(null)
             setLocalFile(null)
         }
     }
@@ -309,7 +312,7 @@ export default function ArtistsList(){
     const handleUpdateSongActionClick = (song) => {
         setUpdatingSongFormIsActive(true)
         openAddSongModal()
-        setSongToDoAction(song)
+        setDocumentToDoAction(song)
         reset({
             title: song.title,
             singer: JoinArrayItems(song.singer),
@@ -430,24 +433,28 @@ export default function ArtistsList(){
                             <label htmlFor="contacts">Contacts :</label>
                             <ul className="contacts-container">
                                 <li onClick={toggleContactPhoneNumber} className={ contactPhoneNumberIsActif ? "actif" : "" } title="Numéro téléphone">
-                                    <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
+                                    <Image src="/images/phone.png" width={20} height={20} alt="email input" priority/>
                                 </li>
                                 <li onClick={toggleContactEmail} className={ contactEmailIsActif ? "actif" : "" } title="Adresse email">
-                                    <Image src="/images/artist.png" width={20} height={20} alt="email input" priority/>
+                                    <Image src="/images/email.png" width={20} height={20} alt="email input" priority/>
                                 </li>
                             </ul>
                             <div className="inputs-container">
                                 { 
                                     contactPhoneNumberIsActif &&
                                     <div className="input-container">
-                                        <span></span>
+                                        <span>
+                                            <Image src="/images/phone.png" width={20} height={20} alt="email input" priority/>
+                                        </span>
                                         <input type="tel" id="numberPhone" placeholder="numéro téléphone de l'artiste" title="Numéro téléphone" { ...register("phoneNumber") }/>
                                     </div>
                                 }
                                 { 
                                     contactEmailIsActif && 
                                     <div className="input-container">
-                                        <span></span>
+                                        <span>
+                                    <Image src="/images/email.png" width={20} height={20} alt="email input" priority/>
+                                        </span>
                                         <input type="email" id="email" placeholder="adresse email de l'artiste" title="Adresse email" { ...register("email") }/>
                                     </div>
                                 }
@@ -468,20 +475,21 @@ export default function ArtistsList(){
                 </div>
             </form>
             <div ref={removeSongModalRef} className="remove-song-modal">
-                <h3>Suppression d'une chanson.</h3>
-                { songToDoAction &&
-                    <p>
-                        Êtes-vous sûr(e) de vouloir supprimer la chanson intitulée
-                        <strong> {songToDoAction.title} </strong>
-                        chantée par
-                        <strong> {JoinArrayItems(songToDoAction.singer)} </strong>
-                        ?
-                    </p>
+                <h3>Suppression d'un document artiste.</h3>
+                { documentToDoAction &&
+                    <>
+                        <p>
+                            Êtes-vous sûr(e) de vouloir supprimer les documents artiste de
+                            <strong> {documentToDoAction.artistName} </strong>
+                            ?
+                        </p>
+                        <p>Faite attention, cette action est irréversible.</p>
+                    </>
                 }
                 <div className="remove-song-choices">
                     <span onClick={handleClickNoButton}><button disabled={songActionIsLoading} className="no">Non</button></span>
                     <span>
-                        <button disabled={songActionIsLoading} onClick={()=>removeSong(songToDoAction)} className="yes">
+                        <button disabled={songActionIsLoading} onClick={()=>removeDocumentArtist(documentToDoAction)} className="yes">
                             { 
                                 songActionIsLoading ?
                                 <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
