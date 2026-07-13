@@ -315,21 +315,21 @@ export default function ArtistsList(){
         }
     }
 
-    const handleUpdateDocumentActionClick = (song) => {
+    const handleUpdateDocumentActionClick = (document) => {
         setUpdatingSongFormIsActive(true)
         openAddSongModal()
-        setDocumentToDoAction(song)
+        setDocumentToDoAction(document)
         reset({
-            title: song.title,
-            singer: JoinArrayItems(song.singer),
-            author: song.author,
-            composer: song.composer,
-            album: song.album,
+            name: document.name,
+            artistName: document.artistName,
+            roles: JoinArrayItems(document.roles),
+            about: document.about,
+            address: document.address,
             hostedFile: (
-                song.fileUrl.startsWith('http://') ||
-                song.fileUrl.startsWith('https://')
-            ) ? song.fileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+song.fileUrl,
-            fileType: song.fileType
+                document.image.startsWith('http://') ||
+                document.image.startsWith('https://')
+            ) ? document.image : process.env.NEXT_PUBLIC_API_BASE_URL+document.image,
+            birthDayAndPlace: document.birthDayAndPlace
         })
     }
 
