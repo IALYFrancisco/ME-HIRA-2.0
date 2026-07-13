@@ -301,13 +301,17 @@ export default function ArtistsList(){
                 }
             }
 
-            const update = {
-                docId: documentToDoAction._id,
-                artist: formToJSON(artist),
-                artistContact: formToJSON(artistContact)
+            let update = {}
+
+            update.docId = documentToDoAction._id
+            if(artist){
+                update.artist = formToJSON(artist)
+            }
+            if(artistContact){
+                update.artistContact = formToJSON(artistContact)
             }
 
-            let response = await api.patch('/artist/update', { update: update })
+            let response = await api.patch('/artist/update', { update })
             if(response.status === 200){
                 toast.info(`Le document artiste de ${documentToDoAction?.artistName} a été bien modifié.`)
                 api.get('/artist/get')
