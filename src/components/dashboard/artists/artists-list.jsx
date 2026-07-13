@@ -249,7 +249,7 @@ export default function ArtistsList(){
 
     const isModified = isDirty || localFile
 
-    const updateSong = async (data) => {
+    const updateArtistDocument = async (data) => {
         try{
             setSongActionIsLoading(true)
 
@@ -392,7 +392,7 @@ export default function ArtistsList(){
             <div className="add-song-overlay" ref={addSongOverlayRef} onClick={closeAddSongModal}></div>
             <form onSubmit={
                 handleSubmit(
-                    updatingSongFormIsActive ? updateSong : createArtistDocument
+                    updatingSongFormIsActive ? updateArtistDocument : createArtistDocument
                 )}
                 className="add-song-modal" ref={addSongFormRef}
             >
