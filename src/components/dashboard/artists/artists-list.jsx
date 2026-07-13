@@ -28,7 +28,7 @@ export default function ArtistsList(){
     var [localFile, setLocalFile] = useState('')
     var [localFileIsDefined, setLocalFileIsDefined] = useState(false)
     var [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
-    const addSongOverlayRef = useRef(null)
+    const overlayRef = useRef(null)
     const addSongFormRef = useRef(null)
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
@@ -141,23 +141,27 @@ export default function ArtistsList(){
     }
 
     const openAddSongModal = ()=>{
-        addSongOverlayRef.current.classList.add('active')
+        overlayRef.current.classList.add('active')
         addSongFormRef.current.classList.add('active')
     }
 
     const closeAddSongModal = ()=>{
-        addSongOverlayRef.current.classList.remove('active')
+        overlayRef.current.classList.remove('active')
         addSongFormRef.current.classList.remove('active')
         removeSongModalRef.current.classList.remove('active')
         reset({
-            title: "",
-            singer: "",
-            author: "",
-            composer: "",
-            album: "",
+            name: "",
+            artistName: "",
+            roles: "",
+            about: "",
+            address: "",
             hostedFile: "",
-            fileType: ""
+            birthDayAndPlace: "",
+            email: "",
+            phoneNumber: "",
         })
+        setContactEmailIsActif(false)
+        setContactPhoneNumberIsActif(false)
         setUpdatingSongFormIsActive(false)
     }
 
@@ -187,7 +191,7 @@ export default function ArtistsList(){
         if(removeSongModalRef.current){
             removeSongModalRef.current.classList.remove('active')
         }
-        addSongOverlayRef.current.classList.remove('active')
+        overlayRef.current.classList.remove('active')
     }
 
     const handleFileChange = (e) => {
@@ -222,7 +226,7 @@ export default function ArtistsList(){
 
     const openSongRemoveModal = (document)=>{
         setDocumentToDoAction(document)
-        addSongOverlayRef.current.classList.add('active')
+        overlayRef.current.classList.add('active')
         removeSongModalRef.current.classList.add('active')
     }
 
@@ -243,64 +247,82 @@ export default function ArtistsList(){
         }finally{
             setSongActionIsLoading(false)
             removeSongModalRef.current.classList.remove('active')
-            addSongOverlayRef.current.classList.remove('active')
+            overlayRef.current.classList.remove('active')
         }
     }
 
     const isModified = isDirty || localFile
 
-    const updateSong = async (data) => {
+    const updateArtistDocument = async (data) => {
         try{
             setSongActionIsLoading(true)
 
-            const update = new FormData()
+            const artist = new FormData()
+            const artistContact = new FormData()
 
-            if(documentToDoAction.title !== data.title){
-                update.append('title', data.title)
+            if(documentToDoAction.name !== data.name){
+                artist.append('name', data.name)
             }
-            if(documentToDoAction.author !== data.author){
-                update.append('author', data.author)
+            if(documentToDoAction.artistName !== data.artistName){
+                artist.append('artistName', data.artistName)
             }
-            if(documentToDoAction.album !== data.album){
-                update.append('album', data.album)
+            if(documentToDoAction.about !== data.about){
+                artist.append('about', data.about)
             }
-            if(documentToDoAction.composer !== data.composer){
-                update.append('composer', data.composer)
+            if(documentToDoAction.address !== data.address){
+                artist.append('address', data.address)
             }
-            if(documentToDoAction.fileType !== data.fileType){
-                update.append('fileType', data.fileType)
+            if(documentToDoAction.birthDayAndPlace !== data.birthDayAndPlace){
+                artist.append('birthDayAndPlace', data.birthDayAndPlace)
             }
-            if(JoinArrayItems(documentToDoAction.singer) !== data.singer){
-                update.append('singer', data.singer)
+            if(documentToDoAction.contacts.phoneNumber !== data.phoneNumber){
+                artistContact.append('phoneNumber', data.phoneNumber)
+            }
+            if(documentToDoAction.contacts.email !== data.email){
+                artistContact.append('email', data.email)
+            }
+            if(JoinArrayItems(documentToDoAction.roles) !== data.roles){
+                artist.append('roles', data.roles)
             }
             let localFileUrl = (
-                documentToDoAction.fileUrl.startsWith('https://') ||
-                documentToDoAction.fileUrl.startsWith('http://')
-            ) ? documentToDoAction.fileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+documentToDoAction.fileUrl
+                documentToDoAction.image?.startsWith('https://') ||
+                documentToDoAction.image?.startsWith('http://')
+            ) ? documentToDoAction.image : process.env.NEXT_PUBLIC_API_BASE_URL+documentToDoAction.image
 
             if(
                 (localFileUrl !== data.hostedFile)
                 ||(localFile)
             ){    
                 if(localFileUrl !== data.hostedFile){
-                    update.append('fileUrl', data.hostedFile)
+                    artist.append('image', data.hostedFile)
                 }
                 if(localFile){
-                    update.append('file', localFile)
+                    artist.append('file', localFile)
                 }
             }
 
-            let response = await api.patch('/song/update', { song: documentToDoAction._id, update: formToJSON(update)})
-            if(response.status === 200){
-                toast.info(`La chanson intitulée ${documentToDoAction?.title} a été bien modifiée.`)
-                api.get('/song/get')
-                    .then((response) => {
-                        setSongs(response.data)
-                    })
-                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des chansons."))
+            let update = {}
+
+            update.docId = documentToDoAction._id
+            if(artist){
+                update.artist = formToJSON(artist)
             }
-        }catch{
-            toast.error("Erreur de modification du chanson, veuillez réessayer plus tard.")
+            if(artistContact){
+                update.artistContact = formToJSON(artistContact)
+            }
+
+            let response = await api.patch('/artist/update', { update })
+            if(response.status === 200){
+                toast.info(`Le document artiste de ${documentToDoAction?.artistName} a été bien modifié.`)
+                api.get('/artist/get')
+                    .then((response) => {
+                        setArtists(response.data)
+                    })
+                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
+            }
+        }catch(error){
+            console.log(error)
+            toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
             closeAddSongModal()
@@ -309,21 +331,35 @@ export default function ArtistsList(){
         }
     }
 
-    const handleUpdateSongActionClick = (song) => {
+    const handleUpdateDocumentActionClick = (document) => {
+        
         setUpdatingSongFormIsActive(true)
         openAddSongModal()
-        setDocumentToDoAction(song)
+        setDocumentToDoAction(document)
+
+        let artistEmail = document.contacts.email
+        let artistPhoneNumber = document.contacts.phoneNumber
+
+        if(artistEmail){
+            setContactEmailIsActif(true)
+        }
+        if(artistPhoneNumber){
+            setContactPhoneNumberIsActif(true)
+        }
+
         reset({
-            title: song.title,
-            singer: JoinArrayItems(song.singer),
-            author: song.author,
-            composer: song.composer,
-            album: song.album,
+            name: document.name,
+            artistName: document.artistName,
+            roles: JoinArrayItems(document.roles),
+            about: document.about,
+            address: document.address,
             hostedFile: (
-                song.fileUrl.startsWith('http://') ||
-                song.fileUrl.startsWith('https://')
-            ) ? song.fileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+song.fileUrl,
-            fileType: song.fileType
+                document.image?.startsWith('http://') ||
+                document.image?.startsWith('https://')
+            ) ? document.image : process.env.NEXT_PUBLIC_API_BASE_URL+document.image,
+            birthDayAndPlace: document.birthDayAndPlace,
+            email: artistEmail ? artistEmail : "",
+            phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
         })
     }
 
@@ -377,7 +413,7 @@ export default function ArtistsList(){
                                         <td>{artist.birthDayAndPlace}</td>
                                         <td className="actions">
                                             <ul ref={ activePopUp === artist._id ? popUpActionsRef : null } className={ activePopUp === artist._id ? "song-actions active" : "song-actions" }>
-                                                <li onClick={()=>handleUpdateSongActionClick(artist)}>Modifier</li>
+                                                <li onClick={()=>handleUpdateDocumentActionClick(artist)}>Modifier</li>
                                                 <li onClick={()=>openSongRemoveModal(artist)}>Supprimer</li>
                                             </ul>
                                             <Image onClick={()=>toggleActionsPopUp(artist._id)} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
@@ -389,10 +425,10 @@ export default function ArtistsList(){
                     </table>
                 </section>
             </section>
-            <div className="add-song-overlay" ref={addSongOverlayRef} onClick={closeAddSongModal}></div>
+            <div className="add-song-overlay" ref={overlayRef} onClick={closeAddSongModal}></div>
             <form onSubmit={
                 handleSubmit(
-                    updatingSongFormIsActive ? updateSong : createArtistDocument
+                    updatingSongFormIsActive ? updateArtistDocument : createArtistDocument
                 )}
                 className="add-song-modal" ref={addSongFormRef}
             >
