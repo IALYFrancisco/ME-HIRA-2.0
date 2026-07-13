@@ -281,8 +281,8 @@ export default function ArtistsList(){
                 artist.append('roles', data.roles)
             }
             let localFileUrl = (
-                documentToDoAction.image.startsWith('https://') ||
-                documentToDoAction.image.startsWith('http://')
+                documentToDoAction.image?.startsWith('https://') ||
+                documentToDoAction.image?.startsWith('http://')
             ) ? documentToDoAction.image : process.env.NEXT_PUBLIC_API_BASE_URL+documentToDoAction.image
 
             if(
