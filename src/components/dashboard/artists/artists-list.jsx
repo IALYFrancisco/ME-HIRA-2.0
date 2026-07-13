@@ -28,7 +28,7 @@ export default function ArtistsList(){
     var [localFile, setLocalFile] = useState('')
     var [localFileIsDefined, setLocalFileIsDefined] = useState(false)
     var [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
-    const addSongOverlayRef = useRef(null)
+    const overlayRef = useRef(null)
     const addSongFormRef = useRef(null)
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
@@ -141,12 +141,12 @@ export default function ArtistsList(){
     }
 
     const openAddSongModal = ()=>{
-        addSongOverlayRef.current.classList.add('active')
+        overlayRef.current.classList.add('active')
         addSongFormRef.current.classList.add('active')
     }
 
     const closeAddSongModal = ()=>{
-        addSongOverlayRef.current.classList.remove('active')
+        overlayRef.current.classList.remove('active')
         addSongFormRef.current.classList.remove('active')
         removeSongModalRef.current.classList.remove('active')
         reset({
@@ -187,7 +187,7 @@ export default function ArtistsList(){
         if(removeSongModalRef.current){
             removeSongModalRef.current.classList.remove('active')
         }
-        addSongOverlayRef.current.classList.remove('active')
+        overlayRef.current.classList.remove('active')
     }
 
     const handleFileChange = (e) => {
@@ -222,7 +222,7 @@ export default function ArtistsList(){
 
     const openSongRemoveModal = (document)=>{
         setDocumentToDoAction(document)
-        addSongOverlayRef.current.classList.add('active')
+        overlayRef.current.classList.add('active')
         removeSongModalRef.current.classList.add('active')
     }
 
@@ -243,7 +243,7 @@ export default function ArtistsList(){
         }finally{
             setSongActionIsLoading(false)
             removeSongModalRef.current.classList.remove('active')
-            addSongOverlayRef.current.classList.remove('active')
+            overlayRef.current.classList.remove('active')
         }
     }
 
@@ -395,7 +395,7 @@ export default function ArtistsList(){
                     </table>
                 </section>
             </section>
-            <div className="add-song-overlay" ref={addSongOverlayRef} onClick={closeAddSongModal}></div>
+            <div className="add-song-overlay" ref={overlayRef} onClick={closeAddSongModal}></div>
             <form onSubmit={
                 handleSubmit(
                     updatingSongFormIsActive ? updateArtistDocument : createArtistDocument
