@@ -255,11 +255,11 @@ export default function ArtistsList(){
 
             const update = new FormData()
 
-            if(documentToDoAction.title !== data.title){
-                update.append('title', data.title)
+            if(documentToDoAction.name !== data.name){
+                update.append('name', data.name)
             }
-            if(documentToDoAction.author !== data.author){
-                update.append('author', data.author)
+            if(documentToDoAction.artistName !== data.artistName){
+                update.append('artistName', data.artistName)
             }
             if(documentToDoAction.album !== data.album){
                 update.append('album', data.album)
