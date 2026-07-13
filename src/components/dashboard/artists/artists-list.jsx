@@ -297,17 +297,23 @@ export default function ArtistsList(){
                 }
             }
 
-            let response = await api.patch('/song/update', { song: documentToDoAction._id, update: formToJSON(update)})
+            const update = {
+                docId: documentToDoAction._id,
+                artist: artist,
+                artistContact: artistContact
+            }
+
+            let response = await api.patch('/artist/update', update)
             if(response.status === 200){
-                toast.info(`La chanson intitulée ${documentToDoAction?.title} a été bien modifiée.`)
-                api.get('/song/get')
+                toast.info(`Le document artiste de ${documentToDoAction?.artistName} a été bien modifié.`)
+                api.get('/artist/get')
                     .then((response) => {
-                        setSongs(response.data)
+                        setArtists(response.data)
                     })
-                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des chansons."))
+                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
             }
         }catch{
-            toast.error("Erreur de modification du chanson, veuillez réessayer plus tard.")
+            toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
             closeAddSongModal()
