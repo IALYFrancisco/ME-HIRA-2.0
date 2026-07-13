@@ -270,10 +270,10 @@ export default function ArtistsList(){
             if(documentToDoAction.birthDayAndPlace !== data.birthDayAndPlace){
                 update.append('birthDayAndPlace', data.birthDayAndPlace)
             }
-            if(documentToDoAction.contact.phoneNumber !== data.phoneNumber){
+            if(documentToDoAction.contacts.phoneNumber !== data.phoneNumber){
                 update.append('phoneNumber', data.phoneNumber)
             }
-            if(documentToDoAction.contact.email !== data.email){
+            if(documentToDoAction.contacts.email !== data.email){
                 update.append('email', data.email)
             }
             if(JoinArrayItems(documentToDoAction.roles) !== data.roles){
