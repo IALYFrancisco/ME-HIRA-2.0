@@ -253,6 +253,8 @@ export default function ArtistsList(){
         try{
             setSongActionIsLoading(true)
 
+            const artist = new FormData()
+
             const update = new FormData()
 
             if(documentToDoAction.name !== data.name){
