@@ -327,6 +327,17 @@ export default function ArtistsList(){
         setUpdatingSongFormIsActive(true)
         openAddSongModal()
         setDocumentToDoAction(document)
+
+        let artistEmail = document.contacts.email
+        let artistPhoneNumber = document.contacts.phoneNumber
+
+        if(artistEmail){
+            setContactEmailIsActif(true)
+        }
+        if(artistPhoneNumber){
+            setContactPhoneNumberIsActif(true)
+        }
+
         reset({
             name: document.name,
             artistName: document.artistName,
@@ -337,7 +348,8 @@ export default function ArtistsList(){
                 document.image?.startsWith('http://') ||
                 document.image?.startsWith('https://')
             ) ? document.image : process.env.NEXT_PUBLIC_API_BASE_URL+document.image,
-            birthDayAndPlace: document.birthDayAndPlace
+            birthDayAndPlace: document.birthDayAndPlace,
+            email: document.contacts.email
         })
     }
 
