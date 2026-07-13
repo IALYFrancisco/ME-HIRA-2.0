@@ -299,8 +299,8 @@ export default function ArtistsList(){
 
             const update = {
                 docId: documentToDoAction._id,
-                artist: artist,
-                artistContact: artistContact
+                artist: formToJSON(artist),
+                artistContact: formToJSON(artistContact)
             }
 
             let response = await api.patch('/artist/update', update)
