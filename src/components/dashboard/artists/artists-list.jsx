@@ -315,7 +315,7 @@ export default function ArtistsList(){
         }
     }
 
-    const handleUpdateSongActionClick = (song) => {
+    const handleUpdateDocumentActionClick = (song) => {
         setUpdatingSongFormIsActive(true)
         openAddSongModal()
         setDocumentToDoAction(song)
@@ -383,7 +383,7 @@ export default function ArtistsList(){
                                         <td>{artist.birthDayAndPlace}</td>
                                         <td className="actions">
                                             <ul ref={ activePopUp === artist._id ? popUpActionsRef : null } className={ activePopUp === artist._id ? "song-actions active" : "song-actions" }>
-                                                <li onClick={()=>handleUpdateSongActionClick(artist)}>Modifier</li>
+                                                <li onClick={()=>handleUpdateDocumentActionClick(artist)}>Modifier</li>
                                                 <li onClick={()=>openSongRemoveModal(artist)}>Supprimer</li>
                                             </ul>
                                             <Image onClick={()=>toggleActionsPopUp(artist._id)} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
