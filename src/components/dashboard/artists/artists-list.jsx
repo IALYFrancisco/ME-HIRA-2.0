@@ -150,13 +150,13 @@ export default function ArtistsList(){
         addSongFormRef.current.classList.remove('active')
         removeSongModalRef.current.classList.remove('active')
         reset({
-            title: "",
-            singer: "",
-            author: "",
-            composer: "",
-            album: "",
+            name: "",
+            artistName: "",
+            roles: "",
+            about: "",
+            address: "",
             hostedFile: "",
-            fileType: ""
+            birthDayAndPlace: ""
         })
         setUpdatingSongFormIsActive(false)
     }
