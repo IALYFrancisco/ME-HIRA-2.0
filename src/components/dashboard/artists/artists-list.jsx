@@ -281,9 +281,9 @@ export default function ArtistsList(){
                 artist.append('roles', data.roles)
             }
             let localFileUrl = (
-                documentToDoAction.fileUrl.startsWith('https://') ||
-                documentToDoAction.fileUrl.startsWith('http://')
-            ) ? documentToDoAction.fileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+documentToDoAction.fileUrl
+                documentToDoAction.image.startsWith('https://') ||
+                documentToDoAction.image.startsWith('http://')
+            ) ? documentToDoAction.image : process.env.NEXT_PUBLIC_API_BASE_URL+documentToDoAction.image
 
             if(
                 (localFileUrl !== data.hostedFile)
@@ -312,7 +312,8 @@ export default function ArtistsList(){
                     })
                     .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
             }
-        }catch{
+        }catch(error){
+            console.log(error)
             toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
