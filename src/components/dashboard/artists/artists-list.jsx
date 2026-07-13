@@ -324,6 +324,7 @@ export default function ArtistsList(){
     }
 
     const handleUpdateDocumentActionClick = (document) => {
+        
         setUpdatingSongFormIsActive(true)
         openAddSongModal()
         setDocumentToDoAction(document)
@@ -349,7 +350,8 @@ export default function ArtistsList(){
                 document.image?.startsWith('https://')
             ) ? document.image : process.env.NEXT_PUBLIC_API_BASE_URL+document.image,
             birthDayAndPlace: document.birthDayAndPlace,
-            email: document.contacts.email
+            email: artistEmail ? artistEmail : "",
+            phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
         })
     }
 
