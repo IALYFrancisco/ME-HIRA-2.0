@@ -261,17 +261,23 @@ export default function ArtistsList(){
             if(documentToDoAction.artistName !== data.artistName){
                 update.append('artistName', data.artistName)
             }
-            if(documentToDoAction.album !== data.album){
-                update.append('album', data.album)
+            if(documentToDoAction.about !== data.about){
+                update.append('about', data.about)
             }
-            if(documentToDoAction.composer !== data.composer){
-                update.append('composer', data.composer)
+            if(documentToDoAction.address !== data.address){
+                update.append('address', data.address)
             }
-            if(documentToDoAction.fileType !== data.fileType){
-                update.append('fileType', data.fileType)
+            if(documentToDoAction.birthDayAndPlace !== data.birthDayAndPlace){
+                update.append('birthDayAndPlace', data.birthDayAndPlace)
             }
-            if(JoinArrayItems(documentToDoAction.singer) !== data.singer){
-                update.append('singer', data.singer)
+            if(documentToDoAction.contact.phoneNumber !== data.phoneNumber){
+                update.append('phoneNumber', data.phoneNumber)
+            }
+            if(documentToDoAction.contact.email !== data.email){
+                update.append('email', data.email)
+            }
+            if(JoinArrayItems(documentToDoAction.roles) !== data.roles){
+                update.append('roles', data.roles)
             }
             let localFileUrl = (
                 documentToDoAction.fileUrl.startsWith('https://') ||
@@ -283,7 +289,7 @@ export default function ArtistsList(){
                 ||(localFile)
             ){    
                 if(localFileUrl !== data.hostedFile){
-                    update.append('fileUrl', data.hostedFile)
+                    update.append('image', data.hostedFile)
                 }
                 if(localFile){
                     update.append('file', localFile)
