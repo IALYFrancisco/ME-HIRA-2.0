@@ -156,8 +156,12 @@ export default function ArtistsList(){
             about: "",
             address: "",
             hostedFile: "",
-            birthDayAndPlace: ""
+            birthDayAndPlace: "",
+            email: "",
+            phoneNumber: "",
         })
+        setContactEmailIsActif(false)
+        setContactPhoneNumberIsActif(false)
         setUpdatingSongFormIsActive(false)
     }
 
