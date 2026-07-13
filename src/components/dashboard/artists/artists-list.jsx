@@ -326,8 +326,8 @@ export default function ArtistsList(){
             about: document.about,
             address: document.address,
             hostedFile: (
-                document.image.startsWith('http://') ||
-                document.image.startsWith('https://')
+                document.image?.startsWith('http://') ||
+                document.image?.startsWith('https://')
             ) ? document.image : process.env.NEXT_PUBLIC_API_BASE_URL+document.image,
             birthDayAndPlace: document.birthDayAndPlace
         })
