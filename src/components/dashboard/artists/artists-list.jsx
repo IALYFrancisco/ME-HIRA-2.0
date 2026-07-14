@@ -332,6 +332,11 @@ export default function ArtistsList(){
     }
 
     const handleUpdateDocumentActionClick = (document) => {
+
+        let hostedFileValue = document.image ? document.image : ""
+        if(hostedFileValue){
+            hostedFileValue = (hostedFileValue.startsWith('http://') || hostedFileValue.startsWith('https://')) ? hostedFileValue : process.env.NEXT_PUBLIC_API_BASE_URL+hostedFileValue
+        }
         
         setUpdatingSongFormIsActive(true)
         openAddSongModal()
@@ -353,10 +358,7 @@ export default function ArtistsList(){
             roles: JoinArrayItems(document.roles),
             about: document.about,
             address: document.address,
-            hostedFile: (
-                document.image?.startsWith('http://') ||
-                document.image?.startsWith('https://')
-            ) ? document.image : process.env.NEXT_PUBLIC_API_BASE_URL+document.image,
+            hostedFile: hostedFileValue,
             birthDayAndPlace: document.birthDayAndPlace,
             email: artistEmail ? artistEmail : "",
             phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
