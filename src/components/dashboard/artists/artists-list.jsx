@@ -320,8 +320,7 @@ export default function ArtistsList(){
                     })
                     .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
             }
-        }catch(error){
-            console.log(error)
+        }catch{
             toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
