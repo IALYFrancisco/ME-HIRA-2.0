@@ -1,3 +1,3 @@
-export default function Overlay() {
-    return(<div className={  "overlay"}></div>)
+export default function Overlay(props) {
+    return(<div className={ props.overlayState ? "overlay actif" : "overlay"}></div>)
 }
