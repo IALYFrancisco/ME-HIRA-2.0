@@ -412,6 +412,23 @@ nav .filter-type-container {
   position: relative;
 }
 
+.overlay {
+    background: rgba(57, 57, 57, 0.096);
+    backdrop-filter: blur(4);
+    width: 100%;
+    height: 100dvh;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    transition: 250ms;
+    z-index: 11;
+}
+
+.overlay.enabled {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 @media only screen and (max-width: 1024px) {
     
     nav {
