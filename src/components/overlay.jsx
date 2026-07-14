@@ -1,3 +1,3 @@
 export default function Overlay() {
-    return(<h1></h1>)
+    return(<div className={  "overlay"}></div>)
 }
