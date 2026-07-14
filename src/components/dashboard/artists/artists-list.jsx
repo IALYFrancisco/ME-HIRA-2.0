@@ -304,10 +304,10 @@ export default function ArtistsList(){
             let update = {}
 
             update.docId = documentToDoAction._id
-            if(Object.keys((formToJSON(artist))) !== 0){
+            if(Object.keys((formToJSON(artist))).length !== 0){
                 update.artist = formToJSON(artist)
             }
-            if(Object.keys(formToJSON(artistContact))){
+            if(Object.keys(formToJSON(artistContact)).length !== 0){
                 update.artistContact = formToJSON(artistContact)
             }
 
