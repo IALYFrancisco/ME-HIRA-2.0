@@ -121,3 +121,24 @@
     column-gap: 5px;
     height: 34px;
 }
+
+.remove-document-modal .remove-document-choices button.yes:disabled,
+.remove-document-modal .remove-document-choices button.no:disabled {
+    background-color: var(--gray);
+    color: var(--black);
+}
+
+.remove-song-modal .remove-song-choices button.yes {
+    background-color: red;
+    color: white;
+}
+
+.remove-song-modal .remove-song-choices button.yes img {
+    width: 19px;
+    height: auto;
+}
+
+.remove-song-modal .remove-song-choices button.no {
+    background-color: var(--black);
+    color: white;
+}
