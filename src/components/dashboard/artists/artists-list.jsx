@@ -50,6 +50,14 @@ export default function ArtistsList(){
         }
     }
 
+    const toggleRemoveArtistDocumentModalState = ()=>{
+        if(removeArtistDocumentModalState){
+            setRemoveArtistDocumentModalState(false)
+        }else{
+            setRemoveArtistDocumentModalState(true)
+        }
+    }
+
     useEffect(()=>{
         const handleClickOutside = (event) => {
             if(popUpActionsRef.current && !popUpActionsRef.current.contains(event.target)){
