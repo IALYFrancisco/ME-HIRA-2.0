@@ -37,7 +37,7 @@ export default function ArtistsList(){
     const [ songActionIsLoading, setSongActionIsLoading ] = useState(false)
     const [ updatingSongFormIsActive, setUpdatingSongFormIsActive ] = useState(false)
 
-    const removeSongModalRef = useRef(null)
+    // const removeSongModalRef = useRef(null)
 
     var [ prompt, setPrompt ] = useState("")
 
@@ -157,7 +157,7 @@ export default function ArtistsList(){
     const closeAddSongModal = ()=>{
         toggleOverlayState()
         addSongFormRef.current.classList.remove('active')
-        removeSongModalRef.current.classList.remove('active')
+        // removeSongModalRef.current.classList.remove('active')
         reset({
             name: "",
             artistName: "",
@@ -197,9 +197,9 @@ export default function ArtistsList(){
     }, [])
 
     const handleClickNoButton = () => {
-        if(removeSongModalRef.current){
-            removeSongModalRef.current.classList.remove('active')
-        }
+        // if(removeSongModalRef.current){
+        //     removeSongModalRef.current.classList.remove('active')
+        // }
         toggleOverlayState()
     }
 
@@ -236,7 +236,7 @@ export default function ArtistsList(){
     const openSongRemoveModal = (document)=>{
         setDocumentToDoAction(document)
         toggleOverlayState()
-        removeSongModalRef.current.classList.add('active')
+        // removeSongModalRef.current.classList.add('active')
     }
 
     const removeDocumentArtist = async (artist) => {
@@ -255,7 +255,7 @@ export default function ArtistsList(){
             toast.error("Erreur de suppression du document artiste, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
-            removeSongModalRef.current.classList.remove('active')
+            // removeSongModalRef.current.classList.remove('active')
             toggleOverlayState()
         }
     }
@@ -520,7 +520,7 @@ export default function ArtistsList(){
                     </span>
                 </div>
             </form>
-            <div ref={removeSongModalRef} className="remove-song-modal">
+            {/* <div ref={removeSongModalRef} className="remove-song-modal">
                 <h3>Suppression d'un document artiste.</h3>
                 { documentToDoAction &&
                     <>
@@ -544,7 +544,7 @@ export default function ArtistsList(){
                         </button>
                     </span>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }
