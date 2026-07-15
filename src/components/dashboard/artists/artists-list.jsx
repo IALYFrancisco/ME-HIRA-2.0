@@ -1,6 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react-hooks/incompatible-library */
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
@@ -11,12 +11,15 @@ import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
 import { JoinArrayItems } from "@/helpers/song"
 import { formToJSON } from "axios"
+import Overlay from "@/components/overlay"
+import RemoveArtistDocumentModal from "./removeArtistDocumentModal"
 
 export default function ArtistsList(){
 
     var [ contactPhoneNumberIsActif, setContactPhoneNumberIsActif ] = useState(false)
-    
     var [ contactEmailIsActif, setContactEmailIsActif ] = useState(false)
+    const [ overlayState, setOverlayState ] = useState(false)
+    const [ removeArtistDocumentModalState, setRemoveArtistDocumentModalState ] = useState(false)
     
     var [ artists, setArtists ] = useState([])
     var [fetchArtistIsLoading, setfetchArtistsIsLoading] = useState(false)
@@ -28,7 +31,6 @@ export default function ArtistsList(){
     var [localFile, setLocalFile] = useState('')
     var [localFileIsDefined, setLocalFileIsDefined] = useState(false)
     var [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
-    const overlayRef = useRef(null)
     const addSongFormRef = useRef(null)
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
@@ -36,9 +38,23 @@ export default function ArtistsList(){
     const [ songActionIsLoading, setSongActionIsLoading ] = useState(false)
     const [ updatingSongFormIsActive, setUpdatingSongFormIsActive ] = useState(false)
 
-    const removeSongModalRef = useRef(null)
-
     var [ prompt, setPrompt ] = useState("")
+
+    const toggleOverlayState = () => {
+        if(overlayState){
+            setOverlayState(false)
+        }else{
+            setOverlayState(true)
+        }
+    }
+
+    const toggleRemoveArtistDocumentModalState = ()=>{
+        if(removeArtistDocumentModalState){
+            setRemoveArtistDocumentModalState(false)
+        }else{
+            setRemoveArtistDocumentModalState(true)
+        }
+    }
 
     useEffect(()=>{
         const handleClickOutside = (event) => {
@@ -141,14 +157,14 @@ export default function ArtistsList(){
     }
 
     const openAddSongModal = ()=>{
-        overlayRef.current.classList.add('active')
+        toggleOverlayState()
         addSongFormRef.current.classList.add('active')
     }
 
     const closeAddSongModal = ()=>{
-        overlayRef.current.classList.remove('active')
+        toggleOverlayState()
         addSongFormRef.current.classList.remove('active')
-        removeSongModalRef.current.classList.remove('active')
+        setRemoveArtistDocumentModalState(false)
         reset({
             name: "",
             artistName: "",
@@ -188,10 +204,8 @@ export default function ArtistsList(){
     }, [])
 
     const handleClickNoButton = () => {
-        if(removeSongModalRef.current){
-            removeSongModalRef.current.classList.remove('active')
-        }
-        overlayRef.current.classList.remove('active')
+        toggleRemoveArtistDocumentModalState()
+        toggleOverlayState()
     }
 
     const handleFileChange = (e) => {
@@ -226,8 +240,8 @@ export default function ArtistsList(){
 
     const openSongRemoveModal = (document)=>{
         setDocumentToDoAction(document)
-        overlayRef.current.classList.add('active')
-        removeSongModalRef.current.classList.add('active')
+        toggleOverlayState()
+        toggleRemoveArtistDocumentModalState()
     }
 
     const removeDocumentArtist = async (artist) => {
@@ -246,8 +260,8 @@ export default function ArtistsList(){
             toast.error("Erreur de suppression du document artiste, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
-            removeSongModalRef.current.classList.remove('active')
-            overlayRef.current.classList.remove('active')
+            toggleRemoveArtistDocumentModalState()
+            toggleOverlayState()
         }
     }
 
@@ -304,10 +318,10 @@ export default function ArtistsList(){
             let update = {}
 
             update.docId = documentToDoAction._id
-            if(artist){
+            if(Object.keys((formToJSON(artist))).length !== 0){
                 update.artist = formToJSON(artist)
             }
-            if(artistContact){
+            if(Object.keys(formToJSON(artistContact)).length !== 0){
                 update.artistContact = formToJSON(artistContact)
             }
 
@@ -320,8 +334,7 @@ export default function ArtistsList(){
                     })
                     .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
             }
-        }catch(error){
-            console.log(error)
+        }catch{
             toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
@@ -332,6 +345,11 @@ export default function ArtistsList(){
     }
 
     const handleUpdateDocumentActionClick = (document) => {
+
+        let hostedFileValue = document.image ? document.image : ""
+        if(hostedFileValue){
+            hostedFileValue = (hostedFileValue.startsWith('http://') || hostedFileValue.startsWith('https://')) ? hostedFileValue : process.env.NEXT_PUBLIC_API_BASE_URL+hostedFileValue
+        }
         
         setUpdatingSongFormIsActive(true)
         openAddSongModal()
@@ -353,10 +371,7 @@ export default function ArtistsList(){
             roles: JoinArrayItems(document.roles),
             about: document.about,
             address: document.address,
-            hostedFile: (
-                document.image?.startsWith('http://') ||
-                document.image?.startsWith('https://')
-            ) ? document.image : process.env.NEXT_PUBLIC_API_BASE_URL+document.image,
+            hostedFile: hostedFileValue,
             birthDayAndPlace: document.birthDayAndPlace,
             email: artistEmail ? artistEmail : "",
             phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
@@ -425,7 +440,7 @@ export default function ArtistsList(){
                     </table>
                 </section>
             </section>
-            <div className="add-song-overlay" ref={overlayRef} onClick={closeAddSongModal}></div>
+            <Overlay overlayState={overlayState} onClickAction={closeAddSongModal}/>
             <form onSubmit={
                 handleSubmit(
                     updatingSongFormIsActive ? updateArtistDocument : createArtistDocument
@@ -510,31 +525,13 @@ export default function ArtistsList(){
                     </span>
                 </div>
             </form>
-            <div ref={removeSongModalRef} className="remove-song-modal">
-                <h3>Suppression d'un document artiste.</h3>
-                { documentToDoAction &&
-                    <>
-                        <p>
-                            Êtes-vous sûr(e) de vouloir supprimer les documents artiste de
-                            <strong> {documentToDoAction.artistName} </strong>
-                            ?
-                        </p>
-                        <p>Faite attention, cette action est irréversible.</p>
-                    </>
-                }
-                <div className="remove-song-choices">
-                    <span onClick={handleClickNoButton}><button disabled={songActionIsLoading} className="no">Non</button></span>
-                    <span>
-                        <button disabled={songActionIsLoading} onClick={()=>removeDocumentArtist(documentToDoAction)} className="yes">
-                            { 
-                                songActionIsLoading ?
-                                <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
-                                : "Oui"
-                            }
-                        </button>
-                    </span>
-                </div>
-            </div>
+            <RemoveArtistDocumentModal
+                removeArtistDocumentModalState={removeArtistDocumentModalState}
+                documentToDoAction={documentToDoAction}
+                handleClickNoButton={handleClickNoButton}
+                songActionIsLoading={songActionIsLoading}
+                removeDocumentArtist={removeDocumentArtist}
+            />
         </>
     )
 }

@@ -68,7 +68,103 @@
     background-color: var(--orange-base);
 }
 
-.remove-song-modal p:nth-child(3) {
+.remove-document-modal p:nth-child(3) {
     margin-top: 15px;
     color: red;
+}
+
+.remove-document-modal {
+    background-color: white;
+    width: 100%;
+    max-width: 350px;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    margin: 20px auto;
+    left: -50%;
+    right: -50%;
+    transition: 300ms;
+    transform: scale(1.1);
+    box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 12;
+}
+
+.remove-document-modal.enabled {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.remove-document-modal h3 {
+    margin-bottom: 20px;
+    color: red;
+}
+
+.remove-document-modal .remove-document-choices {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-top: 20px;
+}
+
+.remove-document-modal .remove-document-choices button {
+    transition: all .10s ease-in-out;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    height: 34px;
+}
+
+.remove-document-modal .remove-document-choices button.yes:disabled,
+.remove-document-modal .remove-document-choices button.no:disabled {
+    background-color: var(--gray);
+    color: var(--black);
+}
+
+.remove-document-modal .remove-document-choices button.yes {
+    background-color: red;
+    color: white;
+}
+
+.remove-document-modal .remove-document-choices button.yes img {
+    width: 19px;
+    height: auto;
+}
+
+.remove-document-modal .remove-document-choices button.no {
+    background-color: var(--black);
+    color: white;
+}
+
+.remove-document-choices span:active {
+  transition: all .10s ease-in-out;
+  transform: scale(0.85);
+}
+
+.remove-document-choices span:has(button) {
+    display: block;
+    padding: 2px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 12px;
+}
+
+.remove-document-choices span:has(button.yes) {
+    border: 1px solid red;
+}
+
+.remove-document-choices span:has(button.no) {
+    border: 1px solid var(--black);
+}
+
+.remove-document-choices span:has(button:disabled){
+    border-color: var(--gray);
+    transform: none;
 }
