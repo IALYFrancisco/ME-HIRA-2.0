@@ -68,7 +68,7 @@
     background-color: var(--orange-base);
 }
 
-.remove-song-modal p:nth-child(3) {
+.remove-document-modal p:nth-child(3) {
     margin-top: 15px;
     color: red;
 }
