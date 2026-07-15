@@ -38,8 +38,6 @@ export default function ArtistsList(){
     const [ songActionIsLoading, setSongActionIsLoading ] = useState(false)
     const [ updatingSongFormIsActive, setUpdatingSongFormIsActive ] = useState(false)
 
-    // const removeSongModalRef = useRef(null)
-
     var [ prompt, setPrompt ] = useState("")
 
     const toggleOverlayState = () => {
@@ -166,8 +164,6 @@ export default function ArtistsList(){
     const closeAddSongModal = ()=>{
         toggleOverlayState()
         addSongFormRef.current.classList.remove('active')
-        // removeSongModalRef.current.classList.remove('active')
-        // toggleRemoveArtistDocumentModalState()
         setRemoveArtistDocumentModalState(false)
         reset({
             name: "",
@@ -208,9 +204,6 @@ export default function ArtistsList(){
     }, [])
 
     const handleClickNoButton = () => {
-        // if(removeSongModalRef.current){
-        //     removeSongModalRef.current.classList.remove('active')
-        // }
         toggleRemoveArtistDocumentModalState()
         toggleOverlayState()
     }
@@ -248,7 +241,6 @@ export default function ArtistsList(){
     const openSongRemoveModal = (document)=>{
         setDocumentToDoAction(document)
         toggleOverlayState()
-        // removeSongModalRef.current.classList.add('active')
         toggleRemoveArtistDocumentModalState()
     }
 
@@ -268,7 +260,6 @@ export default function ArtistsList(){
             toast.error("Erreur de suppression du document artiste, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
-            // removeSongModalRef.current.classList.remove('active')
             toggleRemoveArtistDocumentModalState()
             toggleOverlayState()
         }
@@ -541,31 +532,6 @@ export default function ArtistsList(){
                 songActionIsLoading={songActionIsLoading}
                 removeDocumentArtist={removeDocumentArtist}
             />
-            {/* <div ref={removeSongModalRef} className="remove-song-modal">
-                <h3>Suppression d'un document artiste.</h3>
-                { documentToDoAction &&
-                    <>
-                        <p>
-                            Êtes-vous sûr(e) de vouloir supprimer les documents artiste de
-                            <strong> {documentToDoAction.artistName} </strong>
-                            ?
-                        </p>
-                        <p>Faite attention, cette action est irréversible.</p>
-                    </>
-                }
-                <div className="remove-song-choices">
-                    <span onClick={handleClickNoButton}><button disabled={songActionIsLoading} className="no">Non</button></span>
-                    <span>
-                        <button disabled={songActionIsLoading} onClick={()=>removeDocumentArtist(documentToDoAction)} className="yes">
-                            { 
-                                songActionIsLoading ?
-                                <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
-                                : "Oui"
-                            }
-                        </button>
-                    </span>
-                </div>
-            </div> */}
         </>
     )
 }
