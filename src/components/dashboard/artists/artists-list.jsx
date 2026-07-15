@@ -167,7 +167,8 @@ export default function ArtistsList(){
         toggleOverlayState()
         addSongFormRef.current.classList.remove('active')
         // removeSongModalRef.current.classList.remove('active')
-        toggleRemoveArtistDocumentModalState()
+        // toggleRemoveArtistDocumentModalState()
+        setRemoveArtistDocumentModalState(false)
         reset({
             name: "",
             artistName: "",
