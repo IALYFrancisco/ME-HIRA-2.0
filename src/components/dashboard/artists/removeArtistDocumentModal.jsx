@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image"
 
-export default function RemoveArtistDocumentModal({ removeArtistDocumentState }){
+export default function RemoveArtistDocumentModal({ removeArtistDocumentState, documentToDoAction }){
     return(
         <div className={ removeArtistDocumentState ? "remove-document-modal enabled" : "remove-document-modal" }>
             <h3>Suppression d'un document artiste.</h3>
