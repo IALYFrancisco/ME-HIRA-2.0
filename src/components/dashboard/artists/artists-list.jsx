@@ -42,6 +42,14 @@ export default function ArtistsList(){
 
     var [ prompt, setPrompt ] = useState("")
 
+    const toggleOverlayState = () => {
+        if(overlayState){
+            setOverlayState(false)
+        }else{
+            setOverlayState(true)
+        }
+    }
+
     useEffect(()=>{
         const handleClickOutside = (event) => {
             if(popUpActionsRef.current && !popUpActionsRef.current.contains(event.target)){
