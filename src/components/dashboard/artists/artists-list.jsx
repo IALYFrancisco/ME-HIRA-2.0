@@ -429,7 +429,7 @@ export default function ArtistsList(){
                 </section>
             </section>
             {/* <div className="add-song-overlay" ref={overlayRef} onClick={closeAddSongModal}></div> */}
-            <Overlay/>
+            <Overlay overlayState={overlayState}/>
             <form onSubmit={
                 handleSubmit(
                     updatingSongFormIsActive ? updateArtistDocument : createArtistDocument
