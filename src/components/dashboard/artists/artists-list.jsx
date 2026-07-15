@@ -538,6 +538,7 @@ export default function ArtistsList(){
                 documentToDoAction={documentToDoAction}
                 handleClickNoButton={handleClickNoButton}
                 songActionIsLoading={songActionIsLoading}
+                removeDocumentArtist={removeDocumentArtist}
             />
             {/* <div ref={removeSongModalRef} className="remove-song-modal">
                 <h3>Suppression d'un document artiste.</h3>
