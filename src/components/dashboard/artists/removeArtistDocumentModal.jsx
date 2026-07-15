@@ -15,7 +15,7 @@ export default function RemoveArtistDocumentModal({ removeArtistDocumentState, d
                     <p>Faite attention, cette action est irréversible.</p>
                 </>
             }
-            <div className="remove-song-choices">
+            <div className="remove-document-choices">
                 <span onClick={handleClickNoButton}><button disabled={songActionIsLoading} className="no">Non</button></span>
                 <span>
                     <button disabled={songActionIsLoading} onClick={()=>removeDocumentArtist(documentToDoAction)} className="yes">
