@@ -91,3 +91,9 @@
     padding: 20px;
     z-index: 12;
 }
+
+.remove-document-modal.enabled {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
