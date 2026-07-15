@@ -1,3 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
+import Image from "next/image"
+
 export default function RemoveArtistDocumentModal(){
     return(
         <div ref={removeSongModalRef} className="remove-song-modal">
