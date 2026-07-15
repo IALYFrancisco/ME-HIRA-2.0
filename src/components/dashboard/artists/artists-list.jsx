@@ -435,7 +435,7 @@ export default function ArtistsList(){
                     </table>
                 </section>
             </section>
-            <Overlay overlayState={overlayState}/>
+            <Overlay overlayState={overlayState} onClickAction={closeAddSongModal()}/>
             <form onSubmit={
                 handleSubmit(
                     updatingSongFormIsActive ? updateArtistDocument : createArtistDocument
