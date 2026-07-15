@@ -167,6 +167,7 @@ export default function ArtistsList(){
         toggleOverlayState()
         addSongFormRef.current.classList.remove('active')
         // removeSongModalRef.current.classList.remove('active')
+        toggleRemoveArtistDocumentModalState()
         reset({
             name: "",
             artistName: "",
@@ -209,6 +210,7 @@ export default function ArtistsList(){
         // if(removeSongModalRef.current){
         //     removeSongModalRef.current.classList.remove('active')
         // }
+        toggleRemoveArtistDocumentModalState()
         toggleOverlayState()
     }
 
@@ -246,6 +248,7 @@ export default function ArtistsList(){
         setDocumentToDoAction(document)
         toggleOverlayState()
         // removeSongModalRef.current.classList.add('active')
+        toggleRemoveArtistDocumentModalState()
     }
 
     const removeDocumentArtist = async (artist) => {
@@ -265,6 +268,7 @@ export default function ArtistsList(){
         }finally{
             setSongActionIsLoading(false)
             // removeSongModalRef.current.classList.remove('active')
+            toggleRemoveArtistDocumentModalState()
             toggleOverlayState()
         }
     }
