@@ -128,17 +128,17 @@
     color: var(--black);
 }
 
-.remove-song-modal .remove-song-choices button.yes {
+.remove-document-modal .remove-document-choices button.yes {
     background-color: red;
     color: white;
 }
 
-.remove-song-modal .remove-song-choices button.yes img {
+.remove-document-modal .remove-document-choices button.yes img {
     width: 19px;
     height: auto;
 }
 
-.remove-song-modal .remove-song-choices button.no {
+.remove-document-modal .remove-document-choices button.no {
     background-color: var(--black);
     color: white;
 }
