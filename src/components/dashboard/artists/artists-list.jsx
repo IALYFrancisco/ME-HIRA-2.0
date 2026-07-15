@@ -11,6 +11,7 @@ import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
 import { JoinArrayItems } from "@/helpers/song"
 import { formToJSON } from "axios"
+import Overlay from "@/components/overlay"
 
 export default function ArtistsList(){
 
@@ -427,6 +428,7 @@ export default function ArtistsList(){
                 </section>
             </section>
             {/* <div className="add-song-overlay" ref={overlayRef} onClick={closeAddSongModal}></div> */}
+            <Overlay/>
             <form onSubmit={
                 handleSubmit(
                     updatingSongFormIsActive ? updateArtistDocument : createArtistDocument
