@@ -18,6 +18,7 @@ export default function ArtistsList(){
     var [ contactPhoneNumberIsActif, setContactPhoneNumberIsActif ] = useState(false)
     
     var [ contactEmailIsActif, setContactEmailIsActif ] = useState(false)
+    const [ overlayState, setOverlayState ] = useState(false)
     
     var [ artists, setArtists ] = useState([])
     var [fetchArtistIsLoading, setfetchArtistsIsLoading] = useState(false)
