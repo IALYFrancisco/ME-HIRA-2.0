@@ -12,6 +12,7 @@ import { api } from "@/helpers/api"
 import { JoinArrayItems } from "@/helpers/song"
 import { formToJSON } from "axios"
 import Overlay from "@/components/overlay"
+import RemoveArtistDocumentModal from "./removeArtistDocumentModal"
 
 export default function ArtistsList(){
 
@@ -520,6 +521,7 @@ export default function ArtistsList(){
                     </span>
                 </div>
             </form>
+            <RemoveArtistDocumentModal/>
             {/* <div ref={removeSongModalRef} className="remove-song-modal">
                 <h3>Suppression d'un document artiste.</h3>
                 { documentToDoAction &&
