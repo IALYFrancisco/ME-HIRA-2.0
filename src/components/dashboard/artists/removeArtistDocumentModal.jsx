@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function RemoveArtistDocumentModal({ removeArtistDocumentState }){
     return(
-        <div className={ removeArtistDocumentState ? "remove-song-modal enabled" : "remove-song-modal" }>
+        <div className={ removeArtistDocumentState ? "remove-document-modal enabled" : "remove-document-modal" }>
             <h3>Suppression d'un document artiste.</h3>
             { documentToDoAction &&
                 <>
