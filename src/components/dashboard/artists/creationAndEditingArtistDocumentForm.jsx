@@ -6,6 +6,7 @@ export default function CreationAndEditingArtistDocumentForm({
     updatingSongFormIsActive,
     updateArtistDocument,
     createArtistDocument,
+    creationAndEditingArtistDocumentFormState,
     closeAddSongModal,
     localFileIsDefined,
     hostedFileIsDefined,
