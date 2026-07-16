@@ -204,6 +204,7 @@ export default function ArtistsList(){
                 setArtists={setArtists}
                 setDocumentToDoAction={setDocumentToDoAction}
                 setSongActionIsLoading={setSongActionIsLoading}
+                songActionIsLoading={songActionIsLoading}
                 updatingSongFormIsActive={updatingSongFormIsActive}
                 closeAddSongModal={closeAddSongModal}
                 documentToDoAction={documentToDoAction}
