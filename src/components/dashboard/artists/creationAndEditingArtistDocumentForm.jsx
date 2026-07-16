@@ -20,7 +20,8 @@ export default function CreationAndEditingArtistDocumentForm({
     documentToDoAction,
     setContactEmailIsActif,
     setContactPhoneNumberIsActif,
-    setArtists
+    setArtists,
+    setDocumentToDoAction
 }){
 
     const { register, handleSubmit, reset, watch, formState: { isDirty } } = useForm()
