@@ -190,11 +190,6 @@ export default function ArtistsList(){
     }
 
     const handleUpdateDocumentActionClick = (document) => {
-
-        // let hostedFileValue = document.image ? document.image : ""
-        // if(hostedFileValue){
-        //     hostedFileValue = (hostedFileValue.startsWith('http://') || hostedFileValue.startsWith('https://')) ? hostedFileValue : process.env.NEXT_PUBLIC_API_BASE_URL+hostedFileValue
-        // }
         
         setUpdatingSongFormIsActive(true)
         openAddSongModal()
@@ -210,17 +205,6 @@ export default function ArtistsList(){
             setContactPhoneNumberIsActif(true)
         }
 
-        // reset({
-        //     name: document.name,
-        //     artistName: document.artistName,
-        //     roles: JoinArrayItems(document.roles),
-        //     about: document.about,
-        //     address: document.address,
-        //     hostedFile: hostedFileValue,
-        //     birthDayAndPlace: document.birthDayAndPlace,
-        //     email: artistEmail ? artistEmail : "",
-        //     phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
-        // })
     }
 
     return(
