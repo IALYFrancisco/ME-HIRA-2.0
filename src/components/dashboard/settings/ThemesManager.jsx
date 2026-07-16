@@ -5,7 +5,10 @@ export default function ThemesManager(){
             <p>Vous pouvez faire un choix parmi les thèmes suivants :</p>
             <ul className="themes-elements">
                 <li className="theme">
-                    <div></div>
+                    <div>
+                        <div className="light-theme"></div>
+                        <div className="dark-theme"></div>
+                    </div>
                 </li>
                 <li className="theme">
                     <div></div>
