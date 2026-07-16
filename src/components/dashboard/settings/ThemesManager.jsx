@@ -9,12 +9,15 @@ export default function ThemesManager(){
                         <div className="light-theme"></div>
                         <div className="dark-theme"></div>
                     </div>
+                    <p>Thème claire</p>
                 </li>
                 <li className="theme">
                     <div></div>
+                    <p>Thème claire</p>
                 </li>
                 <li className="theme">
                     <div></div>
+                    <p>Thème sombre</p>
                 </li>
             </ul>
         </section>
