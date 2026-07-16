@@ -13,6 +13,7 @@ import { JoinArrayItems } from "@/helpers/song"
 import { formToJSON } from "axios"
 import Overlay from "@/components/overlay"
 import RemoveArtistDocumentModal from "./removeArtistDocumentModal"
+import CreationAndEditingArtistDocumentForm from "./creationAndEditingArtistDocumentForm"
 
 export default function ArtistsList(){
 
@@ -525,6 +526,7 @@ export default function ArtistsList(){
                     </span>
                 </div>
             </form> */}
+            <CreationAndEditingArtistDocumentForm/>
             <RemoveArtistDocumentModal
                 removeArtistDocumentModalState={removeArtistDocumentModalState}
                 documentToDoAction={documentToDoAction}
