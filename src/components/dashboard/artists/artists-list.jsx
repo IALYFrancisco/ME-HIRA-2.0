@@ -81,25 +81,12 @@ export default function ArtistsList(){
     const openAddSongModal = ()=>{
         toggleOverlayState()
         setCreationAndEditingArtistDocumentFormState(true)
-        // addSongFormRef.current.classList.add('active')
     }
 
     const closeAddSongModal = ()=>{
         toggleOverlayState()
         setCreationAndEditingArtistDocumentFormState(false)
-        // addSongFormRef.current.classList.remove('active')
         setRemoveArtistDocumentModalState(false)
-        reset({
-            name: "",
-            artistName: "",
-            roles: "",
-            about: "",
-            address: "",
-            hostedFile: "",
-            birthDayAndPlace: "",
-            email: "",
-            phoneNumber: "",
-        })
         setContactEmailIsActif(false)
         setContactPhoneNumberIsActif(false)
         setUpdatingSongFormIsActive(false)
