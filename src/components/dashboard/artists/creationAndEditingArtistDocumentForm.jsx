@@ -1,7 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
+import { useForm } from "react-hook-form";
 
 export default function CreationAndEditingArtistDocumentForm(){
+
+    const { handleSubmit } = useForm()
+
     return(
         <form onSubmit={
             handleSubmit(
