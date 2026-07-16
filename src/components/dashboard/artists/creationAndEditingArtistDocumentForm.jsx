@@ -48,6 +48,12 @@ export default function CreationAndEditingArtistDocumentForm({
     },[localFile, watchAll])
 
     useEffect(()=>{
+
+        let hostedFileValue = document.image ? document.image : ""
+        if(hostedFileValue){
+            hostedFileValue = (hostedFileValue.startsWith('http://') || hostedFileValue.startsWith('https://')) ? hostedFileValue : process.env.NEXT_PUBLIC_API_BASE_URL+hostedFileValue
+        }
+
         if(updatingSongFormIsActive){
             reset({
                 name: documentToDoAction.name,
@@ -61,6 +67,7 @@ export default function CreationAndEditingArtistDocumentForm({
                 phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
             })
         }
+        
     }, [documentToDoAction, reset, updatingSongFormIsActive])
 
     const createArtistDocument = async (data) => {
