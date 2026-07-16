@@ -19,7 +19,7 @@ export default function CreationAndEditingArtistDocumentForm({
     songActionIsLoading
 }){
 
-    const { handleSubmit, reset } = useForm()
+    const { register, handleSubmit, reset } = useForm()
 
     return(
         <form onSubmit={
