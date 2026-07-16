@@ -10,7 +10,8 @@ export default function CreationAndEditingArtistDocumentForm({
     localFileIsDefined,
     hostedFileIsDefined,
     handleFileChange,
-    toggleContactPhoneNumber
+    toggleContactPhoneNumber,
+    contactEmailIsActif
 }){
 
     const { handleSubmit, reset } = useForm()
