@@ -269,82 +269,82 @@ export default function ArtistsList(){
 
     const isModified = isDirty || localFile
 
-    const updateArtistDocument = async (data) => {
-        try{
-            setSongActionIsLoading(true)
+    // const updateArtistDocument = async (data) => {
+    //     try{
+    //         setSongActionIsLoading(true)
 
-            const artist = new FormData()
-            const artistContact = new FormData()
+    //         const artist = new FormData()
+    //         const artistContact = new FormData()
 
-            if(documentToDoAction.name !== data.name){
-                artist.append('name', data.name)
-            }
-            if(documentToDoAction.artistName !== data.artistName){
-                artist.append('artistName', data.artistName)
-            }
-            if(documentToDoAction.about !== data.about){
-                artist.append('about', data.about)
-            }
-            if(documentToDoAction.address !== data.address){
-                artist.append('address', data.address)
-            }
-            if(documentToDoAction.birthDayAndPlace !== data.birthDayAndPlace){
-                artist.append('birthDayAndPlace', data.birthDayAndPlace)
-            }
-            if(documentToDoAction.contacts.phoneNumber !== data.phoneNumber){
-                artistContact.append('phoneNumber', data.phoneNumber)
-            }
-            if(documentToDoAction.contacts.email !== data.email){
-                artistContact.append('email', data.email)
-            }
-            if(JoinArrayItems(documentToDoAction.roles) !== data.roles){
-                artist.append('roles', data.roles)
-            }
-            let localFileUrl = (
-                documentToDoAction.image?.startsWith('https://') ||
-                documentToDoAction.image?.startsWith('http://')
-            ) ? documentToDoAction.image : process.env.NEXT_PUBLIC_API_BASE_URL+documentToDoAction.image
+    //         if(documentToDoAction.name !== data.name){
+    //             artist.append('name', data.name)
+    //         }
+    //         if(documentToDoAction.artistName !== data.artistName){
+    //             artist.append('artistName', data.artistName)
+    //         }
+    //         if(documentToDoAction.about !== data.about){
+    //             artist.append('about', data.about)
+    //         }
+    //         if(documentToDoAction.address !== data.address){
+    //             artist.append('address', data.address)
+    //         }
+    //         if(documentToDoAction.birthDayAndPlace !== data.birthDayAndPlace){
+    //             artist.append('birthDayAndPlace', data.birthDayAndPlace)
+    //         }
+    //         if(documentToDoAction.contacts.phoneNumber !== data.phoneNumber){
+    //             artistContact.append('phoneNumber', data.phoneNumber)
+    //         }
+    //         if(documentToDoAction.contacts.email !== data.email){
+    //             artistContact.append('email', data.email)
+    //         }
+    //         if(JoinArrayItems(documentToDoAction.roles) !== data.roles){
+    //             artist.append('roles', data.roles)
+    //         }
+    //         let localFileUrl = (
+    //             documentToDoAction.image?.startsWith('https://') ||
+    //             documentToDoAction.image?.startsWith('http://')
+    //         ) ? documentToDoAction.image : process.env.NEXT_PUBLIC_API_BASE_URL+documentToDoAction.image
 
-            if(
-                (localFileUrl !== data.hostedFile)
-                ||(localFile)
-            ){    
-                if(localFileUrl !== data.hostedFile){
-                    artist.append('image', data.hostedFile)
-                }
-                if(localFile){
-                    artist.append('file', localFile)
-                }
-            }
+    //         if(
+    //             (localFileUrl !== data.hostedFile)
+    //             ||(localFile)
+    //         ){    
+    //             if(localFileUrl !== data.hostedFile){
+    //                 artist.append('image', data.hostedFile)
+    //             }
+    //             if(localFile){
+    //                 artist.append('file', localFile)
+    //             }
+    //         }
 
-            let update = {}
+    //         let update = {}
 
-            update.docId = documentToDoAction._id
-            if(Object.keys((formToJSON(artist))).length !== 0){
-                update.artist = formToJSON(artist)
-            }
-            if(Object.keys(formToJSON(artistContact)).length !== 0){
-                update.artistContact = formToJSON(artistContact)
-            }
+    //         update.docId = documentToDoAction._id
+    //         if(Object.keys((formToJSON(artist))).length !== 0){
+    //             update.artist = formToJSON(artist)
+    //         }
+    //         if(Object.keys(formToJSON(artistContact)).length !== 0){
+    //             update.artistContact = formToJSON(artistContact)
+    //         }
 
-            let response = await api.patch('/artist/update', { update })
-            if(response.status === 200){
-                toast.info(`Le document artiste de ${documentToDoAction?.artistName} a été bien modifié.`)
-                api.get('/artist/get')
-                    .then((response) => {
-                        setArtists(response.data)
-                    })
-                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
-            }
-        }catch{
-            toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
-        }finally{
-            setSongActionIsLoading(false)
-            closeAddSongModal()
-            setDocumentToDoAction(null)
-            setLocalFile(null)
-        }
-    }
+    //         let response = await api.patch('/artist/update', { update })
+    //         if(response.status === 200){
+    //             toast.info(`Le document artiste de ${documentToDoAction?.artistName} a été bien modifié.`)
+    //             api.get('/artist/get')
+    //                 .then((response) => {
+    //                     setArtists(response.data)
+    //                 })
+    //                 .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
+    //         }
+    //     }catch{
+    //         toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
+    //     }finally{
+    //         setSongActionIsLoading(false)
+    //         closeAddSongModal()
+    //         setDocumentToDoAction(null)
+    //         setLocalFile(null)
+    //     }
+    // }
 
     const handleUpdateDocumentActionClick = (document) => {
 
