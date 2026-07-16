@@ -102,17 +102,6 @@ export default function ArtistsList(){
         toggleOverlayState()
     }
 
-    const handleFileChange = (e) => {
-
-        const file = e.target.files[0]
-
-        if(!file){
-            return
-        }
-
-        setLocalFile(file)
-    }
-
     const openSongRemoveModal = (document)=>{
         setDocumentToDoAction(document)
         toggleOverlayState()
