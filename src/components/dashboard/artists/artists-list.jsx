@@ -191,10 +191,10 @@ export default function ArtistsList(){
 
     const handleUpdateDocumentActionClick = (document) => {
 
-        let hostedFileValue = document.image ? document.image : ""
-        if(hostedFileValue){
-            hostedFileValue = (hostedFileValue.startsWith('http://') || hostedFileValue.startsWith('https://')) ? hostedFileValue : process.env.NEXT_PUBLIC_API_BASE_URL+hostedFileValue
-        }
+        // let hostedFileValue = document.image ? document.image : ""
+        // if(hostedFileValue){
+        //     hostedFileValue = (hostedFileValue.startsWith('http://') || hostedFileValue.startsWith('https://')) ? hostedFileValue : process.env.NEXT_PUBLIC_API_BASE_URL+hostedFileValue
+        // }
         
         setUpdatingSongFormIsActive(true)
         openAddSongModal()
