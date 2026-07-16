@@ -195,16 +195,6 @@ export default function ArtistsList(){
         openAddSongModal()
         setDocumentToDoAction(document)
 
-        let artistEmail = document.contacts.email
-        let artistPhoneNumber = document.contacts.phoneNumber
-
-        if(artistEmail){
-            setContactEmailIsActif(true)
-        }
-        if(artistPhoneNumber){
-            setContactPhoneNumberIsActif(true)
-        }
-
     }
 
     return(

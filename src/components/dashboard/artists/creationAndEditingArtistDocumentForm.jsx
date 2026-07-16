@@ -49,12 +49,23 @@ export default function CreationAndEditingArtistDocumentForm({
 
     useEffect(()=>{
 
-        let hostedFileValue = document.image ? document.image : ""
-        if(hostedFileValue){
-            hostedFileValue = (hostedFileValue.startsWith('http://') || hostedFileValue.startsWith('https://')) ? hostedFileValue : process.env.NEXT_PUBLIC_API_BASE_URL+hostedFileValue
-        }
-
         if(updatingSongFormIsActive){
+
+            let hostedFileValue = document.image ? document.image : ""
+            if(hostedFileValue){
+                hostedFileValue = (hostedFileValue.startsWith('http://') || hostedFileValue.startsWith('https://')) ? hostedFileValue : process.env.NEXT_PUBLIC_API_BASE_URL+hostedFileValue
+            }
+
+            let artistEmail = document.contacts.email
+            let artistPhoneNumber = document.contacts.phoneNumber
+
+            if(artistEmail){
+                setContactEmailIsActif(true)
+            }
+            if(artistPhoneNumber){
+                setContactPhoneNumberIsActif(true)
+            }
+
             reset({
                 name: documentToDoAction.name,
                 artistName: documentToDoAction.artistName,
@@ -66,6 +77,7 @@ export default function CreationAndEditingArtistDocumentForm({
                 email: artistEmail ? artistEmail : "",
                 phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
             })
+            
         }
         
     }, [documentToDoAction, reset, updatingSongFormIsActive])
