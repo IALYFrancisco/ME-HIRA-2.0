@@ -49,13 +49,13 @@ export default function CreationAndEditingArtistDocumentForm({
 
         if(updatingSongFormIsActive){
 
-            let hostedFileValue = document.image ? document.image : ""
+            let hostedFileValue = documentToDoAction.image ? documentToDoAction.image : ""
             if(hostedFileValue){
                 hostedFileValue = (hostedFileValue.startsWith('http://') || hostedFileValue.startsWith('https://')) ? hostedFileValue : process.env.NEXT_PUBLIC_API_BASE_URL+hostedFileValue
             }
 
-            let artistEmail = document.contacts.email
-            let artistPhoneNumber = document.contacts.phoneNumber
+            let artistEmail = documentToDoAction.contacts.email
+            let artistPhoneNumber = documentToDoAction.contacts.phoneNumber
 
             if(artistEmail){
                 setContactEmailIsActif(true)
