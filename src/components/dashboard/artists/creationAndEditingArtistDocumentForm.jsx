@@ -9,7 +9,8 @@ export default function CreationAndEditingArtistDocumentForm({
     closeAddSongModal,
     localFileIsDefined,
     hostedFileIsDefined,
-    handleFileChange
+    handleFileChange,
+    toggleContactPhoneNumber
 }){
 
     const { handleSubmit, reset } = useForm()
