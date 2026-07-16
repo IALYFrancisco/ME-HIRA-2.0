@@ -248,6 +248,8 @@ export default function ArtistsList(){
                 updatingSongFormIsActive={updatingSongFormIsActive}
                 closeAddSongModal={closeAddSongModal}
                 documentToDoAction={documentToDoAction}
+                setContactEmailIsActif={setContactEmailIsActif}
+                setContactPhoneNumberIsActif={setContactPhoneNumberIsActif}
             />
             <RemoveArtistDocumentModal
                 removeArtistDocumentModalState={removeArtistDocumentModalState}
