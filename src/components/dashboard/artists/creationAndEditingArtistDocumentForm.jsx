@@ -13,7 +13,8 @@ export default function CreationAndEditingArtistDocumentForm({
     toggleContactPhoneNumber,
     contactPhoneNumberIsActif,
     toggleContactEmail,
-    contactEmailIsActif
+    contactEmailIsActif,
+    createArtistDocumentIsLoading
 }){
 
     const { handleSubmit, reset } = useForm()
