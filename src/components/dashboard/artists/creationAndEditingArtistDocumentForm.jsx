@@ -80,7 +80,7 @@ export default function CreationAndEditingArtistDocumentForm({
 
         }
         
-    }, [documentToDoAction, reset, updatingSongFormIsActive])
+    }, [documentToDoAction, reset, setContactEmailIsActif, setContactPhoneNumberIsActif, updatingSongFormIsActive])
 
     const createArtistDocument = async (data) => {
         try{
