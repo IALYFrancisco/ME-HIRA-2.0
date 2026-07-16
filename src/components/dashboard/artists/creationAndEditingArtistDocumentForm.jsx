@@ -27,7 +27,10 @@ export default function CreationAndEditingArtistDocumentForm({
             handleSubmit(
                 updatingSongFormIsActive ? updateArtistDocument : createArtistDocument
             )}
-            className="add-song-modal"
+            className={ 
+                ( updatingSongFormIsActive || creationAndEditingArtistDocumentFormState ) ?
+                "add-song-modal enabled" : "add-song-modal"
+            }
         >
             <span className="close-modal" onClick={ ()=> {closeAddSongModal(); reset()}}>
                 <Image src="/images/close.png" width={16} height={16} priority alt="fermer modal d'ajout de chanson"/>
