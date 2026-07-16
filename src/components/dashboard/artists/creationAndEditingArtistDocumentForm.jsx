@@ -25,6 +25,63 @@ export default function CreationAndEditingArtistDocumentForm({
 
     const [localFile, setLocalFile] = useState('')
 
+    const createArtistDocument = async (data) => {
+        try{
+    
+            setCreateArtistDocumentIsLoading(true)
+                
+            const artistDocument = new FormData()
+            const artistContact = new FormData()
+    
+            // Artist contacts object creation
+            if(data.phoneNumber){
+                artistContact.append("phoneNumber", data.phoneNumber)
+            }
+            if(data.email){
+                artistContact.append("email", data.email)
+            }
+                
+                // Artist document object création
+                artistDocument.append('name', data.name)
+                artistDocument.append('artistName', data.artistName)
+                artistDocument.append('roles', data.roles)
+                artistDocument.append('about', data.about)
+                artistDocument.append('address', data.address)
+                artistDocument.append('birthDayAndPlace', data.birthDayAndPlace)
+                if(data.hostedFile){
+                    artistDocument.append('image', data.hostedFile)
+                }
+                if(localFile){
+                    artistDocument.append('file', localFile)
+                }
+                const response = await api.post(
+                    '/artist/create-document',
+                    { 
+                        artist: formToJSON(artistDocument),
+                        contact: formToJSON(artistContact)
+                    },
+                    {
+                        headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}
+                    })
+                
+                if(response.status === 201){
+                    api.get('/artist/get')
+                        .then((response) => {
+                            setArtists(response.data)
+                        })
+                        .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
+                    toast.info(`Le document artiste de ${data.artistName} est créé dans la base de donnée.`)
+                    reset()
+                    setLocalFile(null)
+                    closeAddSongModal()
+                }
+            }catch{
+                toast.error(`Erreur de l'ajout du chanson, veuillez réessayer plus tard.`)
+            }finally{
+                setCreateArtistDocumentIsLoading(false)
+            }
+        }
+
     const updateArtistDocument = async (data) => {
         try{
             setSongActionIsLoading(true)
