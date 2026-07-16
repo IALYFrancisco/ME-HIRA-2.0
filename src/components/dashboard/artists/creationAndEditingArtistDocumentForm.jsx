@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function CreationAndEditingArtistDocumentForm({
     updatingSongFormIsActive,
