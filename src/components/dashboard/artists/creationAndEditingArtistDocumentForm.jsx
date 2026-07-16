@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { formToJSON } from "axios";
 import { JoinArrayItems } from "@/helpers/song"
 import { toast } from "sonner";
+import { api } from "@/helpers/api";
 
 export default function CreationAndEditingArtistDocumentForm({
     updatingSongFormIsActive,
@@ -151,7 +152,8 @@ export default function CreationAndEditingArtistDocumentForm({
                     setLocalFile(null)
                     closeAddSongModal()
                 }
-            }catch{
+            }catch(e){
+                console.log(e)
                 toast.error(`Erreur du création de document artiste, veuillez réessayer plus tard.`)
             }finally{
                 setCreateArtistDocumentIsLoading(false)
