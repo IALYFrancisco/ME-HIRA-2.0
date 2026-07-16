@@ -31,7 +31,7 @@ export default function ArtistsList(){
     var [localFile, setLocalFile] = useState('')
     var [localFileIsDefined, setLocalFileIsDefined] = useState(false)
     var [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
-    const addSongFormRef = useRef(null)
+    // const addSongFormRef = useRef(null)
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
     const [ documentToDoAction, setDocumentToDoAction ] = useState(null)
@@ -158,12 +158,12 @@ export default function ArtistsList(){
 
     const openAddSongModal = ()=>{
         toggleOverlayState()
-        addSongFormRef.current.classList.add('active')
+        // addSongFormRef.current.classList.add('active')
     }
 
     const closeAddSongModal = ()=>{
         toggleOverlayState()
-        addSongFormRef.current.classList.remove('active')
+        // addSongFormRef.current.classList.remove('active')
         setRemoveArtistDocumentModalState(false)
         reset({
             name: "",
