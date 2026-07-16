@@ -13,7 +13,6 @@ export default function CreationAndEditingArtistDocumentForm({
     localFileIsDefined,
     hostedFileIsDefined,
     handleFileChange,
-    toggleContactPhoneNumber,
     contactPhoneNumberIsActif,
     toggleContactEmail,
     contactEmailIsActif,
