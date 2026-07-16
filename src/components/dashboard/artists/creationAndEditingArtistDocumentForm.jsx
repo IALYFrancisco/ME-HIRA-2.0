@@ -9,18 +9,18 @@ import { toast } from "sonner";
 import { api } from "@/helpers/api";
 
 export default function CreationAndEditingArtistDocumentForm({
-    updatingSongFormIsActive,
-    creationAndEditingArtistDocumentFormState,
+    setArtists,
     closeAddSongModal,
-    contactPhoneNumberIsActif,
+    documentToDoAction,
     contactEmailIsActif,
     songActionIsLoading,
+    setDocumentToDoAction,
     setSongActionIsLoading,
-    documentToDoAction,
     setContactEmailIsActif,
+    updatingSongFormIsActive,
+    contactPhoneNumberIsActif,
     setContactPhoneNumberIsActif,
-    setArtists,
-    setDocumentToDoAction
+    creationAndEditingArtistDocumentFormState
 }){
 
     const { register, handleSubmit, reset, watch, formState: { isDirty } } = useForm()
