@@ -252,6 +252,7 @@ export default function ArtistsList(){
                 setContactPhoneNumberIsActif={setContactPhoneNumberIsActif}
                 contactEmailIsActif={contactEmailIsActif}
                 contactPhoneNumberIsActif={contactPhoneNumberIsActif}
+                creationAndEditingArtistDocumentFormState={creationAndEditingArtistDocumentFormState}
             />
             <RemoveArtistDocumentModal
                 removeArtistDocumentModalState={removeArtistDocumentModalState}
