@@ -12,6 +12,7 @@ export default function CreationAndEditingArtistDocumentForm({
     handleFileChange,
     toggleContactPhoneNumber,
     contactPhoneNumberIsActif,
+    toggleContactEmail,
     contactEmailIsActif
 }){
 
