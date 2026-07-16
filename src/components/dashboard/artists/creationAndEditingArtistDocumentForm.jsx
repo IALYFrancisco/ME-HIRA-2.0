@@ -23,6 +23,8 @@ export default function CreationAndEditingArtistDocumentForm({
 
     const { register, handleSubmit, reset } = useForm()
 
+    const [localFile, setLocalFile] = useState('')
+
     const updateArtistDocument = async (data) => {
         try{
             setSongActionIsLoading(true)
