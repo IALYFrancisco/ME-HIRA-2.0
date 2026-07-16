@@ -254,6 +254,17 @@ export default function CreationAndEditingArtistDocumentForm({
         }
     }
 
+    const handleFileChange = (e) => {
+
+        const file = e.target.files[0]
+
+        if(!file){
+            return
+        }
+
+        setLocalFile(file)
+    }
+
     return(
         <form onSubmit={
             handleSubmit(
