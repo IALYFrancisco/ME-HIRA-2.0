@@ -11,6 +11,7 @@ export default function CreationAndEditingArtistDocumentForm({
     hostedFileIsDefined,
     handleFileChange,
     toggleContactPhoneNumber,
+    contactPhoneNumberIsActif,
     contactEmailIsActif
 }){
 
