@@ -196,18 +196,18 @@
     transform: scale(1);
 }
 
-.add-song-modal section {
+.document-form-modal section {
     display: flex;
     column-gap: 20px;
     margin-top: 15px;
 }
 
-.add-song-modal fieldset {
+.document-form-modal fieldset {
     width: 50%;
     border: none;
 }
 
-.add-song-modal input:not([type='file']) {
+.document-form-modal input:not([type='file']) {
     display: block;
     width: 100%;
     margin-top: 10px;
@@ -218,24 +218,24 @@
     outline: none;
 }
 
-.add-song-modal input[type='file']{
+.document-form-modal input[type='file']{
     margin-top: 15px;
     height: 40px;
 }
 
-.add-song-modal input:focus {
+.document-form-modal input:focus {
     border-color: var(--orange-base);
 }
 
-.add-song-modal .form-element {
+.document-form-modal .form-element {
     margin-top: 15px;
 }
 
-.add-song-modal label {
+.document-form-modal label {
     cursor: pointer;
 }
 
-.add-song-modal button {
+.document-form-modal button {
     transition: all .10s ease-in-out;
     padding: 10px 15px;
     background-color: var(--orange-base);
@@ -250,23 +250,22 @@
     justify-content: center;
 }
 
-.add-song-modal button:disabled {
+.document-form-modal button:disabled {
     background-color: var(--gray);
 }
 
-.add-song-modal button img {
+.document-form-modal button img {
     color: transparent;
     width: 30px;
     height: auto;
 }
 
-
-.add-song-modal span:active {
+.document-form-modal span:active {
   transition: all .10s ease-in-out;
   transform: scale(0.85);
 }
 
-.add-song-modal span:has(button) {
+.document-form-modal span:has(button) {
     display: block;
     border: 1px solid var(--orange-base);
     padding: 2px;
@@ -277,12 +276,12 @@
     margin-top: 20px;
 }
 
-.add-song-modal span:has(button:disabled){
+.document-form-modal span:has(button:disabled){
     border-color: var(--gray);
     transform: none;
 }
 
-.add-song-modal select {
+.document-form-modal select {
     display: block;
     width: 100%;
     height: 40px;
@@ -293,11 +292,11 @@
     margin-top: 10px;
 }
 
-.add-song-modal select:focus {
+.document-form-modal select:focus {
     border-color: var(--orange-base);
 }
 
-.add-song-modal .close-modal {
+.document-form-modal .close-modal {
     width: 25px;
     height: 25px;
     background-color: var(--gray);
@@ -310,7 +309,7 @@
     justify-content: center;
 }
 
-.add-song-modal .close-modal img {
+.document-form-modal .close-modal img {
     height: auto;
     width: 10px;
 }
