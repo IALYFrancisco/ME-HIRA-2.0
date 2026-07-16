@@ -441,7 +441,7 @@ export default function ArtistsList(){
                 </section>
             </section>
             <Overlay overlayState={overlayState} onClickAction={closeAddSongModal}/>
-            <form onSubmit={
+            {/* <form onSubmit={
                 handleSubmit(
                     updatingSongFormIsActive ? updateArtistDocument : createArtistDocument
                 )}
@@ -524,7 +524,7 @@ export default function ArtistsList(){
                         </button>
                     </span>
                 </div>
-            </form>
+            </form> */}
             <RemoveArtistDocumentModal
                 removeArtistDocumentModalState={removeArtistDocumentModalState}
                 documentToDoAction={documentToDoAction}
