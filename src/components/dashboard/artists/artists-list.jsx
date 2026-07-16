@@ -24,7 +24,7 @@ export default function ArtistsList(){
     var [ artists, setArtists ] = useState([])
     var [fetchArtistIsLoading, setfetchArtistsIsLoading] = useState(false)
     var [createArtistDocumentIsLoading, setCreateArtistDocumentIsLoading] = useState(false)
-    const { register, handleSubmit, watch, reset, formState: { isDirty } } = useForm()
+    const { watch, reset, formState: { isDirty } } = useForm()
     const { loading } = useAuth()
     
     const watchAll = watch()
