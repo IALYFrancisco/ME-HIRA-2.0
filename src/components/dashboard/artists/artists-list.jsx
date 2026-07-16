@@ -184,20 +184,6 @@ export default function ArtistsList(){
     }
 
     useEffect(()=>{
-        if(watchAll.hostedFile){
-            setHostedFileIsDefined(true)
-        }else{
-            setHostedFileIsDefined(false)
-        }
-
-        if(localFile){
-            setLocalFileIsDefined(true)
-        }else{
-            setLocalFileIsDefined(false)
-        }
-    },[localFile, watchAll])
-
-    useEffect(()=>{
         setfetchArtistsIsLoading(true)
         api.get('/artist/get')
         .then((response) => setArtists(response.data))

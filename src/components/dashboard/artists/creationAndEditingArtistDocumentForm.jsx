@@ -24,6 +24,20 @@ export default function CreationAndEditingArtistDocumentForm({
 
     const [localFile, setLocalFile] = useState('')
 
+    useEffect(()=>{
+        if(watchAll.hostedFile){
+            setHostedFileIsDefined(true)
+        }else{
+            setHostedFileIsDefined(false)
+        }
+    
+        if(localFile){
+            setLocalFileIsDefined(true)
+        }else{
+            setLocalFileIsDefined(false)
+        }
+    },[localFile, watchAll])
+
     const createArtistDocument = async (data) => {
         try{
     
