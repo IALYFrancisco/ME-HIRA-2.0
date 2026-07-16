@@ -1,1 +1,3 @@
-export default function CreationAndEditing
+export default function CreationAndEditingArtistDocumentForm(){
+    return()
+}
