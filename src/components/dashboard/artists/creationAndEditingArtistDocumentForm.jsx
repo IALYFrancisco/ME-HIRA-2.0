@@ -12,7 +12,6 @@ export default function CreationAndEditingArtistDocumentForm({
     updatingSongFormIsActive,
     creationAndEditingArtistDocumentFormState,
     closeAddSongModal,
-    handleFileChange,
     contactPhoneNumberIsActif,
     contactEmailIsActif,
     songActionIsLoading,
