@@ -11,7 +11,7 @@ export default function ThemesManager(){
                             <div className="dark-theme"></div>
                         </div>
                     </div>
-                    <p>Thème claire</p>
+                    <p>Thème système</p>
                 </li>
                 <li className="theme">
                     <div>
