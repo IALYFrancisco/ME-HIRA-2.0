@@ -49,18 +49,18 @@ export default function CreationAndEditingArtistDocumentForm({
     useEffect(()=>{
         if(updatingSongFormIsActive){
             reset({
-                name: document.name,
-                artistName: document.artistName,
-                roles: JoinArrayItems(document.roles),
-                about: document.about,
-                address: document.address,
+                name: documentToDoAction.name,
+                artistName: documentToDoAction.artistName,
+                roles: JoinArrayItems(documentToDoAction.roles),
+                about: documentToDoAction.about,
+                address: documentToDoAction.address,
                 hostedFile: hostedFileValue,
-                birthDayAndPlace: document.birthDayAndPlace,
+                birthDayAndPlace: documentToDoAction.birthDayAndPlace,
                 email: artistEmail ? artistEmail : "",
                 phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
             })
         }
-    })
+    }, [documentToDoAction, reset, updatingSongFormIsActive])
 
     const createArtistDocument = async (data) => {
         try{
