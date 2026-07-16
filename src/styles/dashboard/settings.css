@@ -152,6 +152,8 @@
     height: 60px;
     border-radius: 10px;
     cursor: pointer;
+    overflow: hidden;
+    display: flex;
 }
 
 .themes-elements li:first-child > div {
@@ -172,4 +174,16 @@
 
 .theme:active {
     transform: scale(0.95);
+}
+
+.theme .light-theme {
+    width: 50%;
+    height: 100%;
+    background-color: var(--orange-base);
+}
+
+.theme .dark-theme {
+    width: 50%;
+    height: 100%;
+    background-color: var(--black);
 }
