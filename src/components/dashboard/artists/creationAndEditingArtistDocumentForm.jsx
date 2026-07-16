@@ -77,7 +77,7 @@ export default function CreationAndEditingArtistDocumentForm({
                 email: artistEmail ? artistEmail : "",
                 phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
             })
-            
+
         }
         
     }, [documentToDoAction, reset, updatingSongFormIsActive])
@@ -213,6 +213,22 @@ export default function CreationAndEditingArtistDocumentForm({
             closeAddSongModal()
             setDocumentToDoAction(null)
             setLocalFile(null)
+        }
+    }
+
+    const toggleContactPhoneNumber = () => {
+        if(contactPhoneNumberIsActif){
+            setContactPhoneNumberIsActif(false)
+        }else{
+            setContactPhoneNumberIsActif(true)
+        }
+    }
+
+    const toggleContactEmail = () => {
+        if(contactEmailIsActif){
+            setContactEmailIsActif(false)
+        }else{
+            setContactEmailIsActif(true)
         }
     }
 
