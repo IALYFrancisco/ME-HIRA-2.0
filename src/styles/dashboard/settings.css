@@ -189,3 +189,17 @@
     margin-top: 5px;
     text-align: center;
 }
+
+.themes-container button {
+    background-color: var(--orange-base);
+}
+
+.themes-container span {
+    display: block;
+    border: 1px solid var(--orange-base);
+    padding: 2px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 12px;
+    margin-top: 30px;
+}

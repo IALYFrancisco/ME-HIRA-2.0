@@ -26,6 +26,9 @@ export default function ThemesManager(){
                     <p>Thème sombre</p>
                 </li>
             </ul>
+            <span className="border">
+                <button>Réinitialiser le thème</button>
+            </span>
         </section>
     )
 }
