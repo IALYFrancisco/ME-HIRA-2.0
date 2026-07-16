@@ -6,10 +6,11 @@ export default function CreationAndEditingArtistDocumentForm({
     updatingSongFormIsActive,
     updateArtistDocument,
     createArtistDocument,
-    closeAddSongModal
+    closeAddSongModal,
+    localFileIsDefined
 }){
 
-    const { handleSubmit } = useForm()
+    const { handleSubmit, reset } = useForm()
 
     return(
         <form onSubmit={
