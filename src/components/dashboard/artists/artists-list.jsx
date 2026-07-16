@@ -513,6 +513,7 @@ export default function ArtistsList(){
             </form> */}
             <CreationAndEditingArtistDocumentForm
                 updatingSongFormIsActive={updatingSongFormIsActive}
+                closeAddSongModal={closeAddSongModal}
             />
             <RemoveArtistDocumentModal
                 removeArtistDocumentModalState={removeArtistDocumentModalState}
