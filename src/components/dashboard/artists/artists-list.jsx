@@ -231,6 +231,7 @@ export default function ArtistsList(){
             </section>
             <Overlay overlayState={overlayState} onClickAction={closeAddSongModal}/>
             <CreationAndEditingArtistDocumentForm
+                setArtists={setArtists}
                 updatingSongFormIsActive={updatingSongFormIsActive}
                 closeAddSongModal={closeAddSongModal}
                 documentToDoAction={documentToDoAction}
