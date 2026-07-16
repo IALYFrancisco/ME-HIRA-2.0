@@ -23,7 +23,6 @@ export default function ArtistsList(){
     
     var [ artists, setArtists ] = useState([])
     var [fetchArtistIsLoading, setfetchArtistsIsLoading] = useState(false)
-    const { watch, reset } = useForm()
     const { loading } = useAuth()
     
     var [ activePopUp, setActivePopUp ] = useState(null)
