@@ -25,10 +25,10 @@ export default function ArtistsList(){
     var [ artists, setArtists ] = useState([])
     var [fetchArtistIsLoading, setfetchArtistsIsLoading] = useState(false)
     var [createArtistDocumentIsLoading, setCreateArtistDocumentIsLoading] = useState(false)
-    const { watch, reset, formState: { isDirty } } = useForm()
+    const { watch, reset } = useForm()
     const { loading } = useAuth()
     
-    const watchAll = watch()
+    // const watchAll = watch()
     // var [localFile, setLocalFile] = useState('')
     var [localFileIsDefined, setLocalFileIsDefined] = useState(false)
     var [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
@@ -252,7 +252,7 @@ export default function ArtistsList(){
         }
     }
 
-    const isModified = isDirty || localFile
+    // const isModified = isDirty || localFile
 
     // const updateArtistDocument = async (data) => {
     //     try{

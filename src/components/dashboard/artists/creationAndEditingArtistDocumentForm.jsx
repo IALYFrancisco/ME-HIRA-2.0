@@ -15,13 +15,14 @@ export default function CreationAndEditingArtistDocumentForm({
     toggleContactEmail,
     contactEmailIsActif,
     createArtistDocumentIsLoading,
-    isModified,
     songActionIsLoading,
     setSongActionIsLoading,
     documentToDoAction
 }){
 
-    const { register, handleSubmit, reset, watch } = useForm()
+    const { register, handleSubmit, reset, watch, formState: { isDirty } } = useForm()
+
+    const isModified = isDirty || localFile
 
     const watchAll = watch()
 
