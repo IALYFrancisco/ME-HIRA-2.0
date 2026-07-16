@@ -29,7 +29,7 @@ export default function CreationAndEditingArtistDocumentForm({
             )}
             className={ 
                 ( updatingSongFormIsActive || creationAndEditingArtistDocumentFormState ) ?
-                "add-song-modal enabled" : "add-song-modal"
+                "document-form-modal enabled" : "document-form-modal"
             }
         >
             <span className="close-modal" onClick={ ()=> {closeAddSongModal(); reset()}}>
