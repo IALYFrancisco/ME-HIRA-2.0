@@ -137,11 +137,18 @@
 
 .themes-elements {
     display: flex;
-    column-gap: 10px;
+    column-gap: 20px;
 }
 
 .theme {
     width: 100px;
     height: 65px;
-    background-color: red;
+    background-color: var(--gray);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .10s ease-in-out;
+}
+
+.theme:active {
+    transform: scale(0.9);
 }
