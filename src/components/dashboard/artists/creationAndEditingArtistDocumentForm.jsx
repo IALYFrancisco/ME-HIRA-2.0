@@ -295,7 +295,7 @@ export default function CreationAndEditingArtistDocumentForm({
                     <div className="form-element">
                         <label htmlFor="hostedFile">Photo de l'artiste :</label>
                         <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour une photo déjà mis en ligne" {...register('hostedFile')}/>
-                        <input disabled={hostedFileIsDefined} type="file" accept="audio/*,video/*" onChange={handleFileChange}/>
+                        <input disabled={hostedFileIsDefined} type="file" onChange={handleFileChange}/>
                     </div>
                     <div className="form-element">
                         <label htmlFor="contacts">Contacts :</label>
