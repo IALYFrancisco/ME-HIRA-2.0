@@ -1,4 +1,4 @@
-.add-song-modal textarea {
+.document-form-modal textarea {
     display: block;
     width: 100%;
     margin-top: 10px;
@@ -9,17 +9,17 @@
     height: 57px;
 }
 
-.add-song-modal textarea:focus {
+.document-form-modal textarea:focus {
     border-color: var(--orange-base);
 }
 
-.add-song-modal .form-element ul {
+.document-form-modal .form-element ul {
     margin-top: 10px;
     display: flex;
     column-gap: 13px;
 }
 
-.add-song-modal .form-element ul li {
+.document-form-modal .form-element ul li {
     background-color: var(--gray);
     width: 35px;
     height: 35px;
@@ -30,27 +30,27 @@
     cursor: pointer;
 }
 
-.add-song-modal .form-element ul li.actif {
+.document-form-modal .form-element ul li.actif {
     background-color: var(--orange-base);
 }
 
-.add-song-modal .form-element ul li:active {
+.document-form-modal .form-element ul li:active {
     transform: scale(.9);
 }
 
-.add-song-modal .form-element ul li img {
+.document-form-modal .form-element ul li img {
     height: auto;
 }
 
-.add-song-modal .form-element .input-container {
+.document-form-modal .form-element .input-container {
     position: relative;
 }
 
-.add-song-modal .form-element .inputs-container input {
+.document-form-modal .form-element .inputs-container input {
     padding-left: 45px;
 }
 
-.add-song-modal .form-element .input-container span {
+.document-form-modal .form-element .input-container span {
     width: 33px;
     height: 32px;
     background-color: var(--gray);
@@ -64,7 +64,7 @@
     justify-content: center;
 }
 
-.add-song-modal .form-element .input-container:focus-within span {
+.document-form-modal .form-element .input-container:focus-within span {
     background-color: var(--orange-base);
 }
 
