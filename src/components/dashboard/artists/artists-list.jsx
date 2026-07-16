@@ -202,24 +202,24 @@ export default function ArtistsList(){
             <Overlay overlayState={overlayState} onClickAction={closeAddSongModal}/>
             <CreationAndEditingArtistDocumentForm
                 setArtists={setArtists}
-                setDocumentToDoAction={setDocumentToDoAction}
-                setSongActionIsLoading={setSongActionIsLoading}
-                songActionIsLoading={songActionIsLoading}
-                updatingSongFormIsActive={updatingSongFormIsActive}
                 closeAddSongModal={closeAddSongModal}
                 documentToDoAction={documentToDoAction}
-                setContactEmailIsActif={setContactEmailIsActif}
-                setContactPhoneNumberIsActif={setContactPhoneNumberIsActif}
+                songActionIsLoading={songActionIsLoading}
                 contactEmailIsActif={contactEmailIsActif}
+                setDocumentToDoAction={setDocumentToDoAction}
+                setSongActionIsLoading={setSongActionIsLoading}
+                setContactEmailIsActif={setContactEmailIsActif}
+                updatingSongFormIsActive={updatingSongFormIsActive}
                 contactPhoneNumberIsActif={contactPhoneNumberIsActif}
+                setContactPhoneNumberIsActif={setContactPhoneNumberIsActif}
                 creationAndEditingArtistDocumentFormState={creationAndEditingArtistDocumentFormState}
             />
             <RemoveArtistDocumentModal
-                removeArtistDocumentModalState={removeArtistDocumentModalState}
                 documentToDoAction={documentToDoAction}
-                handleClickNoButton={handleClickNoButton}
                 songActionIsLoading={songActionIsLoading}
+                handleClickNoButton={handleClickNoButton}
                 removeDocumentArtist={removeDocumentArtist}
+                removeArtistDocumentModalState={removeArtistDocumentModalState}
             />
         </>
     )
