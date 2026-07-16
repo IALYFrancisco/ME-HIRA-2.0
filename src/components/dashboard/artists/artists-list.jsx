@@ -526,7 +526,9 @@ export default function ArtistsList(){
                     </span>
                 </div>
             </form> */}
-            <CreationAndEditingArtistDocumentForm/>
+            <CreationAndEditingArtistDocumentForm
+                updatingSongFormIsActive={updatingSongFormIsActive}
+            />
             <RemoveArtistDocumentModal
                 removeArtistDocumentModalState={removeArtistDocumentModalState}
                 documentToDoAction={documentToDoAction}
