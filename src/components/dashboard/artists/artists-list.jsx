@@ -27,11 +27,6 @@ export default function ArtistsList(){
     const { watch, reset } = useForm()
     const { loading } = useAuth()
     
-    // const watchAll = watch()
-    // var [localFile, setLocalFile] = useState('')
-    // var [localFileIsDefined, setLocalFileIsDefined] = useState(false)
-    // var [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
-    // const addSongFormRef = useRef(null)
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
     const [ documentToDoAction, setDocumentToDoAction ] = useState(null)
