@@ -46,6 +46,22 @@ export default function CreationAndEditingArtistDocumentForm({
         }
     },[localFile, watchAll])
 
+    useEffect(()=>{
+        if(updatingSongFormIsActive){
+            reset({
+                name: document.name,
+                artistName: document.artistName,
+                roles: JoinArrayItems(document.roles),
+                about: document.about,
+                address: document.address,
+                hostedFile: hostedFileValue,
+                birthDayAndPlace: document.birthDayAndPlace,
+                email: artistEmail ? artistEmail : "",
+                phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
+            })
+        }
+    })
+
     const createArtistDocument = async (data) => {
         try{
     
