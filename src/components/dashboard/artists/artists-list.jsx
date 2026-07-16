@@ -210,17 +210,17 @@ export default function ArtistsList(){
             setContactPhoneNumberIsActif(true)
         }
 
-        reset({
-            name: document.name,
-            artistName: document.artistName,
-            roles: JoinArrayItems(document.roles),
-            about: document.about,
-            address: document.address,
-            hostedFile: hostedFileValue,
-            birthDayAndPlace: document.birthDayAndPlace,
-            email: artistEmail ? artistEmail : "",
-            phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
-        })
+        // reset({
+        //     name: document.name,
+        //     artistName: document.artistName,
+        //     roles: JoinArrayItems(document.roles),
+        //     about: document.about,
+        //     address: document.address,
+        //     hostedFile: hostedFileValue,
+        //     birthDayAndPlace: document.birthDayAndPlace,
+        //     email: artistEmail ? artistEmail : "",
+        //     phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
+        // })
     }
 
     return(
