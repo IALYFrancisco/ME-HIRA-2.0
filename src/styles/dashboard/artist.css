@@ -169,8 +169,6 @@
     transform: none;
 }
 
-/* Début ajoutés récéments */
-
 .document-form-modal {
     background-color: white;
     width: 100%;
@@ -313,5 +311,3 @@
     height: auto;
     width: 10px;
 }
-
-/* Fin ajoutés récement */
