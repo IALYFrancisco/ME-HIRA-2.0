@@ -21,11 +21,11 @@ export default function CreationAndEditingArtistDocumentForm({
 
     const { register, handleSubmit, reset, watch, formState: { isDirty } } = useForm()
 
+    const [localFile, setLocalFile] = useState('')
+
     const isModified = isDirty || localFile
 
     const watchAll = watch()
-
-    const [localFile, setLocalFile] = useState('')
 
     useEffect(()=>{
         if(watchAll.hostedFile){
