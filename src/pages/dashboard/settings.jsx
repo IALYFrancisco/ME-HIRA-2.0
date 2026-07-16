@@ -15,7 +15,7 @@ export default function Settings(){
         <DashboardLayout>
             <Head>
                 <title>
-                    Paramètres - Me-Hira
+                    Paramètres | Dashboard - Me-Hira
                 </title>
             </Head>
             <section className="dashboard-settings-container">
