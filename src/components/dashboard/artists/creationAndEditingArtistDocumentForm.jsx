@@ -2,7 +2,9 @@
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 
-export default function CreationAndEditingArtistDocumentForm(){
+export default function CreationAndEditingArtistDocumentForm({
+    updatingSongFormIsActive
+}){
 
     const { handleSubmit } = useForm()
 
