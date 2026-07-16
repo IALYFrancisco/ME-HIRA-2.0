@@ -49,6 +49,13 @@
     box-shadow: 3px 3px 10px #acacac00, -3px -3px 10px #acacac00;
 }
 
+.dashboard-settings-container .themes-container {
+    border: 1px solid var(--gray);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #acacac00, -3px -3px 10px #acacac00;
+}
+
 .dashboard-settings-container form:hover {
     border-color: var(--orange-base);
 }
