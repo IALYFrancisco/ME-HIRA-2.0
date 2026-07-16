@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/incompatible-library */
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import { useForm } from "react-hook-form";
@@ -20,7 +21,9 @@ export default function CreationAndEditingArtistDocumentForm({
     documentToDoAction
 }){
 
-    const { register, handleSubmit, reset } = useForm()
+    const { register, handleSubmit, reset, watch } = useForm()
+
+    const watchAll = watch()
 
     const [localFile, setLocalFile] = useState('')
 
