@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 
 export default function CreationAndEditingArtistDocumentForm({
     updatingSongFormIsActive,
-    updateArtistDocument,
     createArtistDocument,
     creationAndEditingArtistDocumentFormState,
     closeAddSongModal,
