@@ -250,6 +250,8 @@ export default function ArtistsList(){
                 documentToDoAction={documentToDoAction}
                 setContactEmailIsActif={setContactEmailIsActif}
                 setContactPhoneNumberIsActif={setContactPhoneNumberIsActif}
+                contactEmailIsActif={contactEmailIsActif}
+                contactPhoneNumberIsActif={contactPhoneNumberIsActif}
             />
             <RemoveArtistDocumentModal
                 removeArtistDocumentModalState={removeArtistDocumentModalState}
