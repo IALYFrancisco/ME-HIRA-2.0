@@ -18,7 +18,8 @@ export default function CreationAndEditingArtistDocumentForm({
     createArtistDocumentIsLoading,
     songActionIsLoading,
     setSongActionIsLoading,
-    documentToDoAction
+    documentToDoAction,
+    setContactEmailIsActif
 }){
 
     const { register, handleSubmit, reset, watch, formState: { isDirty } } = useForm()
