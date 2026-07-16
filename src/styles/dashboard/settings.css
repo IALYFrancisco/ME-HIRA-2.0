@@ -137,7 +137,7 @@
 
 .themes-elements {
     display: flex;
-    column-gap: 20px;
+    column-gap: 15px;
 }
 
 .theme {
@@ -150,9 +150,20 @@
 .theme div {
     width: 100px;
     height: 65px;
-    background-color: var(--gray);
     border-radius: 5px;
     cursor: pointer;
+}
+
+.themes-elements li:first-child div {
+    background-color: red;
+}
+
+.themes-elements li:nth-child(2) div {
+    background-color: var(--orange-base);
+}
+
+.themes-elements li:last-child div {
+    background-color: var(--black);
 }
 
 .theme:hover {
