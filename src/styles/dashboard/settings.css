@@ -147,22 +147,22 @@
     transition: all .10s ease-in-out;
 }
 
-.theme div {
+.theme > div {
     width: 90px;
     height: 60px;
     border-radius: 10px;
     cursor: pointer;
 }
 
-.themes-elements li:first-child div {
+.themes-elements li:first-child > div {
     background-color: red;
 }
 
-.themes-elements li:nth-child(2) div {
+.themes-elements li:nth-child(2) > div {
     background-color: var(--orange-base);
 }
 
-.themes-elements li:last-child div {
+.themes-elements li:last-child > div {
     background-color: var(--black);
 }
 
