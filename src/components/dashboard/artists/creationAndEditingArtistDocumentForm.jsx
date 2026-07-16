@@ -152,7 +152,7 @@ export default function CreationAndEditingArtistDocumentForm({
                     closeAddSongModal()
                 }
             }catch{
-                toast.error(`Erreur de l'ajout du chanson, veuillez réessayer plus tard.`)
+                toast.error(`Erreur du création de document artiste, veuillez réessayer plus tard.`)
             }finally{
                 setCreateArtistDocumentIsLoading(false)
             }
