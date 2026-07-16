@@ -148,8 +148,8 @@
 }
 
 .theme div {
-    width: 100px;
-    height: 65px;
+    width: 90px;
+    height: 60px;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -171,5 +171,5 @@
 }
 
 .theme:active {
-    transform: scale(0.9);
+    transform: scale(0.95);
 }
