@@ -1,3 +1,7 @@
 export default function ThemesManager(){
-    return(<h1>Thèmes</h1>)
+    return(
+        <section className="themes-container">
+            
+        </section>
+    )
 }
