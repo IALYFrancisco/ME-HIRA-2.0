@@ -7,7 +7,8 @@ export default function CreationAndEditingArtistDocumentForm({
     updateArtistDocument,
     createArtistDocument,
     closeAddSongModal,
-    localFileIsDefined
+    localFileIsDefined,
+    hostedFileIsDefined
 }){
 
     const { handleSubmit, reset } = useForm()
