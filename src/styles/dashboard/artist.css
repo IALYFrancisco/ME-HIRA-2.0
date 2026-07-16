@@ -171,7 +171,7 @@
 
 /* Début ajoutés récéments */
 
-.add-song-modal {
+.document-form-modal {
     background-color: white;
     width: 100%;
     max-width: 1000px;
@@ -190,7 +190,7 @@
     z-index: 12;
 }
 
-.add-song-modal.active {
+.document-form-modal.enabled {
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
