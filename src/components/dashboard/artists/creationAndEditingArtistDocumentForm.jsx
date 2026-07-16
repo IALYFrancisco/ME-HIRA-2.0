@@ -26,9 +26,9 @@ export default function CreationAndEditingArtistDocumentForm({
     const { register, handleSubmit, reset, watch, formState: { isDirty } } = useForm()
 
     const [localFile, setLocalFile] = useState('')
-    var [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
-    var [localFileIsDefined, setLocalFileIsDefined] = useState(false)
-    var [createArtistDocumentIsLoading, setCreateArtistDocumentIsLoading] = useState(false)
+    const [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
+    const [localFileIsDefined, setLocalFileIsDefined] = useState(false)
+    const [createArtistDocumentIsLoading, setCreateArtistDocumentIsLoading] = useState(false)
 
     const isModified = isDirty || localFile
 
