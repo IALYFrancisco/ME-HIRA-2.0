@@ -19,7 +19,8 @@ export default function CreationAndEditingArtistDocumentForm({
     setSongActionIsLoading,
     documentToDoAction,
     setContactEmailIsActif,
-    setContactPhoneNumberIsActif
+    setContactPhoneNumberIsActif,
+    setArtists
 }){
 
     const { register, handleSubmit, reset, watch, formState: { isDirty } } = useForm()
@@ -152,8 +153,7 @@ export default function CreationAndEditingArtistDocumentForm({
                     setLocalFile(null)
                     closeAddSongModal()
                 }
-            }catch(e){
-                console.log(e)
+            }catch{
                 toast.error(`Erreur du création de document artiste, veuillez réessayer plus tard.`)
             }finally{
                 setCreateArtistDocumentIsLoading(false)
