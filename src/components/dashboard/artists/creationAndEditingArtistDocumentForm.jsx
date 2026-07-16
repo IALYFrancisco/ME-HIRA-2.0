@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { formToJSON } from "axios";
+import { JoinArrayItems } from "@/helpers/song"
 
 export default function CreationAndEditingArtistDocumentForm({
     updatingSongFormIsActive,
