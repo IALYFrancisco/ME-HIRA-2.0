@@ -82,6 +82,26 @@ export default function CreationAndEditingArtistDocumentForm({
         
     }, [documentToDoAction, reset, setContactEmailIsActif, setContactPhoneNumberIsActif, updatingSongFormIsActive])
 
+    useEffect(()=>{
+
+        if(!creationAndEditingArtistDocumentFormState){
+
+            reset({
+                name: "",
+                artistName: "",
+                roles: "",
+                about: "",
+                address: "",
+                hostedFile: "",
+                birthDayAndPlace: "",
+                email: "",
+                phoneNumber: "",
+            })
+
+        }
+
+    }, [creationAndEditingArtistDocumentFormState, reset])
+
     const createArtistDocument = async (data) => {
         try{
     
