@@ -93,9 +93,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.dashboard-settings-container button:hover {
     background-color: var(--orange-base);
 }
 
@@ -107,7 +104,7 @@
 
 .dashboard-settings-container form span {
     display: block;
-    border: 1px solid var(--gray);
+    border: 1px solid var(--orange-base);
     padding: 2px;
     width: fit-content;
     height: fit-content;
@@ -117,11 +114,7 @@
 
 .dashboard-settings-container form span:active {
   transition: all .10s ease-in-out;
-  transform: scale(0.85);
-}
-
-.dashboard-settings-container form span:has(button:hover) {
-    border-color: var(--orange-base);
+  transform: scale(0.95);
 }
 
 .themes-container {
