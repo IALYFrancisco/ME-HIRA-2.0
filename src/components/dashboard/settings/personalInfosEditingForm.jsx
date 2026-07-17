@@ -28,7 +28,7 @@ export default function PersonalInfosEditingForm(){
     }
 
     const handleCloseChangePersonalInfosModal = () => {
-        
+
     }
 
     return(
@@ -57,6 +57,7 @@ export default function PersonalInfosEditingForm(){
             />
             <Overlay
                 overlayState={overlayState}
+                closeOverlay={handleCloseChangePersonalInfosModal}
             />
         </>
     )
