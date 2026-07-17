@@ -196,3 +196,28 @@
     border-radius: 12px;
     margin-top: 30px;
 }
+
+.change-personal-infos-modal {
+    background-color: white;
+    width: 100%;
+    max-width: 1000px;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    margin: 20px auto;
+    left: -50%;
+    right: -50%;
+    transition: 300ms;
+    transform: scale(1.1);
+    box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 12;
+}
+
+.change-personal-infos-modal.enabled {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
