@@ -422,6 +422,8 @@ nav .filter-type-container {
     pointer-events: none;
     transition: 250ms;
     z-index: 11;
+    top: 0;
+    left: 0;
 }
 
 .overlay.enabled {
