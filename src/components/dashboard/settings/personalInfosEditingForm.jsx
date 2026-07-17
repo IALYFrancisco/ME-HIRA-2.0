@@ -46,7 +46,9 @@ export default function PersonalInfosEditingForm(){
             <PersonalInfosEditingModal
                 personalInfosEditingModalState={personalInfosEditingModalState}
             />
-            <Overlay/>
+            <Overlay
+                overlayState={overlayState}
+            />
         </>
     )
 }
