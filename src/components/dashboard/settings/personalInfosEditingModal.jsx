@@ -4,6 +4,12 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
             <h3>Changement sur les informations personnelles :</h3>
             <p>Afin de pouvoir modifier vos informations personnelles, vous devez vous identifier.</p>
             <p>Si votre adresse email reçoit une modification, vous serez déconnecté de votre compte puis vous authentifier à nouveau pour vous connecter.</p>
+            <form>
+                <div className="form-element">
+                    <label htmlFor="password">Votre mot de passe :</label>
+                    <input type="password" name="password" id="password" />
+                </div>
+            </form>
         </section>
     )
 }
