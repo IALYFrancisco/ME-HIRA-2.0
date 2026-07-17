@@ -27,6 +27,10 @@ export default function PersonalInfosEditingForm(){
         setPersonalInfosEditingModalState(true)
     }
 
+    const handleCloseChangePersonalInfosModal = () => {
+        
+    }
+
     return(
         <>
             <form onSubmit={handleSubmit(changeCurrentUserInfo)}>
