@@ -1,3 +1,3 @@
-export default function PersonalInfosEditingModal(){
-    return(<h1>This is a modal ;)</h1>)
+export default function PersonalInfosEditingModal(personalInfosEditingModalState){
+    return(<h1 className={ personalInfosEditingModalState ? "enabled" : ""}>This is a modal ;)</h1>)
 }
