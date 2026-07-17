@@ -28,7 +28,8 @@ export default function PersonalInfosEditingForm(){
     }
 
     const handleCloseChangePersonalInfosModal = () => {
-
+        setPersonalInfosEditingModalState(false)
+        setOverlayState(false)
     }
 
     return(
