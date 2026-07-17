@@ -199,7 +199,7 @@ export default function ArtistsList(){
                     </table>
                 </section>
             </section>
-            <Overlay overlayState={overlayState} onClickAction={closeAddSongModal}/>
+            <Overlay overlayState={overlayState} closeOverlay={closeAddSongModal}/>
             <CreationAndEditingArtistDocumentForm
                 setArtists={setArtists}
                 closeAddSongModal={closeAddSongModal}
