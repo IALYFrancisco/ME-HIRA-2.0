@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form";
 import { useAuth } from "@/contexts/AuthContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PersonalInfosEditingModal from "./personalInfosEditingModal";
 
 export default function PersonalInfosEditingForm(){
 
     const { register, reset, handleSubmit } = useForm()
     const { user } = useAuth()
+    const [ personalInfosEditingModalState, setPersonalInfosEditingModalState ] = useState(false)
     
     useEffect(()=>{
         reset({
@@ -40,7 +41,9 @@ export default function PersonalInfosEditingForm(){
                     </span>
                 </div>
             </form>
-            <PersonalInfosEditingModal personalInfosEditingModalState={} />
+            <PersonalInfosEditingModal
+                personalInfosEditingModalState={personalInfosEditingModalState}
+            />
         </>
     )
 }
