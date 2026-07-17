@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "@/contexts/AuthContext";
 import { useEffect, useState } from "react";
 import PersonalInfosEditingModal from "./personalInfosEditingModal";
+import Overlay from "@/components/overlay";
 
 export default function PersonalInfosEditingForm(){
 
@@ -44,6 +45,7 @@ export default function PersonalInfosEditingForm(){
             <PersonalInfosEditingModal
                 personalInfosEditingModalState={personalInfosEditingModalState}
             />
+            <Overlay/>
         </>
     )
 }
