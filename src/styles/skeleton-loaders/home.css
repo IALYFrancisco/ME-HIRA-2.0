@@ -18,11 +18,6 @@
     border-radius: 11px;
 }
 
-.skeleton-songs-container ul li:hover .poster-container {
-    border: #fec70081 solid 2px;
-    transition: border .5s ease-in-out;
-}
-
 .skeleton-songs-container .poster-container {
     width: 100%;
     height: 120px;

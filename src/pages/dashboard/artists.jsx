@@ -6,7 +6,7 @@ export default function Artist(){
     return(
         <DashboardLayout>
             <Head>
-                <title>Artistes - Me-Hira</title>
+                <title>Artistes | Dashboard - Me-Hira</title>
             </Head>
             <ArtistsList/>
         </DashboardLayout>

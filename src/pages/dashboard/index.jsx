@@ -6,7 +6,7 @@ export default function Song(){
     return(
         <DashboardLayout>
             <Head>
-                <title>Chansons - Me-Hira</title>
+                <title>Chansons | Dashboard - Me-Hira</title>
             </Head>
             <SongsList/>
         </DashboardLayout>

@@ -5,6 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
+import ThemesManager from "@/components/dashboard/settings/ThemesManager";
 
 export default function Settings(){
     
@@ -14,7 +15,7 @@ export default function Settings(){
         <DashboardLayout>
             <Head>
                 <title>
-                    Paramètres - Me-Hira
+                    Paramètres | Dashboard - Me-Hira
                 </title>
             </Head>
             <section className="dashboard-settings-container">
@@ -33,7 +34,9 @@ export default function Settings(){
                             <PersonalInfosEditingForm/>
                             <ChangePasswordForm/>
                         </div>
-                        <div className="right"></div>
+                        <div className="right">
+                            <ThemesManager/>
+                        </div>
                     </section>
                 </div>
             </section>
