@@ -9,6 +9,7 @@ export default function PersonalInfosEditingForm(){
     const { register, reset, handleSubmit } = useForm()
     const { user } = useAuth()
     const [ personalInfosEditingModalState, setPersonalInfosEditingModalState ] = useState(false)
+    const [ overlayState, setOverlayState ] = useState(false)
     
     useEffect(()=>{
         reset({
