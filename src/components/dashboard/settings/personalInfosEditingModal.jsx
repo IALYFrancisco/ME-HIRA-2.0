@@ -7,7 +7,12 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
             <form>
                 <div className="form-element">
                     <label htmlFor="password">Votre mot de passe :</label>
-                    <input type="password" name="password" id="password" />
+                    <input type="password" name="password" id="password" placeholder="veuillez saisir votre mot de passe" />
+                </div>
+                <div className="form-element">
+                    <span className="border">
+                        <button>Soumettre</button>
+                    </span>
                 </div>
             </form>
         </section>
