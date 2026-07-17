@@ -214,6 +214,7 @@
     border-radius: 10px;
     padding: 20px;
     z-index: 12;
+    top: 50px;
 }
 
 .change-personal-infos-modal.enabled {
