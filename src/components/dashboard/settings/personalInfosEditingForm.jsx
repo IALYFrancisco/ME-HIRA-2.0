@@ -20,7 +20,12 @@ export default function PersonalInfosEditingForm(){
 
     const changeCurrentUserInfo = () => {
         return
-    } 
+    }
+
+    const handleOpenChangePersonalInfosModal = () => {
+        setOverlayState(true)
+        setPersonalInfosEditingModalState(true)
+    }
 
     return(
         <>
@@ -35,7 +40,7 @@ export default function PersonalInfosEditingForm(){
                     <input disabled={true} type="email" id="email" placeholder="veuillez saisir votre adresse email" { ...register("email", { required: true }) } required/>
                 </div>
                 <div className="form-element">
-                    <span className="border" >
+                    <span className="border" onClick={handleOpenChangePersonalInfosModal} >
                         <button>
                             {/* <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> */}
                             Changer mon information personnelle
