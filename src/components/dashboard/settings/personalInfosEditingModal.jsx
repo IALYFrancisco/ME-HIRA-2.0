@@ -118,7 +118,7 @@ export default function PersonalInfosEditingModal({
                 <form onSubmit={handleSubmitCheck(checkUser)}>
                     <div className="form-element">
                         <label htmlFor="password">Votre mot de passe :</label>
-                        <input type="password" id="password" { ...registerCheck("password", {required:true}) } placeholder="veuillez saisir votre mot de passe" required />
+                        <input type="password" id="password" { ...registerCheck("password") } placeholder="veuillez saisir votre mot de passe" required />
                     </div>
                     <div className="form-element">
                         <span className="border">

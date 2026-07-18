@@ -250,6 +250,15 @@
     color: white;
 }
 
+.can-change-form .form-element:nth-child(3) span:has(button:disabled){
+    border-color: var(--gray);
+}
+
+.can-change-form .form-element:nth-child(3) span:nth-child(2) button:disabled{
+    background-color: var(--gray);
+    color: var(--black);
+}
+
 .change-personal-infos-modal .loader-search-icone {
     width: 19px;
     height: auto;
