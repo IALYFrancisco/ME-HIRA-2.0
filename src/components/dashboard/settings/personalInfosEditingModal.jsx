@@ -1,6 +1,7 @@
 import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
 import { useForm } from "react-hook-form"
+import { toast } from "sonner"
 
 export default function PersonalInfosEditingModal({personalInfosEditingModalState}){
 
@@ -12,11 +13,20 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
             const user = new FormData()
             user.append("_id", user._id)
             user.append("password", data.password)
-            let checkResponse = await api.post("/user/check", { user })
-
+            await api.post("/user/check", { user })
+            return true
         }
-        catch{
-
+        catch(error){
+            if(error.status === 404){
+                toast.warning("Vous n'êtes pas autorisé à faire cette action.")
+            }
+            if(error.status === 403){
+                toast.warning("Mot de passe incorrect.")
+            }
+            if(error.status === 500){
+                toast.error("Erreur de vérification d'utilisateur, veuillez réessayer plus tard.")
+            }
+            return false
         }
     }
 
