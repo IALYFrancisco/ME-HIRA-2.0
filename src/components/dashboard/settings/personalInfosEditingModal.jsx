@@ -46,7 +46,7 @@ export default function PersonalInfosEditingModal({
         }
     }
 
-    const changeUserPersonalInfos = (data) => {
+    const changeUserPersonalInfos = async (data) => {
         try{
             if(userCanChange){
                 
@@ -57,7 +57,9 @@ export default function PersonalInfosEditingModal({
                 }
                 if(data.email !== user.email){
                     update.append("email", data.email)
-                } 
+                }
+
+                await api.patch("/user/update", { user: _user, update: formToJSON(update) })
 
             }
             return toast.warning("Vous n'êtes pas autorisé à faire cette action.")
