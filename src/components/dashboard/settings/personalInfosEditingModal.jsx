@@ -137,7 +137,7 @@ export default function PersonalInfosEditingModal({
                         <span className="border">
                             <button>
                                 { 
-                                    userCkeckIsLoading ?
+                                    userUpdateIsLoading ?
                                     <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
                                     : "Soumettre"
                                 }
