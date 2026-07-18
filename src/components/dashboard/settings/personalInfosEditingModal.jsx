@@ -60,11 +60,11 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
                 <form>
                     <div className="form-element">
                         <label htmlFor="name">Votre nom :</label>
-                        <input type="text" name="name" id="name" placeholder="on vous sollicite de nous fournir votre nom complet" />
+                        <input type="text" id="name" placeholder="on vous sollicite de nous fournir votre nom complet" { ...register("name",{required:true}) } required />
                     </div>
                     <div className="form-element">
                         <label htmlFor="email">Votre adresse email :</label>
-                        <input type="email" name="email" id="email" placeholder="on vous sollicite de nous fournir votre nom complet" />
+                        <input type="email" id="email" placeholder="on vous sollicite de nous fournir votre nom complet" { ...register("email",{required:true}) } required />
                     </div>
                     <div className="form-element">
                         <span className="border">
