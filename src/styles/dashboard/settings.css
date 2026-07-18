@@ -249,3 +249,8 @@
     background-color: var(--black);
     color: white;
 }
+
+.change-personal-infos-modal .loader-search-icone {
+    width: 19px;
+    height: auto;
+}
