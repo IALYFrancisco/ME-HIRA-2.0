@@ -10,10 +10,10 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
 
     const checkUser = async (data) => {
         try{
-            const user = new FormData()
-            user.append("_id", user._id)
-            user.append("password", data.password)
-            await api.post("/user/check", { user })
+            const _user = new FormData()
+            _user.append("_id", user._id)
+            _user.append("password", data.password)
+            await api.post("/user/check", { user: _user })
             return true
         }
         catch(error){
