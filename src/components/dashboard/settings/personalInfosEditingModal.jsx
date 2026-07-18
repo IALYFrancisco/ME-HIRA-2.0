@@ -7,12 +7,13 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
     const { register, handleSubmit } = useForm()
     const { user } = useAuth()
 
-    const changeUserInfos = async (data) => {
+    const checkUser = async (data) => {
         try{
             const user = new FormData()
             user.append("_id", user._id)
             user.append("password", data.password)
-            let checkResponse = await api.post("/user/check", { user }) 
+            let checkResponse = await api.post("/user/check", { user })
+
         }
         catch{
 
@@ -24,7 +25,7 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
             <h3>Changement sur les informations personnelles :</h3>
             <p>Afin de pouvoir modifier vos informations personnelles, vous devez vous identifier.</p>
             <p>Si votre adresse email reçoit une modification, vous serez déconnecté de votre compte puis vous authentifier à nouveau pour vous connecter.</p>
-            <form onSubmit={handleSubmit(changeUserInfos)}>
+            <form onSubmit={handleSubmit(checkUser)}>
                 <div className="form-element">
                     <label htmlFor="password">Votre mot de passe :</label>
                     <input type="password" id="password" { ...register("password", {required:true}) } placeholder="veuillez saisir votre mot de passe" required />
