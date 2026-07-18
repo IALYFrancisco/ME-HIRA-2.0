@@ -47,7 +47,13 @@ export default function PersonalInfosEditingModal({
     }
 
     const changeUserPersonalInfos = (data) => {
-        return
+        try{
+            if(userCanChange){
+
+            }
+            return toast.warning("Vous n'êtes pas autorisé à faire cette action.")
+        }
+        catch{}
     }
 
     const handleClickCancelButton = () => {
