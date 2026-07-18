@@ -31,9 +31,6 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
             }
             setUserCanChange(false)
         }
-        finally{
-            setUserIsChecked(true)
-        }
     }
 
     return(
