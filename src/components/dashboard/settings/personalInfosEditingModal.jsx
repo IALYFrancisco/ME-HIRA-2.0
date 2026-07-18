@@ -68,7 +68,7 @@ export default function PersonalInfosEditingModal({
                     }, 4000)
                     return toast.info("Vos informations a été bien modifiées et puisque votre adresse email a réçu une modfication, vous allez être déconnecté.")
                 }
-                return toast.info("Vos informations a été bien modifiées")
+                return toast.info("Vos informations a été bien modifiées.")
 
             }
             return toast.warning("Vous n'êtes pas autorisé à faire cette action.")
