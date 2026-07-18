@@ -91,7 +91,9 @@ export default function PersonalInfosEditingModal({
             }
             return toast.warning("Vous n'êtes pas autorisé à faire cette action.")
         }
-        catch{}
+        catch{
+            return toast.error("Erreur de modification des informations personnelles, veuillez réessayer plus tard.")
+        }
         finally{
             setUserUpdateIsLoading(false)
         }
