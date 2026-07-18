@@ -5,7 +5,10 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 
-export default function PersonalInfosEditingModal({personalInfosEditingModalState}){
+export default function PersonalInfosEditingModal({
+    personalInfosEditingModalState,
+    handleCloseChangePersonalInfosModal
+}){
 
     const { register, handleSubmit, reset } = useForm()
     const { user } = useAuth()
@@ -67,7 +70,7 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
                         <input type="email" id="email" placeholder="on vous sollicite de nous fournir votre nom complet" { ...register("email",{required:true}) } required />
                     </div>
                     <div className="form-element">
-                        <span className="border">
+                        <span className="border" onClick={handleCloseChangePersonalInfosModal}>
                             <button>Annuler</button>
                         </span>
                         <span className="border">
