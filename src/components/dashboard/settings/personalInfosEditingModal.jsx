@@ -1,5 +1,6 @@
 import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 
@@ -7,6 +8,7 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
 
     const { register, handleSubmit } = useForm()
     const { user } = useAuth()
+    const [ userCanChange, setUserCanChange ] = useState(false)
 
     const checkUser = async (data) => {
         try{
