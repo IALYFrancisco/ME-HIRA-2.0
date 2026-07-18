@@ -16,7 +16,7 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
             _user.append("_id", user._id)
             _user.append("password", data.password)
             await api.post("/user/check", { user: _user })
-            return true
+            setUserCanChange(true)
         }
         catch(error){
             if(error.status === 404){
@@ -28,7 +28,7 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
             if(error.status === 500){
                 toast.error("Erreur de vérification d'utilisateur, veuillez réessayer plus tard.")
             }
-            return false
+            setUserCanChange(false)
         }
     }
 
