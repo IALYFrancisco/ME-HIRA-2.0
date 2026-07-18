@@ -20,6 +20,8 @@ export default function PersonalInfosEditingModal({
 
     const {
         reset: resetCheck,
+        handleSubmit: handleSubmitCheck,
+        register: registerCheck
     } = useForm()
 
     const { user, setUser } = useAuth()
@@ -113,10 +115,10 @@ export default function PersonalInfosEditingModal({
             <p>Afin de pouvoir modifier vos informations personnelles, vous devez vous identifier.</p>
             <p>Si votre adresse email reçoit une modification, vous serez déconnecté de votre compte puis vous authentifier à nouveau pour vous connecter.</p>
             { !userCanChange &&
-                <form onSubmit={handleSubmit(checkUser)}>
+                <form onSubmit={handleSubmitCheck(checkUser)}>
                     <div className="form-element">
                         <label htmlFor="password">Votre mot de passe :</label>
-                        <input type="password" id="password" { ...register("password", {required:true}) } placeholder="veuillez saisir votre mot de passe" required />
+                        <input type="password" id="password" { ...registerCheck("password", {required:true}) } placeholder="veuillez saisir votre mot de passe" required />
                     </div>
                     <div className="form-element">
                         <span className="border">
