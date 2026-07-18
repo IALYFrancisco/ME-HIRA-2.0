@@ -9,7 +9,6 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
     const { register, handleSubmit } = useForm()
     const { user } = useAuth()
     const [ userCanChange, setUserCanChange ] = useState(false)
-    const [ userIsChecked, setUserIsChecked ] = useState(false)
 
     const checkUser = async (data) => {
         try{
@@ -55,7 +54,7 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
                 </form>
             }
             {
-                userIsChecked && userCanChange &&
+                userCanChange &&
                 <form>
                     <div className="form-element">
                         <label htmlFor="name">Votre nom :</label>
