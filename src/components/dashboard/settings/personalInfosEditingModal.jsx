@@ -69,7 +69,13 @@ export default function PersonalInfosEditingModal({
                     </div>
                     <div className="form-element">
                         <span className="border">
-                            <button>Soumettre</button>
+                            <button>
+                                { 
+                                    userCkeckIsLoading ?
+                                    <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
+                                    : "Soumettre"
+                                }
+                            </button>
                         </span>
                     </div>
                 </form>
