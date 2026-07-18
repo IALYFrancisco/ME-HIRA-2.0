@@ -9,6 +9,7 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
     const { register, handleSubmit } = useForm()
     const { user } = useAuth()
     const [ userCanChange, setUserCanChange ] = useState(false)
+    const [ userIsChecked, setUserIsChecked ] = useState(false)
 
     const checkUser = async (data) => {
         try{
