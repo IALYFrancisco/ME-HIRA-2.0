@@ -135,14 +135,14 @@ export default function PersonalInfosEditingModal({
             }
             {
                 userCanChange &&
-                <form onSubmit={handleSubmit(changeUserPersonalInfos)} className="can-change-form">
+                <form onSubmit={handleSubmitUpdate(changeUserPersonalInfos)} className="can-change-form">
                     <div className="form-element">
                         <label htmlFor="name">Votre nom :</label>
-                        <input type="text" id="name" placeholder="on vous sollicite de nous fournir votre nom complet" { ...register("name",{required:true}) } required />
+                        <input type="text" id="name" placeholder="on vous sollicite de nous fournir votre nom complet" { ...registerUpdate("name",{required:true}) } required />
                     </div>
                     <div className="form-element">
                         <label htmlFor="email">Votre adresse email :</label>
-                        <input type="email" id="email" placeholder="on vous sollicite de nous fournir votre nom complet" { ...register("email",{required:true}) } required />
+                        <input type="email" id="email" placeholder="on vous sollicite de nous fournir votre nom complet" { ...registerUpdate("email",{required:true}) } required />
                     </div>
                     <div className="form-element">
                         <span className="border" onClick={handleClickCancelButton}>
