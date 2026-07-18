@@ -4,6 +4,7 @@ import { formToJSON } from "axios"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
+import Image from "next/image"
 
 export default function PersonalInfosEditingModal({
     personalInfosEditingModalState,
@@ -89,7 +90,13 @@ export default function PersonalInfosEditingModal({
                             <button>Annuler</button>
                         </span>
                         <span className="border">
-                            <button>Soumettre</button>
+                            <button>
+                                { 
+                                    userCkeckIsLoading ?
+                                    <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
+                                    : "Soumettre"
+                                }
+                            </button>
                         </span>
                     </div>
                 </form>
