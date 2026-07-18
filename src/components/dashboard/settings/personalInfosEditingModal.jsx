@@ -66,8 +66,9 @@ export default function PersonalInfosEditingModal({
                         localStorage.removeItem("at.sid")
                         setUser(null)
                     }, 4000)
-                    return toast.info("Vos informations a été bien modifiées")
+                    return toast.info("Vos informations a été bien modifiées et puisque votre adresse email a réçu une modfication, vous allez être déconnecté.")
                 }
+                return
 
             }
             return toast.warning("Vous n'êtes pas autorisé à faire cette action.")
