@@ -232,11 +232,20 @@
     color: red;
 }
 
-.change-personal-infos-modal .can-change-form .form-element:nth-child(3){
+.can-change-form .form-element:nth-child(3){
     display: flex;
     column-gap: 20px;
 }
 
-.change-personal-infos-modal .can-change-form .form-element:nth-child(3) span{
+.can-change-form .form-element:nth-child(3) span{
     margin: 0;
+}
+
+.can-change-form .form-element:nth-child(3) span:first-child{
+    border-color: var(--black);
+}
+
+.can-change-form .form-element:nth-child(3) span:first-child button{
+    background-color: var(--black);
+    color: white;
 }
