@@ -55,6 +55,7 @@ export default function PersonalInfosEditingForm(){
             </form>
             <PersonalInfosEditingModal
                 personalInfosEditingModalState={personalInfosEditingModalState}
+                handleCloseChangePersonalInfosModal={handleCloseChangePersonalInfosModal}
             />
             <Overlay
                 overlayState={overlayState}
