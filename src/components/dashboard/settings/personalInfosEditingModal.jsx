@@ -57,6 +57,14 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
                     <label htmlFor="email">Votre adresse email :</label>
                     <input type="email" name="email" id="email" placeholder="on vous sollicite de nous fournir votre nom complet" />
                 </div>
+                <div className="form-element">
+                    <span className="border">
+                        <button>Annuler</button>
+                    </span>
+                    <span className="border">
+                        <button>Soumettre</button>
+                    </span>
+                </div>
             </form>
         </section>
     )
