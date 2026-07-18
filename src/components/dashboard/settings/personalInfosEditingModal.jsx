@@ -15,6 +15,7 @@ export default function PersonalInfosEditingModal({
     const { user, setUser } = useAuth()
     const [ userCanChange, setUserCanChange ] = useState(false)
     const [ userCkeckIsLoading, setUserCheckIsLoading ] = useState(false)
+    const [ userUpdateIsLoading, setUserUpdateIsLoading ] = useState(false)
 
     const checkUser = async (data) => {
         try{
