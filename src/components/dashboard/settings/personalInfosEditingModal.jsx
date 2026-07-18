@@ -49,6 +49,7 @@ export default function PersonalInfosEditingModal({
 
     const changeUserPersonalInfos = async (data) => {
         try{
+            setUserUpdateIsLoading(true)
             if(userCanChange){
                 
                 let _user = user._id
@@ -79,6 +80,9 @@ export default function PersonalInfosEditingModal({
             return toast.warning("Vous n'êtes pas autorisé à faire cette action.")
         }
         catch{}
+        finally{
+            setUserUpdateIsLoading(false)
+        }
     }
 
     const handleClickCancelButton = () => {
