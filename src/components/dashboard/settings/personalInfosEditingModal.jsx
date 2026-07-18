@@ -13,6 +13,7 @@ export default function PersonalInfosEditingModal({
     const { register, handleSubmit, reset } = useForm()
     const { user } = useAuth()
     const [ userCanChange, setUserCanChange ] = useState(false)
+    const [ userCkeckIsLoading, setUserCheckIsLoading ] = useState(false)
 
     const checkUser = async (data) => {
         try{
