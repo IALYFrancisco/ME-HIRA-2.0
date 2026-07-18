@@ -69,6 +69,8 @@ export default function PersonalInfosEditingModal({
                     handleClickCancelButton()
                     return toast.info("Vos informations a été bien modifiées et puisque votre adresse email a réçu une modfication, vous allez être déconnecté.")
                 }
+                const getUserInformationsResponse = await api.get("/user/informations")
+                setUser(getUserInformationsResponse.data)
                 handleClickCancelButton()
                 return toast.info("Vos informations a été bien modifiées.")
 
