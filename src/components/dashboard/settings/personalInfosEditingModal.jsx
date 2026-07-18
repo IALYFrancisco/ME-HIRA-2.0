@@ -48,6 +48,9 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
                     </span>
                 </div>
             </form>
+            <form>
+                
+            </form>
         </section>
     )
 }
