@@ -57,7 +57,7 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
             }
             {
                 userCanChange &&
-                <form>
+                <form className="can-change-form">
                     <div className="form-element">
                         <label htmlFor="name">Votre nom :</label>
                         <input type="text" id="name" placeholder="on vous sollicite de nous fournir votre nom complet" { ...register("name",{required:true}) } required />

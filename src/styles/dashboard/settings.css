@@ -231,3 +231,12 @@
     font-weight: 600;
     color: red;
 }
+
+.change-personal-infos-modal .can-change-form .form-element:nth-child(3){
+    display: flex;
+    column-gap: 20px;
+}
+
+.change-personal-infos-modal .can-change-form .form-element:nth-child(3) span{
+    margin: 0;
+}
