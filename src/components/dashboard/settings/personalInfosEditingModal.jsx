@@ -36,7 +36,7 @@ export default function PersonalInfosEditingModal({
             _user.append("_id", user._id)
             _user.append("password", data.password)
             await api.post("/user/check", { user: formToJSON(_user) })
-            resetCheck({
+            resetUpdate({
                 name: user.name,
                 email: user.email
             })
