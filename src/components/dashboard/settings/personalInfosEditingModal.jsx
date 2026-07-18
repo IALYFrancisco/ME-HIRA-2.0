@@ -18,6 +18,7 @@ export default function PersonalInfosEditingModal({
 
     const checkUser = async (data) => {
         try{
+            setUserCheckIsLoading(true)
             const _user = new FormData()
             _user.append("_id", user._id)
             _user.append("password", data.password)
@@ -39,6 +40,9 @@ export default function PersonalInfosEditingModal({
                 toast.error("Erreur de vérification d'utilisateur, veuillez réessayer plus tard.")
             }
             setUserCanChange(false)
+        }
+        finally{
+            setUserCheckIsLoading(false)
         }
     }
 
