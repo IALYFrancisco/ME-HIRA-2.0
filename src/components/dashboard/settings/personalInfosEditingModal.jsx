@@ -1,4 +1,9 @@
+import { useForm } from "react-hook-form"
+
 export default function PersonalInfosEditingModal({personalInfosEditingModalState}){
+
+    const { register } = useForm()
+
     return(
         <section className={ personalInfosEditingModalState ? "change-personal-infos-modal enabled" : "change-personal-infos-modal"}>
             <h3>Changement sur les informations personnelles :</h3>
