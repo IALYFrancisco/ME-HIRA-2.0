@@ -17,6 +17,9 @@ export default function PersonalInfosEditingModal({
         reset: resetUpdate,
         watch: watchUpdate 
     } = useForm()
+
+    const {} = useForm()
+    
     const { user, setUser } = useAuth()
     const [ userCanChange, setUserCanChange ] = useState(false)
     const [ userCkeckIsLoading, setUserCheckIsLoading ] = useState(false)
