@@ -22,8 +22,6 @@ export default function PersonalInfosEditingModal({
     const [ userCkeckIsLoading, setUserCheckIsLoading ] = useState(false)
     const [ userUpdateIsLoading, setUserUpdateIsLoading ] = useState(false)
 
-    var userInfosIsModified = ( watch.name !== user.name || watch.email !== user.email) ? true : false
-
     const checkUser = async (data) => {
         try{
             setUserCheckIsLoading(true)
