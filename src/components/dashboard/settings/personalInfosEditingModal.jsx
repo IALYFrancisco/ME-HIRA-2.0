@@ -17,11 +17,7 @@ export default function PersonalInfosEditingModal({
     const [ userCkeckIsLoading, setUserCheckIsLoading ] = useState(false)
     const [ userUpdateIsLoading, setUserUpdateIsLoading ] = useState(false)
 
-    useEffect(()=>{
-
-        const userInfosIsModified = ( watch.name !== user.name || watch.email !== user.email) ? true : false
-
-    }, [user, watch])
+    var userInfosIsModified = ( watch.name !== user.name || watch.email !== user.email) ? true : false
 
     const checkUser = async (data) => {
         try{
@@ -141,7 +137,7 @@ export default function PersonalInfosEditingModal({
                             <button>Annuler</button>
                         </span>
                         <span className="border">
-                            <button>
+                            <button disabled={userInfosIsModified}>
                                 { 
                                     userUpdateIsLoading ?
                                     <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
