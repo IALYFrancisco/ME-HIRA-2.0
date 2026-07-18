@@ -49,6 +49,12 @@ export default function PersonalInfosEditingModal({
     const changeUserPersonalInfos = (data) => {
         try{
             if(userCanChange){
+                
+                let _user = user._id
+                const update = new FormData()
+                if(data.name !== user.name){
+                    update.append("name", data.name)
+                }
 
             }
             return toast.warning("Vous n'êtes pas autorisé à faire cette action.")
