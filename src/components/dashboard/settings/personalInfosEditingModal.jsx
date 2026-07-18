@@ -1,7 +1,7 @@
 import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
 import { formToJSON } from "axios"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import Image from "next/image"
@@ -11,11 +11,17 @@ export default function PersonalInfosEditingModal({
     handleCloseChangePersonalInfosModal
 }){
 
-    const { register, handleSubmit, reset } = useForm()
+    const { register, handleSubmit, reset, watch } = useForm()
     const { user, setUser } = useAuth()
     const [ userCanChange, setUserCanChange ] = useState(false)
     const [ userCkeckIsLoading, setUserCheckIsLoading ] = useState(false)
     const [ userUpdateIsLoading, setUserUpdateIsLoading ] = useState(false)
+
+    useEffect(()=>{
+
+        const userInfosIsModified = ( watch.name !== user.name || watch.email !== user.email) ? true : false
+
+    }, [user, watch])
 
     const checkUser = async (data) => {
         try{
