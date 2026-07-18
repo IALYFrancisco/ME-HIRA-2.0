@@ -63,7 +63,8 @@ export default function PersonalInfosEditingModal({
 
                 if(update.email){
                     setTimeout(()=>{
-
+                        localStorage.removeItem("at.sid")
+                        setUser(null)
                     }, 4000)
                     toast.info("Vos informations a été bien modifiées")
                 }
