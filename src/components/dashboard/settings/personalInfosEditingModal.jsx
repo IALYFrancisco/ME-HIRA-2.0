@@ -42,7 +42,17 @@ export default function PersonalInfosEditingModal({
 
     const changeUserPersonalInfos = (data) => {
         return
-    } 
+    }
+
+    const handleClickCancelButton = () => {
+        handleCloseChangePersonalInfosModal()
+        reset({
+            name: "",
+            email: "",
+            password: ""
+        })
+        setUserCanChange(false)
+    }
 
     return(
         <section className={ personalInfosEditingModalState ? "change-personal-infos-modal enabled" : "change-personal-infos-modal"}>
@@ -74,7 +84,7 @@ export default function PersonalInfosEditingModal({
                         <input type="email" id="email" placeholder="on vous sollicite de nous fournir votre nom complet" { ...register("email",{required:true}) } required />
                     </div>
                     <div className="form-element">
-                        <span className="border" onClick={handleCloseChangePersonalInfosModal}>
+                        <span className="border" onClick={handleClickCancelButton}>
                             <button>Annuler</button>
                         </span>
                         <span className="border">
