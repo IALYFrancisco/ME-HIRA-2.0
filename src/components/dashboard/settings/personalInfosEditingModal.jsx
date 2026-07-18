@@ -11,7 +11,12 @@ export default function PersonalInfosEditingModal({
     handleCloseChangePersonalInfosModal
 }){
 
-    const { register, handleSubmit, reset, watch } = useForm()
+    const { 
+        register: registerUpdate,
+        handleSubmit: handleSubmitUpdate,
+        reset: resetUpdate,
+        watch: watchUpdate 
+    } = useForm()
     const { user, setUser } = useAuth()
     const [ userCanChange, setUserCanChange ] = useState(false)
     const [ userCkeckIsLoading, setUserCheckIsLoading ] = useState(false)
