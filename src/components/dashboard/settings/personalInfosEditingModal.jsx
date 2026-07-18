@@ -12,7 +12,7 @@ export default function PersonalInfosEditingModal({
 }){
 
     const { register, handleSubmit, reset } = useForm()
-    const { user } = useAuth()
+    const { user, setUser } = useAuth()
     const [ userCanChange, setUserCanChange ] = useState(false)
     const [ userCkeckIsLoading, setUserCheckIsLoading ] = useState(false)
 
@@ -60,6 +60,13 @@ export default function PersonalInfosEditingModal({
                 }
 
                 await api.patch("/user/update", { user: _user, update: formToJSON(update) })
+
+                if(update.email){
+                    setTimeout(()=>{
+
+                    }, 4000)
+                    toast.info("Vos informations a été bien modifiées")
+                }
 
             }
             return toast.warning("Vous n'êtes pas autorisé à faire cette action.")
