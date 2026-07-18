@@ -15,7 +15,7 @@ export default function PersonalInfosEditingModal({
         register: registerUpdate,
         handleSubmit: handleSubmitUpdate,
         reset: resetUpdate,
-        watch: watchUpdate 
+        formState: { isDirty: isDirtyUpdateForm }
     } = useForm()
 
     const {
@@ -149,7 +149,7 @@ export default function PersonalInfosEditingModal({
                             <button>Annuler</button>
                         </span>
                         <span className="border">
-                            <button disabled={userInfosIsModified}>
+                            <button disabled={isDirtyUpdateForm}>
                                 { 
                                     userUpdateIsLoading ?
                                     <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
