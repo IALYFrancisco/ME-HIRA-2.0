@@ -66,8 +66,10 @@ export default function PersonalInfosEditingModal({
                         localStorage.removeItem("at.sid")
                         setUser(null)
                     }, 4000)
+                    handleClickCancelButton()
                     return toast.info("Vos informations a été bien modifiées et puisque votre adresse email a réçu une modfication, vous allez être déconnecté.")
                 }
+                handleClickCancelButton()
                 return toast.info("Vos informations a été bien modifiées.")
 
             }
