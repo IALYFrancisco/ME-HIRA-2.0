@@ -55,6 +55,9 @@ export default function PersonalInfosEditingModal({
                 if(data.name !== user.name){
                     update.append("name", data.name)
                 }
+                if(data.email !== user.email){
+                    update.append("email", data.email)
+                } 
 
             }
             return toast.warning("Vous n'êtes pas autorisé à faire cette action.")
