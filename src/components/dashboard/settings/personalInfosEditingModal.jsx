@@ -49,7 +49,14 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
                 </div>
             </form>
             <form>
-                
+                <div className="form-element">
+                    <label htmlFor="name">Votre nom :</label>
+                    <input type="text" name="name" id="name" placeholder="on vous sollicite de nous fournir votre nom complet" />
+                </div>
+                <div className="form-element">
+                    <label htmlFor="email">Votre adresse email :</label>
+                    <input type="email" name="email" id="email" placeholder="on vous sollicite de nous fournir votre nom complet" />
+                </div>
             </form>
         </section>
     )
