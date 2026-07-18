@@ -1,5 +1,6 @@
 import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
+import { formToJSON } from "axios"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
@@ -15,7 +16,7 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
             const _user = new FormData()
             _user.append("_id", user._id)
             _user.append("password", data.password)
-            await api.post("/user/check", { user: _user })
+            await api.post("/user/check", { user: formToJSON(_user) })
             setUserCanChange(true)
         }
         catch(error){
