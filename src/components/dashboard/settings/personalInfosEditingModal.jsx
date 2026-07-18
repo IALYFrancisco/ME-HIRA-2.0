@@ -97,10 +97,12 @@ export default function PersonalInfosEditingModal({
 
     const handleClickCancelButton = () => {
         handleCloseChangePersonalInfosModal()
-        reset({
-            name: "",
-            email: "",
+        resetCheck([{
             password: ""
+        }])
+        resetUpdate({
+            name: "",
+            email: ""
         })
         setUserCanChange(false)
     }
