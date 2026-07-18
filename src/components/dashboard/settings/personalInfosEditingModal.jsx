@@ -31,6 +31,9 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
             }
             setUserCanChange(false)
         }
+        finally{
+            setUserIsChecked(true)
+        }
     }
 
     return(
@@ -38,19 +41,21 @@ export default function PersonalInfosEditingModal({personalInfosEditingModalStat
             <h3>Changement sur les informations personnelles :</h3>
             <p>Afin de pouvoir modifier vos informations personnelles, vous devez vous identifier.</p>
             <p>Si votre adresse email reçoit une modification, vous serez déconnecté de votre compte puis vous authentifier à nouveau pour vous connecter.</p>
-            <form onSubmit={handleSubmit(checkUser)}>
-                <div className="form-element">
-                    <label htmlFor="password">Votre mot de passe :</label>
-                    <input type="password" id="password" { ...register("password", {required:true}) } placeholder="veuillez saisir votre mot de passe" required />
-                </div>
-                <div className="form-element">
-                    <span className="border">
-                        <button>Soumettre</button>
-                    </span>
-                </div>
-            </form>
             {
-                userCanChange &&
+                <form onSubmit={handleSubmit(checkUser)}>
+                    <div className="form-element">
+                        <label htmlFor="password">Votre mot de passe :</label>
+                        <input type="password" id="password" { ...register("password", {required:true}) } placeholder="veuillez saisir votre mot de passe" required />
+                    </div>
+                    <div className="form-element">
+                        <span className="border">
+                            <button>Soumettre</button>
+                        </span>
+                    </div>
+                </form>
+            }
+            {
+                userIsChecked && userCanChange &&
                 <form>
                     <div className="form-element">
                         <label htmlFor="name">Votre nom :</label>
