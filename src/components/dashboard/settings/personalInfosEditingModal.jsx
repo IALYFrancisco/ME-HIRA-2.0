@@ -149,7 +149,7 @@ export default function PersonalInfosEditingModal({
                             <button>Annuler</button>
                         </span>
                         <span className="border">
-                            <button disabled={isDirtyUpdateForm}>
+                            <button disabled={!isDirtyUpdateForm}>
                                 { 
                                     userUpdateIsLoading ?
                                     <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
