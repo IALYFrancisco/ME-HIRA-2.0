@@ -16,6 +16,10 @@ export default function ChangePasswordModal({
         register: registerCheck
     } = useForm()
 
+    const {
+
+    } = useForm()
+
     const { user } = useAuth()
     const [ userCanChange, setUserCanChange ] = useState(false)
     const [ userCheckIsLoading, setUserCheckIsLoading ] = useState(false)
@@ -74,7 +78,7 @@ export default function ChangePasswordModal({
             {
                 userCanChange &&
                 <form>
-                    
+
                 </form>
             }
         </section>
