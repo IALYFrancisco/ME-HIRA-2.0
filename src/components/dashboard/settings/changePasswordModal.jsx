@@ -2,5 +2,7 @@ export default function ChangePasswordModal({
     changePasswordModalState,
     handleCloseChangePasswordModal
 }){
-    return(<h1>Modal de changement de mot de passe</h1>)
+    return(
+        <section className={ changePasswordModalState ? "change-password-modal enabled" : "change-password-modal"}></section>
+    )
 }
