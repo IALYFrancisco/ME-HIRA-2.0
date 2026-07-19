@@ -98,7 +98,6 @@ export default function ChangePasswordModal({
             checkPassword: ""
         })
         resetUpdate({
-            currentPassword: "",
             newPassword: "",
             confirmNewPassword: ""
         })
@@ -133,10 +132,6 @@ export default function ChangePasswordModal({
             {
                 userCanChange &&
                 <form onSubmit={handleSubmitUpdate(changeUserPassword)} className="can-change-form">
-                    <div className="form-element">
-                        <label htmlFor="currentPassword">Votre mot de passe actuel :</label>
-                        <input type="password" id="currentPassword" placeholder="veuillez saisir votre mot de passe actuel" { ...registerUpdate("currentPassword", { required: true }) } required />
-                    </div>
                     <div className="form-element">
                         <label htmlFor="newPassword">Nouveau mot de passe :</label>
                         <input type="password" id="newPassword" placeholder="veuillez choisir un mot de passe fort" { ...registerUpdate("newPassword", { required: true }) } required />
