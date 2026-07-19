@@ -12,7 +12,8 @@ export default function ChangePasswordModal({
 }){
 
     const {
-        handleSubmit: handleSubmitCheck
+        handleSubmit: handleSubmitCheck,
+        register: registerCheck
     } = useForm()
 
     const { user } = useAuth()
