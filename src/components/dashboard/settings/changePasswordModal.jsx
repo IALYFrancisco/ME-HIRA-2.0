@@ -26,7 +26,18 @@ export default function ChangePasswordModal({
             await api.post("/user/check", { user: formToJSON(_user) })
             setUserCanChange(true)
         }
-        catch{}
+        catch(error){
+            if(error.status === 404){
+                toast.warning("Vous n'êtes pas autorisé à faire cette action.")
+            }
+            if(error.status === 403){
+                toast.warning("Mot de passe incorrect.")
+            }
+            if(error.status === 500){
+                toast.error("Erreur de vérification d'utilisateur, veuillez réessayer plus tard.")
+            }
+            setUserCanChange(false)
+        }
         finally{}
     }
 
