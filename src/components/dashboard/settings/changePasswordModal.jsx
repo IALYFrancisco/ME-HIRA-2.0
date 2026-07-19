@@ -56,6 +56,17 @@ export default function ChangePasswordModal({
                         <label htmlFor="checkPassword">Votre mot de passe actuel :</label>
                         <input type="password" id="checkPassword" { ...registerCheck("checkPassword") } placeholder="veuillez saisir votre mot de passe actuel" required />
                     </div>
+                    <div className="form-element">
+                        <span className="border">
+                            <button>
+                                {
+                                    userCheckIsLoading ?
+                                    <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
+                                    : "Soumettre"
+                                }
+                            </button>
+                        </span>
+                    </div>
                 </form>
             }
         </section>
