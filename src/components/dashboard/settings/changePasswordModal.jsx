@@ -145,6 +145,20 @@ export default function ChangePasswordModal({
                         <label htmlFor="confirmNewPassword">Confirmation du nouveau mot de passe :</label>
                         <input type="password" id="confirmNewPassword" placeholder="veuillez confirmer le nouveau mot de passe" { ...registerUpdate("confirmNewPassword", { required: true }) } required />
                     </div>
+                    <div className="form-element">
+                        <span className="border" onClick={handleClickCancelButton}>
+                            <button>Annuler</button>
+                        </span>
+                        <span className="border">
+                            <button disabled={!isDirtyUpdateForm}>
+                                { 
+                                    userUpdateIsLoading ?
+                                    <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
+                                    : "Soumettre"
+                                }
+                            </button>
+                        </span>
+                    </div>
                 </form>
             }
         </section>
