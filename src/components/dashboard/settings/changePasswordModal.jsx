@@ -39,7 +39,9 @@ export default function ChangePasswordModal({
             }
             setUserCanChange(false)
         }
-        finally{}
+        finally{
+            setUserCheckIsLoading(false)
+        }
     }
 
     return(
