@@ -200,7 +200,7 @@
 .change-personal-infos-modal {
     background-color: white;
     width: 100%;
-    max-width: 450px;
+    max-width: 500px;
     position: fixed;
     opacity: 0;
     pointer-events: none;
