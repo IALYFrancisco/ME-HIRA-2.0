@@ -12,6 +12,10 @@ export default function ChangePasswordModal({
 
     const [ userCanChange, setUserCanChange ] = useState(false)
 
+    const checkUser = async (data) => {
+        
+    }
+
     return(
         <section className={ changePasswordModalState ? "change-password-modal enabled" : "change-password-modal"}>
             <h3>Changement de mot de passe :</h3>
