@@ -135,7 +135,7 @@ export default function ChangePasswordModal({
                 <form onSubmit={handleSubmitUpdate(changeUserPassword)} className="can-change-form">
                     <div className="form-element">
                         <label htmlFor="currentPassword">Votre mot de passe actuel :</label>
-                        <input type="password" name="currentPassword" id="currentPassword" placeholder="veuillez saisir votre mot de passe actuel" />
+                        <input type="password" name="currentPassword" id="currentPassword" placeholder="veuillez saisir votre mot de passe actuel" { ...registerUpdate("currentPassword", { required: true }) } required />
                     </div>
                 </form>
             }
