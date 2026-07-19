@@ -15,7 +15,8 @@ export default function ChangePasswordModal({
 
     const checkUser = async (data) => {
         try{
-
+            setUserCheckIsLoading(true)
+            const _user = new FormData()
         }
         catch{}
         finally{}
