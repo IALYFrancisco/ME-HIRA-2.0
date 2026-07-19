@@ -1,9 +1,10 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 
 export default function ChangePasswordForm(){
 
     const { reset, register } = useForm()
+    const [ overlayState, setOverlayState ] = useState(false)
 
     useEffect(()=>{
         reset({
