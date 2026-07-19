@@ -47,7 +47,6 @@ export default function PersonalInfosEditingForm(){
                 <div className="form-element">
                     <span className="border" onClick={handleOpenChangePersonalInfosModal} >
                         <button>
-                            {/* <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> */}
                             Changer mon information personnelle
                         </button>
                     </span>
