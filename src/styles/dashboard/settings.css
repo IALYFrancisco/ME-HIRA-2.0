@@ -266,12 +266,14 @@
     color: var(--black);
 }
 
-.change-personal-infos-modal .loader-search-icone {
+.change-personal-infos-modal .loader-search-icone,
+.change-password-modal .loader-search-icone {
     width: 19px;
     height: auto;
 }
 
-.change-personal-infos-modal .close-modal {
+.change-personal-infos-modal .close-modal,
+.change-password-modal .close-modal {
     width: 25px;
     height: 25px;
     background-color: var(--gray);
@@ -285,7 +287,8 @@
     top: 15px;
 }
 
-.change-personal-infos-modal .close-modal img {
+.change-personal-infos-modal .close-modal img,
+.change-password-modal .close-modal img {
     height: auto;
     width: 10px;
 }
