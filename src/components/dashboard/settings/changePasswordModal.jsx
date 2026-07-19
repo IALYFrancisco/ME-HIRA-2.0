@@ -93,6 +93,7 @@ export default function ChangePasswordModal({
             newPassword: "",
             confirmNewPassword: ""
         })
+        setUserCanChange(false)
     }
 
     return(
