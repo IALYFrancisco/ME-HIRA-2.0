@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import ChangePasswordModal from "./changePasswordModal"
+import Overlay from "@/components/overlay"
 
 export default function ChangePasswordForm(){
 
@@ -45,6 +46,10 @@ export default function ChangePasswordForm(){
             <ChangePasswordModal
                 changePasswordModalState={changePasswordModalState}
                 handleCloseChangePasswordModal={handleCloseChangePasswordModal}
+            />
+            <Overlay
+                overlayState={overlayState}
+                closeOverlay={handleCloseChangePasswordModal}
             />
         </>
     )
