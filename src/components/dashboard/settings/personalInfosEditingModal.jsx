@@ -26,7 +26,7 @@ export default function PersonalInfosEditingModal({
 
     const { user, setUser } = useAuth()
     const [ userCanChange, setUserCanChange ] = useState(false)
-    const [ userCkeckIsLoading, setUserCheckIsLoading ] = useState(false)
+    const [ userCheckIsLoading, setUserCheckIsLoading ] = useState(false)
     const [ userUpdateIsLoading, setUserUpdateIsLoading ] = useState(false)
 
     const checkUser = async (data) => {
@@ -126,7 +126,7 @@ export default function PersonalInfosEditingModal({
                         <span className="border">
                             <button>
                                 { 
-                                    userCkeckIsLoading ?
+                                    userCheckIsLoading ?
                                     <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
                                     : "Soumettre"
                                 }
