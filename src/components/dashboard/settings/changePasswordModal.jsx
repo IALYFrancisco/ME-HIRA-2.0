@@ -150,7 +150,7 @@ export default function ChangePasswordModal({
                             <button>Annuler</button>
                         </span>
                         <span className="border">
-                            <button disabled={!isDirtyUpdateForm}>
+                            <button>
                                 { 
                                     userUpdateIsLoading ?
                                     <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
