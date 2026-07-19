@@ -218,7 +218,8 @@
     top: 50px;
 }
 
-.change-personal-infos-modal.enabled {
+.change-personal-infos-modal.enabled,
+.change-password-modal.enabled {
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
