@@ -81,6 +81,10 @@ export default function ChangePasswordModal({
 
     }
 
+    const handleClickCancelButton = () => {
+        
+    }
+
     return(
         <section className={ changePasswordModalState ? "change-password-modal enabled" : "change-password-modal"}>
             <h3>Changement de mot de passe :</h3>
