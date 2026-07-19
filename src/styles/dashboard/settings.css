@@ -42,7 +42,10 @@
     margin-top: 30px;
 }
 
-.dashboard-settings-container form:not(.change-personal-infos-modal form) {
+.dashboard-settings-container form:not(
+    .change-personal-infos-modal form,
+    .change-password-modal form
+) {
     border: 1px solid var(--gray);
     padding: 20px;
     border-radius: 10px;
