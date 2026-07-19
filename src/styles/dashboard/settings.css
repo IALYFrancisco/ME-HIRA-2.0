@@ -239,25 +239,30 @@
     color: red;
 }
 
-.can-change-form .form-element:nth-child(3){
+.can-change-form .form-element:nth-child(3),
+.can-change-form .form-element:nth-child(4) {
     display: flex;
     column-gap: 20px;
 }
 
-.can-change-form .form-element:nth-child(3) span{
+.can-change-form .form-element:nth-child(3) span,
+.can-change-form .form-element:nth-child(4) span{
     margin: 0;
 }
 
-.can-change-form .form-element:nth-child(3) span:first-child{
+.can-change-form .form-element:nth-child(3) span:first-child,
+.can-change-form .form-element:nth-child(4) span:first-child{
     border-color: var(--black);
 }
 
-.can-change-form .form-element:nth-child(3) span:first-child button{
+.can-change-form .form-element:nth-child(3) span:first-child button,
+.can-change-form .form-element:nth-child(4) span:first-child button{
     background-color: var(--black);
     color: white;
 }
 
-.can-change-form .form-element:nth-child(3) span:has(button:disabled){
+.can-change-form .form-element:nth-child(3) span:has(button:disabled),
+.can-change-form .form-element:nth-child(4) span:has(button:disabled){
     border-color: var(--gray);
 }
 
