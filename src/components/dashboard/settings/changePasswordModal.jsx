@@ -1,3 +1,6 @@
+import { useAuth } from "@/contexts/AuthContext"
+import { api } from "@/helpers/api"
+import { formToJSON } from "axios"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 
@@ -10,6 +13,7 @@ export default function ChangePasswordModal({
         handleSubmit: handleSubmitCheck
     } = useForm()
 
+    const { user } = useAuth()
     const [ userCanChange, setUserCanChange ] = useState(false)
     const [ userCheckIsLoading, setUserCheckIsLoading ] = useState(false)
 
@@ -17,6 +21,10 @@ export default function ChangePasswordModal({
         try{
             setUserCheckIsLoading(true)
             const _user = new FormData()
+            _user.append("_id", user._id)
+            _user.append("checkPassword", data.password)
+            await api.post("/user/check", { user: formToJSON(_user) })
+            setUserCanChange(true)
         }
         catch{}
         finally{}
