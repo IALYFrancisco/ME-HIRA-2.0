@@ -11,9 +11,12 @@ export default function ChangePasswordModal({
     } = useForm()
 
     const [ userCanChange, setUserCanChange ] = useState(false)
+    const [ userCheckIsLoading, setUserCheckIsLoading ] = useState(false)
 
     const checkUser = async (data) => {
-        try{}
+        try{
+
+        }
         catch{}
         finally{}
     }
