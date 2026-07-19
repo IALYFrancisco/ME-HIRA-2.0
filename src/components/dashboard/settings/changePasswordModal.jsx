@@ -51,7 +51,12 @@ export default function ChangePasswordModal({
             <p>Suite au changement de votre mot de passe, vous serez déconnecté de votre compte puis vous authentifier à nouveau pour vous connecter.</p>
             {
                 !userCanChange &&
-                <form></form>
+                <form onSubmit={handleSubmitCheck(checkUser)}>
+                    <div className="form-element">
+                        <label htmlFor="checkPassword">Votre mot de passe actuel :</label>
+                        <input type="password" id="checkPassword" { ...registerCheck("checkPassword") } placeholder="veuillez saisir votre mot de passe actuel" required />
+                    </div>
+                </form>
             }
         </section>
     )
