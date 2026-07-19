@@ -5,6 +5,7 @@ export default function ChangePasswordForm(){
 
     const { reset, register } = useForm()
     const [ overlayState, setOverlayState ] = useState(false)
+    const [ changePasswordModalState, setChangePasswordModalState ] = useState(false)
 
     useEffect(()=>{
         reset({
