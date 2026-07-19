@@ -1,7 +1,7 @@
 import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
 import { formToJSON } from "axios"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import Image from "next/image"
