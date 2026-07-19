@@ -58,6 +58,7 @@ export default function ChangePasswordModal({
 
         try{
 
+            setUserUpdateIsLoading(true)
             if(userCanChange){
 
                 let _user = user._id
