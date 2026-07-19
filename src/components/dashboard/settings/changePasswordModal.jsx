@@ -64,6 +64,10 @@ export default function ChangePasswordModal({
                     return toast.warning("Le nouveau mot de passe et la confirmation de nouveau mot de passe doivent correspondre.")
                 }
 
+                update.append("password", data.newPassword)
+
+                await api.patch("/user/update", { user: _user, update: formToJSON(update) })
+
             }
 
         }
