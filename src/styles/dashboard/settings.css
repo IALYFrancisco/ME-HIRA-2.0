@@ -263,3 +263,22 @@
     width: 19px;
     height: auto;
 }
+
+.change-personal-infos-modal .close-modal {
+    width: 25px;
+    height: 25px;
+    background-color: var(--gray);
+    position: absolute;
+    right: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 15px;
+}
+
+.change-personal-infos-modal .close-modal img {
+    height: auto;
+    width: 10px;
+}
