@@ -75,6 +75,10 @@ export default function ChangePasswordModal({
                     setUser(null)
                 }, 4000)
 
+                handleClickCancelButton()
+                return toast.info("Votre mot de passe a été bien modifié, vous allez être déconnecté.")
+                
+
             }
 
         }
