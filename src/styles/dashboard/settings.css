@@ -221,6 +221,10 @@
     top: 50px;
 }
 
+.change-password-modal {
+    top: 0;
+}
+
 .change-personal-infos-modal.enabled,
 .change-password-modal.enabled {
     opacity: 1;
