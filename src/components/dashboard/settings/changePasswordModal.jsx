@@ -60,8 +60,9 @@ export default function ChangePasswordModal({
                 let _user = user._id
                 const update = new FormData()
                 
-                if(data.newPassword !== data.confirmNewPassword)
+                if(data.newPassword !== data.confirmNewPassword){
                     return toast.warning("Le nouveau mot de passe et la confirmation de nouveau mot de passe doivent correspondre.")
+                }
 
             }
 
