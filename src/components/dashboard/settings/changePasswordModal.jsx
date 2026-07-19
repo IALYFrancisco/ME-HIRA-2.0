@@ -18,7 +18,8 @@ export default function ChangePasswordModal({
     } = useForm()
 
     const {
-        handleSubmit: handleSubmitUpdate
+        handleSubmit: handleSubmitUpdate,
+        reset: resetUpdate
     } = useForm()
 
     const { user, setUser } = useAuth()
@@ -86,6 +87,11 @@ export default function ChangePasswordModal({
         handleCloseChangePasswordModal()
         resetCheck({
             checkPassword: ""
+        })
+        resetUpdate({
+            currentPassword: "",
+            newPassword: "",
+            confirmNewPassword: ""
         })
     }
 
