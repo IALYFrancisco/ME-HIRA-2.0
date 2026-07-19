@@ -4,6 +4,7 @@ import { formToJSON } from "axios"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
+import Image from "next/image"
 
 export default function ChangePasswordModal({
     changePasswordModalState,
