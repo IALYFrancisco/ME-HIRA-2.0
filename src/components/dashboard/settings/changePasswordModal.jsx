@@ -3,7 +3,7 @@ import { api } from "@/helpers/api"
 import { formToJSON } from "axios"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
-import { toast& } from "sonner"
+import { toast } from "sonner"
 
 export default function ChangePasswordModal({
     changePasswordModalState,
