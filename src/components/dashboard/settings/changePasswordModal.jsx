@@ -1,7 +1,12 @@
+import { useState } from "react"
+
 export default function ChangePasswordModal({
     changePasswordModalState,
     handleCloseChangePasswordModal
 }){
+
+    const [ userCanChange, setUserCanChange ] = useState(false)
+
     return(
         <section className={ changePasswordModalState ? "change-password-modal enabled" : "change-password-modal"}>
             <h3>Changement de mot de passe :</h3>
