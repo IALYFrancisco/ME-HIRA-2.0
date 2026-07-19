@@ -13,7 +13,8 @@ export default function ChangePasswordModal({
 
     const {
         handleSubmit: handleSubmitCheck,
-        register: registerCheck
+        register: registerCheck,
+        reset: resetCheck
     } = useForm()
 
     const {
@@ -82,7 +83,10 @@ export default function ChangePasswordModal({
     }
 
     const handleClickCancelButton = () => {
-        
+        handleCloseChangePasswordModal()
+        resetCheck({
+            checkPassword: ""
+        })
     }
 
     return(
