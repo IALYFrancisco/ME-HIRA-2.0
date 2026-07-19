@@ -162,6 +162,9 @@ export default function PersonalInfosEditingModal({
                     </div>
                 </form>
             }
+            <span className="close-modal" onClick={ ()=> {closeAddSongModal(); reset()}}>
+                <Image src="/images/close.png" width={16} height={16} priority alt="fermer modal d'ajout de chanson"/>
+            </span>
         </section>
     )
 }
