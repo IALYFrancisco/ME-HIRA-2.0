@@ -141,6 +141,10 @@ export default function ChangePasswordModal({
                         <label htmlFor="newPassword">Nouveau mot de passe :</label>
                         <input type="password" id="newPassword" placeholder="veuillez choisir un mot de passe fort" { ...registerUpdate("newPassword", { required: true }) } required />
                     </div>
+                    <div className="form-element">
+                        <label htmlFor="confirmNewPassword">Confirmation du nouveau mot de passe :</label>
+                        <input type="password" id="confirmNewPassword" placeholder="veuillez confirmer le nouveau mot de passe" { ...registerUpdate("confirmNewPassword", { required: true }) } required />
+                    </div>
                 </form>
             }
         </section>
