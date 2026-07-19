@@ -23,6 +23,7 @@ export default function ChangePasswordModal({
     const { user } = useAuth()
     const [ userCanChange, setUserCanChange ] = useState(false)
     const [ userCheckIsLoading, setUserCheckIsLoading ] = useState(false)
+    const [ userUpdateIsLoading, setUserUpdateIsLoading ] = useState(false)
 
     const checkUser = async (data) => {
         try{
