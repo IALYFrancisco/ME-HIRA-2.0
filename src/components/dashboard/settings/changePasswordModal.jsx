@@ -33,7 +33,7 @@ export default function ChangePasswordModal({
             setUserCheckIsLoading(true)
             const _user = new FormData()
             _user.append("_id", user._id)
-            _user.append("checkPassword", data.password)
+            _user.append("password", data.checkPassword)
             await api.post("/user/check", { user: formToJSON(_user) })
             setUserCanChange(true)
         }
