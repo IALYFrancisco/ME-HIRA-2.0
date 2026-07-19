@@ -20,7 +20,7 @@ export default function ChangePasswordModal({
         handleSubmit: handleSubmitUpdate
     } = useForm()
 
-    const { user } = useAuth()
+    const { user, setUser } = useAuth()
     const [ userCanChange, setUserCanChange ] = useState(false)
     const [ userCheckIsLoading, setUserCheckIsLoading ] = useState(false)
     const [ userUpdateIsLoading, setUserUpdateIsLoading ] = useState(false)
@@ -67,6 +67,11 @@ export default function ChangePasswordModal({
                 update.append("password", data.newPassword)
 
                 await api.patch("/user/update", { user: _user, update: formToJSON(update) })
+
+                setTimeout(()=>{
+                    localStorage.removeItem("at.sid")
+                    setUser(null)
+                }, 4000)
 
             }
 
