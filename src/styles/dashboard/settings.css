@@ -239,7 +239,7 @@
     color: red;
 }
 
-.can-change-form .form-element:nth-child(3),
+.can-change-form .form-element:nth-child(3):not(.confirm-password),
 .can-change-form .form-element:nth-child(4) {
     display: flex;
     column-gap: 20px;
