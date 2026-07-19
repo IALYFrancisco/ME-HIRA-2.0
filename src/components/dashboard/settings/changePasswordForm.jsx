@@ -17,6 +17,11 @@ export default function ChangePasswordForm(){
         return
     }
 
+    const handleOpenChangePasswordModal = () => {
+        setOverlayState(true)
+        setChangePasswordModalState(true)
+    }
+
     return(
         <form onSubmit={handleSubmit(handleSubmitForm)}>
             <h2>Mot de passe :</h2>
