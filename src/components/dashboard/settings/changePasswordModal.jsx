@@ -77,13 +77,17 @@ export default function ChangePasswordModal({
 
                 handleClickCancelButton()
                 return toast.info("Votre mot de passe a été bien modifié, vous allez être déconnecté.")
-                
 
             }
+            return toast.warning("Vous n'êtes pas autorisé à faire cette action.")
 
         }
-        catch{}
-        finally{}
+        catch{
+            return toast.error("Erreur de changement de mot de passe, veuillez réessayer plus tard.")
+        }
+        finally{
+            setUserUpdateIsLoading(false)
+        }
 
     }
 
