@@ -35,7 +35,7 @@ export default function ChangePasswordForm(){
                 <input disabled type="password" id="password" { ...register("password", {required:true}) } required placeholder="veuillez choisir un mot de passe fort" />
             </div>
             <div className="form-element">
-                <span className="border">
+                <span className="border" onClick={handleOpenChangePasswordModal}>
                     <button>Changer mon mot de passe</button>
                 </span>
             </div>
