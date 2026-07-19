@@ -1,9 +1,14 @@
 import { useState } from "react"
+import { useForm } from "react-hook-form"
 
 export default function ChangePasswordModal({
     changePasswordModalState,
     handleCloseChangePasswordModal
 }){
+
+    const {
+        handleSubmit: handleSubmitCheck
+    } = useForm()
 
     const [ userCanChange, setUserCanChange ] = useState(false)
 
