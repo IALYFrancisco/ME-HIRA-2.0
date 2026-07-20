@@ -152,26 +152,31 @@
     padding: 10px;
 }
 
-.dashboard-songs-container table thead tr th:nth-child(1){
+.dashboard-songs-container table thead tr th:nth-child(1),
+.dashboard-artists-container table thead tr th:nth-child(1){
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
-.dashboard-songs-container table thead tr th:nth-last-child(1){
+.dashboard-songs-container table thead tr th:nth-last-child(1),
+.dashboard-artists-container table thead tr th:nth-last-child(1){
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
     
-.dashboard-songs-container table tbody td {
+.dashboard-songs-container table tbody td,
+.dashboard-artists-container table tbody td {
     padding: 13px;
 }
 
-.dashboard-songs-container table tbody tr {
+.dashboard-songs-container table tbody tr,
+.dashboard-artists-container table tbody tr {
     border-bottom: 1px solid rgba(128, 128, 128, 0.143);
     font-size: 15px;
 }
 
-.dashboard-songs-container table tbody tr:hover {
+.dashboard-songs-container table tbody tr:hover,
+.dashboard-artists-container table tbody tr:hover {
     background-color: rgba(172, 172, 172, 0.143);
     cursor: pointer;
     transition: all .10s ease-in-out;
