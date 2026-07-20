@@ -18,10 +18,6 @@ export default function PersonalInfosEditingForm(){
         })
     },[reset, user])
 
-    const changeCurrentUserInfo = () => {
-        return
-    }
-
     const handleOpenChangePersonalInfosModal = () => {
         setOverlayState(true)
         setPersonalInfosEditingModalState(true)
@@ -34,7 +30,7 @@ export default function PersonalInfosEditingForm(){
 
     return(
         <>
-            <form onSubmit={handleSubmit(changeCurrentUserInfo)}>
+            <form onSubmit={(e)=>e.preventDefault()}>
                 <h2>Informations personnelles :</h2>
                 <div className="form-element">
                     <label htmlFor="name">Votre nom :</label>
@@ -47,7 +43,6 @@ export default function PersonalInfosEditingForm(){
                 <div className="form-element">
                     <span className="border" onClick={handleOpenChangePersonalInfosModal} >
                         <button>
-                            {/* <Image src="/images/black-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> */}
                             Changer mon information personnelle
                         </button>
                     </span>
@@ -55,6 +50,7 @@ export default function PersonalInfosEditingForm(){
             </form>
             <PersonalInfosEditingModal
                 personalInfosEditingModalState={personalInfosEditingModalState}
+                handleCloseChangePersonalInfosModal={handleCloseChangePersonalInfosModal}
             />
             <Overlay
                 overlayState={overlayState}

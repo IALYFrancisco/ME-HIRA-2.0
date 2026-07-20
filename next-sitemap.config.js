@@ -7,5 +7,25 @@ module.exports = {
     sitemapSize: 7000,
     changefreq: 'weekly',
     priority: 1.0,
-    autoLastmod: true
+    autoLastmod: true,
+
+    // Exclusion de certaines pages ( dans sitemap.xml )
+    exclude: [
+        '/dashboard',
+        '/dashboard/*',
+        '/authentication/*'
+    ],
+
+    // Configuration pour le fichier robots.txt
+    robotsTxtOptions: {
+        policies: [
+            {
+                userAgent: "*",
+                disallow: [
+                    "/dashboard",
+                    "/authentication"
+                ]
+            }
+        ]
+    }
 }

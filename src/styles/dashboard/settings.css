@@ -42,7 +42,10 @@
     margin-top: 30px;
 }
 
-.dashboard-settings-container form:not(.change-personal-infos-modal form) {
+.dashboard-settings-container form:not(
+    .change-personal-infos-modal form,
+    .change-password-modal form
+) {
     border: 1px solid var(--gray);
     padding: 20px;
     border-radius: 10px;
@@ -188,6 +191,7 @@
 }
 
 .themes-container span {
+    transition: all .10s ease-in-out;
     display: block;
     border: 1px solid var(--orange-base);
     padding: 2px;
@@ -197,10 +201,15 @@
     margin-top: 30px;
 }
 
-.change-personal-infos-modal {
+.themes-container span:has(button:active){
+    transform: scale(0.95);
+}
+
+.change-personal-infos-modal,
+.change-password-modal {
     background-color: white;
     width: 100%;
-    max-width: 450px;
+    max-width: 500px;
     position: fixed;
     opacity: 0;
     pointer-events: none;
@@ -217,17 +226,83 @@
     top: 50px;
 }
 
-.change-personal-infos-modal.enabled {
+.change-password-modal {
+    top: 0;
+}
+
+.change-personal-infos-modal.enabled,
+.change-password-modal.enabled {
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
 }
 
-.change-personal-infos-modal p:nth-child(2) {
+.change-personal-infos-modal p:nth-child(2),
+.change-password-modal p:nth-child(2) {
     margin: 20px 0;
 }
 
-.change-personal-infos-modal p:nth-child(3) {
+.change-personal-infos-modal p:nth-child(3),
+.change-password-modal p:nth-child(3) {
     font-weight: 600;
     color: red;
+}
+
+.can-change-form .form-element:nth-child(3):not(.confirm-password),
+.can-change-form .form-element:nth-child(4) {
+    display: flex;
+    column-gap: 20px;
+}
+
+.can-change-form .form-element:nth-child(3) span,
+.can-change-form .form-element:nth-child(4) span{
+    margin: 0;
+}
+
+.can-change-form .form-element:nth-child(3) span:first-child,
+.can-change-form .form-element:nth-child(4) span:first-child{
+    border-color: var(--black);
+}
+
+.can-change-form .form-element:nth-child(3) span:first-child button,
+.can-change-form .form-element:nth-child(4) span:first-child button{
+    background-color: var(--black);
+    color: white;
+}
+
+.can-change-form .form-element:nth-child(3) span:has(button:disabled),
+.can-change-form .form-element:nth-child(4) span:has(button:disabled){
+    border-color: var(--gray);
+}
+
+.can-change-form .form-element:nth-child(3) span:nth-child(2) button:disabled{
+    background-color: var(--gray);
+    color: var(--black);
+}
+
+.change-personal-infos-modal .loader-search-icone,
+.change-password-modal .loader-search-icone {
+    width: 19px;
+    height: auto;
+}
+
+.change-personal-infos-modal .close-modal,
+.change-password-modal .close-modal {
+    width: 25px;
+    height: 25px;
+    background-color: var(--gray);
+    position: absolute;
+    right: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 15px;
+}
+
+.change-personal-infos-modal .close-modal img,
+.change-password-modal .close-modal img {
+    height: auto;
+    width: 10px;
 }

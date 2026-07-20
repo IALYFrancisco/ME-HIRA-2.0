@@ -6,22 +6,21 @@ import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import Image from "next/image"
 
-export default function PersonalInfosEditingModal({
-    personalInfosEditingModalState,
-    handleCloseChangePersonalInfosModal
+export default function ChangePasswordModal({
+    changePasswordModalState,
+    handleCloseChangePasswordModal
 }){
 
-    const { 
-        register: registerUpdate,
-        handleSubmit: handleSubmitUpdate,
-        reset: resetUpdate,
-        formState: { isDirty: isDirtyUpdateForm }
+    const {
+        handleSubmit: handleSubmitCheck,
+        register: registerCheck,
+        reset: resetCheck
     } = useForm()
 
     const {
-        reset: resetCheck,
-        handleSubmit: handleSubmitCheck,
-        register: registerCheck
+        handleSubmit: handleSubmitUpdate,
+        reset: resetUpdate,
+        register: registerUpdate
     } = useForm()
 
     const { user, setUser } = useAuth()
@@ -34,12 +33,8 @@ export default function PersonalInfosEditingModal({
             setUserCheckIsLoading(true)
             const _user = new FormData()
             _user.append("_id", user._id)
-            _user.append("password", data.password)
+            _user.append("password", data.checkPassword)
             await api.post("/user/check", { user: formToJSON(_user) })
-            resetUpdate({
-                name: user.name,
-                email: user.email
-            })
             setUserCanChange(true)
         }
         catch(error){
@@ -59,73 +54,73 @@ export default function PersonalInfosEditingModal({
         }
     }
 
-    const changeUserPersonalInfos = async (data) => {
+    const changeUserPassword = async (data) => {
+
         try{
+
             setUserUpdateIsLoading(true)
             if(userCanChange){
-                
+
                 let _user = user._id
                 const update = new FormData()
-                if(data.name !== user.name){
-                    update.append("name", data.name)
+                
+                if(data.newPassword !== data.confirmNewPassword){
+                    return toast.warning("Le nouveau mot de passe et la confirmation de nouveau mot de passe doivent correspondre.")
                 }
-                if(data.email !== user.email){
-                    update.append("email", data.email)
-                }
+
+                update.append("password", data.newPassword)
 
                 await api.patch("/user/update", { user: _user, update: formToJSON(update) })
 
-                if(update.email){
-                    setTimeout(()=>{
-                        localStorage.removeItem("at.sid")
-                        setUser(null)
-                    }, 4000)
-                    handleClickCancelButton()
-                    return toast.info("Vos informations a été bien modifiées et puisque votre adresse email a réçu une modfication, vous allez être déconnecté.")
-                }
-                const getUserInformationsResponse = await api.get("/user/informations")
-                setUser(getUserInformationsResponse.data)
+                setTimeout(()=>{
+                    localStorage.removeItem("at.sid")
+                    setUser(null)
+                }, 4000)
+
                 handleClickCancelButton()
-                return toast.info("Vos informations a été bien modifiées.")
+                return toast.info("Votre mot de passe a été bien modifié, vous allez être déconnecté.")
 
             }
             return toast.warning("Vous n'êtes pas autorisé à faire cette action.")
+
         }
         catch{
-            return toast.error("Erreur de modification des informations personnelles, veuillez réessayer plus tard.")
+            return toast.error("Erreur de changement de mot de passe, veuillez réessayer plus tard.")
         }
         finally{
             setUserUpdateIsLoading(false)
         }
+
     }
 
     const handleClickCancelButton = () => {
-        handleCloseChangePersonalInfosModal()
-        resetCheck([{
-            password: ""
-        }])
+        handleCloseChangePasswordModal()
+        resetCheck({
+            checkPassword: ""
+        })
         resetUpdate({
-            name: "",
-            email: ""
+            newPassword: "",
+            confirmNewPassword: ""
         })
         setUserCanChange(false)
     }
 
     return(
-        <section className={ personalInfosEditingModalState ? "change-personal-infos-modal enabled" : "change-personal-infos-modal"}>
-            <h3>Changement sur les informations personnelles :</h3>
-            <p>Afin de pouvoir modifier vos informations personnelles, vous devez vous identifier.</p>
-            <p>Si votre adresse email reçoit une modification, vous serez déconnecté de votre compte puis vous authentifier à nouveau pour vous connecter.</p>
-            { !userCanChange &&
+        <section className={ changePasswordModalState ? "change-password-modal enabled" : "change-password-modal"}>
+            <h3>Changement de mot de passe :</h3>
+            <p>Afin de pouvoir modifier votre mot de passe, vous devez vous identifier.</p>
+            <p>Suite au changement de votre mot de passe, vous serez déconnecté de votre compte puis vous authentifier à nouveau pour vous connecter.</p>
+            {
+                !userCanChange &&
                 <form onSubmit={handleSubmitCheck(checkUser)}>
                     <div className="form-element">
-                        <label htmlFor="password">Votre mot de passe :</label>
-                        <input type="password" id="password" { ...registerCheck("password") } placeholder="veuillez saisir votre mot de passe" required />
+                        <label htmlFor="checkPassword">Votre mot de passe actuel :</label>
+                        <input type="password" id="checkPassword" { ...registerCheck("checkPassword") } placeholder="veuillez saisir votre mot de passe actuel" required />
                     </div>
                     <div className="form-element">
                         <span className="border">
                             <button>
-                                { 
+                                {
                                     userCheckIsLoading ?
                                     <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
                                     : "Soumettre"
@@ -137,21 +132,21 @@ export default function PersonalInfosEditingModal({
             }
             {
                 userCanChange &&
-                <form onSubmit={handleSubmitUpdate(changeUserPersonalInfos)} className="can-change-form">
+                <form onSubmit={handleSubmitUpdate(changeUserPassword)} className="can-change-form">
                     <div className="form-element">
-                        <label htmlFor="name">Votre nom :</label>
-                        <input type="text" id="name" placeholder="on vous sollicite de nous fournir votre nom complet" { ...registerUpdate("name",{required:true}) } required />
+                        <label htmlFor="newPassword">Nouveau mot de passe :</label>
+                        <input type="password" id="newPassword" placeholder="veuillez choisir un mot de passe fort" { ...registerUpdate("newPassword", { required: true }) } required />
                     </div>
-                    <div className="form-element">
-                        <label htmlFor="email">Votre adresse email :</label>
-                        <input type="email" id="email" placeholder="on vous sollicite de nous fournir votre nom complet" { ...registerUpdate("email",{required:true}) } required />
+                    <div className="form-element confirm-password">
+                        <label htmlFor="confirmNewPassword">Confirmation du nouveau mot de passe :</label>
+                        <input type="password" id="confirmNewPassword" placeholder="veuillez confirmer le nouveau mot de passe" { ...registerUpdate("confirmNewPassword", { required: true }) } required />
                     </div>
                     <div className="form-element">
                         <span className="border" onClick={handleClickCancelButton}>
                             <button>Annuler</button>
                         </span>
                         <span className="border">
-                            <button disabled={!isDirtyUpdateForm}>
+                            <button>
                                 { 
                                     userUpdateIsLoading ?
                                     <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />

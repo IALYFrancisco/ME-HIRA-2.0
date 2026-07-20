@@ -11,6 +11,7 @@ import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
 import { JoinArrayItems } from "@/helpers/song"
 import { formToJSON } from "axios"
+import Overlay from "@/components/overlay"
 
 export default function SongsList(){
 
@@ -24,7 +25,7 @@ export default function SongsList(){
     var [localFile, setLocalFile] = useState('')
     var [localFileIsDefined, setLocalFileIsDefined] = useState(false)
     var [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
-    const addSongOverlayRef = useRef(null)
+    const [ overlayState, setOverlayState ] = useState(false)
     const addSongFormRef = useRef(null)
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
@@ -100,12 +101,13 @@ export default function SongsList(){
     }
 
     const openAddSongModal = ()=>{
-        addSongOverlayRef.current.classList.add('active')
+        setOverlayState(true)
         addSongFormRef.current.classList.add('active')
     }
 
     const closeAddSongModal = ()=>{
-        addSongOverlayRef.current.classList.remove('active')
+        handleClickNoButton()
+        setOverlayState(false)
         addSongFormRef.current.classList.remove('active')
         reset({
             title: "",
@@ -146,14 +148,14 @@ export default function SongsList(){
 
     const openSongPublicationModal = (song)=>{
         setSongToDoAction(song)
-        addSongOverlayRef.current.classList.add('active')
+        setOverlayState(true)
         publicationSongModalRef.current.classList.add('active')
     }
 
     const songPublication = async (song) => {
         try{
             setSongActionIsLoading(true)
-            let response = await api.patch('/song/publication', { song: song._id, update: song?.published ? { published: false } : { published: true }})
+            let response = await api.patch('/song/update', { song: song._id, update: song?.published ? { published: false } : { published: true }})
             if(response.status === 200){
                 toast.info(`La chanson intitulée ${song?.title} est actuellement ${song?.published ? 'indisponible' : 'disponible'} en publique.`)
                 api.get('/song/get')
@@ -167,7 +169,7 @@ export default function SongsList(){
         }finally{
             setSongActionIsLoading(false)
             publicationSongModalRef.current.classList.remove('active')
-            addSongOverlayRef.current.classList.remove('active')
+            setOverlayState(false)
         }
     }
 
@@ -178,7 +180,7 @@ export default function SongsList(){
         if(removeSongModalRef.current){
             removeSongModalRef.current.classList.remove('active')
         }
-        addSongOverlayRef.current.classList.remove('active')
+        setOverlayState(false)
     }
 
     const handleFileChange = (e) => {
@@ -213,7 +215,7 @@ export default function SongsList(){
 
     const openSongRemoveModal = (song)=>{
         setSongToDoAction(song)
-        addSongOverlayRef.current.classList.add('active')
+        setOverlayState(true)
         removeSongModalRef.current.classList.add('active')
     }
 
@@ -234,7 +236,7 @@ export default function SongsList(){
         }finally{
             setSongActionIsLoading(false)
             removeSongModalRef.current.classList.remove('active')
-            addSongOverlayRef.current.classList.remove('active')
+            setOverlayState(false)
         }
     }
 
@@ -383,7 +385,7 @@ export default function SongsList(){
                     </table>
                 </section>
             </section>
-            <div className="add-song-overlay" ref={addSongOverlayRef} onClick={closeAddSongModal}></div>
+            <Overlay overlayState={overlayState} closeOverlay={closeAddSongModal} />
             <form onSubmit={
                 handleSubmit(
                     updatingSongFormIsActive ? updateSong : addSong

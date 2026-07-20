@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react-hooks/exhaustive-deps */
 import Image from "next/image"
@@ -139,7 +140,7 @@ export default function ArtistsList(){
 
     return(
         <>
-            <section className="dashboard-songs-container">
+            <section className="dashboard-artists-container">
                 <div className="page-header-container">
                     <section className="header">
                         <div className="page-title">
