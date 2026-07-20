@@ -4,31 +4,36 @@
     height: 100vh;
 }
 
-.dashboard-songs-container {
+.dashboard-songs-container,
+.dashboard-artists-container {
     width: calc(100% - 180px);
     height: max-content;
     padding: 0 20px;
     position: relative;
 }
 
-.dashboard-songs-container .page-header-container {
+.dashboard-songs-container .page-header-container,
+.dashboard-artists-container .page-header-container {
     position: sticky;
     z-index: 10;
     top: 0;
     background-color: white;
 }
 
-.dashboard-songs-container .header {
+.dashboard-songs-container .header,
+.dashboard-artists-container .header {
     width: 100%;
 }
 
-.dashboard-songs-container .header .page-title {
+.dashboard-songs-container .header .page-title,
+.dashboard-artists-container .header .page-title {
     height: 100px;
     display: flex;
     align-items: center;
 }
 
-.dashboard-songs-container .actions-container {
+.dashboard-songs-container .actions-container,
+.dashboard-artists-container .actions-container {
     width: 100%;
     display: flex;
     justify-content: space-between;

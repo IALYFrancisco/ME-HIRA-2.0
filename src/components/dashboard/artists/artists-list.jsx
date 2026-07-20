@@ -140,7 +140,7 @@ export default function ArtistsList(){
 
     return(
         <>
-            <section className="dashboard-songs-container">
+            <section className="dashboard-artists-container">
                 <div className="page-header-container">
                     <section className="header">
                         <div className="page-title">
