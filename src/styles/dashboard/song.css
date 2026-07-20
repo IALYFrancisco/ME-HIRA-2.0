@@ -135,16 +135,20 @@
 }
 
 .dashboard-songs-container th.actions,
-.dashboard-songs-container td.actions {
+.dashboard-songs-container td.actions,
+.dashboard-artists-container th.actions,
+.dashboard-artists-container td.actions {
     width: 10%;
     position: relative;
 }
 
-.dashboard-songs-container td {
+.dashboard-songs-container td,
+.dashboard-artists-container td {
     text-align: center;
 }
 
-.dashboard-songs-container table th {
+.dashboard-songs-container table th,
+.dashboard-artists-container table th {
     padding: 10px;
 }
 
