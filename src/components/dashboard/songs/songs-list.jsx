@@ -103,11 +103,13 @@ export default function SongsList(){
 
     const openAddSongModal = ()=>{
         // addSongOverlayRef.current.classList.add('active')
+        setOverlayState(true)
         addSongFormRef.current.classList.add('active')
     }
 
     const closeAddSongModal = ()=>{
         // addSongOverlayRef.current.classList.remove('active')
+        setOverlayState(false)
         addSongFormRef.current.classList.remove('active')
         reset({
             title: "",
@@ -149,6 +151,7 @@ export default function SongsList(){
     const openSongPublicationModal = (song)=>{
         setSongToDoAction(song)
         // addSongOverlayRef.current.classList.add('active')
+        setOverlayState(true)
         publicationSongModalRef.current.classList.add('active')
     }
 
@@ -170,6 +173,7 @@ export default function SongsList(){
             setSongActionIsLoading(false)
             publicationSongModalRef.current.classList.remove('active')
             // addSongOverlayRef.current.classList.remove('active')
+            setOverlayState(false)
         }
     }
 
@@ -181,6 +185,7 @@ export default function SongsList(){
             removeSongModalRef.current.classList.remove('active')
         }
         // addSongOverlayRef.current.classList.remove('active')
+        setOverlayState(false)
     }
 
     const handleFileChange = (e) => {
@@ -216,6 +221,7 @@ export default function SongsList(){
     const openSongRemoveModal = (song)=>{
         setSongToDoAction(song)
         // addSongOverlayRef.current.classList.add('active')
+        setOverlayState(true)
         removeSongModalRef.current.classList.add('active')
     }
 
@@ -237,6 +243,7 @@ export default function SongsList(){
             setSongActionIsLoading(false)
             removeSongModalRef.current.classList.remove('active')
             // addSongOverlayRef.current.classList.remove('active')
+            setOverlayState(false)
         }
     }
 
