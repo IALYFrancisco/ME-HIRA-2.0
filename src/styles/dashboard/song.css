@@ -42,15 +42,18 @@
     height: max-content;
 }
 
-.dashboard-songs-container .header h1 {
+.dashboard-songs-container .header h1,
+.dashboard-artists-container .header h1 {
     margin-left: 15px;
 }
 
-.dashboard-songs-container .filters-container {
+.dashboard-songs-container .filters-container,
+.dashboard-artists-container .filters-container {
     width: 50%;
 }
 
-.dashboard-songs-container .actions-container input {
+.dashboard-songs-container .actions-container input,
+.dashboard-artists-container .actions-container input {
     display: block;
     width: 100%;
     height: 40px;
@@ -60,11 +63,13 @@
     outline: none;
 }
 
-.dashboard-songs-container .actions-container input:focus {
+.dashboard-songs-container .actions-container input:focus,
+.dashboard-artists-container .actions-container input:focus {
     border-color: var(--orange-base);
 }
 
-.dashboard-songs-container .actions-container button {
+.dashboard-songs-container .actions-container button,
+.dashboard-artists-container .actions-container button {
     transition: all .10s ease-in-out;
     padding: 10px 15px;
     background-color: var(--orange-base);
@@ -78,7 +83,8 @@
     height: 34px;
 }
 
-.dashboard-songs-container .actions-container button img {
+.dashboard-songs-container .actions-container button img,
+.dashboard-artists-container .actions-container button img {
     height: auto;
     width: 12px;
 }
