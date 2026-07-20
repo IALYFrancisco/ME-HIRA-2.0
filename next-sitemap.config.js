@@ -7,5 +7,12 @@ module.exports = {
     sitemapSize: 7000,
     changefreq: 'weekly',
     priority: 1.0,
-    autoLastmod: true
+    autoLastmod: true,
+
+    // Exclusion de certaines pages
+    exclude: [
+        '/dashboard',
+        '/dashboard/*',
+        '/authentication/*'
+    ]
 }
