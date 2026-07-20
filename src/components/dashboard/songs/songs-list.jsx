@@ -26,7 +26,6 @@ export default function SongsList(){
     var [localFileIsDefined, setLocalFileIsDefined] = useState(false)
     var [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
     const [ overlayState, setOverlayState ] = useState(false)
-    // const addSongOverlayRef = useRef(null)
     const addSongFormRef = useRef(null)
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
@@ -102,14 +101,12 @@ export default function SongsList(){
     }
 
     const openAddSongModal = ()=>{
-        // addSongOverlayRef.current.classList.add('active')
         setOverlayState(true)
         addSongFormRef.current.classList.add('active')
     }
 
     const closeAddSongModal = ()=>{
         handleClickNoButton()
-        // addSongOverlayRef.current.classList.remove('active')
         setOverlayState(false)
         addSongFormRef.current.classList.remove('active')
         reset({
@@ -151,7 +148,6 @@ export default function SongsList(){
 
     const openSongPublicationModal = (song)=>{
         setSongToDoAction(song)
-        // addSongOverlayRef.current.classList.add('active')
         setOverlayState(true)
         publicationSongModalRef.current.classList.add('active')
     }
@@ -173,7 +169,6 @@ export default function SongsList(){
         }finally{
             setSongActionIsLoading(false)
             publicationSongModalRef.current.classList.remove('active')
-            // addSongOverlayRef.current.classList.remove('active')
             setOverlayState(false)
         }
     }
@@ -185,7 +180,6 @@ export default function SongsList(){
         if(removeSongModalRef.current){
             removeSongModalRef.current.classList.remove('active')
         }
-        // addSongOverlayRef.current.classList.remove('active')
         setOverlayState(false)
     }
 
@@ -221,7 +215,6 @@ export default function SongsList(){
 
     const openSongRemoveModal = (song)=>{
         setSongToDoAction(song)
-        // addSongOverlayRef.current.classList.add('active')
         setOverlayState(true)
         removeSongModalRef.current.classList.add('active')
     }
@@ -243,7 +236,6 @@ export default function SongsList(){
         }finally{
             setSongActionIsLoading(false)
             removeSongModalRef.current.classList.remove('active')
-            // addSongOverlayRef.current.classList.remove('active')
             setOverlayState(false)
         }
     }
@@ -393,7 +385,6 @@ export default function SongsList(){
                     </table>
                 </section>
             </section>
-            { /*<div className="add-song-overlay" ref={addSongOverlayRef} onClick={closeAddSongModal}></div>*/}
             <Overlay overlayState={overlayState} closeOverlay={closeAddSongModal} />
             <form onSubmit={
                 handleSubmit(
