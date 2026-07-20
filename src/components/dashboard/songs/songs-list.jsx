@@ -108,6 +108,7 @@ export default function SongsList(){
     }
 
     const closeAddSongModal = ()=>{
+        handleClickNoButton()
         // addSongOverlayRef.current.classList.remove('active')
         setOverlayState(false)
         addSongFormRef.current.classList.remove('active')
