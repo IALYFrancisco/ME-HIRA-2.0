@@ -9,7 +9,7 @@ module.exports = {
     priority: 1.0,
     autoLastmod: true,
 
-    // Exclusion de certaines pages
+    // Exclusion de certaines pages ( dans sitemap.xml )
     exclude: [
         '/dashboard',
         '/dashboard/*',
