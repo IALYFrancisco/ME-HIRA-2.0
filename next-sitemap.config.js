@@ -14,5 +14,18 @@ module.exports = {
         '/dashboard',
         '/dashboard/*',
         '/authentication/*'
-    ]
+    ],
+
+    // Configuration pour le fichier robots.txt
+    robotsTxtOptions: {
+        policies: [
+            {
+                userAgent: "*",
+                disallow: [
+                    "/dashboard",
+                    "/authentication"
+                ]
+            }
+        ]
+    }
 }
