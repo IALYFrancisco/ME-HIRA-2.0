@@ -17,6 +17,7 @@ export default function ThemesManager(){
                     <p>Thème système</p>
                 </li>
                 <li className="theme">
+                    <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                     <div>
                         <div></div>
                     </div>
