@@ -19,6 +19,10 @@ export default function ThemesManager(){
         setResetThemeModalState(false)
     }
 
+    const resetTheme = () => {
+        
+    }
+
     return(
         <>
             <section className="themes-container">
