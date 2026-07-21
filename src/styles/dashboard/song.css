@@ -424,6 +424,7 @@
 }
 
 .publication-song-modal .publication-song-choices button.yes:disabled,
+.reset-theme-modal .reset-theme-choices button.yes:disabled,
 .reset-theme-modal .reset-theme-choices button.no:disabled {
     background-color: var(--gray);
     color: var(--black);
