@@ -371,7 +371,8 @@
     background-color: var(--gray);
 }
 
-.publication-song-modal {
+.publication-song-modal,
+.reset-theme-modal {
     background-color: white;
     width: 100%;
     max-width: 350px;
