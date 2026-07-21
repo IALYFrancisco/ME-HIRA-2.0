@@ -371,7 +371,8 @@
     background-color: var(--gray);
 }
 
-.publication-song-modal {
+.publication-song-modal,
+.reset-theme-modal {
     background-color: white;
     width: 100%;
     max-width: 350px;
@@ -390,7 +391,8 @@
     z-index: 12;
 }
 
-.publication-song-modal.active {
+.publication-song-modal.active,
+.reset-theme-modal.enabled {
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
@@ -400,14 +402,16 @@
     margin-bottom: 20px;
 }
 
-.publication-song-modal .publication-song-choices {
+.publication-song-modal .publication-song-choices,
+.reset-theme-modal .reset-theme-choices {
     display: flex;
     align-items: center;
     column-gap: 10px;
     margin-top: 20px;
 }
 
-.publication-song-modal .publication-song-choices button {
+.publication-song-modal .publication-song-choices button,
+.reset-theme-modal .reset-theme-choices button {
     transition: all .10s ease-in-out;
     padding: 10px 15px;
     border: none;
@@ -420,31 +424,37 @@
 }
 
 .publication-song-modal .publication-song-choices button.yes:disabled,
-.publication-song-modal .publication-song-choices button.no:disabled {
+.reset-theme-modal .reset-theme-choices button.yes:disabled,
+.reset-theme-modal .reset-theme-choices button.no:disabled {
     background-color: var(--gray);
     color: var(--black);
 }
 
-.publication-song-modal .publication-song-choices button.yes {
+.publication-song-modal .publication-song-choices button.yes,
+.reset-theme-modal .reset-theme-choices button.yes {
     background-color: var(--orange-base);
 }
 
-.publication-song-modal .publication-song-choices button.yes img {
+.publication-song-modal .publication-song-choices button.yes img,
+.reset-theme-modal .reset-theme-choices button.yes img {
     width: 19px;
     height: auto;
 }
 
-.publication-song-modal .publication-song-choices button.no {
+.publication-song-modal .publication-song-choices button.no,
+.reset-theme-modal .reset-theme-choices button.no {
     background-color: var(--black);
     color: white;
 }
 
-.publication-song-choices span:active {
+.publication-song-choices span:active,
+.reset-theme-modal span:active {
   transition: all .10s ease-in-out;
   transform: scale(0.85);
 }
 
-.publication-song-choices span:has(button) {
+.publication-song-choices span:has(button),
+.reset-theme-modal span:has(button) {
     display: block;
     padding: 2px;
     width: fit-content;
@@ -452,15 +462,18 @@
     border-radius: 12px;
 }
 
-.publication-song-choices span:has(button.yes) {
+.publication-song-choices span:has(button.yes),
+.reset-theme-modal span:has(button.yes) {
     border: 1px solid var(--orange-base);
 }
 
-.publication-song-choices span:has(button.no) {
+.publication-song-choices span:has(button.no),
+.reset-theme-modal span:has(button.no) {
     border: 1px solid var(--black);
 }
 
-.publication-song-choices span:has(button:disabled){
+.publication-song-choices span:has(button:disabled),
+.reset-theme-modal span:has(button:disabled){
     border-color: var(--gray);
     transform: none;
 }

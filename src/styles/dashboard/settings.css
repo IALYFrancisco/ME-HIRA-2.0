@@ -136,6 +136,10 @@
     column-gap: 15px;
 }
 
+.theme {
+    position: relative;
+}
+
 .theme > div {
     padding: 3px;
     border: transparent solid 2px;
@@ -184,6 +188,15 @@
     font-size: 13px;
     margin-top: 5px;
     text-align: center;
+}
+
+.theme img  {
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+    z-index: 1;
+    width: 20px;
+    height: auto;
 }
 
 .themes-container button {
@@ -305,4 +318,12 @@
 .change-password-modal .close-modal img {
     height: auto;
     width: 10px;
+}
+
+.reset-theme-modal {
+    top: 75px;
+}
+
+.reset-theme-modal p {
+    margin: 20px 0;
 }
