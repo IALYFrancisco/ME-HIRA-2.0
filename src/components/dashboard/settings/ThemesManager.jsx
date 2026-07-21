@@ -51,8 +51,13 @@ export default function ThemesManager(){
                     <button>Réinitialiser le thème</button>
                 </span>
             </section>
-            <Overlay overlayState={overlayState} closeOverlay={closeOverlay}/>
-            <ResetThemeModal/>
+            <Overlay
+                overlayState={overlayState}
+                closeOverlay={closeOverlay}
+            />
+            <ResetThemeModal
+                resetThemeModalState={resetThemeModalState}
+            />
         </>
     )
 }

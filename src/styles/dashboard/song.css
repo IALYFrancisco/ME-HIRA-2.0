@@ -391,7 +391,8 @@
     z-index: 12;
 }
 
-.publication-song-modal.active {
+.publication-song-modal.active,
+.reset-theme-modal.enabled {
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
