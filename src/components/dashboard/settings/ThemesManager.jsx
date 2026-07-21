@@ -7,6 +7,7 @@ export default function ThemesManager(){
 
     const [ overlayState, setOverlayState ] = useState(false)
     const [ resetThemeModalState, setResetThemeModalState ] = useState(false)
+    const [ resetThemeActionIsLoading, setResetThemeActionIsLoading ] = useState(false)
 
     const handleClickResetThemebutton = () => {
         setOverlayState(true)
