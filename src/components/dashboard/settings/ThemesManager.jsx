@@ -43,7 +43,7 @@ export default function ThemesManager(){
                     <button>Réinitialiser le thème</button>
                 </span>
             </section>
-            <Overlay/>
+            <Overlay overlayState={overlayState}/>
         </>
     )
 }
