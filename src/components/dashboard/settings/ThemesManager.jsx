@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Overlay from "@/components/overlay"
 import { useState } from "react"
+import ResetThemeModal from "./ResetThemeModal"
 
 export default function ThemesManager(){
 
@@ -48,6 +49,7 @@ export default function ThemesManager(){
                 </span>
             </section>
             <Overlay overlayState={overlayState} closeOverlay={closeOverlay}/>
+            <ResetThemeModal/>
         </>
     )
 }
