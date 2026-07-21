@@ -10,7 +10,7 @@ export default function ResetThemeModal({
             <div className="reset-theme-choices">
                 <span onClick={handleClickNoButton}><button disabled={resetThemeActionIsLoading} className="no">Non</button></span>
                 <span>
-                    <button disabled={songActionIsLoading} onClick={()=>songPublication(songToDoAction)} className="yes">
+                    <button disabled={resetThemeActionIsLoading} onClick={()=>songPublication(songToDoAction)} className="yes">
                         { 
                             songActionIsLoading ?
                             <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
