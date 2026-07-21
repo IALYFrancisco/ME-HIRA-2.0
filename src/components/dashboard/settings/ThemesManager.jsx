@@ -10,10 +10,12 @@ export default function ThemesManager(){
 
     const handleClickResetThemebutton = () => {
         setOverlayState(true)
+        setResetThemeModalState(true)
     }
-
+    
     const closeOverlay = () => {
         setOverlayState(false)
+        setResetThemeModalState(false)
     }
 
     return(
