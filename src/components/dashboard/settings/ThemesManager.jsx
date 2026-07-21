@@ -5,6 +5,10 @@ export default function ThemesManager(){
 
     const [ overlayState, setOverlayState ] = useState(false)
 
+    const handleClickResetThemebutton = () => {
+        setOverlayState(true)
+    }
+
     return(
         <>
             <section className="themes-container">
@@ -34,7 +38,7 @@ export default function ThemesManager(){
                         <p>Thème sombre</p>
                     </li>
                 </ul>
-                <span className="border">
+                <span className="border" onClick={handleClickResetThemebutton}>
                     <button>Réinitialiser le thème</button>
                 </span>
             </section>
