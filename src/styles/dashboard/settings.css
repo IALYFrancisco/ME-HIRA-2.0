@@ -323,3 +323,7 @@
 .reset-theme-modal {
     top: 75px;
 }
+
+.reset-theme-modal p {
+    margin: 20px 0;
+}
