@@ -2,6 +2,9 @@ import Image from "next/image"
 import Overlay from "@/components/overlay"
 
 export default function ThemesManager(){
+
+    const [ overlayState, setOverlayState ] = useState(false)
+
     return(
         <>
             <section className="themes-container">
