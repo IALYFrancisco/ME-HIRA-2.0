@@ -402,14 +402,16 @@
     margin-bottom: 20px;
 }
 
-.publication-song-modal .publication-song-choices {
+.publication-song-modal .publication-song-choices,
+.reset-theme-modal .reset-theme-choices {
     display: flex;
     align-items: center;
     column-gap: 10px;
     margin-top: 20px;
 }
 
-.publication-song-modal .publication-song-choices button {
+.publication-song-modal .publication-song-choices button,
+.reset-theme-modal .reset-theme-choices button {
     transition: all .10s ease-in-out;
     padding: 10px 15px;
     border: none;
@@ -422,26 +424,30 @@
 }
 
 .publication-song-modal .publication-song-choices button.yes:disabled,
-.publication-song-modal .publication-song-choices button.no:disabled {
+.reset-theme-modal .reset-theme-choices button.no:disabled {
     background-color: var(--gray);
     color: var(--black);
 }
 
-.publication-song-modal .publication-song-choices button.yes {
+.publication-song-modal .publication-song-choices button.yes,
+.reset-theme-modal .reset-theme-choices button.yes {
     background-color: var(--orange-base);
 }
 
-.publication-song-modal .publication-song-choices button.yes img {
+.publication-song-modal .publication-song-choices button.yes img,
+.reset-theme-modal .reset-theme-choices button.yes img {
     width: 19px;
     height: auto;
 }
 
-.publication-song-modal .publication-song-choices button.no {
+.publication-song-modal .publication-song-choices button.no,
+.reset-theme-modal .reset-theme-choices button.no {
     background-color: var(--black);
     color: white;
 }
 
-.publication-song-choices span:active {
+.publication-song-choices span:active,
+.reset-theme-modal span:active {
   transition: all .10s ease-in-out;
   transform: scale(0.85);
 }
