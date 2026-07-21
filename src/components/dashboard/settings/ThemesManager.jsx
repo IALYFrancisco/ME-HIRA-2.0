@@ -10,6 +10,10 @@ export default function ThemesManager(){
         setOverlayState(true)
     }
 
+    const closeOverlay = () => {
+        setOverlayState(false)
+    }
+
     return(
         <>
             <section className="themes-container">
