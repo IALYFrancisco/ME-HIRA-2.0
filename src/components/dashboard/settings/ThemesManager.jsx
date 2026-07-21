@@ -20,7 +20,13 @@ export default function ThemesManager(){
     }
 
     const resetTheme = () => {
-        
+        try{
+            setResetThemeActionIsLoading(true)
+        }
+        catch{}
+        finally{
+            setResetThemeActionIsLoading(false)
+        }
     }
 
     return(
