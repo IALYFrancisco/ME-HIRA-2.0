@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Overlay from "@/components/overlay"
+import { useState } from "react"
 
 export default function ThemesManager(){
 
