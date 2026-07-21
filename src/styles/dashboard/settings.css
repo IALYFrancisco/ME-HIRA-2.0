@@ -319,3 +319,7 @@
     height: auto;
     width: 10px;
 }
+
+.reset-theme-modal {
+    top: 75px;
+}
