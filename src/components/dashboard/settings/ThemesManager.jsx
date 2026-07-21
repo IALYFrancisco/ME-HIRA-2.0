@@ -71,6 +71,7 @@ export default function ThemesManager(){
                 resetThemeModalState={resetThemeModalState}
                 handleClickNoButton={closeOverlay}
                 resetThemeActionIsLoading={resetThemeActionIsLoading}
+                resetTheme={resetTheme}
             />
         </>
     )
