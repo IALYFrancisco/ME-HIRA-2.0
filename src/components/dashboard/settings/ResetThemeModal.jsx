@@ -1,5 +1,6 @@
 export default function ResetThemeModal({
-    resetThemeModalState
+    resetThemeModalState,
+    handleClickNoButton
 }){
     return(
         <div className={ resetThemeModalState ? "reset-theme-modal enabled" : "reset-theme-modal"}>
