@@ -26,6 +26,7 @@ export default function ThemesManager(){
         catch{}
         finally{
             setResetThemeActionIsLoading(false)
+            closeOverlay()
         }
     }
 
