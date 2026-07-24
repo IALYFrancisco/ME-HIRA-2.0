@@ -14,7 +14,7 @@ export default function ThemesManager(){
     const [ resetThemeActionIsLoading, setResetThemeActionIsLoading ] = useState(false)
     const [ changeThemeIsLoading, setChangeThemeIsLoading ] = useState(false)
     const { theme, setTheme } = useTheme()
-    const { user } = useAuth()
+    const { user, setUser } = useAuth()
 
     const handleClickResetThemebutton = () => {
         setOverlayState(true)
@@ -43,9 +43,9 @@ export default function ThemesManager(){
             await api.patch("/user/update", { user: user._id, update: { theme: _theme } })
             const getUserInformationsResponse = await api.get("/user/informations")
             setUser(getUserInformationsResponse.data)
-            setTheme(getUserInformationsResponse.data.theme)
         }
-        catch{
+        catch(error){
+            console.log(error)
             return toast.error("Erreur de changement de thème, veuillez réessayer plus tard.")
         }
     }
