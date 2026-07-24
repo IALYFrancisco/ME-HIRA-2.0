@@ -71,7 +71,7 @@ export default function ThemesManager(){
                         }
                         {
                             changeThemeIsLoading &&
-                            // themeChoice === "system" &&
+                            themeChoice === "system" &&
                             <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
                             
                         }
@@ -85,6 +85,7 @@ export default function ThemesManager(){
                     </li>
                     <li className="theme">
                         { 
+                            !changeThemeIsLoading &&
                             theme === "light" && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         }
@@ -100,6 +101,7 @@ export default function ThemesManager(){
                     </li>
                     <li className="theme">
                         { 
+                            !changeThemeIsLoading &&
                             theme === "dark" && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         }
