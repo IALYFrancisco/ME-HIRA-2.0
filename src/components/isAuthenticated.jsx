@@ -19,6 +19,7 @@ export default function IsAuthenticated({ children }) {
   if (!user) return null;
 
   if(!loading && user && user.status === "superuser"){
+      setTheme(user.theme)
       return children;
   }
 }
