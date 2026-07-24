@@ -41,7 +41,9 @@ export default function ThemesManager(){
         try{
             if(_theme===user.theme) return
             await api.patch("/user/update", { user: user._id, update: { theme: _theme } })
-            setTheme(_theme)
+            const getUserInformationsResponse = await api.get("/user/informations")
+            setUser(getUserInformationsResponse.data)
+            setTheme(getUserInformationsResponse.data.theme)
         }
         catch{
             return toast.error("Erreur de changement de thème, veuillez réessayer plus tard.")
