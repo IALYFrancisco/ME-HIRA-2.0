@@ -18,6 +18,7 @@ export default function ThemesManager(){
     const { user, setUser } = useAuth()
 
     const handleClickResetThemebutton = () => {
+        if(user.theme==="light") return
         setOverlayState(true)
         setResetThemeModalState(true)
     }
