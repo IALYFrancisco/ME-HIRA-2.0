@@ -16,10 +16,13 @@ export default function IsAuthenticated({ children }) {
     }
   }, [user, loading, router]);
 
+  useEffect(()=>{
+    setTheme(user?.theme)
+  }, [setTheme, user?.theme])
+
   if (!user) return null;
 
   if(!loading && user && user.status === "superuser"){
-      setTheme(user.theme)
-      return children;
+    return children;
   }
 }
