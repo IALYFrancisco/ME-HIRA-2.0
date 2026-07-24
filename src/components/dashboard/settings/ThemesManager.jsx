@@ -31,7 +31,9 @@ export default function ThemesManager(){
         try{
             setResetThemeActionIsLoading(true)
         }
-        catch{}
+        catch{
+            return toast.error("Erreur de réinitialisation de thème, veuillez réessayer plus tard.")
+        }
         finally{
             setResetThemeActionIsLoading(false)
             closeOverlay()
