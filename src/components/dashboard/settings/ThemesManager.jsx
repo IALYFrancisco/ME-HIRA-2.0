@@ -122,7 +122,7 @@ export default function ThemesManager(){
                         <p>Thème sombre</p>
                     </li>
                 </ul>
-                <span className="border" onClick={handleClickResetThemebutton}>
+                <span className={ user.theme !== "light" ? "border" : "border enabled"} onClick={handleClickResetThemebutton}>
                     <button disabled={user.theme !== "ligth"} >Réinitialiser le thème</button>
                 </span>
             </section>
