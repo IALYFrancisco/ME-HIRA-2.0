@@ -65,12 +65,13 @@ export default function ThemesManager(){
                 <ul className="themes-elements">
                     <li className="theme">
                         { 
+                            !changeThemeIsLoading &&
                             theme === "system" && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         }
                         {
                             changeThemeIsLoading &&
-                            themeChoice === "system" &&
+                            // themeChoice === "system" &&
                             <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
                             
                         }
@@ -87,6 +88,11 @@ export default function ThemesManager(){
                             theme === "light" && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         }
+                        {
+                            changeThemeIsLoading &&
+                            themeChoice === "light" &&
+                            <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />                        
+                        }
                         <div onClick={()=>changeTheme("light")}>
                             <div></div>
                         </div>
@@ -96,6 +102,11 @@ export default function ThemesManager(){
                         { 
                             theme === "dark" && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
+                        }
+                        {
+                            changeThemeIsLoading &&
+                            themeChoice === "dark" &&
+                            <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />                        
                         }
                         <div onClick={()=>changeTheme("dark")}>
                             <div></div>
