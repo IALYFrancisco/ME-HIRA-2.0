@@ -12,7 +12,6 @@ export default function ThemesManager(){
     const [ resetThemeActionIsLoading, setResetThemeActionIsLoading ] = useState(false)
     const { user } = useAuth()
     const { theme } = useTheme()
-    const isUserThemePreference = theme === user.theme
 
     const handleClickResetThemebutton = () => {
         setOverlayState(true)
@@ -46,8 +45,10 @@ export default function ThemesManager(){
                 <p>Vous pouvez faire un choix parmi les thèmes suivants :</p>
                 <ul className="themes-elements">
                     <li className="theme">
-                        
-                        <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
+                        { 
+                            theme === "system" && 
+                            <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
+                        }
                         <div>
                             <div>
                                 <div className="light-theme"></div>
@@ -57,14 +58,20 @@ export default function ThemesManager(){
                         <p>Thème système</p>
                     </li>
                     <li className="theme">
-                        <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
+                        { 
+                            theme === "light" && 
+                            <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
+                        }
                         <div>
                             <div></div>
                         </div>
                         <p>Thème claire</p>
                     </li>
                     <li className="theme">
-                        <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
+                        { 
+                            theme === "dark" && 
+                            <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
+                        }
                         <div>
                             <div></div>
                         </div>
