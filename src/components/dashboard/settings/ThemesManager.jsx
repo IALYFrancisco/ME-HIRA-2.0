@@ -123,7 +123,7 @@ export default function ThemesManager(){
                     </li>
                 </ul>
                 <span className="border" onClick={handleClickResetThemebutton}>
-                    <button>Réinitialiser le thème</button>
+                    <button disabled={user.theme !== "ligth"} >Réinitialiser le thème</button>
                 </span>
             </section>
             <Overlay
