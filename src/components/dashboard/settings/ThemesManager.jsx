@@ -6,6 +6,7 @@ import { useTheme } from "next-themes"
 import { api } from "@/helpers/api"
 import { useAuth } from "@/contexts/AuthContext"
 import { formToJSON } from "axios"
+import { toast } from "sonner"
 
 export default function ThemesManager(){
 
@@ -47,7 +48,7 @@ export default function ThemesManager(){
             setTheme(_theme)
         }
         catch{
-
+            return toast.error("Erreur de changement de thème, veuillez réessayer plus tard.")
         }
     }
 
