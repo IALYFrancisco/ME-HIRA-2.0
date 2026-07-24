@@ -3,10 +3,12 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useAuth } from "@/contexts/AuthContext";
+import { useTheme } from "next-themes";
 
 export default function IsAuthenticated({ children }) {
   const { user, loading } = useAuth();
   const router = useRouter();
+  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     if (!loading && !user) {
