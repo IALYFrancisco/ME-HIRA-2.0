@@ -4,6 +4,7 @@ import { useState } from "react"
 import ResetThemeModal from "./ResetThemeModal"
 import { useTheme } from "next-themes"
 import { api } from "@/helpers/api"
+import { useAuth } from "@/contexts/AuthContext"
 
 export default function ThemesManager(){
 
@@ -11,6 +12,7 @@ export default function ThemesManager(){
     const [ resetThemeModalState, setResetThemeModalState ] = useState(false)
     const [ resetThemeActionIsLoading, setResetThemeActionIsLoading ] = useState(false)
     const { theme, setTheme } = useTheme()
+    const { user } = useAuth()
 
     const handleClickResetThemebutton = () => {
         setOverlayState(true)
@@ -35,6 +37,7 @@ export default function ThemesManager(){
 
     const changeTheme = async (_theme) => {
         try{
+            if(_theme===user.theme) return
             const data = new FormData()
             await api.patch("/user/update", )
         }
