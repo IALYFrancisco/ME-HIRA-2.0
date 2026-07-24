@@ -65,8 +65,12 @@ export default function ThemesManager(){
                 <ul className="themes-elements">
                     <li className="theme">
                         { 
+                            !setChangeThemeIsLoading &&
                             theme === "system" && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
+                        }
+                        {
+
                         }
                         <div onClick={()=>changeTheme("system")}>
                             <div>
@@ -78,6 +82,7 @@ export default function ThemesManager(){
                     </li>
                     <li className="theme">
                         { 
+                            !setChangeThemeIsLoading &&
                             theme === "light" && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         }
@@ -88,6 +93,7 @@ export default function ThemesManager(){
                     </li>
                     <li className="theme">
                         { 
+                            !setChangeThemeIsLoading &&
                             theme === "dark" && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         }
