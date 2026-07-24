@@ -13,6 +13,7 @@ export default function ThemesManager(){
     const [ resetThemeModalState, setResetThemeModalState ] = useState(false)
     const [ resetThemeActionIsLoading, setResetThemeActionIsLoading ] = useState(false)
     const [ changeThemeIsLoading, setChangeThemeIsLoading ] = useState(false)
+    const [ themeChoice, setThemeChoice ] = useState("")
     const { theme, setTheme } = useTheme()
     const { user, setUser } = useAuth()
 
