@@ -34,8 +34,13 @@ export default function ThemesManager(){
     }
 
     const changeTheme = async (_theme) => {
-        const data = new FormData()
-        await api.patch("/user/update", )
+        try{
+            const data = new FormData()
+            await api.patch("/user/update", )
+        }
+        catch{
+
+        }
     }
 
     return(
