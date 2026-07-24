@@ -204,6 +204,10 @@
     background-color: var(--orange-base);
 }
 
+.themes-container button:disabled {
+    background-color: var(--gray);
+}
+
 .themes-container span {
     transition: all .10s ease-in-out;
     display: block;
@@ -217,6 +221,11 @@
 
 .themes-container span:has(button:active){
     transform: scale(0.95);
+}
+
+.themes-container span:has(button:disabled){
+    transform: none;
+    border-color: var(--gray);
 }
 
 .change-personal-infos-modal,
