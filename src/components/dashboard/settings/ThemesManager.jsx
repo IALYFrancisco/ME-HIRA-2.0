@@ -43,6 +43,7 @@ export default function ThemesManager(){
                 <p>Vous pouvez faire un choix parmi les thèmes suivants :</p>
                 <ul className="themes-elements">
                     <li className="theme">
+                        <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         <div>
                             <div>
                                 <div className="light-theme"></div>
@@ -59,6 +60,7 @@ export default function ThemesManager(){
                         <p>Thème claire</p>
                     </li>
                     <li className="theme">
+                        <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         <div>
                             <div></div>
                         </div>
