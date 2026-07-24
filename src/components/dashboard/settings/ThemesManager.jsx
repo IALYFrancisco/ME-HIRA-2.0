@@ -5,7 +5,6 @@ import ResetThemeModal from "./ResetThemeModal"
 import { useTheme } from "next-themes"
 import { api } from "@/helpers/api"
 import { useAuth } from "@/contexts/AuthContext"
-import { formToJSON } from "axios"
 import { toast } from "sonner"
 
 export default function ThemesManager(){
@@ -41,10 +40,7 @@ export default function ThemesManager(){
     const changeTheme = async (_theme) => {
         try{
             if(_theme===user.theme) return
-            const data = new FormData()
-            data.append("user", user._id)
-            data.append("update", formToJSON({ theme: _theme }))
-            await api.patch("/user/update", formToJSON(data))
+            await api.patch("/user/update", { user: user._id, update: { theme: _theme } })
             setTheme(_theme)
         }
         catch{
