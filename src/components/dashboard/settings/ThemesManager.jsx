@@ -3,6 +3,7 @@ import Overlay from "@/components/overlay"
 import { useState } from "react"
 import ResetThemeModal from "./ResetThemeModal"
 import { useAuth } from "@/contexts/AuthContext"
+import { useTheme } from "next-themes"
 
 export default function ThemesManager(){
 
@@ -10,6 +11,8 @@ export default function ThemesManager(){
     const [ resetThemeModalState, setResetThemeModalState ] = useState(false)
     const [ resetThemeActionIsLoading, setResetThemeActionIsLoading ] = useState(false)
     const { user } = useAuth()
+    const { theme } = useTheme()
+    const isUserThemePreference = theme === user.theme
 
     const handleClickResetThemebutton = () => {
         setOverlayState(true)
@@ -43,6 +46,7 @@ export default function ThemesManager(){
                 <p>Vous pouvez faire un choix parmi les thèmes suivants :</p>
                 <ul className="themes-elements">
                     <li className="theme">
+                        
                         <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         <div>
                             <div>
