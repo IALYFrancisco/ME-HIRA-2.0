@@ -43,6 +43,7 @@ export default function ThemesManager(){
             data.append("user", user._id)
             data.append("update", { theme: _theme })
             await api.patch("/user/update", formToJSON(data))
+            setTheme(_theme)
         }
         catch{
 
