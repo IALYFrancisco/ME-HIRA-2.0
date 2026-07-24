@@ -32,8 +32,8 @@ export default function ThemesManager(){
         }
     }
 
-    const changeTheme = () => {
-        
+    const changeTheme = (_theme) => {
+        console.log("Selected theme :", _theme)
     }
 
     return(
@@ -47,7 +47,7 @@ export default function ThemesManager(){
                             theme === "system" && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         }
-                        <div>
+                        <div onClick={changeTheme("system")}>
                             <div>
                                 <div className="light-theme"></div>
                                 <div className="dark-theme"></div>
@@ -60,7 +60,7 @@ export default function ThemesManager(){
                             theme === "light" && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         }
-                        <div>
+                        <div onClick={changeTheme("light")}>
                             <div></div>
                         </div>
                         <p>Thème claire</p>
@@ -70,7 +70,7 @@ export default function ThemesManager(){
                             theme === "dark" && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         }
-                        <div>
+                        <div onClick={changeTheme("dark")}>
                             <div></div>
                         </div>
                         <p>Thème sombre</p>
