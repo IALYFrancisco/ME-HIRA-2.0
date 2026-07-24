@@ -69,7 +69,10 @@ export default function ThemesManager(){
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         }
                         {
-
+                            changeThemeIsLoading &&
+                            themeChoice === "system" &&
+                            <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
+                            
                         }
                         <div onClick={()=>changeTheme("system")}>
                             <div>
