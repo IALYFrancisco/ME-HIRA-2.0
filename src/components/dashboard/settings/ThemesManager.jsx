@@ -27,10 +27,13 @@ export default function ThemesManager(){
         setResetThemeModalState(false)
     }
 
-    const resetTheme = () => {
+    const resetTheme = async () => {
         try{
             setResetThemeActionIsLoading(true)
             if(user.theme === "light") return
+            await api.patch("/user/update", { user: user._id, update: { theme: "light" } })
+            const getUserInformationsResponse = await api.get("/user/informations")
+            setUser(getUserInformationsResponse.data)
         }
         catch{
             return toast.error("Erreur de réinitialisation de thème, veuillez réessayer plus tard.")
