@@ -2,7 +2,6 @@ import Image from "next/image"
 import Overlay from "@/components/overlay"
 import { useState } from "react"
 import ResetThemeModal from "./ResetThemeModal"
-import { useAuth } from "@/contexts/AuthContext"
 import { useTheme } from "next-themes"
 
 export default function ThemesManager(){
@@ -10,7 +9,6 @@ export default function ThemesManager(){
     const [ overlayState, setOverlayState ] = useState(false)
     const [ resetThemeModalState, setResetThemeModalState ] = useState(false)
     const [ resetThemeActionIsLoading, setResetThemeActionIsLoading ] = useState(false)
-    const { user } = useAuth()
     const { theme } = useTheme()
 
     const handleClickResetThemebutton = () => {
