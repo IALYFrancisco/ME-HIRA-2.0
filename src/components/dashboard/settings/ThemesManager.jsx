@@ -12,6 +12,7 @@ export default function ThemesManager(){
     const [ overlayState, setOverlayState ] = useState(false)
     const [ resetThemeModalState, setResetThemeModalState ] = useState(false)
     const [ resetThemeActionIsLoading, setResetThemeActionIsLoading ] = useState(false)
+    const [ changeThemeIsLoading, setChangeThemeIsLoading ] = useState(false)
     const { theme, setTheme } = useTheme()
     const { user } = useAuth()
 
