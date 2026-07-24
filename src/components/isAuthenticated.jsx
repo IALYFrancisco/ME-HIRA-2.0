@@ -8,7 +8,7 @@ import { useTheme } from "next-themes";
 export default function IsAuthenticated({ children }) {
   const { user, loading } = useAuth();
   const router = useRouter();
-  const { theme, setTheme } = useTheme()
+  const { setTheme } = useTheme()
 
   useEffect(() => {
     if (!loading && !user) {
