@@ -40,6 +40,7 @@ export default function ThemesManager(){
 
     const changeTheme = async (_theme) => {
         try{
+            setThemeChoice(_theme)
             setChangeThemeIsLoading(true)
             if(_theme===user.theme) return
             await api.patch("/user/update", { user: user._id, update: { theme: _theme } })
@@ -52,6 +53,7 @@ export default function ThemesManager(){
         }
         finally{
             setChangeThemeIsLoading(false)
+            setThemeChoice("")
         }
     }
 
