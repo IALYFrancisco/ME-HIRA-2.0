@@ -72,13 +72,11 @@ export default function ThemesManager(){
                 <ul className="themes-elements">
                     <li className="theme">
                         { 
-                            !changeThemeIsLoading &&
-                            theme === "system" && 
+                            ( !changeThemeIsLoading && theme === "system" ) && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         }
                         {
-                            changeThemeIsLoading &&
-                            themeChoice === "system" &&
+                            ( changeThemeIsLoading && themeChoice === "system" ) &&
                             <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
                             
                         }
@@ -91,14 +89,12 @@ export default function ThemesManager(){
                         <p>Thème système</p>
                     </li>
                     <li className="theme">
-                        { 
-                            !changeThemeIsLoading &&
-                            theme === "light" && 
+                        {
+                            ( !changeThemeIsLoading && theme === "light" ) && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         }
                         {
-                            changeThemeIsLoading &&
-                            themeChoice === "light" &&
+                            ( changeThemeIsLoading && themeChoice === "light" ) &&
                             <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />                        
                         }
                         <div onClick={()=>changeTheme("light")}>
@@ -107,14 +103,11 @@ export default function ThemesManager(){
                         <p>Thème claire</p>
                     </li>
                     <li className="theme">
-                        { 
-                            !changeThemeIsLoading &&
-                            theme === "dark" && 
+                        { ( !changeThemeIsLoading && theme === "dark" ) && 
                             <Image src="/images/check.png" width={24} height={24} alt="check for current theme" priority />
                         }
                         {
-                            changeThemeIsLoading &&
-                            themeChoice === "dark" &&
+                            ( changeThemeIsLoading && themeChoice === "dark" ) &&
                             <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />                        
                         }
                         <div onClick={()=>changeTheme("dark")}>
@@ -123,8 +116,8 @@ export default function ThemesManager(){
                         <p>Thème sombre</p>
                     </li>
                 </ul>
-                <span className={ user.theme !== "light" ? "border" : "border enabled"} onClick={handleClickResetThemebutton}>
-                    <button disabled={user.theme !== "ligth"} >Réinitialiser le thème</button>
+                <span onClick={handleClickResetThemebutton}>
+                    <button disabled={(theme === "light")} >Réinitialiser le thème</button>
                 </span>
             </section>
             <Overlay
