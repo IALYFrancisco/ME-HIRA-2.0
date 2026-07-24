@@ -39,6 +39,7 @@ export default function ThemesManager(){
 
     const changeTheme = async (_theme) => {
         try{
+            setChangeThemeIsLoading(true)
             if(_theme===user.theme) return
             await api.patch("/user/update", { user: user._id, update: { theme: _theme } })
             const getUserInformationsResponse = await api.get("/user/informations")
@@ -47,6 +48,9 @@ export default function ThemesManager(){
         catch(error){
             console.log(error)
             return toast.error("Erreur de changement de thème, veuillez réessayer plus tard.")
+        }
+        finally{
+            setChangeThemeIsLoading(false)
         }
     }
 
