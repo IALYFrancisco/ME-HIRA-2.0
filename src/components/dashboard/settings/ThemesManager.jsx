@@ -43,7 +43,7 @@ export default function ThemesManager(){
             if(_theme===user.theme) return
             const data = new FormData()
             data.append("user", user._id)
-            data.append("update", { theme: _theme })
+            data.append("update", formToJSON({ theme: _theme }))
             await api.patch("/user/update", formToJSON(data))
             setTheme(_theme)
         }
