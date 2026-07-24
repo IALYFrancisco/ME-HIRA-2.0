@@ -30,6 +30,7 @@ export default function ThemesManager(){
     const resetTheme = () => {
         try{
             setResetThemeActionIsLoading(true)
+            if(user.theme === "light") return
         }
         catch{
             return toast.error("Erreur de réinitialisation de thème, veuillez réessayer plus tard.")
