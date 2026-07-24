@@ -30,6 +30,10 @@ export default function ThemesManager(){
         }
     }
 
+    const changeTheme = () => {
+        
+    }
+
     return(
         <>
             <section className="themes-container">
