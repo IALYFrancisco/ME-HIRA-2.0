@@ -14,7 +14,7 @@ export default function ThemesManager(){
     const [ resetThemeActionIsLoading, setResetThemeActionIsLoading ] = useState(false)
     const [ changeThemeIsLoading, setChangeThemeIsLoading ] = useState(false)
     const [ themeChoice, setThemeChoice ] = useState("")
-    const { theme, setTheme } = useTheme()
+    const { theme } = useTheme()
     const { user, setUser } = useAuth()
 
     const handleClickResetThemebutton = () => {
