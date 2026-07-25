@@ -96,6 +96,7 @@
     align-items: center;
     justify-content: center;
     background-color: var(--orange-base);
+    color: var(--button-text-color);
 }
 
 .dashboard-settings-container button img {
