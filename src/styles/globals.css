@@ -7,6 +7,7 @@
 
 .dark {
   --sidebar-color: #191919;
+  --text-color: #D4D4D4;
 }
 
 @font-face {
@@ -309,7 +310,7 @@ aside ul li a {
   display: flex;
   align-items: center;
   column-gap: 5px;
-  color: var(--black);
+  color: var(--text-color);
 }
 
 aside ul li a img {
