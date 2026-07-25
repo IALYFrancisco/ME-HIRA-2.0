@@ -6,7 +6,7 @@
 }
 
 .dark {
-  --orange-base: crimson;
+  --sidebar-color: #191919;
 }
 
 @font-face {
@@ -230,7 +230,7 @@ footer ul li a:hover {
 
 aside {
   min-width: 180px;
-  background-color: var(--orange-base);
+  background-color: var(--sidebar-color);
   position: fixed;
 }
 
