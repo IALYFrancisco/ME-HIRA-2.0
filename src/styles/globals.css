@@ -4,6 +4,10 @@
   --gray: #D4D4D4;
 }
 
+.dark {
+  --orange-dase: crimson;
+}
+
 @font-face {
   font-family: Lato;
   src: url("../../public/font/Lato-Regular.ttf");
