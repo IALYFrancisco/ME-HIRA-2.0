@@ -2,6 +2,13 @@
   --black: #191919;
   --orange-base: #FEC700;
   --gray: #D4D4D4;
+  --sidebar-color: #FEC700;
+  --text-color: #191919;
+}
+
+.dark {
+  --sidebar-color: #191919;
+  --text-color: #D4D4D4;
 }
 
 @font-face {
@@ -17,7 +24,7 @@
 
 body {
   font-family: Lato;
-  color: var(--black);
+  color: var(--text-color);
 }
 
 button, input {
@@ -225,7 +232,7 @@ footer ul li a:hover {
 
 aside {
   min-width: 180px;
-  background-color: var(--orange-base);
+  background-color: var(--sidebar-color);
   position: fixed;
 }
 
@@ -269,9 +276,9 @@ aside ul button {
 }
 
 aside ul button img {
-    color: transparent;
-    width: 30px;
-    height: auto;
+  color: transparent;
+  width: 30px;
+  height: auto;
 }
 
 
@@ -304,7 +311,7 @@ aside ul li a {
   display: flex;
   align-items: center;
   column-gap: 5px;
-  color: var(--black);
+  color: var(--text-color);
 }
 
 aside ul li a img {

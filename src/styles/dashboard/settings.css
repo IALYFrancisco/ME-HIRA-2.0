@@ -9,7 +9,6 @@
     position: sticky;
     z-index: 10;
     top: 0;
-    background-color: white;
 }
 
 .dashboard-settings-container .header {
@@ -97,6 +96,7 @@
     align-items: center;
     justify-content: center;
     background-color: var(--orange-base);
+    color: var(--button-text-color);
 }
 
 .dashboard-settings-container button img {
