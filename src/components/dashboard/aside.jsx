@@ -10,6 +10,7 @@ export default function Sidebar(){
 
     const router = useRouter()
     const { user, setUser } = useAuth()
+    const loaderFileSrc = user.theme === "light" ? "/images/white-dots-loader.svg" : "/images/black-dots-loader.svg"
     var [logoutIsLoading, setLogoutIsLoading] = useState(false)
 
     const logout = async ()=>{
