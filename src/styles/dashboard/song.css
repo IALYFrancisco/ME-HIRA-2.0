@@ -346,13 +346,13 @@
 }
 
 .song-actions {
-    background-color: white;
+    background-color: var(--popup-bg-color);
     position: absolute;
     top: 35px;
     left: 0;
     display: none;
     border-radius: 10px;
-    box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
+    box-shadow: var(--popup-box-shadow);
     border: 1px solid var(--gray);
     padding: 5px;
     z-index: 1;
