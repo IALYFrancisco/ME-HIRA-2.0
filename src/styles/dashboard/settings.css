@@ -230,7 +230,7 @@
 
 .change-personal-infos-modal,
 .change-password-modal {
-    background-color: white;
+    background-color: var(--popup-bg-color);
     width: 100%;
     max-width: 500px;
     position: fixed;
