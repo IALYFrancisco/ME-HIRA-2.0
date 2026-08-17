@@ -264,6 +264,10 @@ aside ul li.actif:not(:last-child) {
   background-color: white;
 }
 
+aside ul li.actif a {
+  color: var(--black);
+}
+
 aside ul button {
   transition: all .10s ease-in-out;
   padding: 10px 15px;
