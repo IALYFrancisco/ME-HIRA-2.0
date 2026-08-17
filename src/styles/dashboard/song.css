@@ -371,6 +371,7 @@
 
 .song-actions li:hover {
     background-color: var(--gray);
+    color: var(--black);
 }
 
 .publication-song-modal,
