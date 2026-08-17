@@ -332,6 +332,7 @@
 
 .reset-theme-modal {
     top: 75px;
+    background-color: var(--popup-bg-color);
 }
 
 .reset-theme-modal p {
