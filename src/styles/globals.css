@@ -6,10 +6,12 @@
   --text-color: #191919;
   --settings-page-text-button-color : #191919;
   --sidebar-button-color : var(--black);
+  --sidebar-button-text-color: #ffffff;
 }
 
 .dark {
   --sidebar-button-color : var(--orange-base);
+  --sidebar-button-text-color: var(--black);
   --sidebar-color: #191919;
   --text-color: #D4D4D4;
 }
@@ -270,7 +272,7 @@ aside ul button {
   border-radius: 10px;
   cursor: pointer;
   width: 100%;
-  color: white;
+  color: var(--sidebar-button-text-color);
   height: 34px;
   overflow: hidden;
   display: flex;
@@ -292,7 +294,7 @@ aside ul span:active {
 
 aside ul span {
   display: block;
-  border: 1px solid var(--black);
+  border: 1px solid var(--sidebar-button-color);
   padding: 2px;
   width: fit-content;
   height: fit-content;
