@@ -8,6 +8,8 @@
   --sidebar-button-color : var(--black);
   --sidebar-button-text-color: #ffffff;
   --popup-bg-color: #ffffff;
+  --no-button-bg-color: var(--black);
+  --no-button-color: white;
 }
 
 .dark {
@@ -16,6 +18,8 @@
   --sidebar-color: #191919;
   --text-color: #D4D4D4;
   --popup-bg-color: #191919;
+  --no-button-color: var(--black);
+  --no-button-bg-color: white;
 }
 
 @font-face {
