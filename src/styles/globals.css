@@ -10,6 +10,7 @@
   --popup-bg-color: #ffffff;
   --no-button-bg-color: var(--black);
   --no-button-color: white;
+  --popup-box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
 }
 
 .dark {
@@ -20,6 +21,7 @@
   --popup-bg-color: #191919;
   --no-button-color: var(--black);
   --no-button-bg-color: white;
+  --popup-box-shadow: none;
 }
 
 @font-face {
