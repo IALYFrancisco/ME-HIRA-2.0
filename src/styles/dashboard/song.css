@@ -150,6 +150,7 @@
 .dashboard-songs-container table th,
 .dashboard-artists-container table th {
     padding: 10px;
+    color: #191919;
 }
 
 .dashboard-songs-container table thead tr th:nth-child(1),
