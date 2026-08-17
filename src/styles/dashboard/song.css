@@ -81,6 +81,7 @@
     align-items: center;
     column-gap: 5px;
     height: 34px;
+    color: #191919;
 }
 
 .dashboard-songs-container .actions-container button img,
