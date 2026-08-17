@@ -7,6 +7,7 @@
   --settings-page-text-button-color : #191919;
   --sidebar-button-color : var(--black);
   --sidebar-button-text-color: #ffffff;
+  --popup-bg-color: #ffffff;
 }
 
 .dark {
@@ -14,6 +15,7 @@
   --sidebar-button-text-color: var(--black);
   --sidebar-color: #191919;
   --text-color: #D4D4D4;
+  --popup-bg-color: #191919;
 }
 
 @font-face {
