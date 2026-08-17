@@ -56,7 +56,7 @@ export default function Sidebar(){
                                 {
                                     logoutIsLoading ?
                                     <Image 
-                                        src="/images/white-dots-loader.svg"
+                                        src={loaderFileSrc}
                                         width={100} height={20} priority alt="buttons loader"
                                     /> :
                                     "Se déconnecter"
