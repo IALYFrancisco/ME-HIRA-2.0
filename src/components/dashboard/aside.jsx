@@ -53,7 +53,14 @@ export default function Sidebar(){
                     <li className="logout">
                         <span>
                             <button onClick={logout}>
-                                {logoutIsLoading ? <Image src="/images/white-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> : "Se déconnecter"}
+                                {
+                                    logoutIsLoading ?
+                                    <Image 
+                                        src="/images/white-dots-loader.svg"
+                                        width={100} height={20} priority alt="buttons loader"
+                                    /> :
+                                    "Se déconnecter"
+                                }
                             </button>
                         </span>
                     </li>
