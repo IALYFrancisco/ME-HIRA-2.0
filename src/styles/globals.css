@@ -5,9 +5,11 @@
   --sidebar-color: #FEC700;
   --text-color: #191919;
   --settings-page-text-button-color : #191919;
+  --sidebar-button-color : var(--black);
 }
 
 .dark {
+  --sidebar-button-color : var(--orange-base);
   --sidebar-color: #191919;
   --text-color: #D4D4D4;
 }
@@ -263,7 +265,7 @@ aside ul li.actif:not(:last-child) {
 aside ul button {
   transition: all .10s ease-in-out;
   padding: 10px 15px;
-  background-color: var(--black);
+  background-color: var(--sidebar-button-color);
   border: none;
   border-radius: 10px;
   cursor: pointer;
