@@ -9,7 +9,7 @@ import { useRouter } from "next/router"
 export default function Sidebar(){
 
     const router = useRouter()
-    const { setUser } = useAuth()
+    const { user, setUser } = useAuth()
     var [logoutIsLoading, setLogoutIsLoading] = useState(false)
 
     const logout = async ()=>{
