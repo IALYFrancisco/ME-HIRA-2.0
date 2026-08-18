@@ -9,7 +9,8 @@ import { useRouter } from "next/router"
 export default function Sidebar(){
 
     const router = useRouter()
-    const { setUser } = useAuth()
+    const { user, setUser } = useAuth()
+    const loaderFileSrc = user.theme === "light" ? "/images/white-dots-loader.svg" : "/images/black-dots-loader.svg"
     var [logoutIsLoading, setLogoutIsLoading] = useState(false)
 
     const logout = async ()=>{
@@ -52,7 +53,14 @@ export default function Sidebar(){
                     <li className="logout">
                         <span>
                             <button onClick={logout}>
-                                {logoutIsLoading ? <Image src="/images/white-dots-loader.svg" width={100} height={20} priority alt="buttons loader"/> : "Se déconnecter"}
+                                {
+                                    logoutIsLoading ?
+                                    <Image 
+                                        src={loaderFileSrc}
+                                        width={100} height={20} priority alt="buttons loader"
+                                    /> :
+                                    "Se déconnecter"
+                                }
                             </button>
                         </span>
                     </li>

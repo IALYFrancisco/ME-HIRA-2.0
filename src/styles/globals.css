@@ -4,11 +4,26 @@
   --gray: #D4D4D4;
   --sidebar-color: #FEC700;
   --text-color: #191919;
+  --settings-page-text-button-color : #191919;
+  --sidebar-button-color : var(--black);
+  --sidebar-button-text-color: #ffffff;
+  --popup-bg-color: #ffffff;
+  --no-button-bg-color: var(--black);
+  --no-button-color: #ffffff;
+  --popup-box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
+  --dashboard-pages-header-bg: #ffffff;
 }
 
 .dark {
+  --sidebar-button-color : var(--orange-base);
+  --sidebar-button-text-color: var(--black);
   --sidebar-color: #191919;
   --text-color: #D4D4D4;
+  --popup-bg-color: #191919;
+  --no-button-color: var(--black);
+  --no-button-bg-color: white;
+  --popup-box-shadow: none;
+  --dashboard-pages-header-bg: transparent;
 }
 
 @font-face {
@@ -259,15 +274,19 @@ aside ul li.actif:not(:last-child) {
   background-color: white;
 }
 
+aside ul li.actif a {
+  color: var(--black);
+}
+
 aside ul button {
   transition: all .10s ease-in-out;
   padding: 10px 15px;
-  background-color: var(--black);
+  background-color: var(--sidebar-button-color);
   border: none;
   border-radius: 10px;
   cursor: pointer;
   width: 100%;
-  color: white;
+  color: var(--sidebar-button-text-color);
   height: 34px;
   overflow: hidden;
   display: flex;
@@ -289,7 +308,7 @@ aside ul span:active {
 
 aside ul span {
   display: block;
-  border: 1px solid var(--black);
+  border: 1px solid var(--sidebar-button-color);
   padding: 2px;
   width: fit-content;
   height: fit-content;
