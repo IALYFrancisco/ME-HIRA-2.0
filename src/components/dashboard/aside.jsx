@@ -40,7 +40,7 @@ export default function Sidebar(){
                     </li>
                     <li className={ router.pathname === "/dashboard/artists" ? "actif" : "" }>
                         <Link href="/dashboard/artists">
-                            <Image src="/images/artist.png" alt="artistes" width={16} height={16} priority />
+                            <Image src="/images/light-artist.png" alt="artistes" width={16} height={16} priority />
                             Artistes
                         </Link>
                     </li>
