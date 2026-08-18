@@ -23,7 +23,7 @@
   --no-button-color: var(--black);
   --no-button-bg-color: white;
   --popup-box-shadow: none;
-  --dashboard-pages-header-bg: transparent;
+  --dashboard-pages-header-bg: #121212;
 }
 
 @font-face {
