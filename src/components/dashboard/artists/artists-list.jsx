@@ -191,7 +191,7 @@ export default function ArtistsList(){
                                                 <li onClick={()=>handleUpdateDocumentActionClick(artist)}>Modifier</li>
                                                 <li onClick={()=>openSongRemoveModal(artist)}>Supprimer</li>
                                             </ul>
-                                            <Image onClick={()=>toggleActionsPopUp(artist._id)} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
+                                            <Image onClick={()=>toggleActionsPopUp(artist._id)} src="/images/light-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque document artiste"/>
                                         </td>
                                     </tr>
                                 ))}
