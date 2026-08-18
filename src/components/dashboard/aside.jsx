@@ -13,6 +13,7 @@ export default function Sidebar(){
     const loaderFileSrc = user.theme === "light" ? "/images/white-dots-loader.svg" : "/images/black-dots-loader.svg"
     const artistFileSrc = user.theme === "light" ? "/images/dark-artist.png" : "/images/light-artist.png"
     const musicIconeFileSrc = user.theme === "light" ? "/images/dark-music.png" : "/images/light-music.png"
+    const settingsIconeFileSrc = user.theme === "light" ? "/images/dark-settings.png" : "/images/light-settings.png"
     var [logoutIsLoading, setLogoutIsLoading] = useState(false)
 
     const logout = async ()=>{
@@ -40,7 +41,7 @@ export default function Sidebar(){
                                     ( user.theme === "dark" && router.pathname === "/dashboard" ) ?
                                     "/images/dark-music.png" :
                                     musicIconeFileSrc
-                                } alt="note melodie" width={16} height={16} priority />
+                                } alt="note melodie" width={15} height={15} priority />
                             Chansons
                         </Link>
                     </li>
@@ -52,14 +53,18 @@ export default function Sidebar(){
                                     "/images/dark-artist.png" :
                                     artistFileSrc
                                 }
-                                alt="artistes" width={16} height={16} priority
+                                alt="artistes" width={20} height={20} priority
                             />
                             Artistes
                         </Link>
                     </li>
                     <li className={ router.pathname === "/dashboard/settings" ? "actif" : "" }>
                         <Link href="/dashboard/settings">
-                            <Image src="/images/setting.png" alt="engrénage pour les paramètres" width={16} height={16} priority />
+                            <Image src={
+                                    ( user.theme === "dark" && router.pathname === "/dashboard/settings" ) ?
+                                    "/images/dark-settings.png" :
+                                    settingsIconeFileSrc
+                                } alt="engrénage pour les paramètres" width={20} height={20} priority />
                             Paramètres
                         </Link>
                     </li>
