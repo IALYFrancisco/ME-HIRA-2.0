@@ -33,7 +33,7 @@ export default function ArtistsList(){
 
     var [ prompt, setPrompt ] = useState("")
 
-    const artistDocumentMenuIconSrc = user.theme === "light" ? "/images/white-dots-loader.svg" : "/images/black-dots-loader.svg"
+    const artistDocumentMenuIconSrc = user.theme === "light" ? "/images/dark-menu-actions.png" : "/images/light-menu-actions.png"
 
     const toggleOverlayState = () => {
         if(overlayState){
