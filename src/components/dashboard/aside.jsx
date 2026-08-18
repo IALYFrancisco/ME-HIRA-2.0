@@ -11,7 +11,7 @@ export default function Sidebar(){
     const router = useRouter()
     const { user, setUser } = useAuth()
     const loaderFileSrc = user.theme === "light" ? "/images/white-dots-loader.svg" : "/images/black-dots-loader.svg"
-    const artistFileSrc = user.theme === "light" ? "/images/black-dots-loader.svg" : "/images/light-artist.png"
+    const artistFileSrc = user.theme === "light" ? "/images/dark-artist.png" : "/images/light-artist.png"
     var [logoutIsLoading, setLogoutIsLoading] = useState(false)
 
     const logout = async ()=>{
@@ -41,7 +41,14 @@ export default function Sidebar(){
                     </li>
                     <li className={ router.pathname === "/dashboard/artists" ? "actif" : "" }>
                         <Link href="/dashboard/artists">
-                            <Image src={artistFileSrc} alt="artistes" width={16} height={16} priority />
+                            <Image
+                                src={
+                                    ( user.theme === "dark" && router.pathname === "/dashboard/artists" ) ?
+                                    "/images/dark-artist.png" :
+                                    artistFileSrc
+                                }
+                                alt="artistes" width={16} height={16} priority
+                            />
                             Artistes
                         </Link>
                     </li>
