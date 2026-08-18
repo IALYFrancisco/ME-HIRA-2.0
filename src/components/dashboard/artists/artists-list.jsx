@@ -23,7 +23,7 @@ export default function ArtistsList(){
     
     var [ artists, setArtists ] = useState([])
     var [fetchArtistIsLoading, setfetchArtistsIsLoading] = useState(false)
-    const { loading } = useAuth()
+    const { loading, user } = useAuth()
     
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
@@ -32,6 +32,8 @@ export default function ArtistsList(){
     const [ updatingSongFormIsActive, setUpdatingSongFormIsActive ] = useState(false)
 
     var [ prompt, setPrompt ] = useState("")
+
+    const artistDocumentMenuIconSrc = user.theme === "light" ? "/images/white-dots-loader.svg" : "/images/black-dots-loader.svg"
 
     const toggleOverlayState = () => {
         if(overlayState){
@@ -191,7 +193,7 @@ export default function ArtistsList(){
                                                 <li onClick={()=>handleUpdateDocumentActionClick(artist)}>Modifier</li>
                                                 <li onClick={()=>openSongRemoveModal(artist)}>Supprimer</li>
                                             </ul>
-                                            <Image onClick={()=>toggleActionsPopUp(artist._id)} src="/images/light-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque document artiste"/>
+                                            <Image onClick={()=>toggleActionsPopUp(artist._id)} src={artistDocumentMenuIconSrc} width={16} height={16} priority alt="menu des actions sur chaque document artiste"/>
                                         </td>
                                     </tr>
                                 ))}
