@@ -12,6 +12,7 @@ export default function Sidebar(){
     const { user, setUser } = useAuth()
     const loaderFileSrc = user.theme === "light" ? "/images/white-dots-loader.svg" : "/images/black-dots-loader.svg"
     const artistFileSrc = user.theme === "light" ? "/images/dark-artist.png" : "/images/light-artist.png"
+    const musicIconeFileSrc = user.theme === "light" ? "/images/dark-music.png" : "/images/light-music.png"
     var [logoutIsLoading, setLogoutIsLoading] = useState(false)
 
     const logout = async ()=>{
@@ -35,7 +36,11 @@ export default function Sidebar(){
                 <ul>
                     <li className={ router.pathname === "/dashboard" ? "actif" : "" }>
                         <Link href="/dashboard">
-                            <Image src="/images/melody.png" alt="note melodie" width={16} height={16} priority />
+                            <Image src={
+                                    ( user.theme === "dark" && router.pathname === "/dashboard" ) ?
+                                    "/images/dark-music.png" :
+                                    musicIconeFileSrc
+                                } alt="note melodie" width={16} height={16} priority />
                             Chansons
                         </Link>
                     </li>
