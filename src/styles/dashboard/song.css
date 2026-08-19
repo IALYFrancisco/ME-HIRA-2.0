@@ -189,6 +189,7 @@
     padding: 3px 10px;
     font-size: 14px;
     border-radius: 5px;
+    color: var(--black);
 }
 
 .dashboard-songs-container table .song-badge.yes,
