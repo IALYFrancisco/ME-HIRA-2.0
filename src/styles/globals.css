@@ -16,6 +16,9 @@
   --popup-bg-color: #ffffff;
   --popup-box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
 
+  --first-skeleton-element-color: var(--gray);
+  --second-skeleton-element-color: #f0f0f0;
+  
 }
 
 .dark {
@@ -26,10 +29,13 @@
   --no-button-color: var(--black);
   --no-button-bg-color: white;
   --dashboard-pages-header-bg: #121212;
-
+  
   /* popups */
   --popup-bg-color: #191919;
   --popup-box-shadow: none;
+  
+  --first-skeleton-element-color: var(--black);
+  --second-skeleton-element-color: #acacac36;
 
 }
 
