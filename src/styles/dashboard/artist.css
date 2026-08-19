@@ -75,7 +75,7 @@
 
 .remove-document-modal,
 .reset-theme-modal {
-    background-color: white;
+    background-color: var(--popup-bg-color);
     width: 100%;
     max-width: 350px;
     position: fixed;
