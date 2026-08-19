@@ -247,10 +247,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--black);
 }
 
 .document-form-modal button:disabled {
     background-color: var(--gray);
+    color: #656565;
 }
 
 .document-form-modal button img {
