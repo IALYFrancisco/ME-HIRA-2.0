@@ -12,6 +12,7 @@ import { api } from "@/helpers/api"
 import { JoinArrayItems } from "@/helpers/song"
 import { formToJSON } from "axios"
 import Overlay from "@/components/overlay"
+import { useTheme } from "next-themes"
 
 export default function SongsList(){
 
@@ -19,9 +20,10 @@ export default function SongsList(){
     var [fetchSongsLoading, setfetchSongsLoading] = useState(false)
     var [addSongIsLoading, setAddSongIsLoading] = useState(false)
     const { register, handleSubmit, watch, reset, formState: { isDirty } } = useForm()
-    const { loading, user } = useAuth()
+    const { loading } = useAuth()
+    const { resolvedTheme } = useTheme()
 
-    const songMenuIconSrc = user.theme === "light" ? "/images/dark-menu-actions.png" : "/images/light-menu-actions.png"
+    const songMenuIconSrc = resolvedTheme === "light" ? "/images/dark-menu-actions.png" : "/images/light-menu-actions.png"
     
     const watchAll = watch()
     var [localFile, setLocalFile] = useState('')
