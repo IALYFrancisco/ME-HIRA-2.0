@@ -5,15 +5,17 @@ import { toast } from "sonner"
 import { api } from "@/helpers/api"
 import { useState } from "react"
 import { useRouter } from "next/router"
+import { useTheme } from "next-themes"
 
 export default function Sidebar(){
 
+    const { resolvedTheme } = useTheme()
     const router = useRouter()
-    const { user, setUser } = useAuth()
-    const loaderFileSrc = user.theme === "light" ? "/images/white-dots-loader.svg" : "/images/black-dots-loader.svg"
-    const artistFileSrc = user.theme === "light" ? "/images/dark-artist.png" : "/images/light-artist.png"
-    const musicIconeFileSrc = user.theme === "light" ? "/images/dark-music.png" : "/images/light-music.png"
-    const settingsIconeFileSrc = user.theme === "light" ? "/images/dark-settings.png" : "/images/light-settings.png"
+    const { setUser } = useAuth()
+    const loaderFileSrc = resolvedTheme === "light" ? "/images/white-dots-loader.svg" : "/images/black-dots-loader.svg"
+    const artistFileSrc = resolvedTheme === "light" ? "/images/dark-artist.png" : "/images/light-artist.png"
+    const musicIconeFileSrc = resolvedTheme === "light" ? "/images/dark-music.png" : "/images/light-music.png"
+    const settingsIconeFileSrc = resolvedTheme === "light" ? "/images/dark-settings.png" : "/images/light-settings.png"
     var [logoutIsLoading, setLogoutIsLoading] = useState(false)
 
     const logout = async ()=>{
@@ -38,7 +40,7 @@ export default function Sidebar(){
                     <li className={ router.pathname === "/dashboard" ? "actif" : "" }>
                         <Link href="/dashboard">
                             <Image src={
-                                    ( user.theme === "dark" && router.pathname === "/dashboard" ) ?
+                                    ( resolvedTheme === "dark" && router.pathname === "/dashboard" ) ?
                                     "/images/dark-music.png" :
                                     musicIconeFileSrc
                                 } alt="note melodie" width={15} height={15} priority />
@@ -49,7 +51,7 @@ export default function Sidebar(){
                         <Link href="/dashboard/artists">
                             <Image
                                 src={
-                                    ( user.theme === "dark" && router.pathname === "/dashboard/artists" ) ?
+                                    ( resolvedTheme === "dark" && router.pathname === "/dashboard/artists" ) ?
                                     "/images/dark-artist.png" :
                                     artistFileSrc
                                 }
@@ -61,7 +63,7 @@ export default function Sidebar(){
                     <li className={ router.pathname === "/dashboard/settings" ? "actif" : "" }>
                         <Link href="/dashboard/settings">
                             <Image src={
-                                    ( user.theme === "dark" && router.pathname === "/dashboard/settings" ) ?
+                                    ( resolvedTheme === "dark" && router.pathname === "/dashboard/settings" ) ?
                                     "/images/dark-settings.png" :
                                     settingsIconeFileSrc
                                 } alt="engrénage pour les paramètres" width={20} height={20} priority />
