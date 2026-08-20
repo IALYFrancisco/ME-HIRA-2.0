@@ -189,17 +189,18 @@
     padding: 3px 10px;
     font-size: 14px;
     border-radius: 5px;
-    color: var(--black);
 }
 
 .dashboard-songs-container table .song-badge.yes,
 .dashboard-artists-container table .song-badge.yes {
     background-color: var(--orange-base);
+    color: var(--black);
 }
 
 .dashboard-songs-container table .song-badge.no,
 .dashboard-artists-container table .song-badge.no {
     background-color: var(--gray);
+    color: var(--black);
 }
 
 .add-song-modal {
