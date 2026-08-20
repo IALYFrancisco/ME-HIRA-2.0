@@ -56,9 +56,7 @@ export default function SongReader({ song: _song }){
     return(
         <ThemeProvider
             attribute="class"
-            defaultTheme="light"
-            enableSystem
-            storageKey="me-hira-color-mode"
+            forcedTheme="light"
         >
             <Head>
                 <title>{`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`}</title>
