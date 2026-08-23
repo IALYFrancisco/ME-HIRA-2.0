@@ -18,6 +18,7 @@ export default function ForgottenPassword(){
     const sendLinkToResetPassword = ()=>{
         try{
             setSendLinkToResetPasswordIsLoading(true)
+            toast.info("Un email vous permettant de réinitialiser votre mot de passe a été envoyé à l'adresse email que vous avez fourni.")
         }
         catch{
             toast.error("Erreur de tenative de réinitialisation de mot de passe, veuillez réessayer plus tard.")
