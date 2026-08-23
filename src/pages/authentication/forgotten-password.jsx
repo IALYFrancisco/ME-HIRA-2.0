@@ -7,6 +7,7 @@ import IsNotAuthenticated from "@/components/isNotAuthenticated"
 import { useAuth } from "@/contexts/AuthContext"
 import { useState } from "react"
 import Image from "next/image"
+import { toast } from "sonner"
 
 export default function ForgottenPassword(){
 
@@ -17,6 +18,9 @@ export default function ForgottenPassword(){
     const sendLinkToResetPassword = ()=>{
         try{
             setSendLinkToResetPasswordIsLoading(true)
+        }
+        catch{
+            toast.error("Erreur de tenative de réinitialisation de mot de passe, veuillez réessayer plus tard.")
         }
         finally{
             setSendLinkToResetPasswordIsLoading(false)
