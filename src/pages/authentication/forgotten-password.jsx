@@ -30,7 +30,7 @@ export default function ForgottenPassword(){
             <section className="forgotten-password-container">
                 <Navbar/>
                 <form onSubmit={handleSubmit(sendLinkToResetPassword)}>
-                    <p>Nous vous enverrons à votre email un lien vous redirigeant sur la page de changement de mot de passe.</p>
+                    <p>Nous enverrons à l'adresse email que vous avez fourni un message vous permettant de réinitialiser votre mot de passe.</p>
                     <div className="form-element">
                         <label htmlFor="email">Adresse email :</label>
                         <input type="email" id="email" placeholder="ex: name@exemple.com" { ...register('email', { required: true }) } required disabled={loading || sendLinkToResetPasswordIsLoading}/>
