@@ -8,6 +8,7 @@ import { useAuth } from "@/contexts/AuthContext"
 import { useState } from "react"
 import Image from "next/image"
 import { toast } from "sonner"
+import { api } from "@/helpers/api"
 
 export default function ForgottenPassword(){
 
@@ -15,9 +16,10 @@ export default function ForgottenPassword(){
     const { loading } = useAuth()
     var [ sendLinkToResetPasswordIsLoading, setSendLinkToResetPasswordIsLoading ] = useState(false)
 
-    const sendLinkToResetPassword = ()=>{
+    const sendLinkToResetPassword = async (data)=>{
         try{
             setSendLinkToResetPasswordIsLoading(true)
+            await api.post("/user/forgotten-password", { email: data.email })
             toast.info("Un email vous permettant de réinitialiser votre mot de passe a été envoyé à l'adresse email que vous avez fourni.")
         }
         catch{
