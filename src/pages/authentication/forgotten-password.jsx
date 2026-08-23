@@ -32,7 +32,7 @@ export default function ForgottenPassword(){
                 <form onSubmit={handleSubmit(sendLinkToResetPassword)}>
                     <p>Nous enverrons à l'adresse email que vous avez fourni un message vous permettant de réinitialiser votre mot de passe.</p>
                     <div className="form-element">
-                        <label htmlFor="email">Adresse email :</label>
+                        <label htmlFor="email">Adresse email associé à votre compte Me-Hira :</label>
                         <input type="email" id="email" placeholder="ex: name@exemple.com" { ...register('email', { required: true }) } required disabled={loading || sendLinkToResetPasswordIsLoading}/>
                     </div>
                     <div className="form-element">
