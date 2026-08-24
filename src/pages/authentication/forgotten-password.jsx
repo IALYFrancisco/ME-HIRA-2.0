@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from "next/head"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
@@ -6,6 +7,8 @@ import IsNotAuthenticated from "@/components/isNotAuthenticated"
 import { useAuth } from "@/contexts/AuthContext"
 import { useState } from "react"
 import Image from "next/image"
+import { toast } from "sonner"
+import { api } from "@/helpers/api"
 
 export default function ForgottenPassword(){
 
@@ -13,9 +16,14 @@ export default function ForgottenPassword(){
     const { loading } = useAuth()
     var [ sendLinkToResetPasswordIsLoading, setSendLinkToResetPasswordIsLoading ] = useState(false)
 
-    const sendLinkToResetPassword = ()=>{
+    const sendLinkToResetPassword = async (data)=>{
         try{
             setSendLinkToResetPasswordIsLoading(true)
+            await api.post("/user/forgotten-password", { email: data.email })
+            toast.success("Un email vous permettant de réinitialiser votre mot de passe a été envoyé à l'adresse email que vous avez fourni.")
+        }
+        catch{
+            toast.error("Erreur de tenative de réinitialisation de mot de passe, veuillez réessayer plus tard.")
         }
         finally{
             setSendLinkToResetPasswordIsLoading(false)
@@ -30,9 +38,9 @@ export default function ForgottenPassword(){
             <section className="forgotten-password-container">
                 <Navbar/>
                 <form onSubmit={handleSubmit(sendLinkToResetPassword)}>
-                    <p>Nous vous enverrons à votre email un lien vous redirigeant sur la page de changement de mot de passe.</p>
+                    <p>Nous enverrons à l'adresse email que vous avez fourni un message vous permettant de réinitialiser votre mot de passe.</p>
                     <div className="form-element">
-                        <label htmlFor="email">Adresse email :</label>
+                        <label htmlFor="email">Adresse email associé à votre compte Me-Hira :</label>
                         <input type="email" id="email" placeholder="ex: name@exemple.com" { ...register('email', { required: true }) } required disabled={loading || sendLinkToResetPasswordIsLoading}/>
                     </div>
                     <div className="form-element">

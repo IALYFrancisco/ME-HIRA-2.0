@@ -9,6 +9,7 @@ import HomeSkeletonLoader from "@/components/skeleton-loaders/home";
 import { useAuth } from "@/contexts/AuthContext";
 import { FormatSongDuration, JoinArrayItems } from "@/helpers/song";
 import { api } from "@/helpers/api";
+import { ThemeProvider } from "next-themes";
 
 export default function Home() {
 
@@ -29,7 +30,10 @@ export default function Home() {
   }, [])
 
   return (
-    <>
+    <ThemeProvider
+      attribute="class"
+      forcedTheme="light"
+    >
       <Head>
         <title>Me-Hira</title>
       </Head>
@@ -66,6 +70,6 @@ export default function Home() {
         }
         <Footer/>
       </section>
-    </>
+    </ThemeProvider>
   );
 }

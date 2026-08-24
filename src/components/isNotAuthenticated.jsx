@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useAuth } from "@/contexts/AuthContext";
+import { ThemeProvider } from "next-themes";
 
 export default function IsNotAuthenticated({children}){
     const router = useRouter()
@@ -12,5 +13,12 @@ export default function IsNotAuthenticated({children}){
             router.replace("/dashboard")
         }
     }, [user, loading, router])
-    return children
+    return(
+        <ThemeProvider
+            attribute="class"
+            forcedTheme="light"
+        >
+            {children}
+        </ThemeProvider>
+    )
 }

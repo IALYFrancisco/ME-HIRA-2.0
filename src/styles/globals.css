@@ -1,4 +1,5 @@
 :root {
+
   --black: #191919;
   --orange-base: #FEC700;
   --gray: #D4D4D4;
@@ -7,11 +8,17 @@
   --settings-page-text-button-color : #191919;
   --sidebar-button-color : var(--black);
   --sidebar-button-text-color: #ffffff;
-  --popup-bg-color: #ffffff;
   --no-button-bg-color: var(--black);
   --no-button-color: #ffffff;
-  --popup-box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
   --dashboard-pages-header-bg: #ffffff;
+
+  /* popups */
+  --popup-bg-color: #ffffff;
+  --popup-box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
+
+  --first-skeleton-element-color: var(--gray);
+  --second-skeleton-element-color: #f0f0f0;
+  
 }
 
 .dark {
@@ -19,11 +26,17 @@
   --sidebar-button-text-color: var(--black);
   --sidebar-color: #191919;
   --text-color: #D4D4D4;
-  --popup-bg-color: #191919;
   --no-button-color: var(--black);
   --no-button-bg-color: white;
+  --dashboard-pages-header-bg: #121212;
+  
+  /* popups */
+  --popup-bg-color: #191919;
   --popup-box-shadow: none;
-  --dashboard-pages-header-bg: transparent;
+  
+  --first-skeleton-element-color: var(--black);
+  --second-skeleton-element-color: #acacac36;
+
 }
 
 @font-face {

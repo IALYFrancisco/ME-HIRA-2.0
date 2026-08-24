@@ -12,6 +12,7 @@ import { api } from "@/helpers/api"
 import { JoinArrayItems } from "@/helpers/song"
 import { formToJSON } from "axios"
 import Overlay from "@/components/overlay"
+import { useTheme } from "next-themes"
 
 export default function SongsList(){
 
@@ -20,6 +21,9 @@ export default function SongsList(){
     var [addSongIsLoading, setAddSongIsLoading] = useState(false)
     const { register, handleSubmit, watch, reset, formState: { isDirty } } = useForm()
     const { loading } = useAuth()
+    const { resolvedTheme } = useTheme()
+
+    const songMenuIconSrc = resolvedTheme === "light" ? "/images/dark-menu-actions.png" : "/images/light-menu-actions.png"
     
     const watchAll = watch()
     var [localFile, setLocalFile] = useState('')
@@ -376,7 +380,7 @@ export default function SongsList(){
                                                 <li onClick={()=>handleUpdateSongActionClick(song)}>Modifier</li>
                                                 <li onClick={()=>openSongRemoveModal(song)}>Supprimer</li>
                                             </ul>
-                                            <Image onClick={()=>toggleActionsPopUp(song._id)} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
+                                            <Image onClick={()=>toggleActionsPopUp(song._id)} src={songMenuIconSrc} width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
                                         </td>
                                     </tr>
                                 ))}

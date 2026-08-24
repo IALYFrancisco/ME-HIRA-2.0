@@ -77,7 +77,7 @@ export default function ThemesManager(){
                         }
                         {
                             ( changeThemeIsLoading && themeChoice === "system" ) &&
-                            <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
+                            <Image src="/images/light-spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />
                             
                         }
                         <div onClick={()=>changeTheme("system")}>
@@ -108,7 +108,7 @@ export default function ThemesManager(){
                         }
                         {
                             ( changeThemeIsLoading && themeChoice === "dark" ) &&
-                            <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />                        
+                            <Image src="/images/light-spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />                        
                         }
                         <div onClick={()=>changeTheme("dark")}>
                             <div></div>

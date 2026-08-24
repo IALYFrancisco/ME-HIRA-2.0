@@ -9,6 +9,7 @@ import SongReaderSkeletonLoader from "@/components/skeleton-loaders/songReader";
 import { useAuth } from "@/contexts/AuthContext";
 import { JoinArrayItems } from "@/helpers/song";
 import axios from "axios";
+import { ThemeProvider } from "next-themes";
 
 export async function getStaticPaths(){
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
@@ -53,7 +54,10 @@ export default function SongReader({ song: _song }){
     }, [slug])
 
     return(
-        <>
+        <ThemeProvider
+            attribute="class"
+            forcedTheme="light"
+        >
             <Head>
                 <title>{`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`}</title>
             </Head>
@@ -76,6 +80,6 @@ export default function SongReader({ song: _song }){
                 </div>
             </section> }
             <Footer/>
-        </>
+        </ThemeProvider>
     )
 }

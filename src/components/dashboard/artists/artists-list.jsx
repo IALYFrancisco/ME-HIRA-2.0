@@ -12,6 +12,7 @@ import { JoinArrayItems } from "@/helpers/song"
 import Overlay from "@/components/overlay"
 import RemoveArtistDocumentModal from "./removeArtistDocumentModal"
 import CreationAndEditingArtistDocumentForm from "./creationAndEditingArtistDocumentForm"
+import { useTheme } from "next-themes"
 
 export default function ArtistsList(){
 
@@ -24,7 +25,8 @@ export default function ArtistsList(){
     var [ artists, setArtists ] = useState([])
     var [fetchArtistIsLoading, setfetchArtistsIsLoading] = useState(false)
     const { loading } = useAuth()
-    
+    const { resolvedTheme } = useTheme()
+
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
     const [ documentToDoAction, setDocumentToDoAction ] = useState(null)
@@ -32,6 +34,8 @@ export default function ArtistsList(){
     const [ updatingSongFormIsActive, setUpdatingSongFormIsActive ] = useState(false)
 
     var [ prompt, setPrompt ] = useState("")
+
+    const artistDocumentMenuIconSrc = resolvedTheme === "light" ? "/images/dark-menu-actions.png" : "/images/light-menu-actions.png"
 
     const toggleOverlayState = () => {
         if(overlayState){
@@ -191,7 +195,7 @@ export default function ArtistsList(){
                                                 <li onClick={()=>handleUpdateDocumentActionClick(artist)}>Modifier</li>
                                                 <li onClick={()=>openSongRemoveModal(artist)}>Supprimer</li>
                                             </ul>
-                                            <Image onClick={()=>toggleActionsPopUp(artist._id)} src="/images/song-menu-actions.png" width={16} height={16} priority alt="menu des actions sur chaque chanson"/>
+                                            <Image onClick={()=>toggleActionsPopUp(artist._id)} src={artistDocumentMenuIconSrc} width={16} height={16} priority alt="menu des actions sur chaque document artiste"/>
                                         </td>
                                     </tr>
                                 ))}

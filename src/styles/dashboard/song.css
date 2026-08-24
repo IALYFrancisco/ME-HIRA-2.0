@@ -194,15 +194,17 @@
 .dashboard-songs-container table .song-badge.yes,
 .dashboard-artists-container table .song-badge.yes {
     background-color: var(--orange-base);
+    color: var(--black);
 }
 
 .dashboard-songs-container table .song-badge.no,
 .dashboard-artists-container table .song-badge.no {
     background-color: var(--gray);
+    color: var(--black);
 }
 
 .add-song-modal {
-    background-color: white;
+    background-color: var(--popup-bg-color);
     width: 100%;
     max-width: 1000px;
     position: fixed;
@@ -213,7 +215,7 @@
     right: -50%;
     transition: 300ms;
     transform: scale(1.1);
-    box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
+    box-shadow: var(--popup-box-shadow);
     border: 1px solid var(--gray);
     border-radius: 10px;
     padding: 20px;
@@ -278,6 +280,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--black);
 }
 
 .add-song-modal button:disabled {
@@ -376,7 +379,7 @@
 
 .publication-song-modal,
 .reset-theme-modal {
-    background-color: white;
+    background-color: var(--popup-bg-color);
     width: 100%;
     max-width: 350px;
     position: fixed;
@@ -387,7 +390,7 @@
     right: -50%;
     transition: 300ms;
     transform: scale(1.1);
-    box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
+    box-shadow: var(--popup-box-shadow);
     border: 1px solid var(--gray);
     border-radius: 10px;
     padding: 20px;
@@ -482,7 +485,7 @@
 }
 
 .remove-song-modal {
-    background-color: white;
+    background-color: var(--popup-bg-color);
     width: 100%;
     max-width: 350px;
     position: fixed;
@@ -493,7 +496,7 @@
     right: -50%;
     transition: 300ms;
     transform: scale(1.1);
-    box-shadow: 3px 3px 10px #acacac36, -3px -3px 10px #acacac36;
+    box-shadow: var(--popup-box-shadow);
     border: 1px solid var(--gray);
     border-radius: 10px;
     padding: 20px;
@@ -547,8 +550,8 @@
 }
 
 .remove-song-modal .remove-song-choices button.no {
-    background-color: var(--black);
-    color: white;
+    background-color: var(--no-button-bg-color);
+    color: var(--no-button-color);
 }
 
 .remove-song-choices span:active {
@@ -569,7 +572,7 @@
 }
 
 .remove-song-choices span:has(button.no) {
-    border: 1px solid var(--black);
+    border: 1px solid var(--no-button-bg-color);
 }
 
 .remove-song-choices span:has(button:disabled){
