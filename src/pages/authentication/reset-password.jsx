@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import Head from "next/head"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
@@ -20,14 +21,20 @@ export default function ResetPassword(){
 
     useEffect(()=>{
 
-        api.post("/user/check-k", { k })
-            .catch((error)=>{
-                if(error.status === 500){
-                    return toast.error("Erreur de tentative de réinitialisation de mot de passe, veuillez réessayer plus tard.")
-                }
-                toast.error("Ce lien de réinitialisation de mot de passe n'est plus valide.")
-                return router.replace("/")
-            })
+        if(k){
+
+            setResetPasswordLoading(true)
+
+            api.post("/user/check-k", { k })
+                .catch((error)=>{
+                    if(error.status === 500){
+                        return toast.error("Erreur de tentative de réinitialisation de mot de passe, veuillez réessayer plus tard.")
+                    }
+                    toast.error("Ce lien de réinitialisation de mot de passe n'est plus valide.")
+                    return router.replace("/")
+                })
+
+        }
 
     }, [k, router])
 
