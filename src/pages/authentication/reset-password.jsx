@@ -7,12 +7,14 @@ import { useAuth } from "@/contexts/AuthContext"
 import { useState } from "react"
 import { toast } from "sonner"
 import Image from "next/image"
+import { useRouter } from "next/router"
 
 export default function ResetPassword(){
 
     const { handleSubmit, register } = useForm()
     const { loading } = useAuth()
     var [resetPasswordLoading, setResetPasswordLoading] = useState(false)
+    const router = useRouter()
 
     const resetPassword = async (data)=>{
         try{
