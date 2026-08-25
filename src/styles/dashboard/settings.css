@@ -299,6 +299,7 @@
 .can-change-form .form-element:nth-child(3) span:has(button:disabled),
 .can-change-form .form-element:nth-child(4) span:has(button:disabled){
     border-color: var(--gray);
+    transform: none;
 }
 
 .can-change-form .form-element:nth-child(3) span:nth-child(2) button:disabled{
