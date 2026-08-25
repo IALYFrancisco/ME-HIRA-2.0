@@ -43,7 +43,8 @@ export default function ResetPassword(){
         }
         catch(error){
             if(error.status === 500) return toast.error("Erreur de tentative de réinitialisation de mot de passe, veuillez réessayer plus tard.")
-            return toast.error("Ce lien de réinitialisation de mot de passe n'est plus valide.")
+            toast.error("Ce lien de réinitialisation de mot de passe n'est plus valide.")
+            return router.replace("/")
         }
         finally{
             setResetPasswordLoading(false)
