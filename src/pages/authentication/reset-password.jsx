@@ -20,9 +20,16 @@ export default function ResetPassword(){
 
     useEffect(()=>{
 
-        api.post("", {})
+        api.post("/user/check-k", { k })
+            .catch((error)=>{
+                if(error.status === 500){
+                    return toast.error("Erreur de tentative de réinitialisation de mot de passe, veuillez réessayer plus tard.")
+                }
+                toast.error("Ce lien de réinitialisation de mot de passe n'est plus valide.")
+                return router.replace("/")
+            })
 
-    }, [])
+    }, [k, router])
 
     const resetPassword = async (data)=>{
         try{
