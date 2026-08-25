@@ -38,6 +38,8 @@ export default function ResetPassword(){
                 return toast.warning("Le mot de passe des deux champs doivent se correspondre.")
             }
             await api.post("/user/reset-password", { k, password: data.password })
+            router.replace("authentication/login")
+            return toast.success("Votre mot de passe a été bien modifié")
         }
         finally{
             setResetPasswordLoading(false)
