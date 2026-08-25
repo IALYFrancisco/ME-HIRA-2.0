@@ -37,6 +37,7 @@ export default function ResetPassword(){
             if(data.newPassword !== data.password){
                 return toast.warning("Le mot de passe des deux champs doivent se correspondre.")
             }
+            await api.post("/user/reset-password", { k, password: data.password })
         }
         finally{
             setResetPasswordLoading(false)
