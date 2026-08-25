@@ -1,18 +1,45 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import Head from "next/head"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { useForm } from "react-hook-form"
 import IsNotAuthenticated from "@/components/isNotAuthenticated"
 import { useAuth } from "@/contexts/AuthContext"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { toast } from "sonner"
 import Image from "next/image"
+import { useRouter } from "next/router"
+import { api } from "@/helpers/api"
 
 export default function ResetPassword(){
 
     const { handleSubmit, register } = useForm()
     const { loading } = useAuth()
     var [resetPasswordLoading, setResetPasswordLoading] = useState(false)
+    const router = useRouter()
+    const { k } = router.query
+
+    useEffect(()=>{
+
+        if(k){
+
+            setResetPasswordLoading(true)
+
+            api.post("/user/check-k", { k })
+                .catch((error)=>{
+                    if(error.status === 500){
+                        return toast.error("Erreur de tentative de réinitialisation de mot de passe, veuillez réessayer plus tard.")
+                    }
+                    toast.error("Ce lien de réinitialisation de mot de passe n'est plus valide.")
+                    return router.replace("/")
+                })
+                .finally(()=>{
+                    setResetPasswordLoading(false)
+                })
+
+        }
+
+    }, [k, router])
 
     const resetPassword = async (data)=>{
         try{
@@ -20,6 +47,14 @@ export default function ResetPassword(){
             if(data.newPassword !== data.password){
                 return toast.warning("Le mot de passe des deux champs doivent se correspondre.")
             }
+            await api.post("/user/reset-password", { k, password: data.password })
+            router.replace("login")
+            return toast.success("Votre mot de passe a été bien modifié")
+        }
+        catch(error){
+            if(error.status === 500) return toast.error("Erreur de tentative de réinitialisation de mot de passe, veuillez réessayer plus tard.")
+            toast.error("Ce lien de réinitialisation de mot de passe n'est plus valide.")
+            return router.replace("/")
         }
         finally{
             setResetPasswordLoading(false)
