@@ -296,8 +296,9 @@
     color: var(--no-button-color);
 }
 
-.can-change-form .form-element:nth-child(3) span:has(button:disabled),
-.can-change-form .form-element:nth-child(4) span:has(button:disabled){
+.can-change-form .form-element:nth-child(3) span:has(button:disabled)
+/* , .can-change-form .form-element:nth-child(4) span:has(button:disabled) */
+{
     border-color: var(--gray);
     transform: none;
 }
