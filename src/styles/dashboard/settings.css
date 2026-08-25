@@ -291,8 +291,8 @@
 .can-change-form .form-element:nth-child(3) span:first-child button
 /* , .can-change-form .form-element:nth-child(4) span:first-child button */
 {
-    background-color: var(--black);
-    color: white;
+    background-color: var(--no-button-bg-color);
+    color: var(--no-button-color);
 }
 
 .can-change-form .form-element:nth-child(3) span:has(button:disabled),
