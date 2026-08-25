@@ -33,6 +33,9 @@ export default function ResetPassword(){
                     toast.error("Ce lien de réinitialisation de mot de passe n'est plus valide.")
                     return router.replace("/")
                 })
+                .finally(()=>{
+                    setResetPasswordLoading(false)
+                })
 
         }
 
