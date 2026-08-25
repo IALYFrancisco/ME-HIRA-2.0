@@ -4,10 +4,11 @@ import Footer from "@/components/footer"
 import { useForm } from "react-hook-form"
 import IsNotAuthenticated from "@/components/isNotAuthenticated"
 import { useAuth } from "@/contexts/AuthContext"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { toast } from "sonner"
 import Image from "next/image"
 import { useRouter } from "next/router"
+import { api } from "@/helpers/api"
 
 export default function ResetPassword(){
 
@@ -15,6 +16,13 @@ export default function ResetPassword(){
     const { loading } = useAuth()
     var [resetPasswordLoading, setResetPasswordLoading] = useState(false)
     const router = useRouter()
+    const { k } = router.query
+
+    useEffect(()=>{
+
+        api.post("", {})
+
+    }, [])
 
     const resetPassword = async (data)=>{
         try{
