@@ -469,6 +469,10 @@ export default function MediaPlayer({
 
         }
 
-    }, [])
+        document.addEventListener("keydown", handleKeyDown)
+
+        return () => { document.removeEventListener("keydown", handleKeyDown) }
+
+    })
 
 }
