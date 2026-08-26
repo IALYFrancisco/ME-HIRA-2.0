@@ -184,4 +184,27 @@ export default function MediaPlayer({
 
     }
 
+    // Gestionnaire de changement de volume
+    const handleVolumeChange = (value) => {
+
+        const media = mediaRef.current
+
+        const newVolume = Math.max(0, Math.min(1, value))
+
+        setVolume(newVolume)
+
+        if(!media) return
+
+        media.volume = newVolume
+
+        if(newVolume > 0){
+            media.muted = false
+            setMuted(false)
+        } else {
+            media.muted = true
+            setMuted(true)
+        }
+
+    }
+
 }
