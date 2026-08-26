@@ -4,13 +4,13 @@ import styles from "./MediaPlayer.module.css"
 export default function VolumeControl({
     volume,
     muted,
-    noVolumeChange,
+    onVolumeChange,
     onMute
 }){
 
     const handleVolumeChange = (event) => {
         const value = Number(event.target.value);
-        noVolumeChange(value)
+        onVolumeChange(value)
     }
 
     return(
