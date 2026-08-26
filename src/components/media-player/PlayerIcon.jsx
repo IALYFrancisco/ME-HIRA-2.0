@@ -112,6 +112,13 @@ export default function PlayerIcon({
                 </svg>
             );
 
+        case "chevronRight":
+            return (
+                <svg {...commonProps}>
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
+            );
+
 
     }
 
