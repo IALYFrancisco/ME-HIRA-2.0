@@ -34,11 +34,19 @@ export default function PlayerIcon({
                 </svg>
             )
 
-        case "previous":
+        case "previous" :
             return(
                 <svg { ...commonProps }>
                     <polygon points="19 5 9 12 19 19 19 5" />
                     <line x1="5" y1="5" x2="5" y2="19" />
+                </svg>
+            )
+
+        case "next" :
+            return(
+                <svg { ...commonProps }>
+                    <polygon points="5 5 15 12 5 19 5 5" />
+                    <line x1="19" y1="5" x2="19" y2="19" />
                 </svg>
             )
 
