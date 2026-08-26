@@ -78,6 +78,16 @@ export default function PlayerIcon({
                 </svg>
             );
 
+        case "fullscreenExit":
+            return (
+                <svg {...commonProps}>
+                    <polyline points="9 3 9 9 3 9" />
+                    <polyline points="15 3 15 9 21 9" />
+                    <polyline points="21 15 15 15 15 21" />
+                    <polyline points="3 15 9 15 9 21" />
+                </svg>
+            );
+
     }
 
 }
