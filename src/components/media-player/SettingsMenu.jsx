@@ -34,6 +34,21 @@ export default function SettingsMenu({
 
         }
 
-    },[])
+        document.addEventListener("mousedown", handleClickOutside)
+
+        return () => {
+            document.removeEventListener(
+                "mousedown",
+                handleClickOutside
+            )
+        }
+
+    },[onClose, open])
+
+    if(!open) return null
+
+    return(
+        <div></div>
+    )
 
 }
