@@ -588,6 +588,48 @@ export default function MediaPlayer({
                         </div>
                     )
                 }
+                {/* Les contrôles dans le lecteur personnalisés */}
+                <div
+                    className={ `${styles.controls} ${controlsVisible ? styles.controlsVisible : styles.controlsHidden }` }
+                    onClick={(event)=>{ event.stopPropagation() }}
+                >
+                    {/* La barre de progression de lecture */}
+                    <div className={styles.progressContainer} >
+                        <input
+                            type="range"
+                            min="0"
+                            max={duration || 0}
+                            step="0.1"
+                            value={currentTime}
+                            onChange={handleProgressChange}
+                            className={ styles.progressSlider }
+                            style={{ "--progress": `${progressPercentage} %` }}
+                            aria-label="Progression"
+                        />
+                    </div>
+                    <div className={ styles.controlsRow } >
+                        <div className={styles.controlsLeft}>
+                            {/* Previous */}
+                            <button
+                                type="button"
+                                className={styles.controlButton}
+                                onClick={()=>{
+                                    if(onPrev){
+                                        onPrev()
+                                    }
+                                }}
+                                disabled={!onPrev}
+                                aria-label="Précédent"
+                                title="Précédent"
+                            >
+                                <PlayerIcon name="previous" size={19} />
+                            </button>
+
+                            {/* Play | Pause */}
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
