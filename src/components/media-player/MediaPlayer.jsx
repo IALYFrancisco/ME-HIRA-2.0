@@ -626,6 +626,27 @@ export default function MediaPlayer({
                             </button>
 
                             {/* Play | Pause */}
+                            <button
+                                type="button"
+                                className={`${styles.controlButton} ${styles.playButton}`}
+                                onClick={togglePlay}
+                                aria-label={ playing ? "Pause" : "Lecture" }
+                                title={ playing ? "Pause" : "Lecture" }
+                            >
+                                <PlayerIcon name={ playing ? "pause" : "play" } size={21} />
+                            </button>
+
+                            {/* Next */}
+                            <button
+                                type="button"
+                                className={ styles.controlButton }
+                                onClick={()=>{ if(onNext){ onNext() } }}
+                                disabled={!onNext}
+                                aria-label="Suivant"
+                                title="Suivant"
+                            >
+                                <PlayerIcon name={next} size={19} />
+                            </button>
 
                         </div>
                     </div>
