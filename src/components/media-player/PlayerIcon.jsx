@@ -96,6 +96,14 @@ export default function PlayerIcon({
                 </svg>
             );
 
+        case "pip":
+            return (
+                <svg {...commonProps}>
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <rect x="12" y="12" width="7" height="5" rx="1" />
+                </svg>
+            );
+
 
     }
 
