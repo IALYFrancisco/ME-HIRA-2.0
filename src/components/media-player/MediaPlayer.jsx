@@ -435,9 +435,21 @@ export default function MediaPlayer({
                     const media = mediaRef.current
 
                     if(!media) return
-                    
+
                     event.preventDefault()
                     handleVolumeChange(Math.min(1, media.volume + 0.05))
+                    break
+
+                }
+
+                case "ArrowDown": {
+
+                    const media = mediaRef.current
+
+                    if(!media) return
+
+                    event.preventDefault()
+                    handleVolumeChange(Math.max(0, media.volume - 0.05))
                     break
 
                 }
