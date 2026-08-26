@@ -430,6 +430,18 @@ export default function MediaPlayer({
 
                 }
 
+                case "ArrowUp" : {
+
+                    const media = mediaRef.current
+
+                    if(!media) return
+                    
+                    event.preventDefault()
+                    handleVolumeChange(Math.min(1, media.volume + 0.05))
+                    break
+
+                }
+
             }
 
         }
