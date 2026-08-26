@@ -265,4 +265,36 @@ export default function MediaPlayer({
 
     }
 
+    // Gestionnaire de lecture en incrustation
+    const handlePictureInPicture = async () => {
+        
+        const media = mediaRef.current
+
+        if(!media) return
+
+        try{
+
+            // On quite si le navigateur est déjà en PiP
+            if( document.pictureInPictureElement ) {
+
+                await document.exitPictureInPicture()
+                return
+
+            }
+
+            if(
+                document.pictureInPictureEnabled &&
+                typeof media.requestPictureInPicture ===
+                "function"
+            ){
+                await media.requestPictureInPicture()
+            }
+
+        }
+        catch (error) {
+            console.error("Picture-in-Picture indisponible ", error)
+        }
+
+    }
+
 }
