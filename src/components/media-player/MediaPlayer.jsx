@@ -562,6 +562,32 @@ export default function MediaPlayer({
                         </div>
                     )
                 }
+                {
+                    !isVideo && (
+
+                        <audio
+                            ref={mediaRef}
+                            key={mediaUrl}
+                            src={mediaUrl}
+                            preload="metadata"
+                            onPlay={handlePlay}
+                            onPause={handlePause}
+                            onLoadedMetadata={handleLoadedMetadata}
+                            onTimeUpdate={handleTimeUpdate}
+                            onEnded={handleEnded}
+                            onWaiting={()=>setLoading(true)}
+                            onCanPlay={()=>setLoading(false)}
+                        ></audio>
+
+                    )
+                }
+                {
+                    loading && (
+                        <div className={styles.loadingOverlay}>
+                            <div className={styles.spinner}></div>
+                        </div>
+                    )
+                }
             </div>
         </div>
     )
