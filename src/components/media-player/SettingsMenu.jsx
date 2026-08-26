@@ -78,6 +78,29 @@ export default function SettingsMenu({
                     </div>
                 </button>
             ) }
+
+            <div className={ styles.settingsSection } >
+
+                <div className={ styles.settingsLabel }>Vitesse de lecture</div>
+                <div className={ styles.speedList }>
+
+                    { SPEEDS.map((speed) => (
+                        <button
+                            key={speed}
+                            type="button"
+                            className={`${styles.speedButton} ${ playbackRate === speed ? styles.speedButtonActive : "" }`}
+                            onClick={()=>{
+                                onPlaybackRateChange();
+                                onClose();
+                            }}
+                        >
+                            { speed === 1 ? "Normal" : `${speed}x` }
+                        </button>
+                    ) ) }
+
+                </div>
+
+            </div>
             
         </div>
     )
