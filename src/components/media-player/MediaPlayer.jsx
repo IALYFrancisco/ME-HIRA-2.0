@@ -237,4 +237,19 @@ export default function MediaPlayer({
 
     }
 
+    // Fonction gestionnaire de progression de lecture de chanson
+    const handleProgressChange = (event) => {
+
+        const media = mediaRef.current
+
+        if(!media || !duration) return
+
+        const newTime = Number(event.target.value)
+
+        media.currentTime = newTime
+
+        setCurrentTime(newTime)
+
+    }
+
 }
