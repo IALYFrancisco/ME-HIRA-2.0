@@ -339,4 +339,24 @@ export default function MediaPlayer({
 
     }, [])
 
+    // Quand la chanson change
+    useEffect(()=>{
+
+        const media = mediaRef.current
+
+        if (!media) return
+
+        media.pause()
+
+        setPlaying(false)
+        setCurrentTime(0)
+        setDuration(0)
+        setVideoRatio(null)
+        setLoading(true)
+        setControlsVisible(true)
+
+        clearControlsTimer()
+
+    }, [clearControlsTimer, mediaUrl])
+
 }
