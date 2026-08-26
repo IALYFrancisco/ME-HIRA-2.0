@@ -689,6 +689,17 @@ export default function MediaPlayer({
                                     canPictureInPicture={canPictureInPicture}
                                 />
                             </div>
+
+                            {/* Gestionnaire des lectures en plein écran */}
+                            <button
+                                type="button"
+                                className={styles.controlButton}
+                                onClick={toggleFullscreen}
+                                aria-label={ fullscreen ? "Quitter le plein écran" : "Plein écran" }
+                                title={ fullscreen ? "Quitter le plein écran" : "Plein écran" }
+                            >
+                                <PlayerIcon name={fullscreen ? "fullscreenExit" : "fullscreen"} size={19} />
+                            </button>
                         </div>
                     </div>
                 </div>
