@@ -125,4 +125,10 @@ export default function MediaPlayer({
         showControls()
     }
 
+    const handlePause = () => {
+        setPlaying(false)
+        setControlsVisible(true)
+        clearControlsTimer()
+    }
+
 }
