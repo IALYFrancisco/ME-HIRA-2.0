@@ -119,4 +119,10 @@ export default function MediaPlayer({
 
     }, [])
 
+    // Mise à jour de l'état local play/pause
+    const handlePlay = () => {
+        setPlaying(true)
+        showControls()
+    }
+
 }
