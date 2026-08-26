@@ -310,7 +310,7 @@ export default function MediaPlayer({
             if( !document.fullscreenElement ){
                 
                 if(player.requestFullscreen){
-                    await play.requestFullscreen()
+                    await player.requestFullscreen()
                 } else if (mediaRef.current?.webkitEnterFullscreen) {
                     // Support navigateurSafari iOS lorsque disponible
                     mediaRef.current.webkitEnterFullscreen()
