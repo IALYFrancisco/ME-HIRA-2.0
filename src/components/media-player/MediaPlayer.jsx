@@ -98,4 +98,25 @@ export default function MediaPlayer({
 
     }, [clearControlsTimer, playing, settingsOpen])
 
+    // Play / Pause
+    const togglePlay = useCallback( async () => {
+
+        const media = mediaRef.current
+
+        if (!media) return
+
+        try {
+
+            if( media.paused){
+                await media.play()
+            } else {
+                media.pause()
+            }
+
+        }catch(error){
+            console.error("Impossible de lire le média", error)
+        }
+
+    }, [])
+
 }
