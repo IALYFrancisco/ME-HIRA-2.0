@@ -3,7 +3,7 @@ import VolumeControl from "./VolumeControl";
 import SettingsMenu from "./SettingsMenu";
 
 import styles from "./MediaPlayer.module.css"
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 function getMediaUrl(fileUrl){
 
@@ -62,6 +62,17 @@ export default function MediaPlayer({
         document.pictureInPictureEnabled &&
         isVideo;
 
-    
+    // Nettoyage du timer des contrôles
+    const cleanControlsTimer = useCallback(()=>{
+
+        if(hideControlsTimerRef.current){
+
+            clearTimeout(hideControlsTimerRef.current)
+
+            hideControlsTimerRef.current = null
+
+        }
+
+    }, [])
 
 }
