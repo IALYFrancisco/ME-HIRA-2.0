@@ -131,4 +131,36 @@ export default function MediaPlayer({
         clearControlsTimer()
     }
 
+    // Metadata chargée
+    const handleLoadMetadata = () => {
+
+        const media = mediaRef.current
+
+        if(!media) return
+
+        setDuration( Number.isFinite(media.duration) ? media.duration : 0 )
+
+        // Pour les vidéos, on récupère le vrai ratio largeur /hauteur
+        // Cela permet au conteneur de suivre exactement le ratio de chaque vidéo
+        if ( isVideo && media.videoWidth && media.videoHeight ) {
+
+            const ratio = media.videoWidth / media.videoHeight
+
+            setVideoRatio(ratio)
+
+        } else {
+
+            setVideoRatio(null)
+
+        }
+
+        // Conservation de la vitesse actuelle
+        media.playbackRate = playbackRate
+
+        // Restauration du volume
+        media.volume = volume
+        media.muted = muted
+
+    }
+
 }
