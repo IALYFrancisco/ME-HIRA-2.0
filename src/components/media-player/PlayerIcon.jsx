@@ -126,6 +126,8 @@ export default function PlayerIcon({
                 </svg>
             );
 
+        default:
+            return null;
 
     }
 
