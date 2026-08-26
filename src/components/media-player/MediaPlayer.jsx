@@ -4,6 +4,13 @@ import SettingsMenu from "./SettingsMenu";
 
 import styles from "./MediaPlayer.module.css"
 
-export default function MediaPlayer(){
-    
+export default function MediaPlayer({
+    song,
+    onNext,
+    onPrev,
+    autoPlay = false,
+    poster,
+    className = ""
+}){
+
 }
