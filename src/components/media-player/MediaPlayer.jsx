@@ -252,4 +252,17 @@ export default function MediaPlayer({
 
     }
 
+    // Gestionnaire des vitesses de lecture de chanson
+    const handlePlaybackRateChange = (rate) => {
+
+        const media = mediaRef.current
+
+        setPlaybackRate(rate)
+
+        if(media){
+            media.playbackRate = rate
+        }
+
+    }
+
 }
