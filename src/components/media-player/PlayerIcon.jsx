@@ -26,6 +26,19 @@ export default function PlayerIcon({
                 </svg>
             )
 
+        case "pause" :
+            return(
+                <svg { ...commonProps }>
+                    <rect x="6" y="4" width="4" height="16" rx="1"/>
+                    <rect x="14" y="4" width="4" height="16" rx="1"/>
+                </svg>
+            )
+
+        // case "previous":
+        //     return(
+        //         <svg></svg>
+        //     )
+
     }
 
 }
