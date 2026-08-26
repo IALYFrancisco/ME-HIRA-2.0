@@ -3,7 +3,7 @@ import VolumeControl from "./VolumeControl";
 import SettingsMenu from "./SettingsMenu";
 
 import styles from "./MediaPlayer.module.css"
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 function getMediaUrl(fileUrl){
 
@@ -325,5 +325,18 @@ export default function MediaPlayer({
         }
 
     }
+
+    // Détéction des requêtes de lecture en plein écran
+    useEffect(()=>{
+
+        const handleFullscreenChange = () => {
+            setFullscreen(Boolean(document.fullscreenElement))
+        }
+
+        document.addEventListener("fullscreenchange", handleFullscreenChange)
+
+        return () => { document.removeEventListener("fullscreenchange", handleFullscreenChange) }
+
+    }, [])
 
 }
