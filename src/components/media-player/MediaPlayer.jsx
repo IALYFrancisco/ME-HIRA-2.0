@@ -657,10 +657,12 @@ export default function MediaPlayer({
                             </div>
                         </div>
                         <div className={styles.controlsRight}>
+                            {/* Gestionnaire de volume dans le lecteur personnalisé */}
                             <VolumeControl
                                 volume={volume}
                                 muted={muted}
-                                onVolumeChange
+                                onVolumeChange={handleVolumeChange}
+                                onMute={toggleMute}
                             />
                         </div>
                     </div>
