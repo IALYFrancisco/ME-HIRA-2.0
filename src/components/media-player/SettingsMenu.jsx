@@ -48,7 +48,23 @@ export default function SettingsMenu({
     if(!open) return null
 
     return(
-        <div></div>
+        <div ref={menuRef} className={styles.settingsMenu} >
+
+            <div className={styles.settingsHeader}>
+                <span>Paramètres</span>
+                <button
+                    type="button"
+                    className={styles.settingsClose}
+                    onClick={onClose}
+                    aria-label="Fermer"
+                >
+                    <PlayerIcon name="close" size="17" />
+                </button>
+            </div>
+
+            
+            
+        </div>
     )
 
 }
