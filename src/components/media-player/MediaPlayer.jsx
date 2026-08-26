@@ -55,4 +55,13 @@ export default function MediaPlayer({
 
     const mediaUrl = getMediaUrl(song?.fileUrl)
 
+    // Détecte si le navigateur supporte PiP
+    const canPictureInPicture =
+        typeof document !== "undefined" &&
+        "pictureInPictureEnabled" in document &&
+        document.pictureInPictureEnabled &&
+        isVideo;
+
+    
+
 }
