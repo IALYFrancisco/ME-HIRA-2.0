@@ -41,4 +41,6 @@ export default function MediaPlayer({
 
     const [ loading, setLoading ] = useState(false)
 
+    const isVideo = song?.fileType === "video"
+
 }
