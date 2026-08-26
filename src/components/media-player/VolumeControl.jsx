@@ -8,4 +8,9 @@ export default function VolumeControl({
     noMute
 }){
 
+    const handleVolumeChange = (event) => {
+        const value = Number(event.target.value);
+        noVolumeChange(value)
+    }
+
 }
