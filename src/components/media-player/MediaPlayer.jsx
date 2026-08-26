@@ -475,4 +475,23 @@ export default function MediaPlayer({
 
     })
 
+    // Syle du conteneur média.
+    // pour une vidéo : width 100%, aspect-ratio: ratio réel => hauteur calculée automatiquement
+    const mediaContainerStyle =
+        isVideo && videoRatio ? { aspectRatio: `${videoRatio}` } : undefined
+
+    // Pour la barre de progresion de lecture
+    const progressPercentage =
+        duration > 0 ? (currentTime/duration) * 100 : 0
+    
+    if(!mediaUrl) {
+
+        return(
+            <div className={ `${styles.player} ${styles.playerError} ${className}` }>Média introuvable</div>
+        )
+
+    }
+
+    
+
 }
