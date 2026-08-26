@@ -405,6 +405,31 @@ export default function MediaPlayer({
                     togglePlay()
                     break
 
+                case "ArrowRight" : {
+
+                    const media = mediaRef.current
+
+                    if(!media) return
+
+                    media.currentTime = Math.min(
+                        media.duration || 0,
+                        media.currentTime + 5
+                    )
+                    break
+
+                }
+
+                case "ArrowLeft": {
+
+                    const media = mediaRef.current
+
+                    if(!media) return
+
+                    media.currentTime = Math.max(0, media.currentTime - 5)
+                    break
+
+                }
+
             }
 
         }
