@@ -174,4 +174,14 @@ export default function MediaPlayer({
 
     }
 
+    // Fin du lecture | Le lecteur ne passe pas automatiquement au suivant.
+    // Le bouton next rest contrôlé par le parent
+    const handleEnded = () => {
+
+        setPlaying(false)
+        setControlsVisible(true)
+        clearControlsTimer()
+
+    }
+
 }
