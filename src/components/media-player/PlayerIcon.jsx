@@ -50,6 +50,15 @@ export default function PlayerIcon({
                 </svg>
             )
 
+         case "volume":
+            return (
+                <svg {...commonProps}>
+                    <polygon points="3 9 7 9 12 5 12 19 7 15 3 15 3 9" />
+                    <path d="M16 8.5a5 5 0 0 1 0 7" />
+                    <path d="M19 5.5a9 9 0 0 1 0 13" />
+                </svg>
+            );
+
     }
 
 }
