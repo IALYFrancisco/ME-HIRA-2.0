@@ -11,3 +11,10 @@ const SPEEDS = [
     2
 ]
 
+export default function SettingsMenu({
+    open,
+    onClose,
+    playbackRate,
+    onPlaybackRateChange,
+    onPictureInPicture
+}){}
