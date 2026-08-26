@@ -207,4 +207,34 @@ export default function MediaPlayer({
 
     }
 
+    // Gestionnaire des actions Mute/UnMute
+    const toggleMute = () => {
+
+        const media = mediaRef.current
+
+        if(!media) return
+
+        if(media.muted || media.volume === 0) {
+
+            media.muted = false
+
+            // Si le volume était à 0, on restaure 50%
+            if ( media.volume === 0 ) {
+
+                media.volume = volume > 0 ? volume : 0.5
+                setVolume(media.volume)
+
+            }
+
+            setMuted(false)
+
+        } else {
+
+            media.muted = true
+            setMuted(true)
+
+        }
+
+    }
+
 }
