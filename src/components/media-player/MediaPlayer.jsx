@@ -63,7 +63,7 @@ export default function MediaPlayer({
         isVideo;
 
     // Nettoyage du timer des contrôles
-    const cleanControlsTimer = useCallback(()=>{
+    const clearControlsTimer = useCallback(()=>{
 
         if(hideControlsTimerRef.current){
 
@@ -74,5 +74,28 @@ export default function MediaPlayer({
         }
 
     }, [])
+
+    // Cache automatiquement les contrôles pendant la lecture
+    const showControls = useCallback(()=>{
+
+        clearControlsTimer()
+
+        setControlsVisible(true)
+
+        if(!playing){
+            return
+        }
+
+        hideControlsTimerRef.current = setTimeout(()=>{
+
+            if(!settingsOpen){
+
+                setControlsVisible(false)
+
+            }
+
+        }, 3000)
+
+    }, [clearControlsTimer, playing, settingsOpen])
 
 }
