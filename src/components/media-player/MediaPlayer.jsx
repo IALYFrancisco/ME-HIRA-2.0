@@ -163,4 +163,15 @@ export default function MediaPlayer({
 
     }
 
+    // Gestionnaire de progression de lecture
+    const handleTimeUpdate = () => {
+
+        const media = mediaRef.current
+
+        if(!media) return
+
+        setCurrentTime(media.currentTime)
+
+    }
+
 }
