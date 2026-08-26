@@ -297,4 +297,33 @@ export default function MediaPlayer({
 
     }
 
+    // Gestionnaire de lecture en plein écran
+    const toggleFullscreen = async () => {
+
+        const player = playerRef.current
+
+        if(!player) return
+
+        try{
+
+            if( !document.fullscreenElement ){
+                
+                if(player.requestFullscreen){
+                    await play.requestFullscreen()
+                } else if (mediaRef.current?.webkitEnterFullscreen) {
+                    // Support navigateurSafari iOS lorsque disponible
+                    mediaRef.current.webkitEnterFullscreen()
+                }
+
+            } else {
+                await document.exitFullscreen()
+            }
+
+        }
+        catch(error){
+            console.error("Fullscreen indisponible :", error)
+        }
+
+    }
+
 }
