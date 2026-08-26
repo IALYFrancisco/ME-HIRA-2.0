@@ -10,6 +10,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { JoinArrayItems } from "@/helpers/song";
 import axios from "axios";
 import { ThemeProvider } from "next-themes";
+import MediaPlayer from "@/components/media-player/MediaPlayer";
 
 export async function getStaticPaths(){
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/song/get`)
@@ -66,11 +67,12 @@ export default function SongReader({ song: _song }){
             {!_loadersState && <section className="song-container">
                 <div className="song">
                     <div className="song-poster-container">
-                        <video src={
+                        {/* <video src={
                             ( song.fileUrl.startsWith('https://') || song.fileUrl.startsWith('http://') ) ?
                             song.fileUrl :
                             `${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`
-                        } autoPlay controls loop></video>
+                            } autoPlay controls loop></video> */}
+                        <MediaPlayer song={song}/>
                     </div>
                     <div className="song-info">
                         <h1>{song.title}</h1>
