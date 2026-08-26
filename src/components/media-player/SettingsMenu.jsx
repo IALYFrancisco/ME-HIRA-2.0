@@ -17,7 +17,8 @@ export default function SettingsMenu({
     onClose,
     playbackRate,
     onPlaybackRateChange,
-    onPictureInPicture
+    onPictureInPicture,
+    canPictureInPicture
 }){
 
     const menuRef = useRef(null)
@@ -62,7 +63,7 @@ export default function SettingsMenu({
                 </button>
             </div>
 
-            
+            { canPi }
             
         </div>
     )
