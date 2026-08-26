@@ -454,6 +454,17 @@ export default function MediaPlayer({
 
                 }
 
+                case "KeyM" :
+                    toggleMute()
+                    break
+
+                case "KeyF" :
+                    toggleFullscreen()
+                    break
+
+                default:
+                    break
+
             }
 
         }
