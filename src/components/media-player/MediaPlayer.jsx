@@ -4,6 +4,7 @@ import SettingsMenu from "./SettingsMenu";
 
 import styles from "./MediaPlayer.module.css"
 import { useCallback, useEffect, useRef, useState } from "react";
+import { FormatSongDuration } from "@/helpers/song";
 
 function getMediaUrl(fileUrl){
 
@@ -648,6 +649,19 @@ export default function MediaPlayer({
                                 <PlayerIcon name={next} size={19} />
                             </button>
 
+                            {/* Durée et temps écoulés dans le lecture */}
+                            <div className={styles.timeDisplay} >
+                                <span>{FormatSongDuration(currentTime)}</span>
+                                <span className={styles.timeSeparator}>/</span>
+                                <span>{FormatSongDuration(duration)}</span>
+                            </div>
+                        </div>
+                        <div className={styles.controlsRight}>
+                            <VolumeControl
+                                volume={volume}
+                                muted={muted}
+                                onVolumeChange
+                            />
                         </div>
                     </div>
                 </div>
