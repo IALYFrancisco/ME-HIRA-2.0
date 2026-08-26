@@ -1,5 +1,6 @@
 import PlayerIcon from "./PlayerIcon";
 import styles from "./MediaPlayer.module.css"
+import { useEffect, useRef } from "react";
 
 const SPEEDS = [
     0.5,
@@ -17,4 +18,22 @@ export default function SettingsMenu({
     playbackRate,
     onPlaybackRateChange,
     onPictureInPicture
-}){}
+}){
+
+    const menuRef = useRef(null)
+
+    useEffect(()=>{
+
+        if(!open) return;
+
+        const handleClickOutside = (event) => {
+
+            if(menuRef.current && !menuRef.current.contains(event.target)){
+                onClose()
+            }
+
+        }
+
+    },[])
+
+}
