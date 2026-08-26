@@ -63,7 +63,21 @@ export default function SettingsMenu({
                 </button>
             </div>
 
-            { canPi }
+            { canPictureInPicture && (
+                <button
+                    type="button"
+                    className={styles.settingsItem}
+                    onClick={()=>{
+                        onPictureInPicture();
+                        onClose();
+                    }}
+                >
+                    <div className={ styles.settingsItemLeft } >
+                        <PlayerIcon name="pip" size={18} />
+                        <span>Lecture en incrustation</span>
+                    </div>
+                </button>
+            ) }
             
         </div>
     )
