@@ -388,4 +388,27 @@ export default function MediaPlayer({
         }
     }, [clearControlsTimer])
 
+    // Gestionnaire des actions venant du clavier
+    useEffect(() => {
+
+        const handleKeyDown = (event) => {
+
+            // Ne pas intercepter les touches lorqu'on écrit dans un input
+            const tag = event.target?.tagName?.toLowerCase()
+
+            if( tag === "input" || tag === "textarea" ) return
+
+            switch (event.node) {
+
+                case "Space" :
+                    event.preventDefault()
+                    togglePlay()
+                    break
+
+            }
+
+        }
+
+    }, [])
+
 }
