@@ -53,4 +53,6 @@ export default function MediaPlayer({
 
     const isVideo = song?.fileType === "video"
 
+    const mediaUrl = getMediaUrl(song?.fileUrl)
+
 }
