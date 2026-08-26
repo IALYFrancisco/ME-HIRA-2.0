@@ -524,7 +524,42 @@ export default function MediaPlayer({
                             onError={(event)=>{ console.error("Erreur vidéo :", event.currentTarget.error) }}
                         ></video>
                     ) : (
-                        <div></div>
+                        <div className={styles.audioVisualization}>
+                            { song?.thumnailUrl ? (
+                                    // eslint-disable-next-line @next/next/no-img-element
+                                    <img
+                                        src={song.thumnailUrl}
+                                        alt={song.title}
+                                        className={ styles.audioArtwork }
+                                    />
+                                ) : (
+                                    <div
+                                        className={styles.audioArtworkPlaceholder}
+                                    >
+                                        <PlayerIcon name="play" size={42} />
+                                    </div>
+                                )
+                            }
+                            <div className={styles.audioInformation}>
+                                <div
+                                    className={ styles.audioTitle }
+                                >
+                                    { song?.title || "Lecture audio" }
+                                </div>
+                                {
+                                    Array.isArray(song?.singer) &&
+                                    (
+                                        <div
+                                            className={
+                                                styles.audioSinger
+                                            }
+                                        >
+                                            { song.singer.join(", ") }
+                                        </div>
+                                    )
+                                }
+                            </div>
+                        </div>
                     )
                 }
             </div>
