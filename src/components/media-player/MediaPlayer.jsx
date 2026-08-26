@@ -359,4 +359,26 @@ export default function MediaPlayer({
 
     }, [clearControlsTimer, mediaUrl])
 
+    // Gestion de lecteur au chargement du média ( autoplay ou pas )
+    useEffect(()=>{
+
+        if(!autoPlay) return
+
+        const media = mediaRef.current
+
+        if(!media) return
+
+        const playMedia = async () => {
+
+            try{ await media.play() }
+            catch{ 
+                // Le navigateur peut bloquer autoplay avec son
+             }
+
+        }
+
+        playMedia()
+
+    }, [autoPlay, mediaUrl])
+
 }
