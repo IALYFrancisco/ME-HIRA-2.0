@@ -27,6 +27,18 @@ export default function VolumeControl({
                     size={19}
                 />
             </button>
+            <div className={styles.volumeSliderContainer}>
+                <input
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value={ muted ? 0 : volume }
+                    onChange={handleVolumeChange}
+                    className={styles.volumeSlider}
+                    aria-label="volume"
+                />
+            </div>
         </div>
     )
 
