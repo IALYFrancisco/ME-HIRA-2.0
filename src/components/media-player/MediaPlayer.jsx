@@ -664,6 +664,31 @@ export default function MediaPlayer({
                                 onVolumeChange={handleVolumeChange}
                                 onMute={toggleMute}
                             />
+                            {/* Paramètres pour d'autres actions sur le lecteur personnalisé */}
+                            <div
+                                className={styles.settingsWrapper}
+                            >
+                                <button
+                                    type="button"
+                                    className={ styles.controlButton }
+                                    onClick={()=>{
+                                        setSettingsOpen(previous=>!previous)
+                                        setControlsVisible(true)
+                                    }}
+                                    aria-label="Paramètres"
+                                    title="Paramètres"
+                                >
+                                    <PlayerIcon name="settings" size={19} />
+                                </button>
+                                <SettingsMenu
+                                    open={settingsOpen}
+                                    onClose={()=>setSettingsOpen(false)}
+                                    playbackRate={playbackRate}
+                                    onPlaybackRateChange={handlePlaybackRateChange}
+                                    onPictureInPicture={handlePictureInPicture}
+                                    canPictureInPicture={canPictureInPicture}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
