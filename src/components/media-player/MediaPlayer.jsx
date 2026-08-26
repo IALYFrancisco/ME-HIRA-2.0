@@ -5,6 +5,16 @@ import SettingsMenu from "./SettingsMenu";
 import styles from "./MediaPlayer.module.css"
 import { useRef, useState } from "react";
 
+function getMediaUrl(fileUrl){
+
+    if(!fileUrl) return ""
+
+    if( fileUrl.startsWith("https://") || fileUrl.startsWith("http://") ) return fileUrl
+
+    return `${process.env.NEXT_PUBLIC_API_BASE_URL}${fileUrl}`
+
+}
+
 export default function MediaPlayer({
     song,
     onNext,
