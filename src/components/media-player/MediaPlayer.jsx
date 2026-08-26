@@ -132,7 +132,7 @@ export default function MediaPlayer({
     }
 
     // Metadata chargée
-    const handleLoadMetadata = () => {
+    const handleLoadedMetadata = () => {
 
         const media = mediaRef.current
 
@@ -492,6 +492,43 @@ export default function MediaPlayer({
 
     }
 
-    
+    return(
+        <div 
+            ref={playerRef}
+            className={ `${styles.player} ${isVideo ? styles.videoPlayer : styles.audioPlayer} ${fullscreen ? styles.fullscreenPlayer : ""} ${className}` }
+            onMouseMove={showControls}
+            onTouchStart={showControls}
+        >
+            <div
+                className={styles.mediaContainer}
+                style={mediaContainerStyle}
+                onDoubleClick={toggleFullscreen}
+            >
+                {
+                    isVideo ? (
+                        <video 
+                            ref={mediaRef}
+                            key={mediaUrl}
+                            className={styles.video}
+                            src={mediaUrl}
+                            poster={poster}
+                            playsInline
+                            preload="metadata"
+                            onPlay={handlePlay}
+                            onPause={handlePause}
+                            onLoadedMetadata={handleLoadedMetadata}
+                            onTimeUpdate={handleTimeUpdate}
+                            onEnded={handleEnded}
+                            onWaiting={()=>setLoading(true)}
+                            onCanPlay={()=>setLoading(false)}
+                            onError={(event)=>{ console.error("Erreur vidéo :", event.currentTarget.error) }}
+                        ></video>
+                    ) : (
+                        <div></div>
+                    )
+                }
+            </div>
+        </div>
+    )
 
 }
