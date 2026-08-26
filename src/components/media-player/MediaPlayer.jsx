@@ -381,4 +381,11 @@ export default function MediaPlayer({
 
     }, [autoPlay, mediaUrl])
 
+    // Nettoyage générale des timers
+    useEffect(()=>{
+        return () => {
+            clearControlsTimer()
+        }
+    }, [clearControlsTimer])
+
 }
