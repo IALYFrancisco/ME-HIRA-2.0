@@ -4,7 +4,6 @@
 }
 
 .song-container .song .song-poster-container {
-    border-radius: 10px;
     overflow: hidden;
     display: flex;
     align-items: center;
