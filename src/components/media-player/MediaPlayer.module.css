@@ -307,14 +307,14 @@
         );
 }
 
-.volumeContainer::-moz-range-thumb {
+/* .volumeContainer::-moz-range-thumb {
     width: 11px;
     height: 11px;
     border: 0;
     border-radius: 50%;
     background: #fff;
     cursor: pointer;
-}
+} */
 
 /* Styles des paramètres sur le lecteur personnalisé  */
 .settingsWrapper {
