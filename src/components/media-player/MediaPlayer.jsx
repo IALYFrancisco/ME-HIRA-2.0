@@ -646,7 +646,7 @@ export default function MediaPlayer({
                                 aria-label="Suivant"
                                 title="Suivant"
                             >
-                                <PlayerIcon name={next} size={19} />
+                                <PlayerIcon name="next" size={19} />
                             </button>
 
                             {/* Durée et temps écoulés dans le lecture */}
