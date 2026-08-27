@@ -36,7 +36,7 @@ export default function VolumeControl({
                     value={ muted ? 0 : volume }
                     onChange={handleVolumeChange}
                     className={styles.volumeSlider}
-                    styles={{ "--volume": `${(muted ? 0 : volume) * 100}%` }}
+                    style={{ "--volume": `${(muted ? 0 : volume) * 100}%` }}
                     aria-label="volume"
                 />
             </div>

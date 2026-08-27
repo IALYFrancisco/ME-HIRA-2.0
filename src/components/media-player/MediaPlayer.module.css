@@ -294,18 +294,22 @@
 }
 
 .volumeSlider {
+    --volume: 100%;
+    display: block;
     width: 70px;
     height: 4px;
+    margin: 0;
     appearance: none;
     -webkit-appearance: none;
     cursor: pointer;
+    outline: none;
     border-radius: 999px;
     background: 
         linear-gradient(
             to right,
             var(--player-accent) 0%,
-            var(--player-accent) calc(var(--volume, 100%)),
-            rgba(255, 255, 255, 0.3) calc(var(--volume, 100%)),
+            var(--player-accent) var(--volume),
+            rgba(255, 255, 255, 0.3) var(--volume),
             rgba(255, 255, 255, 0.3) 100%
         );
 }
@@ -315,9 +319,10 @@
     -webkit-appearance: none;
     width: 13px;
     height: 13px;
+    margin: 0;
     border: 0;
     border-radius: 50%;
-    background-color: var(--player-accent);
+    background: var(--player-accent);
     cursor: pointer;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
