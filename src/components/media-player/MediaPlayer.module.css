@@ -255,7 +255,7 @@
     transition: opacity 0.15s ease;
 }
 
-.progressSlider:hover:-webkit-slider-thumb {
+.progressSlider:hover::-webkit-slider-thumb {
     opacity: 1;
 }
 
