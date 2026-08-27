@@ -241,3 +241,17 @@
 .progressSlider:hover {
     height: 6px;
 }
+
+.progressSlider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 0;
+    background: var(--player-accent);
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
