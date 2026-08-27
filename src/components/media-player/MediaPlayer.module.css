@@ -407,3 +407,7 @@
     font-size: 12px;
     cursor: pointer;
 }
+
+.speedButton:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
