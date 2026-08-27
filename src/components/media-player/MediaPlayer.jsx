@@ -394,8 +394,6 @@ export default function MediaPlayer({
 
         const handleKeyDown = (event) => {
 
-            console.log(event.code)
-
             // Ne pas intercepter les touches lorqu'on écrit dans un input
             const target = event.target
 
@@ -457,13 +455,13 @@ export default function MediaPlayer({
 
                 }
 
-                case "KeyM" :
-                    toggleMute()
-                    break
+                // case "KeyM" :
+                //     toggleMute()
+                //     break
 
-                case "KeyF" :
-                    toggleFullscreen()
-                    break
+                // case "KeyF" :
+                //     toggleFullscreen()
+                //     break
 
                 default:
                     break
