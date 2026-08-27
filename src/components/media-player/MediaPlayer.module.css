@@ -307,6 +307,18 @@
         );
 }
 
+.volumeSlider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--player-accent);
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
 /* .volumeContainer::-moz-range-thumb {
     width: 11px;
     height: 11px;
