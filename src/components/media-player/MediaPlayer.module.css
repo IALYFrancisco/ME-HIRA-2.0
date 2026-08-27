@@ -321,3 +321,17 @@
 .settingsWrapper {
     position: relative;
 }
+
+.settingsMenu {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 10px);
+    width: 235px;
+    padding: 8px;
+    border-radius: 10px;
+    background: rgba(24, 24, 24, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
