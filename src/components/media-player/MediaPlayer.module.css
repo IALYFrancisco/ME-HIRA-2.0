@@ -397,3 +397,13 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 4px;
 }
+
+.speedButton {
+    padding: 7px 3px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+}
