@@ -259,3 +259,13 @@
 .progressSlider:hover:-webkit-slider-thumb {
     opacity: 1;
 }
+
+.progressSlider::-moz-range-thumb {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 0;
+    background: var(--player-accent);
+    cursor: pointer;
+    opacity: 0;
+}
