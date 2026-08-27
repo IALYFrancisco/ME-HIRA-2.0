@@ -273,3 +273,10 @@
 .progressSlider:hover::-moz-range-thumb {
     opacity: 1;
 }
+
+/* Styles pour le gestionnaire de volume */
+.volumeContainer {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
