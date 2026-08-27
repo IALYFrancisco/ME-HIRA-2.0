@@ -286,3 +286,7 @@
     overflow: hidden;
     transition: width 0.2s ease;
 }
+
+.volumeContainer:hover .volumeSliderContainer {
+    width: 75px;
+}
