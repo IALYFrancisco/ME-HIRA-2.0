@@ -604,7 +604,7 @@ export default function MediaPlayer({
                             value={currentTime}
                             onChange={handleProgressChange}
                             className={ styles.progressSlider }
-                            style={{ "--progress": `${progressPercentage} %` }}
+                            style={{ "--progress": `${progressPercentage}%` }}
                             aria-label="Progression"
                         />
                     </div>
