@@ -280,3 +280,9 @@
     align-items: center;
     gap: 2px;
 }
+
+.volumeSliderContainer {
+    width: 0;
+    overflow: hidden;
+    transition: width 0.2s ease;
+}
