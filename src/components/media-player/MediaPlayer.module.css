@@ -204,3 +204,7 @@
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
 }
+
+.timeSeparator {
+    opacity: 0.55;
+}
