@@ -433,3 +433,12 @@
     pointer-events: none;
     background: rgba(0, 0, 0, 0.08);
 }
+
+.spinner {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: var(--player-accent);
+    animation: spin 0.75s linear infinite;
+}
