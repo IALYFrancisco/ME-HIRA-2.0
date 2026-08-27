@@ -399,7 +399,7 @@ export default function MediaPlayer({
 
             if( tag === "input" || tag === "textarea" ) return
 
-            switch (event.node) {
+            switch (event.code) {
 
                 case "Space" :
                     event.preventDefault()
