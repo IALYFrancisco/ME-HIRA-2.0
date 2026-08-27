@@ -172,3 +172,7 @@
 .controlButton:hover {
     background: rgba(255, 255, 255, 0.13);
 }
+
+.controlButton:active {
+    transform: scale(0.92);
+}
