@@ -399,6 +399,20 @@ export default function MediaPlayer({
 
             if(target?.tagName?.toLowerCase() === "textarea" || (target?.tagName.toLowerCase() === "input" && !target?.type != "range")) return
 
+            const key = event.key.toLowerCase()
+
+            if(key === "m") {
+                event.preventDefault()
+                toggleMute()
+                return
+            }
+
+            if(key === "f"){
+                event.preventDefault()
+                toggleFullscreen()
+                return
+            }
+
             switch (event.code) {
 
                 case "Space" :
