@@ -176,3 +176,9 @@
 .controlButton:active {
     transform: scale(0.92);
 }
+
+.controlButton:disabled {
+    opacity: 0.35;
+    cursor: default;
+    transform: none;
+}
