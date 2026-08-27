@@ -183,9 +183,9 @@
 }
 
 .playButton {
-    width: 42px;
-    height: 42px;
-    flex-basis: 42px;
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
     background: rgba(255, 255, 255, 0.13);
 }
 
