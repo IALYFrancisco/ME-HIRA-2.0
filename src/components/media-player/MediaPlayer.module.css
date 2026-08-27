@@ -521,4 +521,24 @@
         gap: 3px;
     }
 
+    /* Sur mobile, le slider volume peut prendre trop de place */
+    .volumeSliderContainer {
+        display: none;
+    }
+
+    .settingsMenu {
+        right: -5px;
+        width: 220px;
+    }
+
+    .audioPlayer .mediaContainer,
+    .audioVisualization {
+        min-height: 250px;
+    }
+
+    .audioArtwork {
+        width: 150px;
+        height: 150px;
+    }
+
 }
