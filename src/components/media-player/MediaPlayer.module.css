@@ -381,3 +381,7 @@
     align-items: center;
     gap: 10px;
 }
+
+.settingsSection {
+    padding: 10px 8px 7px;
+}
