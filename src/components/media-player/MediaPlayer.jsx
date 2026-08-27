@@ -394,10 +394,12 @@ export default function MediaPlayer({
 
         const handleKeyDown = (event) => {
 
-            // Ne pas intercepter les touches lorqu'on écrit dans un input
-            const tag = event.target?.tagName?.toLowerCase()
+            console.log(event.code)
 
-            if( tag === "input" || tag === "textarea" ) return
+            // Ne pas intercepter les touches lorqu'on écrit dans un input
+            const target = event.target
+
+            if(target?.tagName?.toLowerCase() === "textarea" || (target?.tagName.toLowerCase() === "input" && !target?.type != "range")) return
 
             switch (event.code) {
 
