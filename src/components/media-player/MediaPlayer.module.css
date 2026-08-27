@@ -448,3 +448,13 @@
         transform: rotate(360deg);
     }
 }
+
+/* Styles au cas d'erreur de lécture */
+.playError {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    background: #111;
+}
