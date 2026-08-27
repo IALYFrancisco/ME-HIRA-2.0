@@ -411,3 +411,9 @@
 .speedButton:hover {
     background: rgba(255, 255, 255, 0.08);
 }
+
+.speedButtonActive {
+    background: var(--player-accent);
+    color: #111;
+    font-weight: 600;
+}
