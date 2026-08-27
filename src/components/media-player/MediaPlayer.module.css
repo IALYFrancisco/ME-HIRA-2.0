@@ -360,3 +360,15 @@
 .settingsClose:hover {
     background: rgba(255, 255, 255, 0.1);
 }
+
+.settingsItem {
+    width: 100%;
+    padding: 10px 8px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    text-align: left;
+}
+
