@@ -82,6 +82,7 @@ nav {
   top: 0;
   background-color: white;
   margin: auto;
+  z-index: 1;
 }
 
 nav > ul {
