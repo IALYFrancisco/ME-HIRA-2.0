@@ -391,3 +391,9 @@
     font-size: 12px;
     opacity: 0.6;
 }
+
+.speedList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+}
