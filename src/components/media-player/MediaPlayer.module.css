@@ -385,3 +385,9 @@
 .settingsSection {
     padding: 10px 8px 7px;
 }
+
+.settingsLabel {
+    margin-bottom: 8px;
+    font-size: 12px;
+    opacity: 0.6;
+}
