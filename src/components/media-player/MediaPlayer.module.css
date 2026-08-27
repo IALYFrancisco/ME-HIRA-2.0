@@ -269,3 +269,7 @@
     cursor: pointer;
     opacity: 0;
 }
+
+.progressSlider:hover::-moz-range-thumb {
+    opacity: 1;
+}
