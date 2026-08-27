@@ -282,6 +282,9 @@
 
 .volumeSliderContainer {
     width: 0;
+    height: 38px;
+    display: flex;
+    align-items: center;
     overflow: hidden;
     transition: width 0.2s ease;
 }
