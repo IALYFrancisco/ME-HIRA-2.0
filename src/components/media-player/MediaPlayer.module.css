@@ -467,3 +467,8 @@
     max-width: none;
     max-height: none;
 }
+
+.fullscreenPlayer .mediaContainer {
+    width: 100%;
+    height: 100%;
+}
