@@ -316,3 +316,8 @@
     background: #fff;
     cursor: pointer;
 }
+
+/* Styles des paramètres sur le lecteur personnalisé  */
+.settingsWrapper {
+    position: relative;
+}
