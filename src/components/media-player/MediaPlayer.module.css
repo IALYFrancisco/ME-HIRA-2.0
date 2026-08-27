@@ -208,3 +208,11 @@
 .timeSeparator {
     opacity: 0.55;
 }
+
+/* Style pour la barre de progression de lecture */
+.progressContainer {
+    width: 100%;
+    height: 16px;
+    display: flex;
+    align-items: center;
+}
