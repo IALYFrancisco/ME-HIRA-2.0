@@ -237,3 +237,7 @@
     outline: none;
     transition: height 0.15s ease;
 }
+
+.progressSlider:hover {
+    height: 6px;
+}
