@@ -67,3 +67,14 @@
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.45);
 }
+
+.audioArtworkPlaceholder {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #222;
+    color: var(--player-accent);
+}
