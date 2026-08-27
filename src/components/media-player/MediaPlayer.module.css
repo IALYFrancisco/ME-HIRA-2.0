@@ -417,3 +417,7 @@
     color: #111;
     font-weight: 600;
 }
+
+.speedButtonActive:hover {
+    background: var(--player-accent);
+}
