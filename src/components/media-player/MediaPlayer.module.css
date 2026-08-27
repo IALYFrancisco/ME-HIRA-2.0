@@ -141,3 +141,11 @@
     gap: 10px;
     min-height: 42px;
 }
+
+.controlsLeft,
+.controlsRight {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    min-width: 0;
+}
