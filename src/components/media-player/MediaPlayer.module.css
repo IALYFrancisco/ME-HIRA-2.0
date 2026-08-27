@@ -421,3 +421,15 @@
 .speedButtonActive:hover {
     background: var(--player-accent);
 }
+
+/* Styles du chargement de média */
+.loadingOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.08);
+}
