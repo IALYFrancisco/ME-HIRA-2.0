@@ -22,9 +22,13 @@
     /* Pour une vidéo, l'aspect-ratio est défini dynamiquement depuis react */
     overflow: hidden;
 }
-/* 
+
 .video {
     display: block;
     width: 100%;
     height: 100%;
-} */
+    /* le style suivant est très important pour que les vidéos ne sront jamais déformées  */
+    object-fit: contain;
+    background: #000;
+    cursor: pointer;
+}
