@@ -478,3 +478,7 @@
     height: 100%;
     object-fit: contain;
 }
+
+.fullscreenPlayer .audioVisualization {
+    height: 100%;
+}
