@@ -542,3 +542,29 @@
     }
 
 }
+
+/* Pour les très petits écrans */
+@media (max-width: 400px) {
+
+    .controlButton {
+        width: 31px;
+        height: 31px;
+        flex-basis: 31px;
+    }
+
+    .playButton {
+        width: 35px;
+        height: 35px;
+        flex-basis: 35px;
+    }
+
+    .controls {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .timeDisplay {
+        font-size: 10px;
+    }
+    
+}
