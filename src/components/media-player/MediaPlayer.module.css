@@ -244,8 +244,8 @@
 .progressSlider::-webkit-slider-thumb {
     appearance: none;
     -webkit-appearance: none;
-    width: 13px;
-    height: 13px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
     border: 0;
     background: var(--player-accent);
@@ -260,8 +260,8 @@
 }
 
 .progressSlider::-moz-range-thumb {
-    width: 13px;
-    height: 13px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
     border: 0;
     background: var(--player-accent);
@@ -317,8 +317,8 @@
 .volumeSlider::-webkit-slider-thumb {
     appearance: none;
     -webkit-appearance: none;
-    width: 13px;
-    height: 13px;
+    width: 11px;
+    height: 11px;
     margin: 0;
     border: 0;
     border-radius: 50%;
@@ -328,8 +328,8 @@
 }
 
 .volumeSlider::-moz-range-thumb {
-    width: 13px;
-    height: 13px;
+    width: 11px;
+    height: 11px;
     border: 0;
     border-radius: 50%;
     background: var(--player-accent);
