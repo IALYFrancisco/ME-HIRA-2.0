@@ -72,7 +72,7 @@ export default function SongReader({ song: _song }){
                             song.fileUrl :
                             `${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`
                             } autoPlay controls loop></video> */}
-                        <MediaPlayer song={song}/>
+                        <MediaPlayer autoPlay={true} song={song}/>
                     </div>
                     <div className="song-info">
                         <h1>{song.title}</h1>
