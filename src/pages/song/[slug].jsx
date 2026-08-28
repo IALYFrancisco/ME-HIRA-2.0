@@ -67,11 +67,6 @@ export default function SongReader({ song: _song }){
             {!_loadersState && <section className="song-container">
                 <div className="song">
                     <div className="song-poster-container">
-                        {/* <video src={
-                            ( song.fileUrl.startsWith('https://') || song.fileUrl.startsWith('http://') ) ?
-                            song.fileUrl :
-                            `${process.env.NEXT_PUBLIC_API_BASE_URL}${song.fileUrl}`
-                            } autoPlay controls loop></video> */}
                         <MediaPlayer autoPlay={true} song={song}/>
                     </div>
                     <div className="song-info">
