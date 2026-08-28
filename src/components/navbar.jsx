@@ -60,15 +60,6 @@ export default function Navbar (){
         }
     }
 
-    // useEffect(()=>{
-    //     if(prompt === ""){
-    //         setResults([])
-    //     }
-    //     if((prompt && prompt.trim() !== "") || (fileType && prompt.trim() !== "")){
-    //         fetchSongs(prompt)
-    //     }
-    // },[prompt, fileType])
-
     useEffect(()=>{
         if(prompt.trim() === ""){
             setResults([])
