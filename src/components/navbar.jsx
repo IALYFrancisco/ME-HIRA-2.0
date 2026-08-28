@@ -17,18 +17,23 @@ export default function Navbar (){
     var [ fileType, setFileType ] = useState("")
     const [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
+    const filterTypeContainerRef = useRef(null)
 
     useEffect(()=>{
+        
         const handleClickOutside = (event) => {
-            if(popUpActionsRef.current && !popUpActionsRef.current.contains(event.target)){
-                setActivePopUp(null)
-            }
-            document.addEventListener("mousedown", handleClickOutside)
-            return ()=>{
-                document.removeEventListener("mousedown", handleClickOutside)
+            if(filterTypeContainerRef.current && !filterTypeContainerRef.current.contains(event.target)){
+                setFilterTypePopUpIsActive(false)
             }
         }
-    },[])
+
+        document.addEventListener("mousedown", handleClickOutside)
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside)
+        }
+
+    }, [])
 
     const searchSongs = async (p) => api.get(
         fileType ? `/song/get?prompt=${p}&fileType=${fileType}` : `/song/get?prompt=${p}`
@@ -56,15 +61,7 @@ export default function Navbar (){
     },[prompt, fileType])
 
     const toggleFilterTypePopUp = () => {
-        filterTypePopUpIsActive ? setFilterTypePopUpIsActive(false) : setFilterTypePopUpIsActive(true)
-    }
-
-    const openFilterTypePopUp = () => {
-        setFilterTypePopUpIsActive(true)
-    }
-
-    const closeFilterTypePopUp = () => {
-        setFilterTypePopUpIsActive(false)
+        setFilterTypePopUpIsActive(prev => !prev)
     }
 
     const handleFileTypeChange = (event) => {
@@ -102,7 +99,7 @@ export default function Navbar (){
                             { searchIsLoading && <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />}
                         </button>
                     </span>
-                    <div className="filter-type-container">
+                    <div ref={filterTypeContainerRef} className="filter-type-container">
                         <button className="filter" onClick={toggleFilterTypePopUp}>
                             <Image src="/images/filter.png" priority alt="filtre des chansons de me-hira" width={48} height={48} className="filter-icone" />
                         </button>
