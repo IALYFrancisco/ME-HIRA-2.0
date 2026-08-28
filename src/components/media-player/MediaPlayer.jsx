@@ -499,11 +499,8 @@ export default function MediaPlayer({
 
     // Syle du conteneur média.
     // pour une vidéo : width 100%, aspect-ratio: ratio réel => hauteur calculée automatiquement
-    // const mediaContainerStyle =
-    //     isVideo && videoRatio ? { aspectRatio: `${videoRatio}` } : undefined
-    const mediaContainerStyle = isVideo ?
-        { ...(videoRatio ? { aspectRatio: `${videoRatio}` } : {}),
-          ...(initialLoading ? { minHeight: "320px" } : {}) } : undefined
+    const mediaContainerStyle =
+        isVideo ? { aspectRatio: videoRatio ? `${videoRatio}` : "16 / 9" } : undefined
 
     // Pour la barre de progresion de lecture
     const progressPercentage =
@@ -614,7 +611,7 @@ export default function MediaPlayer({
                 }
                 {
                     loading && (
-                        <div className={`${styles.loadingOverlay} ${ initialLoading ? styles.initialLoading : styles.bufferingLoading }`}>
+                        <div className={styles.loadingOverlay}>
                             <div className={styles.spinner}></div>
                         </div>
                     )
