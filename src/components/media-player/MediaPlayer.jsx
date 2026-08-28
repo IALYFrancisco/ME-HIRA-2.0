@@ -560,6 +560,25 @@ export default function MediaPlayer({
                                     </div>
                                 )
                             }
+                            {/* <div className={styles.audioInformation}>
+                                <div
+                                    className={ styles.audioTitle }
+                                >
+                                    { song?.title || "Lecture audio" }
+                                </div>
+                                {
+                                    Array.isArray(song?.singer) &&
+                                    (
+                                        <div
+                                            className={
+                                                styles.audioSinger
+                                            }
+                                        >
+                                            { song.singer.join(", ") }
+                                        </div>
+                                    )
+                                }
+                            </div> */}
                         </div>
                     )
                 }
