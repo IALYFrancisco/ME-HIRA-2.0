@@ -18,13 +18,22 @@ export default function Navbar (){
     const [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
     const filterTypeContainerRef = useRef(null)
+    const searchbarContainerRef = useRef(null)
 
     useEffect(()=>{
         
         const handleClickOutside = (event) => {
+
+            // pour le pop up du filtre par type de fichier
             if(filterTypeContainerRef.current && !filterTypeContainerRef.current.contains(event.target)){
                 setFilterTypePopUpIsActive(false)
             }
+
+            // pour le pop up du filtre par texte
+            if(searchbarContainerRef.current && !searchbarContainerRef.current.contains(event.target)){
+                setResults([])
+            }
+
         }
 
         document.addEventListener("mousedown", handleClickOutside)
@@ -51,14 +60,22 @@ export default function Navbar (){
         }
     }
 
+    // useEffect(()=>{
+    //     if(prompt === ""){
+    //         setResults([])
+    //     }
+    //     if((prompt && prompt.trim() !== "") || (fileType && prompt.trim() !== "")){
+    //         fetchSongs(prompt)
+    //     }
+    // },[prompt, fileType])
+
     useEffect(()=>{
-        if(prompt === ""){
+        if(prompt.trim() === ""){
             setResults([])
+            return
         }
-        if((prompt && prompt.trim() !== "") || (fileType && prompt.trim() !== "")){
-            fetchSongs(prompt)
-        }
-    },[prompt, fileType])
+        fetchSongs(prompt)
+    }, [prompt, fileType])
 
     const toggleFilterTypePopUp = () => {
         setFilterTypePopUpIsActive(prev => !prev)
@@ -77,12 +94,12 @@ export default function Navbar (){
                     </Link>
                 </li>
                 <li>
-                    <span className="searchbar-container">
+                    <span ref={searchbarContainerRef} className="searchbar-container">
                         <input type="text" id="songSearch" placeholder="Rechercher des chansons ..." value={prompt} onChange={(e)=>{setPrompt(e.target.value)}}/>
                         <div className={((prompt && results.length > 0)) ? "home-search-modal active" : "home-search-modal"}>
                             <ul>
                                 { results.map((song)=>(
-                                    <li key={song._id}>
+                                    <li key={song._id} onClick={()=>setResults([])}>
                                         <Link href={ song.fileType === "video" ? `/song/${song.slug}` : ""}>
                                             <h4>{song.title}</h4>
                                             <span className="singer-container">
