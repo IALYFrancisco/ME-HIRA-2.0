@@ -100,7 +100,7 @@ export default function Navbar (){
                             <ul>
                                 { results.map((song)=>(
                                     <li key={song._id} onClick={()=>setResults([])}>
-                                        <Link href={ song.fileType === "video" ? `/song/${song.slug}` : ""}>
+                                        <Link href={`/song/${song.slug}`}>
                                             <h4>{song.title}</h4>
                                             <span className="singer-container">
                                                 <h5>{JoinArrayItems(song.singer)}</h5>
