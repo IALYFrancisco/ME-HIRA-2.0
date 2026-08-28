@@ -543,11 +543,6 @@ export default function MediaPlayer({
                     ) : (
                         <div className={styles.audioVisualization}>
                             { song?.thumbnailUrl ? (
-                                // <img
-                                    //     src={song.thumnailUrl}
-                                    //     alt={song.title}
-                                    //     className={ styles.audioArtwork }
-                                    // />
                                     // eslint-disable-next-line @next/next/no-img-element
                                     <img
                                         src={
