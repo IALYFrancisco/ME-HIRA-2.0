@@ -30,10 +30,6 @@ export default function Navbar (){
         }
     },[])
 
-    const toggleActionsPopUp = (actionName) => {
-        setActivePopUp((prev)=>{prev === actionName ? null : actionName})
-    }
-
     const searchSongs = async (p) => api.get(
         fileType ? `/song/get?prompt=${p}&fileType=${fileType}` : `/song/get?prompt=${p}`
     )
