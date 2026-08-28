@@ -59,7 +59,7 @@ export default function SettingsMenu({
                     onClick={onClose}
                     aria-label="Fermer"
                 >
-                    <PlayerIcon name="close" size="17" />
+                    <PlayerIcon name="close" size="14" />
                 </button>
             </div>
 
