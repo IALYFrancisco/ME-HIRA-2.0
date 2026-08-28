@@ -52,7 +52,7 @@ export default function SettingsMenu({
         <div ref={menuRef} className={styles.settingsMenu} >
 
             <div className={styles.settingsHeader}>
-                <span>Paramètres</span>
+                <span>Réglages</span>
                 <button
                     type="button"
                     className={styles.settingsClose}
