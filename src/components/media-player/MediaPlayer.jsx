@@ -360,6 +360,7 @@ export default function MediaPlayer({
         setDuration(0)
         setVideoRatio(null)
         setLoading(true)
+        setInitialLoading(true)
         setControlsVisible(true)
 
         clearControlsTimer()
@@ -498,8 +499,11 @@ export default function MediaPlayer({
 
     // Syle du conteneur média.
     // pour une vidéo : width 100%, aspect-ratio: ratio réel => hauteur calculée automatiquement
-    const mediaContainerStyle =
-        isVideo && videoRatio ? { aspectRatio: `${videoRatio}` } : undefined
+    // const mediaContainerStyle =
+    //     isVideo && videoRatio ? { aspectRatio: `${videoRatio}` } : undefined
+    const mediaContainerStyle = isVideo ?
+        { ...(videoRatio ? { aspectRatio: `${videoRatio}` } : {}),
+          ...(initialLoading ? { minHeight: "320px" } : {}) } : undefined
 
     // Pour la barre de progresion de lecture
     const progressPercentage =
@@ -541,7 +545,10 @@ export default function MediaPlayer({
                             onTimeUpdate={handleTimeUpdate}
                             onEnded={handleEnded}
                             onWaiting={()=>setLoading(true)}
-                            onCanPlay={()=>setLoading(false)}
+                            onCanPlay={()=>{
+                                setLoading(false)
+                                setInitialLoading(false)
+                            }}
                             onError={(event)=>{ console.error("Erreur vidéo :", event.currentTarget.error) }}
                         ></video>
                     ) : (
@@ -597,14 +604,17 @@ export default function MediaPlayer({
                             onTimeUpdate={handleTimeUpdate}
                             onEnded={handleEnded}
                             onWaiting={()=>setLoading(true)}
-                            onCanPlay={()=>setLoading(false)}
+                            onCanPlay={()=>{
+                                setLoading(false)
+                                setInitialLoading(false)
+                            }}
                         ></audio>
 
                     )
                 }
                 {
                     loading && (
-                        <div className={styles.loadingOverlay}>
+                        <div className={`${styles.loadingOverlay} ${ initialLoading ? styles.initialLoading : styles.bufferingLoading }`}>
                             <div className={styles.spinner}></div>
                         </div>
                     )
