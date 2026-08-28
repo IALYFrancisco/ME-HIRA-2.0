@@ -78,15 +78,6 @@
     color: var(--player-accent);
 }
 
-.audioSinger {
-    margin-top: 5px;
-    font-size: 14px;
-    opacity: 0.7;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 /* STyle pour les contrôleurs dans le lecteur personnalisé */
 .controls {
     position: absolute;
