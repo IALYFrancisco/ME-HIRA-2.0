@@ -67,7 +67,14 @@ export default function SongReader({ song: _song }){
             {!_loadersState && <section className="song-container">
                 <div className="song">
                     <div className="song-poster-container">
-                        <MediaPlayer autoPlay={true} song={song}/>
+                        <MediaPlayer
+                            autoPlay={true}
+                            song={song}
+                            poster={
+                                (song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
+                                song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
+                            }
+                        />
                     </div>
                     <div className="song-info">
                         <h1>{song.title}</h1>
