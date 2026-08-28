@@ -123,7 +123,7 @@ export default function MediaPlayer({
     // Mise à jour de l'état local play/pause
     const handlePlay = () => {
         setPlaying(true)
-        showControls()
+        // showControls()
     }
 
     const handlePause = () => {
@@ -131,6 +131,12 @@ export default function MediaPlayer({
         setControlsVisible(true)
         clearControlsTimer()
     }
+
+    useEffect(()=>{
+        if(!playing) return
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        showControls()
+    }, [playing, showControls])
 
     // Metadata chargée
     const handleLoadedMetadata = () => {
