@@ -491,8 +491,11 @@ export default function MediaPlayer({
 
     // Style du conteneur média.
     // pour une vidéo : width 100%, aspect-ratio: ratio réel => hauteur calculée automatiquement
-    const mediaContainerStyle =
-        isVideo ? { aspectRatio: videoRatio ? `${videoRatio}` : "16 / 9" } : undefined
+    // const mediaContainerStyle =
+    //     isVideo ? { aspectRatio: videoRatio ? `${videoRatio}` : "16 / 9" } : undefined
+
+     const mediaContainerStyle =
+        isVideo && videoRatio ? { aspectRatio: `${videoRatio}` } : undefined
 
     // Pour la barre de progresion de lecture
     const progressPercentage =
