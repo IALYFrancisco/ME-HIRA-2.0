@@ -542,10 +542,18 @@ export default function MediaPlayer({
                         ></video>
                     ) : (
                         <div className={styles.audioVisualization}>
-                            { song?.thumnailUrl ? (
+                            { song?.thumbnailUrl ? (
+                                // <img
+                                    //     src={song.thumnailUrl}
+                                    //     alt={song.title}
+                                    //     className={ styles.audioArtwork }
+                                    // />
                                     // eslint-disable-next-line @next/next/no-img-element
                                     <img
-                                        src={song.thumnailUrl}
+                                        src={
+                                            (song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
+                                            song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
+                                        }
                                         alt={song.title}
                                         className={ styles.audioArtwork }
                                     />
