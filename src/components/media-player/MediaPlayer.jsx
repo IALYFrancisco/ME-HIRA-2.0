@@ -497,7 +497,7 @@ export default function MediaPlayer({
 
     })
 
-    // Syle du conteneur média.
+    // Style du conteneur média.
     // pour une vidéo : width 100%, aspect-ratio: ratio réel => hauteur calculée automatiquement
     const mediaContainerStyle =
         isVideo ? { aspectRatio: videoRatio ? `${videoRatio}` : "16 / 9" } : undefined
