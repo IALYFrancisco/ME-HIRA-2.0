@@ -90,7 +90,7 @@ export default function SettingsMenu({
                             type="button"
                             className={`${styles.speedButton} ${ playbackRate === speed ? styles.speedButtonActive : "" }`}
                             onClick={()=>{
-                                onPlaybackRateChange();
+                                onPlaybackRateChange(speed);
                                 onClose();
                             }}
                         >
