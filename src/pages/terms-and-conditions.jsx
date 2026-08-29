@@ -60,6 +60,23 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>3. Acceptation des CGU</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>L’accès et l’utilisation de Me-Hira impliquent la prise de connaissance et l’acceptation des présentes CGU.</p>
+                            </li>
+                            <li>
+                                <p>Toute personne qui n’accepte pas ces conditions doit s’abstenir d’utiliser la plateforme.</p>
+                            </li>
+                            <li>
+                                <p>Les présentes CGU peuvent être modifiées à tout moment afin de tenir compte de l’évolution de Me-Hira, de ses fonctionnalités, de son organisation, de son infrastructure ou du cadre légal applicable.</p>
+                            </li>
+                            <li>
+                                <p>La version publiée sur la plateforme est la version en vigueur.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
