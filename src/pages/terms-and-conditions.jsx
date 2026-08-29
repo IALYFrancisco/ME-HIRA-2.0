@@ -347,6 +347,23 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>18. Rôle de LUMINI</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>LUMINI est l’agence web ayant conçu et développé la plateforme technique Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>LUMINI intervient en qualité de prestataire de conception et de développement technique.</p>
+                            </li>
+                            <li>
+                                <p>Son intervention technique ne lui confère aucun droit de propriété sur les œuvres présentes dans le catalogue de Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>Les décisions éditoriales relatives à la sélection, à l’intégration, à la publication, à la dépublication ou à la suppression des contenus relèvent de l’Équipe Me-Hira.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
