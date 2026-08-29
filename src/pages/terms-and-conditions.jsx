@@ -10,7 +10,7 @@ export default function TermsAndConditions(){
             </Head>
             <Navbar/>
             <section className="terms-and-conditions-container">
-                <h1>Conditions générales d'utilisation</h1>
+                <h1>Conditions générales d'utilisation et de vente</h1>
             </section>
             <Footer/>
         </>
