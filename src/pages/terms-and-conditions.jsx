@@ -446,6 +446,14 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>25. Entrée en vigueur</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Les présentes CGU entrent en vigueur à compter de leur publication sur la plateforme Me-Hira.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
