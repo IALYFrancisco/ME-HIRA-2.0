@@ -159,6 +159,28 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>8. Provenance et collecte des fichiers</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Les fichiers intégrés à Me-Hira peuvent provenir notamment :</p>
+                                <p>- de sources accessibles en ligne</p>
+                                <p>- de supports physiques tels que des CD ou cartes mémoire</p>
+                                <p>- de fichiers transmis directement à l’Équipe Me-Hira</p>
+                                <p>- de documents ou archives appartenant à des particuliers</p>
+                                <p>- d’autres sources documentaires.</p>
+                            </li>
+                            <li>
+                                <p>L’obtention d’un fichier auprès d’une source quelconque ne constitue pas, en elle-même, une reconnaissance de titularité des droits par Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>L’Équipe Me-Hira peut effectuer des recherches ou vérifications concernant la provenance d’un contenu lorsqu’elle dispose des informations nécessaires.</p>
+                            </li>
+                            <li>
+                                <p>Lorsqu’un doute sérieux concernant la provenance, l’authenticité ou les droits attachés à un contenu est identifié, Me-Hira peut suspendre sa publication, le dépublier ou le supprimer.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
