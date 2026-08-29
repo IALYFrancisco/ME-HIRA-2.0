@@ -11,6 +11,12 @@ export default function TermsAndConditions(){
             <Navbar/>
             <section className="terms-and-conditions-container">
                 <h1>Conditions générales d'utilisation</h1>
+                <ul>
+                    <li className="terms-and-conditions-item">
+                        <h2>1. Objet</h2>
+                        <p>Les présentes conditions générales régissent l’utilisation de la plateforme LUMINI School ainsi que les modalités d’inscription et de participation aux formations proposées.</p>
+                    </li>
+                </ul>
             </section>
             <Footer/>
         </>
