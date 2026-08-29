@@ -378,6 +378,23 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>20. Liens et services externes</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira peut éventuellement contenir des liens vers des sites ou services externes.</p>
+                            </li>
+                            <li>
+                                <p>Ces sites et services sont exploités indépendamment de Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>Me-Hira ne contrôle pas nécessairement leur contenu, leur disponibilité ou leurs pratiques.</p>
+                            </li>
+                            <li>
+                                <p>L’Utilisateur est invité à consulter les conditions et politiques applicables à ces services externes.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
