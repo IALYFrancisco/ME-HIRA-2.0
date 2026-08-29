@@ -316,6 +316,17 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>16. Responsabilité de l’Utilisateur</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>L’Utilisateur est responsable de l’utilisation qu’il fait de Me-Hira et des conséquences de toute utilisation contraire aux présentes CGU ou à la législation applicable.</p>
+                            </li>
+                            <li>
+                                <p>L’Utilisateur s’engage notamment à respecter les droits de propriété intellectuelle, les droits des personnes et les règles applicables aux systèmes d’information.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
