@@ -262,6 +262,23 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>13. Propositions de chansons</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Les visiteurs peuvent proposer à l’Équipe Me-Hira des chansons ou œuvres susceptibles d’être intégrées au catalogue.</p>
+                            </li>
+                            <li>
+                                <p>Une proposition ne garantit pas l’intégration du contenu.</p>
+                            </li>
+                            <li>
+                                <p>L’Équipe Me-Hira conserve la faculté d’accepter, de refuser, de modifier, de différer ou de supprimer une proposition.</p>
+                            </li>
+                            <li>
+                                <p>Les propositions doivent concerner le patrimoine musical malagasy et respecter les critères éditoriaux de Me-Hira.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
