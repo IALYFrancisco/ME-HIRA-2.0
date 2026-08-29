@@ -1,3 +1,9 @@
+import Head from "next/head"
+
 export default function TermsAndConditions(){
-    return(<h1>This is terms and conditions use of Me-Hira.</h1>)
+    return(
+        <Head>
+            <title>Conditions générales d'utilisation | Me-Hira</title>
+        </Head>
+    )
 }
