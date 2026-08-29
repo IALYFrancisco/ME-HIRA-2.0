@@ -364,6 +364,20 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>19. Prestataires techniques</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira peut s’appuyer sur différents prestataires techniques pour assurer son fonctionnement.</p>
+                            </li>
+                            <li>
+                                <p>Ces prestataires peuvent notamment intervenir dans les domaines de l’hébergement, du stockage, de la distribution de fichiers ou de l’envoi d’e-mails.</p>
+                            </li>
+                            <li>
+                                <p>Les informations relatives aux traitements de données personnelles sont précisées dans la Politique de confidentialité.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
