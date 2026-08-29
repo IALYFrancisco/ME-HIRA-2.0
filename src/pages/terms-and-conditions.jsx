@@ -94,6 +94,51 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>5. Catalogue et contenus musicaux</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira a pour vocation de contribuer à la préservation et à la conservation numérique du patrimoine musical malagasy.</p>
+                            </li>
+                            <li>
+                                <p>L’Équipe Me-Hira sélectionne, collecte et organise les contenus intégrés à la plateforme.</p>
+                            </li>
+                            <li>
+                                <p>Les informations associées aux œuvres peuvent notamment comprendre le titre, le nom de l’interprète ou du chanteur, l’auteur, le compositeur, l’album et d’autres informations descriptives.</p>
+                            </li>
+                            <li>
+                                <p>Ces informations peuvent provenir de recherches documentaires, de sources publiques accessibles en ligne, de documents accompagnant les œuvres ou de supports physiques ou numériques communiqués à l’Équipe Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>La présence d’une œuvre ou d’un contenu sur Me-Hira ne signifie pas que Me-Hira, l’Équipe Me-Hira ou LUMINI revendique la propriété intellectuelle de cette œuvre ou de ce contenu.</p>
+                            </li>
+                            <li>
+                                <p>Les droits attachés aux œuvres et aux enregistrements restent, selon le cas, ceux de leurs auteurs, compositeurs, artistes-interprètes, producteurs, éditeurs ou autres titulaires de droits concernés.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>6. Propriété intellectuelle des œuvres</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Les œuvres musicales, enregistrements sonores, vidéos, images et autres contenus protégés accessibles sur Me-Hira peuvent être soumis aux règles applicables en matière de propriété intellectuelle.</p>
+                            </li>
+                            <li>
+                                <p>La consultation d’un contenu sur Me-Hira ne confère à l’Utilisateur aucun droit de propriété ou droit d’exploitation sur celui-ci.</p>
+                            </li>
+                            <li>
+                                <p>Sauf disposition légale contraire ou autorisation du titulaire de droits concerné, l’Utilisateur ne doit notamment pas :</p>
+                                <p>- reproduire une œuvre</p>
+                                <p>- distribuer une œuvre</p>
+                                <p>- communiquer une œuvre au public</p>
+                                <p>- exploiter commercialement une œuvre</p>
+                                <p>- republier une œuvre</p>
+                                <p>- mettre une œuvre à disposition de tiers</p>
+                                <p>- incorporer une œuvre dans un autre service</p>
+                                <p>- contourner les mécanismes techniques de la plateforme afin d’en extraire les fichiers.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
