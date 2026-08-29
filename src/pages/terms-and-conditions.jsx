@@ -395,6 +395,20 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>21. Sécurité</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira met en œuvre des mesures techniques raisonnables destinées à protéger son infrastructure et son espace administrateur.</p>
+                            </li>
+                            <li>
+                                <p>Toutefois, aucune infrastructure accessible par Internet ne peut être considérée comme totalement exempte de risque.</p>
+                            </li>
+                            <li>
+                                <p>Toute vulnérabilité ou anomalie de sécurité identifiée peut être signalée à l’Équipe Me-Hira à l’adresse de contact indiquée dans les présentes CGU et les Mentions légales.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
