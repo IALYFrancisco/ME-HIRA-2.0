@@ -437,6 +437,15 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>24. Contact</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Pour toute question relative aux présentes CGU, au fonctionnement de Me-Hira, à un contenu ou à une demande de retrait :</p>
+                                <p style={{marginTop: "20px"}}><strong>E-mail : <a href="mailto:ialyfrancisco7@gmail.com">ialyfrancisco7@gmail.com</a></strong></p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
