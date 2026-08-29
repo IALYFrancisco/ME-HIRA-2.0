@@ -423,6 +423,20 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>23. Droit applicable et règlement des différends</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Les présentes CGU sont établies dans le cadre du droit applicable à Madagascar, sous réserve des règles impératives éventuellement applicables.</p>
+                            </li>
+                            <li>
+                                <p>Tout différend relatif à l’utilisation de Me-Hira fera, dans la mesure du possible, l’objet d’une tentative préalable de résolution amiable.</p>
+                            </li>
+                            <li>
+                                <p>À défaut de résolution amiable, le différend pourra être porté devant les juridictions compétentes conformément aux règles de compétence applicables.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
