@@ -17,7 +17,19 @@ export default function TermsAndConditions(){
                         <h2>1. Objet</h2>
                         <ul className="terms-and-conditions-subitem-container">
                             <li>
-                                <p>Les présentes conditions générales régissent l’utilisation de la plateforme LUMINI School ainsi que les modalités d’inscription et de participation aux formations proposées.</p>
+                                <p>Les présentes Conditions générales d’utilisation (CGU) définissent les conditions d’accès et d’utilisation de la plateforme Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>Me-Hira est une plateforme numérique consacrée à la préservation, à la conservation et à la consultation d’œuvres musicales malagasy.</p>
+                            </li>
+                            <li>
+                                <p>La plateforme a notamment pour objectif de contribuer à la conservation numérique de chansons et d’œuvres musicales malagasy qui peuvent être devenues difficiles ou impossibles à retrouver en ligne ou auprès des sources de diffusion habituelles.</p>
+                            </li>
+                            <li>
+                                <p>Me-Hira permet notamment aux visiteurs de consulter un catalogue d’œuvres, d’effectuer des recherches et de lire certains contenus audio ou vidéo directement depuis la plateforme.</p>
+                            </li>
+                            <li>
+                                <p>L’accès au catalogue public et aux fonctionnalités de consultation ne nécessite pas la création d’un compte utilisateur.</p>
                             </li>
                         </ul>
                     </li>

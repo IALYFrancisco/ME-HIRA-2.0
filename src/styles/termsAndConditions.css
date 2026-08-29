@@ -20,3 +20,7 @@
     list-style-type: initial;
     margin-left: 20px;
 }
+
+.terms-and-conditions-subitem-container li {
+    margin-bottom: 20px;
+}
