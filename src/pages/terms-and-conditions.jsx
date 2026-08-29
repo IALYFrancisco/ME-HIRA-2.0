@@ -77,6 +77,23 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>4. Accès au service</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira est actuellement accessible gratuitement et sans création de compte utilisateur pour ses fonctionnalités publiques.</p>
+                            </li>
+                            <li>
+                                <p>L’Équipe Me-Hira peut modifier, suspendre ou interrompre temporairement ou définitivement tout ou partie de la plateforme, notamment pour des raisons de maintenance, de sécurité, d’évolution technique, de retrait d’un contenu ou pour toute autre raison légitime.</p>
+                            </li>
+                            <li>
+                                <p>Me-Hira ne garantit pas une disponibilité permanente ou ininterrompue du service.</p>
+                            </li>
+                            <li>
+                                <p>L’accès à Internet ainsi que les équipements nécessaires à l’utilisation de la plateforme relèvent de la responsabilité de l’Utilisateur.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
