@@ -245,6 +245,23 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>12. Exactitude des informations</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira s’efforce de présenter des informations aussi exactes et pertinentes que possible.</p>
+                            </li>
+                            <li>
+                                <p>Toutefois, certaines informations peuvent provenir de sources externes, anciennes, incomplètes ou contradictoires.</p>
+                            </li>
+                            <li>
+                                <p>Me-Hira ne garantit donc pas l’exactitude absolue, l’exhaustivité ou l’actualité de toutes les informations descriptives associées aux œuvres ou aux personnes.</p>
+                            </li>
+                            <li>
+                                <p>Toute personne constatant une erreur peut contacter l’Équipe Me-Hira afin de demander sa vérification et, le cas échéant, sa correction.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
