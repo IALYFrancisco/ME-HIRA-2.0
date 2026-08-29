@@ -299,6 +299,23 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>15. Espace administrateur</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>L’espace administrateur est une interface privée réservée aux personnes expressément autorisées par l’Équipe Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>À la date de publication des présentes CGU, l’administration de Me-Hira est assurée par un administrateur unique.</p>
+                            </li>
+                            <li>
+                                <p>Les fonctionnalités administratives permettent notamment la gestion des œuvres, des fichiers, des informations descriptives, de la publication et de la dépublication des contenus.</p>
+                            </li>
+                            <li>
+                                <p>Les informations relatives à l’authentification et à la sécurité de l’espace administrateur doivent rester confidentielles.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
