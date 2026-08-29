@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 export default function TermsAndConditions(){
@@ -7,7 +8,8 @@ export default function TermsAndConditions(){
             <Head>
                 <title>Conditions générales d'utilisation - Me-Hira</title>
             </Head>
-            <section className="terms-and-conditions-container"></section>
+            <Navbar/>
+            {/* <section className="terms-and-conditions-container"></section> */}
             <Footer/>
         </>
     )
