@@ -15,3 +15,8 @@
 .terms-and-conditions-item h2 {
     margin-bottom: 20px;
 }
+
+.terms-and-conditions-subitem-container {
+    list-style-type: initial;
+    margin-left: 20px;
+}
