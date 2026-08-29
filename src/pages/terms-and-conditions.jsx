@@ -225,6 +225,26 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>11. Informations relatives aux artistes</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira peut conserver, dans ses bases internes et à des fins exclusivement documentaires et de gestion, des informations relatives à des artistes, chanteurs, auteurs, compositeurs, musiciens et autres personnes intervenant dans le domaine musical malagasy.</p>
+                            </li>
+                            <li>
+                                <p>Ces informations peuvent notamment comprendre des informations biographiques, professionnelles ou descriptives.</p>
+                            </li>
+                            <li>
+                                <p>Certaines informations peuvent avoir été recueillies à partir de sources publiques accessibles en ligne.</p>
+                            </li>
+                            <li>
+                                <p>Les informations conservées dans les bases internes et qui ne sont pas destinées à la publication ne sont pas rendues accessibles au public par Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>Toute personne concernée peut contacter l’Équipe Me-Hira afin de demander la vérification, la rectification ou, lorsque cela est applicable, la suppression des informations la concernant.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
