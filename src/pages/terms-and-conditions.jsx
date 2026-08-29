@@ -11,7 +11,7 @@ export default function TermsAndConditions(){
             <Navbar/>
             <section className="terms-and-conditions-container">
                 <h1>Conditions générales d'utilisation</h1>
-                <h3>Dernière mis à jour: 29 août 2026</h3>
+                <h3 className="update-date">Dernière mis à jour : 29 août 2026</h3>
                 <ul>
                     <li className="terms-and-conditions-item">
                         <h2>1. Objet</h2>
