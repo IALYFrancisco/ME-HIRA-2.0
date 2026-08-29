@@ -181,6 +181,50 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>9. Réclamation et demande de retrait</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Toute personne estimant qu’un contenu accessible sur Me-Hira porte atteinte à ses droits peut contacter l’Équipe Me-Hira à l’adresse suivante : <a href="mailto:ialyfrancisco7@gmail.com">ialyfrancisco7@gmail.com</a></p>
+                            </li>
+                            <li>
+                                <p>Afin de permettre l’examen de la demande, il est recommandé de fournir :</p>
+                                <p>- l’identité du demandeur</p>
+                                <p>- ses coordonnées</p>
+                                <p>- l’identification précise du contenu concerné</p>
+                                <p>- l’adresse ou le lien permettant d’accéder au contenu</p>
+                                <p>- la nature du droit invoqué</p>
+                                <p>- les motifs de la demande</p>
+                                <p>- tout élément permettant de justifier la qualité ou les droits du demandeur</p>
+                                <p>- la mesure demandée, notamment retrait, dépublication, correction ou suppression.</p>
+                            </li>
+                            <li>
+                                <p>L’Équipe Me-Hira peut demander des informations complémentaires lorsque celles-ci sont nécessaires à l’examen de la demande.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>10. Traitement des demandes de retrait</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Après réception d’une demande, l’Équipe Me-Hira examine les informations transmises.</p>
+                            </li>
+                            <li>
+                                <p>Lorsque la situation le justifie, le contenu concerné peut être temporairement dépublié pendant l’examen de la demande.</p>
+                            </li>
+                            <li>
+                                <p>À l’issue de cet examen, l’Équipe Me-Hira peut notamment :</p>
+                                <p>- maintenir le contenu</p>
+                                <p>- corriger les informations associées</p>
+                                <p>- dépublier le contenu</p>
+                                <p>- supprimer définitivement le contenu</p>
+                                <p>- demander des informations complémentaires.</p>
+                            </li>
+                            <li>
+                                <p>Cette procédure interne ne prive aucune personne des droits et recours qui lui sont reconnus par la législation applicable.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
