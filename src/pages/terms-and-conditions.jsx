@@ -327,6 +327,26 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>17. Responsabilité de Me-Hira</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira met en œuvre des moyens raisonnables afin d'assurer le fonctionnement de la plateforme.</p>
+                            </li>
+                            <li>
+                                <p>Toutefois, dans les limites permises par la législation applicable, Me-Hira ne garantit pas :</p>
+                                <p>- l’absence d’erreur dans les informations</p>
+                                <p>- l’exhaustivité des informations</p>
+                                <p>- la disponibilité permanente des contenus</p>
+                                <p>- la conservation définitive de chaque œuvre</p>
+                                <p>- l’absence totale d’interruption</p>
+                                <p>- l’absence totale de dysfonctionnement.</p>
+                            </li>
+                            <li>
+                                <p>Me-Hira peut notamment retirer, modifier ou dépublier un contenu lorsqu’une raison juridique, technique, éditoriale ou de sécurité le justifie.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
