@@ -1,5 +1,17 @@
 .terms-and-conditions-container {
     max-width: 1024px;
-    margin: auto;
+    margin: 0 auto 40px auto;
     padding: 100px;
+}
+
+.terms-and-conditions-container h1 {
+    margin-bottom: 50px;
+}
+
+.terms-and-conditions-item {
+    margin-bottom: 40px;
+}
+
+.terms-and-conditions-item h2 {
+    margin-bottom: 20px;
 }
