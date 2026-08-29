@@ -279,6 +279,26 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>14. Utilisations interdites</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Il est notamment interdit à l’Utilisateur :</p>
+                                <p>- d’utiliser Me-Hira à des fins frauduleuses ou illicites</p>
+                                <p>- de tenter d’accéder à l’espace administrateur sans autorisation</p>
+                                <p>- de contourner ou neutraliser les mécanismes de sécurité</p>
+                                <p>- de tenter d’obtenir un accès non autorisé aux systèmes de Me-Hira</p>
+                                <p>- d’utiliser Me-Hira pour porter atteinte aux droits de tiers</p>
+                                <p>- de perturber volontairement le fonctionnement normal de la plateforme</p>
+                                <p>- d’introduire volontairement des programmes, fichiers ou mécanismes malveillants</p>
+                                <p>- de reproduire ou redistribuer les contenus en violation des règles applicables</p>
+                                <p>- d’utiliser ou divulguer des informations internes auxquelles l’Utilisateur n’est pas autorisé à accéder.</p>
+                            </li>
+                            <li>
+                                <p>Toute tentative d’accès frauduleux ou d’atteinte au système d’information peut faire l’objet des suites prévues par la législation applicable.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
