@@ -33,6 +33,33 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>2. Définitions</h2>
+                        <p className="sub-text">Dans le cadre des présentes CGU :</p>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p><strong>« Me-Hira » :</strong> désigne la plateforme numérique et ses différentes interfaces, fonctionnalités et services.</p>
+                            </li>
+                            <li>
+                                <p><strong>« Équipe Me-Hira » :</strong> désigne les personnes responsables de la gestion éditoriale et opérationnelle de la plateforme.</p>
+                            </li>
+                            <li>
+                                <p><strong>« LUMINI » :</strong> désigne l’agence web ayant conçu et développé la plateforme technique Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p><strong>« Utilisateur »</strong> ou <strong>« Visiteur » :</strong> désigne toute personne accédant à la partie publique de Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p><strong>« Contenu » :</strong> désigne notamment les fichiers audio et vidéo, images, textes, informations descriptives et autres éléments accessibles sur Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p><strong>« Œuvre » :</strong> désigne notamment une œuvre musicale, audiovisuelle ou toute autre création susceptible d’être protégée par les règles applicables en matière de propriété intellectuelle.</p>
+                            </li>
+                            <li>
+                                <p><strong>« Titulaire de droits » :</strong> désigne toute personne physique ou morale pouvant justifier de droits sur une œuvre, un enregistrement, une interprétation ou un autre contenu.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
