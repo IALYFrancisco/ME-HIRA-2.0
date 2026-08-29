@@ -409,6 +409,20 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>22. Modification ou cessation du service</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>L’Équipe Me-Hira peut modifier, suspendre ou mettre fin à tout ou partie du service.</p>
+                            </li>
+                            <li>
+                                <p>Cette décision peut notamment résulter de raisons techniques, financières, juridiques, éditoriales ou liées à la disponibilité des contenus.</p>
+                            </li>
+                            <li>
+                                <p>La cessation du service ne crée aucun droit pour l’Utilisateur à la conservation ou au maintien de l’accès à un contenu particulier.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
