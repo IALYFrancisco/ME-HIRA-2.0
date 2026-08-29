@@ -5,7 +5,7 @@ export default function Footer(){
         <footer>
             <ul>
                 <li>
-                    <Link href="">Conditions générales</Link>
+                    <Link href="/terms-and-conditions">Conditions générales</Link>
                     |<Link href="">Politiques de confidentialité</Link>|
                     <Link href="">Mentions légales</Link>
                 </li>
