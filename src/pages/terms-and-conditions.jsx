@@ -139,6 +139,26 @@ export default function TermsAndConditions(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>7. Streaming et absence de fonctionnalité de téléchargement</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira ne propose pas de fonctionnalité officielle permettant aux Utilisateurs de télécharger les fichiers audio ou vidéo présentés sur la plateforme.</p>
+                            </li>
+                            <li>
+                                <p>La plateforme est conçue pour permettre leur consultation ou leur écoute en streaming au moyen de son lecteur intégré.</p>
+                            </li>
+                            <li>
+                                <p>La plateforme est conçue pour permettre leur consultation ou leur écoute en streaming au moyen de son lecteur intégré.</p>
+                            </li>
+                            <li>
+                                <p>Lorsqu’un Utilisateur utilise, indépendamment des fonctionnalités de Me-Hira, un logiciel, une extension, un service ou tout autre outil tiers permettant éventuellement d’enregistrer ou d’extraire un contenu, cette utilisation relève de son initiative et de sa responsabilité.</p>
+                            </li>
+                            <li>
+                                <p>L’Utilisateur demeure responsable du respect des droits applicables lorsqu’il reproduit, conserve ou redistribue un contenu.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
