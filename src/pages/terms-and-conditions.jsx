@@ -7,6 +7,7 @@ export default function TermsAndConditions(){
             <Head>
                 <title>Conditions générales d'utilisation - Me-Hira</title>
             </Head>
+            <section className="terms-and-conditions-container"></sections>
             <Footer/>
         </>
     )
