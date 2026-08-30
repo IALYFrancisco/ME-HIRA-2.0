@@ -47,7 +47,7 @@ export default function Home() {
               {
                 songs && songs.map((song)=>
                     <li key={song._id}>
-                      <Link href={song.fileType === 'video' ? `/song/${song.slug}` : ''}>
+                      <Link href={`/song/${song.slug}`}>
                         <div className="poster-container">
                           <Image src={(song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
                             song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
