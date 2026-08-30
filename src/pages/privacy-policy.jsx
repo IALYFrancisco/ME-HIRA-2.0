@@ -149,6 +149,20 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>8. Informations internes non destinées à la publication</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Certaines informations relatives aux artistes et aux personnes référencées dans les bases internes peuvent être considérées comme des informations internes.</p>
+                            </li>
+                            <li>
+                                <p>Ces informations ne sont pas destinées à être publiées sur la plateforme et leur accès est limité aux personnes autorisées à administrer Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>Me-Hira ne publie pas volontairement une information interne simplement parce qu’elle a été enregistrée dans sa base de données.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
