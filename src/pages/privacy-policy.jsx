@@ -321,6 +321,15 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>19. Contact</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Pour toute question concernant la présente Politique de confidentialité ou l’exercice d’un droit relatif aux données personnelles :</p>
+                                <p><strong>E-mail : <a href="mailto:ialyfrancisco7@gmail.com">ialyfrancisco7@gmail.com</a></strong></p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
