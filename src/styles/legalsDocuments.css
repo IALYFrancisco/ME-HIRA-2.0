@@ -32,3 +32,19 @@
 .terms-and-conditions-subitem-container li {
     margin-bottom: 20px;
 }
+
+@media only screen and (max-width: 1024px){
+    .terms-and-conditions-container,
+    .privacy-policy-container,
+    .legals-notice-container {
+        padding: 50px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .terms-and-conditions-container,
+    .privacy-policy-container,
+    .legals-notice-container {
+        padding: 25px;
+    }
+}
