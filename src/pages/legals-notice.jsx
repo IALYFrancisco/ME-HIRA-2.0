@@ -9,6 +9,9 @@ export default function LegalsNotice(){
                 <title>Mentions légales - Me-Hira</title>
             </Head>
             <Navbar/>
+            <section className="legals-notice-container">
+
+            </section>
             <Footer/>
         </>
     )
