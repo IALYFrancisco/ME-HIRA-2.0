@@ -305,6 +305,22 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>18. Modifications de la politique</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>La présente politique peut être modifiée afin de tenir compte notamment :</p>
+                                <p>- de l’évolution de Me-Hira</p>
+                                <p>- de l’évolution de son infrastructure</p>
+                                <p>- de l’introduction de nouvelles fonctionnalités</p>
+                                <p>- de l’utilisation de nouveaux prestataires</p>
+                                <p>- de l’évolution de la législation applicable.</p>
+                            </li>
+                            <li>
+                                <p>La version publiée sur Me-Hira constitue la version en vigueur.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
