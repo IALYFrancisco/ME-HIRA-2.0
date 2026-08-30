@@ -48,6 +48,20 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>3. Données techniques des visiteurs</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>À la date de publication de la présente politique, Me-Hira ne met pas volontairement en place un système interne destiné à enregistrer et conserver les adresses IP, les historiques de navigation, les historiques d’écoute ou les journaux techniques des visiteurs à des fins d’analyse ou de profilage.</p>
+                            </li>
+                            <li>
+                                <p>Toutefois, le fonctionnement technique d’un service accessible sur Internet peut nécessiter l’intervention de prestataires d’hébergement ou d’infrastructure susceptibles de traiter certaines informations techniques dans le cadre de leurs propres services.</p>
+                            </li>
+                            <li>
+                                <p>Ces éventuels traitements sont soumis aux conditions et politiques de confidentialité des prestataires concernés.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
