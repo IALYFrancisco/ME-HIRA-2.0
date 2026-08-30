@@ -31,6 +31,23 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>2. Responsable de la gestion et de la publication</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira est actuellement un projet indépendant administré par son équipe de gestion.</p>
+                            </li>
+                            <li>
+                                <p><strong>Responsable actuel de la gestion et de la publication :</strong> IALY Francisco Raymond</p>
+                            </li>
+                            <li>
+                                <p><strong>Adresse électronique :</strong> <a href="mailto:ialyfrancisco7@gmail.com">ialyfrancisco7@gmail.com</a></p>
+                            </li>
+                            <li>
+                                <p>Ces informations pourront être mises à jour lorsque Me-Hira sera éventuellement constituée sous une structure juridique dédiée.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
