@@ -17,22 +17,32 @@ export default function Navbar (){
     var [ fileType, setFileType ] = useState("")
     const [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
+    const filterTypeContainerRef = useRef(null)
+    const searchbarContainerRef = useRef(null)
 
     useEffect(()=>{
+        
         const handleClickOutside = (event) => {
-            if(popUpActionsRef.current && !popUpActionsRef.current.contains(event.target)){
-                setActivePopUp(null)
-            }
-            document.addEventListener("mousedown", handleClickOutside)
-            return ()=>{
-                document.removeEventListener("mousedown", handleClickOutside)
-            }
-        }
-    },[])
 
-    const toggleActionsPopUp = (actionName) => {
-        setActivePopUp((prev)=>{prev === actionName ? null : actionName})
-    }
+            // pour le pop up du filtre par type de fichier
+            if(filterTypeContainerRef.current && !filterTypeContainerRef.current.contains(event.target)){
+                setFilterTypePopUpIsActive(false)
+            }
+
+            // pour le pop up du filtre par texte
+            if(searchbarContainerRef.current && !searchbarContainerRef.current.contains(event.target)){
+                setResults([])
+            }
+
+        }
+
+        document.addEventListener("mousedown", handleClickOutside)
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside)
+        }
+
+    }, [])
 
     const searchSongs = async (p) => api.get(
         fileType ? `/song/get?prompt=${p}&fileType=${fileType}` : `/song/get?prompt=${p}`
@@ -51,24 +61,15 @@ export default function Navbar (){
     }
 
     useEffect(()=>{
-        if(prompt === ""){
+        if(prompt.trim() === ""){
             setResults([])
+            return
         }
-        if((prompt && prompt.trim() !== "") || (fileType && prompt.trim() !== "")){
-            fetchSongs(prompt)
-        }
-    },[prompt, fileType])
+        fetchSongs(prompt)
+    }, [prompt, fileType])
 
     const toggleFilterTypePopUp = () => {
-        filterTypePopUpIsActive ? setFilterTypePopUpIsActive(false) : setFilterTypePopUpIsActive(true)
-    }
-
-    const openFilterTypePopUp = () => {
-        setFilterTypePopUpIsActive(true)
-    }
-
-    const closeFilterTypePopUp = () => {
-        setFilterTypePopUpIsActive(false)
+        setFilterTypePopUpIsActive(prev => !prev)
     }
 
     const handleFileTypeChange = (event) => {
@@ -84,13 +85,13 @@ export default function Navbar (){
                     </Link>
                 </li>
                 <li>
-                    <span className="searchbar-container">
+                    <span ref={searchbarContainerRef} className="searchbar-container">
                         <input type="text" id="songSearch" placeholder="Rechercher des chansons ..." value={prompt} onChange={(e)=>{setPrompt(e.target.value)}}/>
                         <div className={((prompt && results.length > 0)) ? "home-search-modal active" : "home-search-modal"}>
                             <ul>
                                 { results.map((song)=>(
-                                    <li key={song._id}>
-                                        <Link href={ song.fileType === "video" ? `/song/${song.slug}` : ""}>
+                                    <li key={song._id} onClick={()=>setResults([])}>
+                                        <Link href={`/song/${song.slug}`}>
                                             <h4>{song.title}</h4>
                                             <span className="singer-container">
                                                 <h5>{JoinArrayItems(song.singer)}</h5>
@@ -106,7 +107,7 @@ export default function Navbar (){
                             { searchIsLoading && <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />}
                         </button>
                     </span>
-                    <div className="filter-type-container">
+                    <div ref={filterTypeContainerRef} className="filter-type-container">
                         <button className="filter" onClick={toggleFilterTypePopUp}>
                             <Image src="/images/filter.png" priority alt="filtre des chansons de me-hira" width={48} height={48} className="filter-icone" />
                         </button>

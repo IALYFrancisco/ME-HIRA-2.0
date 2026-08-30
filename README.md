@@ -1,40 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+```markdown
+# Me-Hira
 
-## Getting Started
+🎵 **Me-Hira** est une plateforme numérique consacrée à la **préservation et à la conservation numérique d’œuvres musicales malagasy**, notamment des **chansons, vidéos et enregistrements audio**.
 
-First, run the development server:
+## 📌 Problématique
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+De nombreuses chansons et œuvres musicales malagasy sont aujourd'hui difficiles, voire impossibles, à retrouver en ligne. Certains contenus existent encore sur des supports physiques ou auprès de particuliers, mais leur accès reste limité et leur conservation peut être fragile.
+
+La disparition progressive de ces supports, la perte de fichiers et la dispersion des contenus constituent ainsi un risque pour la préservation du patrimoine musical malagasy.
+
+## 💡 Solution
+
+Me-Hira a pour objectif de contribuer à la **conservation numérique de ces œuvres** en centralisant les chansons, vidéos et enregistrements audio sur un **serveur dédié à leur conservation**.
+
+Cette approche vise notamment à préserver des œuvres devenues difficiles à retrouver en ligne et à contribuer à la sauvegarde du patrimoine musical malagasy.
+
+## 🔗 Lien : [https://mehira.onrender.com](https://mehira.onrender.com)
+
+### 📄 Documents légaux de la plateforme Me-Hira
+
+- **[Conditions Générales d'Utilisation](https://mehira.onrender.com/terms-and-conditions)**
+- **[Politique de confidentialité](https://mehira.onrender.com/privacy-policy)**
+- **[Mentions légales](https://mehira.onrender.com/legals-notice)**
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
