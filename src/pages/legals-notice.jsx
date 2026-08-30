@@ -65,6 +65,20 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>4. Situation de LUMINI</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>LUMINI est actuellement une startup/agence web en phase de développement.</p>
+                            </li>
+                            <li>
+                                <p>À la date de publication des présentes Mentions légales, LUMINI n’est pas encore constituée sous une forme juridique définitive.</p>
+                            </li>
+                            <li>
+                                <p>Les informations relatives à son statut juridique pourront être mises à jour lorsque sa constitution juridique sera finalisée.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
