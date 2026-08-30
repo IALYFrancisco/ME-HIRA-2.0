@@ -1,10 +1,12 @@
-.terms-and-conditions-container {
+.terms-and-conditions-container,
+.privacy-policy-container {
     max-width: 1024px;
     margin: 0 auto;
     padding: 100px;
 }
 
-.terms-and-conditions-container .update-date {
+.terms-and-conditions-container .update-date,
+.privacy-policy-container .update-date {
     margin: 50px auto;
 }
 
