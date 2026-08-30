@@ -191,6 +191,23 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>11. Données communiquées par e-mail</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Lorsqu’une personne contacte Me-Hira par courrier électronique, les informations communiquées volontairement dans son message peuvent être utilisées afin de :</p>
+                                <p>- répondre à sa demande</p>
+                                <p>- vérifier une réclamation</p>
+                                <p>- traiter une demande de retrait</p>
+                                <p>- traiter une demande de rectification</p>
+                                <p>- traiter une demande de suppression</p>
+                                <p>- assurer le suivi d’une demande juridique ou technique.</p>
+                            </li>
+                            <li>
+                                <p>Les informations nécessaires au traitement de la demande peuvent être conservées pendant la durée raisonnablement nécessaire à son traitement et, lorsque cela est nécessaire, à la gestion d’un éventuel litige.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
