@@ -340,6 +340,7 @@ export default function PrivacyPolicy() {
                     </li>
                 </ul>
             </section>
+            <Footer/>
         </>
     )
 }
