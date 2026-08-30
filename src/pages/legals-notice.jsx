@@ -121,6 +121,20 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>8. Droits sur les œuvres</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Les œuvres musicales, enregistrements sonores, vidéos, photographies et autres contenus présents sur Me-Hira peuvent appartenir à des auteurs, compositeurs, artistes-interprètes, producteurs, éditeurs ou autres titulaires de droits.</p>
+                            </li>
+                            <li>
+                                <p>Me-Hira ne revendique pas automatiquement la propriété de ces œuvres.</p>
+                            </li>
+                            <li>
+                                <p>La présence d’un contenu sur la plateforme ne doit pas être interprétée comme une déclaration selon laquelle Me-Hira, son équipe ou LUMINI serait titulaire de l’ensemble des droits relatifs à ce contenu.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
