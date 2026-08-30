@@ -123,6 +123,32 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>7. Données relatives aux artistes et professionnels de la musique</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira peut conserver dans ses bases internes des informations relatives à des artistes, chanteurs, auteurs, compositeurs, musiciens et autres personnes liées au domaine musical malagasy.</p>
+                            </li>
+                            <li>
+                                <p>Les informations susceptibles d’être conservées peuvent notamment comprendre :</p>
+                                <p>- nom complet</p>
+                                <p>- nom ou pseudonyme artistique</p>
+                                <p>- activité ou occupation dans le domaine musical</p>
+                                <p>- informations biographiques</p>
+                                <p>- adresse</p>
+                                <p>- image</p>
+                                <p>- date de naissance</p>
+                                <p>- lieu de naissance</p>
+                                <p>- autres informations documentaires.</p>
+                            </li>
+                            <li>
+                                <p>Ces informations sont collectées et conservées dans le cadre interne de documentation et de gestion du projet Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>Certaines informations peuvent provenir de sources publiques accessibles en ligne.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
