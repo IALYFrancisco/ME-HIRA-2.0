@@ -8,6 +8,7 @@ export default function LegalsNotice(){
             <Head>
                 <title>Mentions légales - Me-Hira</title>
             </Head>
+            <Navbar/>
         </>
     )
 }
