@@ -268,6 +268,26 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>16. Sécurité</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira met en œuvre des mesures techniques raisonnables destinées à protéger les informations contre les accès, modifications, destructions ou divulgations non autorisés.</p>
+                            </li>
+                            <li>
+                                <p>L’espace administrateur est notamment protégé par un mécanisme d’authentification.</p>
+                            </li>
+                            <li>
+                                <p>Les mots de passe ne sont pas destinés à être stockés en clair.</p>
+                            </li>
+                            <li>
+                                <p>Les jetons d’authentification sont utilisés conformément à leur finalité de sécurité.</p>
+                            </li>
+                            <li>
+                                <p>Malgré ces mesures, aucune transmission ou infrastructure informatique accessible par Internet ne peut garantir une sécurité absolue.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
