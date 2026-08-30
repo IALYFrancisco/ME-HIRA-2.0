@@ -330,6 +330,14 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>20. Entrée en vigueur</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>La présente Politique de confidentialité entre en vigueur à compter de sa publication sur Me-Hira.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
