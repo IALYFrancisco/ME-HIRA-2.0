@@ -48,6 +48,23 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>3. Développement technique</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>La plateforme Me-Hira a été conçue et développée par LUMINI, une agence web/startup spécialisée dans la conception et le développement de sites web et d’applications web.</p>
+                            </li>
+                            <li>
+                                <p>LUMINI intervient dans le cadre de Me-Hira en qualité de prestataire de conception et de développement technique.</p>
+                            </li>
+                            <li>
+                                <p>LUMINI ne revendique aucun droit de propriété sur les œuvres musicales ou audiovisuelles référencées ou diffusées sur Me-Hira du seul fait de son intervention technique.</p>
+                            </li>
+                            <li>
+                                <p>Les décisions relatives à la sélection, à la publication, à la dépublication, à la modification ou à la suppression des contenus relèvent de l’Équipe Me-Hira.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
