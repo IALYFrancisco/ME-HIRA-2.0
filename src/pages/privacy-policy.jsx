@@ -62,6 +62,29 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>4. Espace administrateur</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira dispose d’un espace administrateur privé.</p>
+                            </li>
+                            <li>
+                                <p>À la date de la présente politique, cet espace est accessible uniquement à l’administrateur autorisé de la plateforme.</p>
+                            </li>
+                            <li>
+                                <p>Les informations nécessaires au fonctionnement de l’espace administrateur peuvent notamment comprendre :</p>
+                                <p>- une adresse e-mail utilisée pour l’authentification</p>
+                                <p>- des informations d’identification</p>
+                                <p>- des jetons d’accès</p>
+                                <p>- des jetons nécessaires au renouvellement de l’authentification</p>
+                                <p>- des informations nécessaires à la récupération du compte</p>
+                                <p>- des préférences d’affichage.</p>
+                            </li>
+                            <li>
+                                <p>Ces informations sont utilisées exclusivement pour assurer l’authentification, la sécurité et le fonctionnement de l’espace administrateur.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
