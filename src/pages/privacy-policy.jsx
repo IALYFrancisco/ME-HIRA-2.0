@@ -85,6 +85,25 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>5. Données stockées dans le navigateur de l’administrateur</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Le navigateur utilisé pour accéder à l’espace administrateur peut conserver certains éléments nécessaires au fonctionnement de l’application.</p>
+                            </li>
+                            <li>
+                                <p>Ces éléments comprennent notamment :</p>
+                                <p>-<strong> LocalStorage :</strong> « at.sid » , « me-hira-color-mode »</p>
+                                <p>-<strong> Cookie HTTP-only :</strong> « rt.sid »</p>
+                            </li>
+                            <li>
+                                <p>Ces éléments sont destinés au fonctionnement de l’authentification et à la gestion des préférences d’affichage.</p>
+                            </li>
+                            <li>
+                                <p>Ils ne constituent pas un système de suivi des visiteurs publics.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
