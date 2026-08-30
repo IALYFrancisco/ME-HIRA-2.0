@@ -195,6 +195,15 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>13. Contact</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Pour toute demande concernant Me-Hira, les contenus, les droits de propriété intellectuelle, les informations relatives aux personnes ou la plateforme :</p>
+                                <p><strong>E-mail : <a href="mailto:ialyfrancisco7@gmail.com">ialyfrancisco7@gmail.com</a></strong></p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
