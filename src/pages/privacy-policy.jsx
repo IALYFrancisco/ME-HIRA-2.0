@@ -163,6 +163,20 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>9. Sources des informations</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Certaines informations peuvent provenir de sources publiques accessibles en ligne, de documents accompagnant les œuvres, de supports physiques ou de fichiers communiqués à l’Équipe Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>Le fait qu’une information soit accessible publiquement en ligne ne signifie pas nécessairement qu’elle puisse être réutilisée sans aucune restriction.</p>
+                            </li>
+                            <li>
+                                <p>Me-Hira traite les demandes de correction, de suppression ou de retrait conformément au cadre applicable.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
