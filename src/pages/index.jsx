@@ -35,7 +35,7 @@ export default function Home() {
       forcedTheme="light"
     >
       <Head>
-        <title>Me-Hira - Ecoutez vos chansons préférées en ligne</title>
+        <title>Me-Hira - Écoutez vos chansons préférées en ligne</title>
       </Head>
       <section className="homepage-container">
         <Navbar/>
