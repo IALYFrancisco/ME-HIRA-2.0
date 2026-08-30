@@ -93,6 +93,20 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>6. Services techniques complémentaires</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira peut également utiliser des services techniques tiers pour certaines fonctions, notamment :</p>
+                                <p>- <strong>GitHub</strong> et <strong>Git LFS</strong> pour certains besoins de stockage et de gestion de fichiers</p>
+                                <p>- <strong>jsDelivr</strong> pour la distribution de certains fichiers statiques ou multimédias</p>
+                                <p>- <strong>Brevo</strong> pour certains services d’envoi d’e-mails.</p>
+                            </li>
+                            <li>
+                                <p>Cette liste peut évoluer en fonction des besoins techniques de la plateforme.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
