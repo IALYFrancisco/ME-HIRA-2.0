@@ -177,6 +177,20 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>10. Finalités de la documentation</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Les informations relatives aux artistes et aux œuvres peuvent être utilisées notamment afin de :</p>
+                                <p>- documenter le patrimoine musical malagasy</p>
+                                <p>- identifier les personnes ayant participé à une œuvre</p>
+                                <p>- organiser le catalogue de Me-Hira</p>
+                                <p>- améliorer la qualité des informations associées aux œuvres</p>
+                                <p>- répondre aux demandes et réclamations</p>
+                                <p>- gérer et administrer la plateforme.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
