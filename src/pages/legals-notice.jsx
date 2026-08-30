@@ -10,7 +10,8 @@ export default function LegalsNotice(){
             </Head>
             <Navbar/>
             <section className="legals-notice-container">
-
+                <h1>Mentions légales</h1>
+                <h3 className="update-date">Dernière mis à jour : 29 août 2026</h3>
             </section>
             <Footer/>
         </>
