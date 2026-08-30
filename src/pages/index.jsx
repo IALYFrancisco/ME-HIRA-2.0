@@ -35,8 +35,9 @@ export default function Home() {
       forcedTheme="light"
     >
       <Head>
-        <link rel="canonical" href="https://mehira.onrender.com" />
         <title>Me-Hira - Écoutez vos chansons préférées en ligne</title>
+        <link rel="canonical" href="https://mehira.onrender.com" />
+        <meta name="description" content="Explorez un catalogue musical varié, retrouvez vos artistes favoris et profitez d'une expérience musicale simple, fluide et personnalisée avec Me-Hira."/>
       </Head>
       <section className="homepage-container">
         <Navbar/>
