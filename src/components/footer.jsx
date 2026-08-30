@@ -7,7 +7,7 @@ export default function Footer(){
                 <li>
                     <Link href="/terms-and-conditions">Conditions générales</Link>
                     |<Link href="/privacy-policy">Politique de confidentialité</Link>|
-                    <Link href="">Mentions légales</Link>
+                    <Link href="/legals-notice">Mentions légales</Link>
                 </li>
                 <li>
                     &copy; 2026 <Link href="/">Me-Hira</Link>
