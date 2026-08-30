@@ -288,6 +288,23 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>17. Droits des personnes</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Conformément à la législation applicable et sous réserve des conditions prévues par celle-ci, les personnes concernées peuvent notamment disposer de droits relatifs à leurs données personnelles, notamment des droits d’accès, de rectification et, lorsque les conditions légales sont réunies, de suppression ou d’opposition au traitement.</p>
+                            </li>
+                            <li>
+                                <p>Toute demande peut être adressée à : <a href="mailto:ialyfrancisco7@gmail.com">ialyfrancisco7@gmail.com</a></p>
+                            </li>
+                            <li>
+                                <p>Me-Hira examinera la demande conformément à la législation applicable.</p>
+                            </li>
+                            <li>
+                                <p>Lorsque cela est nécessaire afin de protéger les données d’une personne contre une demande frauduleuse, Me-Hira peut demander des éléments permettant de vérifier l’identité du demandeur.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
