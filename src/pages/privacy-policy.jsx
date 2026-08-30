@@ -240,6 +240,17 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>14. Hébergement et traitement par des prestataires</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Certains prestataires techniques utilisés par Me-Hira peuvent être établis ou exploiter des infrastructures situées en dehors de Madagascar.</p>
+                            </li>
+                            <li>
+                                <p>Lorsque des données à caractère personnel sont concernées, les traitements sont réalisés conformément aux règles applicables et aux mesures techniques ou contractuelles pertinentes lorsqu’elles sont nécessaires.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
