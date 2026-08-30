@@ -251,6 +251,23 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>15. Durée de conservation</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira ne conserve pas volontairement les données personnelles des visiteurs publics dans le but de constituer un historique de leur utilisation du service.</p>
+                            </li>
+                            <li>
+                                <p>Les données liées à l’administration sont conservées pendant la durée nécessaire au fonctionnement et à la sécurisation du compte administrateur.</p>
+                            </li>
+                            <li>
+                                <p>Les informations relatives aux demandes adressées par e-mail peuvent être conservées pendant la durée nécessaire au traitement de la demande et, lorsque cela est nécessaire, à la défense des droits et intérêts de Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>Les informations documentaires relatives aux artistes peuvent être conservées aussi longtemps qu’elles sont nécessaires aux objectifs internes de documentation et de gestion de Me-Hira, sous réserve des droits reconnus aux personnes concernées et de la législation applicable.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
