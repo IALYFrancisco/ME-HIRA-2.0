@@ -208,6 +208,38 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>12. Réclamations relatives aux œuvres</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Lorsqu’un titulaire de droits ou toute autre personne adresse une demande concernant une œuvre présente sur Me-Hira, les informations fournies dans cette demande peuvent être conservées afin de vérifier la réclamation et de prendre les mesures appropriées.</p>
+                            </li>
+                            <li>
+                                <p>Ces informations peuvent notamment comprendre l’identité du demandeur, ses coordonnées, l’identification de l’œuvre concernée et les éléments justificatifs transmis.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>13. Prestataires techniques</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira utilise ou peut utiliser différents prestataires techniques nécessaires à son fonctionnement.</p>
+                            </li>
+                            <li>
+                                <p>À la date de la présente politique, l’infrastructure de Me-Hira utilise notamment :</p>
+                                <p>-<strong> Render :</strong> pour l’hébergement</p>
+                                <p>-<strong> GitHub / Git LFS :</strong> pour certains besoins de stockage et de gestion de fichiers</p>
+                                <p>-<strong> jsDelivr :</strong> pour la distribution de certains fichiers statiques ou multimédias</p>
+                                <p>-<strong> Brevo :</strong> pour certains services d’envoi d’e-mails.</p>
+                            </li>
+                            <li>
+                                <p>La liste des prestataires peut évoluer en fonction des besoins techniques de Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>Chaque prestataire peut appliquer ses propres conditions d’utilisation et politiques de confidentialité.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
