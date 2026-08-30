@@ -107,6 +107,20 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>7. Propriété intellectuelle de la plateforme</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>La structure, l’interface, le design, le code source, les éléments graphiques, les logos, les textes originaux et les éléments techniques propres à Me-Hira peuvent être protégés par les droits de propriété intellectuelle applicables.</p>
+                            </li>
+                            <li>
+                                <p>Sauf autorisation expresse ou disposition légale contraire, leur reproduction, modification, distribution ou exploitation sans autorisation est interdite.</p>
+                            </li>
+                            <li>
+                                <p>Cette protection est distincte des droits pouvant appartenir aux auteurs, interprètes, producteurs ou autres titulaires de droits sur les œuvres musicales et audiovisuelles accessibles sur la plateforme.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
