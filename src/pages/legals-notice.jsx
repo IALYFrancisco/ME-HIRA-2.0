@@ -135,6 +135,27 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>9. Demande de retrait</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Toute personne estimant qu’un contenu disponible sur Me-Hira porte atteinte à ses droits peut adresser une demande de retrait ou de dépublication à : <strong><a href="mailto:ialyfrancisco7@gmail.com">ialyfrancisco7@gmail.com</a></strong></p>
+                            </li>
+                            <li>
+                                <p>Afin de faciliter le traitement de la demande, celle-ci doit autant que possible identifier :</p>
+                                <p>- le demandeur</p>
+                                <p>- ses coordonnées</p>
+                                <p>- le contenu concerné</p>
+                                <p>- l’adresse de la page concernée</p>
+                                <p>- la nature du droit invoqué</p>
+                                <p>- les motifs de la demande</p>
+                                <p>- tout élément permettant de justifier la demande.</p>
+                            </li>
+                            <li>
+                                <p>L’Équipe Me-Hira examine les demandes reçues et peut procéder à une dépublication, une suppression, une modification ou toute autre mesure appropriée.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
