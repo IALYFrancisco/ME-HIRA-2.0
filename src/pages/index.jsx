@@ -38,6 +38,7 @@ export default function Home() {
         <title>Me-Hira - Écoutez vos chansons préférées en ligne</title>
         <link rel="canonical" href="https://mehira.onrender.com" />
         <meta name="description" content="Explorez un catalogue musical varié, retrouvez vos artistes favoris et profitez d'une expérience musicale simple, fluide et personnalisée avec Me-Hira."/>
+        <meta property="og:title" content="Me-Hira - Écoutez vos chansons préférées en ligne" />
         <meta property="og:description" content="Explorez un catalogue musical varié, retrouvez vos artistes favoris et profitez d'une expérience musicale simple, fluide et personnalisée avec Me-Hira."/>
         <meta name="twitter:description" content="Explorez un catalogue musical varié, retrouvez vos artistes favoris et profitez d'une expérience musicale simple, fluide et personnalisée avec Me-Hira." />
       </Head>
