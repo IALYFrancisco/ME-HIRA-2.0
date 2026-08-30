@@ -156,6 +156,23 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>10. Données relatives aux personnes</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira peut conserver, dans ses bases internes et à des fins de documentation, des informations relatives à des artistes, chanteurs, auteurs, compositeurs, musiciens et autres personnes liées au domaine musical malagasy.</p>
+                            </li>
+                            <li>
+                                <p>Certaines de ces informations peuvent provenir de sources publiques.</p>
+                            </li>
+                            <li>
+                                <p>Les informations internes qui ne sont pas destinées à la publication ne sont pas rendues publiques par Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>Toute personne concernée peut adresser une demande de rectification ou de suppression à : <a href="mailto:ialyfrancisco7@gmail.com">ialyfrancisco7@gmail.com</a></p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
