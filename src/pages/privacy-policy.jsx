@@ -104,6 +104,25 @@ export default function PrivacyPolicy() {
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>6. Finalités des traitements</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Les informations traitées dans le cadre de l’espace administrateur peuvent être utilisées notamment pour :</p>
+                                <p>- authentifier l’administrateur</p>
+                                <p>- maintenir sa session</p>
+                                <p>- renouveler son authentification</p>
+                                <p>- permettre la récupération du compte</p>
+                                <p>- sécuriser l’espace administrateur</p>
+                                <p>- gérer les préférences d’affichage</p>
+                                <p>- permettre l’administration des contenus</p>
+                                <p>- empêcher les accès non autorisés.</p>
+                            </li>
+                            <li>
+                                <p>Ces informations ne sont actuellement pas utilisées à des fins de publicité comportementale ou de profilage commercial.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </>
