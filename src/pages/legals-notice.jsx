@@ -215,6 +215,24 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>15. Mise à jour</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Les présentes Mentions légales peuvent être modifiées notamment en cas :</p>
+                                <p>- de changement de responsable</p>
+                                <p>- de constitution juridique de Me-Hira</p>
+                                <p>- de constitution juridique de LUMINI</p>
+                                <p>- de changement d’hébergement</p>
+                                <p>- de changement de prestataires techniques</p>
+                                <p>- de changement de nom de domaine</p>
+                                <p>- d’évolution de l’organisation de Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>La version publiée sur la plateforme constitue la version en vigueur.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
