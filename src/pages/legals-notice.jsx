@@ -79,6 +79,20 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>5. Hébergement</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>La plateforme Me-Hira est actuellement hébergée auprès de <strong>Render</strong>.</p>
+                            </li>
+                            <li>
+                                <p>L’infrastructure comprend notamment les composants nécessaires à l’hébergement de l’interface web et des services applicatifs de Me-Hira.</p>
+                            </li>
+                            <li>
+                                <p>Les services d’hébergement sont soumis aux conditions applicables du prestataire concerné.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
