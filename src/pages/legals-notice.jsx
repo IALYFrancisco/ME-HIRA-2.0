@@ -187,6 +187,14 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>12. Protection des données personnelles</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Les informations relatives au traitement des données personnelles sont détaillées dans la <Link href="/privacy-policy">Politique de confidentialité de Me-Hira</Link>.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
