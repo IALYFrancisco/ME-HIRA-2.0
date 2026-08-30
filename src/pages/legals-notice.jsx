@@ -173,6 +173,20 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>11. Exactitude des informations</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Me-Hira s’efforce de maintenir des informations exactes et pertinentes.</p>
+                            </li>
+                            <li>
+                                <p>Cependant, certaines données peuvent provenir de sources externes et être anciennes, incomplètes ou contradictoires.</p>
+                            </li>
+                            <li>
+                                <p>Toute personne constatant une erreur peut demander sa vérification et, lorsque cela est approprié, sa correction.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
