@@ -204,6 +204,17 @@ export default function LegalsNotice(){
                             </li>
                         </ul>
                     </li>
+                    <li className="terms-and-conditions-item">
+                        <h2>14. Droit applicable</h2>
+                        <ul className="terms-and-conditions-subitem-container">
+                            <li>
+                                <p>Les présentes Mentions légales sont établies dans le cadre du droit applicable à Madagascar, sous réserve des règles impératives éventuellement applicables.</p>
+                            </li>
+                            <li>
+                                <p>Les questions relatives aux droits d’auteur, aux droits des personnes, aux données personnelles et à l’utilisation de la plateforme sont traitées conformément aux règles légalement applicables.</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <Footer/>
