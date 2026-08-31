@@ -54,6 +54,8 @@ export default function SongReader({ song: _song }){
         .finally(()=>setFetchSongLoading(false))
     }, [slug])
 
+    const pageDescription = `Écoutez « ${song?.title} » de ${JoinArrayItems(song?.singer)} et plongez dans l'univers musical de Me-Hira.`
+
     return(
         <ThemeProvider
             attribute="class"
