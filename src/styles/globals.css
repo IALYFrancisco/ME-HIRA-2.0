@@ -42,6 +42,7 @@
 @font-face {
   font-family: Lato;
   src: url("../../public/font/Lato-Regular.ttf");
+  font-display: swap;
 }
 
 * {
