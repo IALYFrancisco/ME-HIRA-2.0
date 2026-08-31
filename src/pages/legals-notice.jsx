@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export default function LegalsNotice(){
 
-    const pageSEODescription = "Consultez les informations légales de Me-Hira concernant son responsable, son développement, son hébergement, sa propriété intellectuelle et les modalités de contact."
+    const pageSEODescription = "Consultez les informations légales de Me-Hira : responsable, développement, hébergement, propriété intellectuelle et moyens de contact."
 
     return(
         <>
