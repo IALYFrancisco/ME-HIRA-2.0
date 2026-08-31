@@ -3,6 +3,9 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 export default function PrivacyPolicy() {
+
+    const pageSEODescription = "Découvrez comment Me-Hira protège les données personnelles, gère les informations internes relatives aux artistes et assure la confidentialité des données utilisées par la plateforme."
+
     return(
         <>
             <Head>
