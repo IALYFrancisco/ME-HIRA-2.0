@@ -7,6 +7,7 @@ export default function TermsAndConditions(){
         <>
             <Head>
                 <title>Conditions générales d'utilisation - Me-Hira</title>
+                <meta property="og:title" content="Conditions générales d'utilisation - Me-Hira" />
             </Head>
             <Navbar/>
             <section className="terms-and-conditions-container">
