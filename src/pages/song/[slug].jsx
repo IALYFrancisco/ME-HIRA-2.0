@@ -58,6 +58,12 @@ export default function SongReader({ song: _song }){
     const pageShareSocialMediaImage =
         (song?.thumbnailUrl.startsWith('https://')||song?.thumbnailUrl.startsWith('http://'))?
         song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
+    const pageSEOJSON_LD = {
+        "@context": "https://schema.org",
+        "@type": "MusicRecording",
+        "name": song?.title,
+        "url": `https://mehira.onrender.com/song/${song?.slug}`
+    }
 
     return(
         <ThemeProvider
