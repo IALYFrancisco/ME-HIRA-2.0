@@ -1,4 +1,3 @@
-```markdown
 # Me-Hira
 
 🎵 **Me-Hira** est une plateforme numérique consacrée à la **préservation et à la conservation numérique d’œuvres musicales malagasy**, notamment des **chansons, vidéos et enregistrements audio**.
@@ -15,11 +14,11 @@ Me-Hira a pour objectif de contribuer à la **conservation numérique de ces œu
 
 Cette approche vise notamment à préserver des œuvres devenues difficiles à retrouver en ligne et à contribuer à la sauvegarde du patrimoine musical malagasy.
 
-## 🔗 Lien : [https://mehira.onrender.com](https://mehira.onrender.com)
+## 🔗 Lien :
+ [https://mehira.onrender.com](https://mehira.onrender.com)
 
 ### 📄 Documents légaux de la plateforme Me-Hira
 
 - **[Conditions Générales d'Utilisation](https://mehira.onrender.com/terms-and-conditions)**
 - **[Politique de confidentialité](https://mehira.onrender.com/privacy-policy)**
 - **[Mentions légales](https://mehira.onrender.com/legals-notice)**
-```
