@@ -7,6 +7,10 @@ export default function PrivacyPolicy() {
         <>
             <Head>
                 <title>Politique de confidentialité - Me-Hira</title>
+                <link rel="canonical" href="https://mehira.onrender.com/privacy-policy" />
+                <meta property="og:title" content="Politique de confidentialité - Me-Hira" />
+                <meta property="og:url" content="https://mehira.onrender.com/privacy-policy" />
+                <meta name="twitter:title" content="Politique de confidentialité - Me-Hira" />
             </Head>
             <Navbar/>
             <section className="privacy-policy-container">
