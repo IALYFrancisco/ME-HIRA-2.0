@@ -74,6 +74,7 @@ export default function SongReader({ song: _song }){
                 <meta property="og:image" content={pageShareSocialMediaImage} key="og:image" />
                 <meta property="og:image:alt" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} key="og:image" />
                 <meta property="og:description" content={pageDescription}/>
+                <meta property="music:duration" content={song.duration}/>
                 <meta name="twitter:title" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} />
                 <meta name="twitter:description" content={pageDescription} />
             </Head>
