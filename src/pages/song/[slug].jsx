@@ -77,10 +77,26 @@ export default function SongReader({ song: _song }){
             "name": JoinArrayItems(song?.singer),
         },
 
-        "lyricist": {
-            "@type": "Person",
-            "name": song.author
-        }
+        ...(song.author && {
+            "lyricist": {
+                "@type": "Person",
+                "name": song.author
+            }
+        })
+
+        ...(song.composer && {
+            "composer": {
+                "@type": "Person",
+                "name": song.composer
+            }
+        })
+
+        ...(song.album && {
+            "inAlbum": {
+                "@type": "MusicAlbum",
+                "name": song.album
+            }
+        })
 
     }
 
