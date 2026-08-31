@@ -8,6 +8,10 @@ export default function LegalsNotice(){
         <>
             <Head>
                 <title>Mentions légales - Me-Hira</title>
+                <link rel="canonical" href="https://mehira.onrender.com/legals-notice" />
+                <meta property="og:title" content="Mentions légales - Me-Hira" />
+                <meta property="og:url" content="https://mehira.onrender.com/legals-notice" />
+                <meta name="twitter:title" content="Mentions légales - Me-Hira" />
             </Head>
             <Navbar/>
             <section className="legals-notice-container">
