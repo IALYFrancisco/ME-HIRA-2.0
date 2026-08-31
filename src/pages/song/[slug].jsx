@@ -62,7 +62,10 @@ export default function SongReader({ song: _song }){
         "@context": "https://schema.org",
         "@type": "MusicRecording",
         "name": song?.title,
-        "url": `https://mehira.onrender.com/song/${song?.slug}`
+        "url": `https://mehira.onrender.com/song/${song?.slug}`,
+        "image": pageShareSocialMediaImage,
+        
+
     }
 
     return(
