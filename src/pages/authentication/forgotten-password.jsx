@@ -33,6 +33,7 @@ export default function ForgottenPassword(){
     return(
         <IsNotAuthenticated>
             <Head>
+                <meta name="robots" content="noindex, nofollow" key="robots" />
                 <title>Mot de passe oublié | Me-Hira</title>
             </Head>
             <section className="forgotten-password-container">

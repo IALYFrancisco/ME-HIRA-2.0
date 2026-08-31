@@ -3,10 +3,20 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 export default function TermsAndConditions(){
+
+    const pageSEODescription = "Découvrez les règles d’utilisation de Me-Hira, les conditions d’accès aux contenus musicaux, les droits et responsabilités des utilisateurs ainsi que les modalités de retrait des œuvres."
+
     return(
         <>
             <Head>
                 <title>Conditions générales d'utilisation - Me-Hira</title>
+                <link rel="canonical" href="https://mehira.onrender.com/terms-and-conditions" />
+                <meta name="description" content={pageSEODescription}/>
+                <meta property="og:title" content="Conditions générales d'utilisation - Me-Hira" />
+                <meta property="og:url" content="https://mehira.onrender.com/terms-and-conditions" />
+                <meta property="og:description" content={pageSEODescription}/>
+                <meta name="twitter:title" content="Conditions générales d'utilisation - Me-Hira" />
+                <meta name="twitter:description" content={pageSEODescription} />
             </Head>
             <Navbar/>
             <section className="terms-and-conditions-container">

@@ -41,6 +41,7 @@ export default function Login(){
     return(
         <IsNotAuthenticated>
             <Head>
+                <meta name="robots" content="noindex, nofollow" key="robots" />
                 <title>Connexion à un compte Me-Hira</title>
             </Head>
             <section className="login-page-container">

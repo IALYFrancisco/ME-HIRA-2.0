@@ -3,10 +3,20 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 export default function PrivacyPolicy() {
+
+    const pageSEODescription = "Découvrez comment Me-Hira protège les données personnelles, gère les informations internes relatives aux artistes et assure la confidentialité des données utilisées par la plateforme."
+
     return(
         <>
             <Head>
                 <title>Politique de confidentialité - Me-Hira</title>
+                <link rel="canonical" href="https://mehira.onrender.com/privacy-policy" />
+                <meta name="description" content={pageSEODescription}/>
+                <meta property="og:title" content="Politique de confidentialité - Me-Hira" />
+                <meta property="og:url" content="https://mehira.onrender.com/privacy-policy" />
+                <meta property="og:description" content={pageSEODescription}/>
+                <meta name="twitter:title" content="Politique de confidentialité - Me-Hira" />
+                <meta name="twitter:description" content={pageSEODescription} />
             </Head>
             <Navbar/>
             <section className="privacy-policy-container">

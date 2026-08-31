@@ -64,6 +64,7 @@ export default function ResetPassword(){
     return(
         <IsNotAuthenticated>
             <Head>
+                <meta name="robots" content="noindex, nofollow" key="robots" />
                 <title>Réinitialisation de mot de passe</title>
             </Head>
             <section className="reset-password-container">
