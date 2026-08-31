@@ -3,6 +3,9 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 export default function TermsAndConditions(){
+
+    const pageSEODescription = "Découvrez les règles d’utilisation de Me-Hira, les conditions d’accès aux contenus musicaux, les droits et responsabilités des utilisateurs ainsi que les modalités de retrait des œuvres."
+
     return(
         <>
             <Head>
