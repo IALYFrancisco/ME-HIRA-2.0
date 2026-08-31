@@ -4,7 +4,7 @@ import Footer from "@/components/footer";
 
 export default function PrivacyPolicy() {
 
-    const pageSEODescription = "Découvrez comment Me-Hira protège les données personnelles, gère les informations internes relatives aux artistes et assure la confidentialité des données utilisées par la plateforme."
+    const pageSEODescription = "Découvrez comment Me-Hira protège les données personnelles et gère les informations internes relatives aux artistes et à la plateforme."
 
     return(
         <>
