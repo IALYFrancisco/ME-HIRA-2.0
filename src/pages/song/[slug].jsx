@@ -71,6 +71,8 @@ export default function SongReader({ song: _song }){
                 <meta property="og:type" content="music.song" key="og:type" />
                 <meta property="og:title" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} />
                 <meta property="og:url" content={`https://mehira.onrender.com/song/${song?.slug}`} />
+                <meta property="og:image" content={pageShareSocialMediaImage} key="og:image" />
+                <meta property="og:image:alt" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} key="og:image" />
                 <meta property="og:description" content={pageDescription}/>
                 <meta name="twitter:title" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} />
                 <meta name="twitter:description" content={pageDescription} />
