@@ -7,6 +7,7 @@ export default function TermsAndConditions(){
         <>
             <Head>
                 <title>Conditions générales d'utilisation - Me-Hira</title>
+                <link rel="canonical" href="https://mehira.onrender.com/terms-and-conditions" />
                 <meta property="og:title" content="Conditions générales d'utilisation - Me-Hira" />
                 <meta name="twitter:title" content="Conditions générales d'utilisation - Me-Hira" />
             </Head>
