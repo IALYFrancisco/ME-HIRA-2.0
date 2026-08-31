@@ -82,14 +82,14 @@ export default function SongReader({ song: _song }){
                 "@type": "Person",
                 "name": song.author
             }
-        })
+        }),
 
         ...(song.composer && {
             "composer": {
                 "@type": "Person",
                 "name": song.composer
             }
-        })
+        }),
 
         ...(song.album && {
             "inAlbum": {
