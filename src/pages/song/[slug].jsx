@@ -55,6 +55,9 @@ export default function SongReader({ song: _song }){
     }, [slug])
 
     const pageDescription = `Écoutez « ${song?.title} » de ${JoinArrayItems(song?.singer)} et plongez dans l'univers musical de Me-Hira.`
+    const pageShareSocialMediaImage =
+        (song?.thumbnailUrl.startsWith('https://')||song?.thumbnailUrl.startsWith('http://'))?
+        song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
 
     return(
         <ThemeProvider
