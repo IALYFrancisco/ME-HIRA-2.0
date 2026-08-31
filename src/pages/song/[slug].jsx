@@ -70,7 +70,17 @@ export default function SongReader({ song: _song }){
         "name": song?.title,
         "url": `https://mehira.onrender.com/song/${song?.slug}`,
         "image": pageShareSocialMediaImage,
-        
+        "duration": formatISO8601Duration(song?.duration),
+
+        "byArtist": {
+            "@type": "Person",
+            "name": JoinArrayItems(song?.singer),
+        },
+
+        "lyricist": {
+            "@type": "Person",
+            "name": song.author
+        }
 
     }
 
