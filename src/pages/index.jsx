@@ -52,13 +52,20 @@ export default function Home() {
           <section className="songs-container">
             <ul>
               {
-                songs && songs.map((song)=>
+                songs && songs.map((song, index)=>
                     <li key={song._id}>
                       <Link href={`/song/${song.slug}`}>
                         <div className="poster-container">
-                          <Image src={(song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
-                            song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
-                          } width={250} height={150} priority alt={song.title} className={ song.fileType === "video" ? "thumbnail video" : "thumbnail audio" }/>
+                          <Image
+                            src={(song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
+                              song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
+                            }
+                            width={250}
+                            height={150}
+                            priority={index === 0}
+                            alt={song.title}
+                            className={ song.fileType === "video" ? "thumbnail video" : "thumbnail audio" }
+                            />
                           <span className="duration">
                             {FormatSongDuration(song.duration)}
                           </span>
