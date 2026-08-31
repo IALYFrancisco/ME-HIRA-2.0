@@ -62,6 +62,7 @@ export default function SongReader({ song: _song }){
             <Head>
                 <title>{`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`}</title>
                 <meta property="og:title" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} />
+                <meta name="twitter:title" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} />
             </Head>
             <Navbar/>
             { _loadersState && <SongReaderSkeletonLoader/>}
