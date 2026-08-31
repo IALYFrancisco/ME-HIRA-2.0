@@ -38,6 +38,12 @@ export async function getStaticProps({params}){
     }
 }
 
+function formatISO8601Duration(seconds){
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = seconds % 60
+    return `PT${minutes}M${remainingSeconds}`
+}
+
 export default function SongReader({ song: _song }){
     const router = useRouter()
     const { slug } = router.query
