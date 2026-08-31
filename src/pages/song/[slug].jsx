@@ -63,6 +63,7 @@ export default function SongReader({ song: _song }){
                 <title>{`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`}</title>
                 <link rel="canonical" href={`https://mehira.onrender.com/song/${song?.slug}`} />
                 <meta property="og:title" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} />
+                <meta property="og:url" content={`https://mehira.onrender.com/song/${song?.slug}`} />
                 <meta name="twitter:title" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} />
             </Head>
             <Navbar/>
