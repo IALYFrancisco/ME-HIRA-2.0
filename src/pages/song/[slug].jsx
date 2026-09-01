@@ -113,13 +113,13 @@ export default function SongReader({ song: _song }){
                 <meta property="og:title" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} />
                 <meta property="og:url" content={`https://mehira.onrender.com/song/${song?.slug}`} />
                 <meta property="og:image" content={pageShareSocialMediaImage} key="og:image" />
-                <meta property="og:image:alt" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} />
+                <meta property="og:image:alt" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} key="og:image:alt" />
                 <meta property="og:description" content={pageDescription}/>
                 <meta property="music:duration" content={song.duration}/>
                 <meta name="twitter:title" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} />
                 <meta name="twitter:description" content={pageDescription} />
                 <meta name="twitter:image" content={pageShareSocialMediaImage} key="twitter:image" />
-                <meta name="twitter:image:alt" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} />
+                <meta name="twitter:image:alt" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} key="twitter:image:alt" />
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSEOJSON_LD) }} />
             </Head>
             <Navbar/>
