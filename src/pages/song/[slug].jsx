@@ -119,7 +119,7 @@ export default function SongReader({ song: _song }){
                 <meta name="twitter:title" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} />
                 <meta name="twitter:description" content={pageDescription} />
                 <meta name="twitter:image" content={pageShareSocialMediaImage} key="twitter:image" />
-                <meta name="twitter:image:alt" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} />
+                <meta name="twitter:image:alt" content={`${song?.title} - ${JoinArrayItems(song?.singer)} - Me-Hira`} key="twitter:image:alt" />
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSEOJSON_LD) }} />
             </Head>
             <Navbar/>
