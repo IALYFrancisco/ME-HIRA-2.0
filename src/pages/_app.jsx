@@ -28,6 +28,7 @@ export default function App({ Component, pageProps }) {
         <meta property="og:image" content={`${process.env.NEXT_PUBLIC_APP_BASE_URL}/images/me-hira-socials-medias-share-image.png`} key="og:image" />
         <meta property="og:image:alt" content="me-hira" key="og:image:alt" />
         <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_APP_BASE_URL}/images/me-hira-socials-medias-share-image.png`} key="twitter:image" />
+        <meta name="twitter:image:alt" content="me-hira" key="twitter:image:alt" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Toaster className="toast" position='top-center' richColors/>
