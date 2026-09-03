@@ -10,7 +10,6 @@ import { api } from "@/helpers/api";
 
 export default function CreationAndEditingArtistDocumentForm({
     setArtists,
-    overlayState,
     closeAddSongModal,
     documentToDoAction,
     contactEmailIsActif,
@@ -103,13 +102,6 @@ export default function CreationAndEditingArtistDocumentForm({
         }
 
     }, [creationAndEditingArtistDocumentFormState, reset])
-
-    useEffect(()=>{
-        if(!overlayState){
-            setLocalFile(null)
-            reset()
-        }
-    }, [overlayState, reset])
 
     const createArtistDocument = async (data) => {
         try{
@@ -282,7 +274,7 @@ export default function CreationAndEditingArtistDocumentForm({
                 "document-form-modal enabled" : "document-form-modal"
             }
         >
-            <span className="close-modal" onClick={closeAddSongModal}>
+            <span className="close-modal" onClick={ ()=> {closeAddSongModal(); reset(); setLocalFile()}}>
                 <Image src="/images/close.png" width={16} height={16} priority alt="fermer modal d'ajout de chanson"/>
             </span>
             <h2>{ updatingSongFormIsActive ? "Modification" : "Création" } d'un document artiste :</h2>
