@@ -107,8 +107,9 @@ export default function CreationAndEditingArtistDocumentForm({
     useEffect(()=>{
         if(!overlayState){
             setLocalFile(null)
+            reset()
         }
-    }, [overlayState])
+    }, [overlayState, reset])
 
     const createArtistDocument = async (data) => {
         try{
