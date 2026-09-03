@@ -281,7 +281,7 @@ export default function CreationAndEditingArtistDocumentForm({
                 "document-form-modal enabled" : "document-form-modal"
             }
         >
-            <span className="close-modal" onClick={ ()=> {closeAddSongModal(); reset(); setLocalFile(null)}}>
+            <span className="close-modal" onClick={closeAddSongModal}>
                 <Image src="/images/close.png" width={16} height={16} priority alt="fermer modal d'ajout de chanson"/>
             </span>
             <h2>{ updatingSongFormIsActive ? "Modification" : "Création" } d'un document artiste :</h2>
