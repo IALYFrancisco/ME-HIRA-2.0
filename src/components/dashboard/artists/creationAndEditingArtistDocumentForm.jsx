@@ -10,6 +10,7 @@ import { api } from "@/helpers/api";
 
 export default function CreationAndEditingArtistDocumentForm({
     setArtists,
+    overlayState,
     closeAddSongModal,
     documentToDoAction,
     contactEmailIsActif,
