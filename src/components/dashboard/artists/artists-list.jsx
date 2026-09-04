@@ -92,7 +92,8 @@ export default function ArtistsList(){
         setRemoveArtistDocumentModalState(false)
         setContactEmailIsActif(false)
         setContactPhoneNumberIsActif(false)
-        setUpdatingSongFormIsActive(false)
+        setUpdatingSongFormIsActive(false)*
+        artistDocumentFormRef.current?.resetLocalFile()
     }
 
     useEffect(()=>{
