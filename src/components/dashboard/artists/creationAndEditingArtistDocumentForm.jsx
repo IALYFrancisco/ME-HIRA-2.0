@@ -118,46 +118,38 @@ export default function CreationAndEditingArtistDocumentForm({
                 artistData.append("email", data.email)
             }
                 
-                // Artist document object création
-                artistDocument.append('name', data.name)
-                artistDocument.append('artistName', data.artistName)
-                artistDocument.append('roles', data.roles)
-                artistDocument.append('about', data.about)
-                artistDocument.append('address', data.address)
-                artistDocument.append('birthDayAndPlace', data.birthDayAndPlace)
-                if(data.hostedFile){
-                    artistDocument.append('image', data.hostedFile)
-                }
-                if(localFile){
-                    artistDocument.append('artistProfile', localFile)
-                }
-                const response = await api.post(
-                    '/artist/create-document',
-                    { 
-                        artist: formToJSON(artistDocument),
-                        contact: formToJSON(artistContact)
-                    },
-                    {
-                        headers: localFileIsDefined ? {"Content-Type": "multipart/form-data"} : {"Content-Type": "application/json"}
-                    })
-                
-                if(response.status === 201){
-                    api.get('/artist/get')
-                        .then((response) => {
-                            setArtists(response.data)
-                        })
-                        .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
-                    toast.info(`Le document artiste de ${data.artistName} est créé dans la base de donnée.`)
-                    reset()
-                    setLocalFile(null)
-                    closeAddSongModal()
-                }
-            }catch{
-                toast.error(`Erreur du création de document artiste, veuillez réessayer plus tard.`)
-            }finally{
-                setCreateArtistDocumentIsLoading(false)
+            // Artist document object création
+            artistData.append('name', data.name)
+            artistData.append('artistName', data.artistName)
+            artistData.append('roles', data.roles)
+            artistData.append('about', data.about)
+            artistData.append('address', data.address)
+            artistData.append('birthDayAndPlace', data.birthDayAndPlace)
+            if(data.hostedFile){
+                artistData.append('image', data.hostedFile)
             }
+            if(localFile){
+                artistData.append('artistProfile', localFile)
+            }
+            const response = await api.post('/artist/create-document', artistData)
+                
+            if(response.status === 201){
+                api.get('/artist/get')
+                    .then((response) => {
+                        setArtists(response.data)
+                    })
+                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
+                toast.info(`Le document artiste de ${data.artistName} est créé dans la base de donnée.`)
+                reset()
+                setLocalFile(null)
+                closeAddSongModal()
+            }
+        }catch{
+            toast.error(`Erreur du création de document artiste, veuillez réessayer plus tard.`)
+        }finally{
+            setCreateArtistDocumentIsLoading(false)
         }
+    }
 
     const updateArtistDocument = async (data) => {
         try{
