@@ -173,13 +173,13 @@ export default function CreationAndEditingArtistDocumentForm({
                 updateAristDocumentFormData.append('birthDayAndPlace', data.birthDayAndPlace)
             }
             if(documentToDoAction.contacts.phoneNumber !== data.phoneNumber){
-                artistContact.append('phoneNumber', data.phoneNumber)
+                updateAristDocumentFormData.append('phoneNumber', data.phoneNumber)
             }
             if(documentToDoAction.contacts.email !== data.email){
-                artistContact.append('email', data.email)
+                updateAristDocumentFormData.append('email', data.email)
             }
             if(JoinArrayItems(documentToDoAction.roles) !== data.roles){
-                artist.append('roles', data.roles)
+                updateAristDocumentFormData.append('roles', data.roles)
             }
             let localFileUrl = (
                 documentToDoAction.image?.startsWith('https://') ||
