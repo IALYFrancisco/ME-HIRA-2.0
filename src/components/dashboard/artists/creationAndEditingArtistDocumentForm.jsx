@@ -108,15 +108,14 @@ export default function CreationAndEditingArtistDocumentForm({
     
             setCreateArtistDocumentIsLoading(true)
                 
-            const artistDocument = new FormData()
-            const artistContact = new FormData()
+            const artistData = new FormData()
     
             // Artist contacts object creation
             if(data.phoneNumber){
-                artistContact.append("phoneNumber", data.phoneNumber)
+                artistData.append("phoneNumber", data.phoneNumber)
             }
             if(data.email){
-                artistContact.append("email", data.email)
+                artistData.append("email", data.email)
             }
                 
                 // Artist document object création
