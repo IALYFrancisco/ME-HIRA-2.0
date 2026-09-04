@@ -198,15 +198,16 @@ export default function CreationAndEditingArtistDocumentForm({
                 }
             }
     
-            let update = {}
+            // let update = {}
     
-            update.docId = documentToDoAction._id
-            if(Object.keys((formToJSON(artist))).length !== 0){
-                update.artist = formToJSON(artist)
-            }
-            if(Object.keys(formToJSON(artistContact)).length !== 0){
-                update.artistContact = formToJSON(artistContact)
-            }
+            // update.docId = documentToDoAction._id
+            updateAristDocumentFormData.append('docId', documentToDoAction._id)
+            // if(Object.keys((formToJSON(artist))).length !== 0){
+            //     update.artist = formToJSON(artist)
+            // }
+            // if(Object.keys(formToJSON(artistContact)).length !== 0){
+            //     update.artistContact = formToJSON(artistContact)
+            // }
     
             let response = await api.patch('/artist/update', { update })
             if(response.status === 200){
