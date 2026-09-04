@@ -29,6 +29,7 @@ export default function ArtistsList(){
 
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
+    const artistDocumentFormRef = useRef(null)
     const [ documentToDoAction, setDocumentToDoAction ] = useState(null)
     const [ songActionIsLoading, setSongActionIsLoading ] = useState(false)
     const [ updatingSongFormIsActive, setUpdatingSongFormIsActive ] = useState(false)
