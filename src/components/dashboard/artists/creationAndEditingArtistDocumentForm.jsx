@@ -8,7 +8,7 @@ import { JoinArrayItems } from "@/helpers/song"
 import { toast } from "sonner";
 import { api } from "@/helpers/api";
 
-export default function CreationAndEditingArtistDocumentForm({
+const CreationAndEditingArtistDocumentForm = forwardRef(({
     setArtists,
     closeAddSongModal,
     documentToDoAction,
@@ -21,7 +21,7 @@ export default function CreationAndEditingArtistDocumentForm({
     contactPhoneNumberIsActif,
     setContactPhoneNumberIsActif,
     creationAndEditingArtistDocumentFormState
-}){
+}, ref) => {
 
     const { register, handleSubmit, reset, watch, formState: { isDirty } } = useForm()
 
@@ -353,4 +353,8 @@ export default function CreationAndEditingArtistDocumentForm({
             </div>
         </form>
     )
-}
+})
+
+CreationAndEditingArtistDocumentForm.displayName = "CreationAndEditingArtistDocumentForm"
+
+export default CreationAndEditingArtistDocumentForm
