@@ -26,6 +26,12 @@ const CreationAndEditingArtistDocumentForm = forwardRef(({
     const { register, handleSubmit, reset, watch, formState: { isDirty } } = useForm()
 
     const [localFile, setLocalFile] = useState(null)
+    useImperativeHandle(ref, ()=>({
+        resetLocalFile: ()=>{
+            setLocalFile(null)
+        }
+    }))
+
     const [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
     const [localFileIsDefined, setLocalFileIsDefined] = useState(false)
     const [createArtistDocumentIsLoading, setCreateArtistDocumentIsLoading] = useState(false)
