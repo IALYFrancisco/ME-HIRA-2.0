@@ -209,7 +209,7 @@ export default function CreationAndEditingArtistDocumentForm({
             //     update.artistContact = formToJSON(artistContact)
             // }
     
-            let response = await api.patch('/artist/update', { update })
+            let response = await api.patch('/artist/update', { updateAristDocumentFormData })
             if(response.status === 200){
                 toast.info(`Le document artiste de ${documentToDoAction?.artistName} a été bien modifié.`)
                 api.get('/artist/get')
