@@ -1,13 +1,14 @@
+/* eslint-disable react-hooks/incompatible-library */
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-import { useState, useEffect, forwardRef, useImperativeHandle } from "react";
+import { useState, useEffect } from "react";
 import { formToJSON } from "axios";
 import { JoinArrayItems } from "@/helpers/song"
 import { toast } from "sonner";
 import { api } from "@/helpers/api";
 
-const CreationAndEditingArtistDocumentForm = forwardRef(({
+export default function CreationAndEditingArtistDocumentForm({
     setArtists,
     closeAddSongModal,
     documentToDoAction,
@@ -20,17 +21,11 @@ const CreationAndEditingArtistDocumentForm = forwardRef(({
     contactPhoneNumberIsActif,
     setContactPhoneNumberIsActif,
     creationAndEditingArtistDocumentFormState
-}, ref) => {
+}){
 
     const { register, handleSubmit, reset, watch, formState: { isDirty } } = useForm()
 
     const [localFile, setLocalFile] = useState(null)
-    useImperativeHandle(ref, ()=>({
-        resetLocalFile: ()=>{
-            setLocalFile(null)
-        }
-    }))
-
     const [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
     const [localFileIsDefined, setLocalFileIsDefined] = useState(false)
     const [createArtistDocumentIsLoading, setCreateArtistDocumentIsLoading] = useState(false)
@@ -279,7 +274,7 @@ const CreationAndEditingArtistDocumentForm = forwardRef(({
                 "document-form-modal enabled" : "document-form-modal"
             }
         >
-            <span className="close-modal" onClick={ ()=> {closeAddSongModal(); reset()}}>
+            <span className="close-modal" onClick={ ()=> {closeAddSongModal(); reset(); setLocalFile()}}>
                 <Image src="/images/close.png" width={16} height={16} priority alt="fermer modal d'ajout de chanson"/>
             </span>
             <h2>{ updatingSongFormIsActive ? "Modification" : "Création" } d'un document artiste :</h2>
@@ -358,8 +353,4 @@ const CreationAndEditingArtistDocumentForm = forwardRef(({
             </div>
         </form>
     )
-})
-
-CreationAndEditingArtistDocumentForm.displayName = "CreationAndEditingArtistDocumentForm"
-
-export default CreationAndEditingArtistDocumentForm
+}

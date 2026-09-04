@@ -29,7 +29,6 @@ export default function ArtistsList(){
 
     var [ activePopUp, setActivePopUp ] = useState(null)
     const popUpActionsRef = useRef(null)
-    const artistDocumentFormRef = useRef(null)
     const [ documentToDoAction, setDocumentToDoAction ] = useState(null)
     const [ songActionIsLoading, setSongActionIsLoading ] = useState(false)
     const [ updatingSongFormIsActive, setUpdatingSongFormIsActive ] = useState(false)
@@ -92,8 +91,7 @@ export default function ArtistsList(){
         setRemoveArtistDocumentModalState(false)
         setContactEmailIsActif(false)
         setContactPhoneNumberIsActif(false)
-        setUpdatingSongFormIsActive(false)*
-        artistDocumentFormRef.current?.resetLocalFile()
+        setUpdatingSongFormIsActive(false)
     }
 
     useEffect(()=>{
@@ -208,7 +206,6 @@ export default function ArtistsList(){
             </section>
             <Overlay overlayState={overlayState} closeOverlay={closeAddSongModal}/>
             <CreationAndEditingArtistDocumentForm
-                ref={artistDocumentFormRef}
                 setArtists={setArtists}
                 closeAddSongModal={closeAddSongModal}
                 documentToDoAction={documentToDoAction}
