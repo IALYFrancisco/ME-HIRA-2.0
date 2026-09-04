@@ -155,23 +155,22 @@ export default function CreationAndEditingArtistDocumentForm({
         try{
             setSongActionIsLoading(true)
     
-            const artist = new FormData()
-            const artistContact = new FormData()
-    
+            const updateAristDocumentFormData = new FormData()
+            
             if(documentToDoAction.name !== data.name){
-                artist.append('name', data.name)
+                updateAristDocumentFormData.append('name', data.name)
             }
             if(documentToDoAction.artistName !== data.artistName){
-                artist.append('artistName', data.artistName)
+                updateAristDocumentFormData.append('artistName', data.artistName)
             }
             if(documentToDoAction.about !== data.about){
-                artist.append('about', data.about)
+                updateAristDocumentFormData.append('about', data.about)
             }
             if(documentToDoAction.address !== data.address){
-                artist.append('address', data.address)
+                updateAristDocumentFormData.append('address', data.address)
             }
             if(documentToDoAction.birthDayAndPlace !== data.birthDayAndPlace){
-                artist.append('birthDayAndPlace', data.birthDayAndPlace)
+                updateAristDocumentFormData.append('birthDayAndPlace', data.birthDayAndPlace)
             }
             if(documentToDoAction.contacts.phoneNumber !== data.phoneNumber){
                 artistContact.append('phoneNumber', data.phoneNumber)
