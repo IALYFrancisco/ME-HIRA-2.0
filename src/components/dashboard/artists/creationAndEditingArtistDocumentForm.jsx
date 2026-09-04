@@ -191,10 +191,10 @@ export default function CreationAndEditingArtistDocumentForm({
                 ||(localFile)
             ){    
                 if(localFileUrl !== data.hostedFile){
-                    artist.append('image', data.hostedFile)
+                    updateAristDocumentFormData.append('image', data.hostedFile)
                 }
                 if(localFile){
-                    artist.append('file', localFile)
+                    updateAristDocumentFormData.append('artistProfile', localFile)
                 }
             }
     
