@@ -130,7 +130,7 @@ export default function CreationAndEditingArtistDocumentForm({
                     artistDocument.append('image', data.hostedFile)
                 }
                 if(localFile){
-                    artistDocument.append('file', localFile)
+                    artistDocument.append('artistProfile', localFile)
                 }
                 const response = await api.post(
                     '/artist/create-document',
