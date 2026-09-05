@@ -170,7 +170,8 @@ export default function CreationAndEditingArtistDocumentForm({
             }
             if(documentToDoAction.about !== data.about){
                 if(data.about === ""){
-                    clearedFields.push("About")
+                    clearedFields.push({UIText: "A propos de l'artiste", CodeText: "about"})
+                    return
                 }
                 updateAristDocumentFormData.append('about', data.about)
             }
