@@ -170,12 +170,15 @@ export default function CreationAndEditingArtistDocumentForm({
             }
             if(documentToDoAction.about !== data.about){
                 if(data.about === ""){
-                    clearedFields.push({UIText: "A propos de l'artiste", CodeText: "about"})
+                    clearedFields.push({UIText: "A propos", CodeText: "about"})
                     return
                 }
                 updateAristDocumentFormData.append('about', data.about)
             }
             if(documentToDoAction.address !== data.address){
+                if(data.address === ""){
+                    clearedFields.push({UIText: ""})
+                }
                 updateAristDocumentFormData.append('address', data.address)
             }
             if(documentToDoAction.birthDayAndPlace !== data.birthDayAndPlace){
