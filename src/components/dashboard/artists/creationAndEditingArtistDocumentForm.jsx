@@ -161,6 +161,7 @@ export default function CreationAndEditingArtistDocumentForm({
             if(documentToDoAction.name !== data.name){
                 if(data.name === ""){
                     clearedFields.push({ UIText: "Nom", CodeText: "Name" })
+                    return
                 }
                 updateAristDocumentFormData.append('name', data.name)
             }
