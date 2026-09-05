@@ -183,6 +183,10 @@ export default function CreationAndEditingArtistDocumentForm({
                 updateAristDocumentFormData.append('address', data.address)
             }
             if(documentToDoAction.birthDayAndPlace !== data.birthDayAndPlace){
+                if(data.birthDayAndPlace === ""){
+                    clearedFields.push({UIText: "Date et lieu de naissance", CodeText: "birthDayAndPlace"})
+                    return
+                }
                 updateAristDocumentFormData.append('birthDayAndPlace', data.birthDayAndPlace)
             }
             if(documentToDoAction.contacts.phoneNumber !== data.phoneNumber){
