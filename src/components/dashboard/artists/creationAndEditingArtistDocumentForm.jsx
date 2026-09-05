@@ -204,6 +204,9 @@ export default function CreationAndEditingArtistDocumentForm({
                 updateAristDocumentFormData.append('email', data.email)
             }
             if(JoinArrayItems(documentToDoAction.roles) !== data.roles){
+                if(data.roles.length === 0){
+                    clearedFields.push({UIText:"Rôles", CodeText: "roles"})
+                }
                 updateAristDocumentFormData.append('roles', data.roles)
             }
             let localFileUrl = (
