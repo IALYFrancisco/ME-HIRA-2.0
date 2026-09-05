@@ -177,7 +177,8 @@ export default function CreationAndEditingArtistDocumentForm({
             }
             if(documentToDoAction.address !== data.address){
                 if(data.address === ""){
-                    clearedFields.push({UIText: ""})
+                    clearedFields.push({UIText: "Adresse", CodeText: "address"})
+                    return
                 }
                 updateAristDocumentFormData.append('address', data.address)
             }
