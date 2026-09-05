@@ -160,7 +160,7 @@ export default function CreationAndEditingArtistDocumentForm({
             
             if(documentToDoAction.name !== data.name){
                 if(data.name === ""){
-                    clearedFields.push("Name")
+                    clearedFields.push({ UIText: "Nom", CodeText: "Name" })
                 }
                 updateAristDocumentFormData.append('name', data.name)
             }
@@ -168,6 +168,9 @@ export default function CreationAndEditingArtistDocumentForm({
                 updateAristDocumentFormData.append('artistName', data.artistName)
             }
             if(documentToDoAction.about !== data.about){
+                if(data.about === ""){
+                    clearedFields.push("About")
+                }
                 updateAristDocumentFormData.append('about', data.about)
             }
             if(documentToDoAction.address !== data.address){
