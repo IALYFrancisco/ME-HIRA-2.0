@@ -206,6 +206,7 @@ export default function CreationAndEditingArtistDocumentForm({
             if(JoinArrayItems(documentToDoAction.roles) !== data.roles){
                 if(data.roles.length === 0){
                     clearedFields.push({UIText:"Rôles", CodeText: "roles"})
+                    return
                 }
                 updateAristDocumentFormData.append('roles', data.roles)
             }
