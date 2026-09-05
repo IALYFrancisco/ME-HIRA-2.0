@@ -154,10 +154,14 @@ export default function CreationAndEditingArtistDocumentForm({
     const updateArtistDocument = async (data) => {
         try{
             setSongActionIsLoading(true)
+            const clearedFields = new Array()
     
             const updateAristDocumentFormData = new FormData()
             
             if(documentToDoAction.name !== data.name){
+                if(data.name === ""){
+                    clearedFields.push("Name")
+                }
                 updateAristDocumentFormData.append('name', data.name)
             }
             if(documentToDoAction.artistName !== data.artistName){
