@@ -197,6 +197,10 @@ export default function CreationAndEditingArtistDocumentForm({
                 updateAristDocumentFormData.append('phoneNumber', data.phoneNumber)
             }
             if(documentToDoAction.contacts.email !== data.email){
+                if(data.contacts.email === ""){
+                    clearedFields.push({UIText: "Adresse email", CodeText: "email"})
+                    return
+                }
                 updateAristDocumentFormData.append('email', data.email)
             }
             if(JoinArrayItems(documentToDoAction.roles) !== data.roles){
