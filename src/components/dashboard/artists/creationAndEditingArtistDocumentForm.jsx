@@ -239,11 +239,10 @@ export default function CreationAndEditingArtistDocumentForm({
 
             console.log(clearedFieldsUIText)
 
-            if(clearedFieldsUIText.length === 0){
-                window.confirm(`Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFieldsName)} ?`)
+            if(clearedFieldsUIText.length > 0){
+                window.confirm(`Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFieldsUIText)} ?`)
             }
     
-
             let response = await api.patch('/artist/update', updateAristDocumentFormData)
             if(response.status === 200){
                 toast.info(`Le document artiste de ${documentToDoAction?.artistName} a été bien modifié.`)
