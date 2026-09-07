@@ -275,7 +275,7 @@ export default function CreationAndEditingArtistDocumentForm({
             let confirmResult = true
             
             if(clearedFieldsUIText.length > 0){
-                confirmResult = window.confirm(Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFieldsUIText)} ?`)
+                confirmResult = window.confirm(`Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFieldsUIText)} ?`)
             }
 
             if(confirmResult && (isDirty || localFile)){
