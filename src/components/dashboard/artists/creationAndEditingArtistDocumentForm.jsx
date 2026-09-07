@@ -334,7 +334,19 @@ export default function CreationAndEditingArtistDocumentForm({
                 <fieldset>
                     <div className="form-element">
                         <label htmlFor="hostedFile">Photo de l'artiste :</label>
-                        <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour une photo déjà mis en ligne" {...register('hostedFile')}/>
+                        <input
+                            disabled={!!localFile}
+                            type="text"
+                            id="hostedFile"
+                            placeholder="utilisez cet champ pour une photo déjà mis en ligne"
+                            {...register('hostedFile', {
+                                onChange: (e) => {
+                                    if(e.target.value){
+                                        setLocalFile(null)
+                                    }
+                                }
+                            })}
+                        />
                         <input disabled={hostedFileIsDefined} type="file" onChange={handleFileChange}/>
                     </div>
                     <div className="form-element">
