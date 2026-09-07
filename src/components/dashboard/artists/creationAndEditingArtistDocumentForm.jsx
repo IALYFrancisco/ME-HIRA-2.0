@@ -178,9 +178,9 @@ export default function CreationAndEditingArtistDocumentForm({
             if(documentToDoAction.address !== data.address){
                 if(data.address === ""){
                     clearedFields.push({UIText: "Adresse", CodeText: "address"})
-                    return
+                }else{
+                    updateAristDocumentFormData.append('address', data.address)
                 }
-                updateAristDocumentFormData.append('address', data.address)
             }
             if(documentToDoAction.birthDayAndPlace !== data.birthDayAndPlace){
                 if(data.birthDayAndPlace === ""){
@@ -232,10 +232,13 @@ export default function CreationAndEditingArtistDocumentForm({
                 }
             }
 
+            
             const clearedFieldsUIText = []
             clearedFields.filter((cl)=>{
                 clearedFieldsUIText.push(cl.UIText)
             })
+            
+            console.log(clearedFieldsUIText)
 
             if(clearedFieldsUIText.length > 0){
                 window.confirm(`Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFieldsUIText)} ?`)
