@@ -210,10 +210,16 @@ export default function CreationAndEditingArtistDocumentForm({
                     updateAristDocumentFormData.append('roles', data.roles)
                 }
             }
-            let localFileUrl = (
-                documentToDoAction.image?.startsWith('https://') ||
-                documentToDoAction.image?.startsWith('http://')
-            ) ? documentToDoAction.image : process.env.NEXT_PUBLIC_API_BASE_URL+documentToDoAction.image
+
+            // Début codes pour les champs images
+            const localFileUrl = documentToDoAction.image ? documentToDoAction.image : ''
+
+            // let formatedLocalFileUrl = (
+            //     documentToDoAction.image?.startsWith('https://') ||
+            //     documentToDoAction.image?.startsWith('http://')
+            // ) ? documentToDoAction.image : process.env.NEXT_PUBLIC_API_BASE_URL+documentToDoAction.image
+
+            console.log(localFileUrl !== data.hostedFile, localFileUrl, data.hostedFile, documentToDoAction.image)
     
             if(
                 (localFileUrl !== data.hostedFile)
@@ -231,7 +237,7 @@ export default function CreationAndEditingArtistDocumentForm({
                     updateAristDocumentFormData.append('artistProfile', localFile)
                 }
             }
-
+            // Fin codes pour les champs images
             
             const clearedFieldsUIText = []
             clearedFields.filter((cl)=>{
