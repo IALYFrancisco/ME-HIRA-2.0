@@ -258,15 +258,19 @@ export default function CreationAndEditingArtistDocumentForm({
                     })
 
                 }
-                
-                let response = await api.patch('/artist/update', updateAristDocumentFormData)
-                if(response.status === 200){
-                    toast.info(`Le document artiste de ${documentToDoAction?.artistName} a été bien modifié.`)
-                    api.get('/artist/get')
-                        .then((response) => {
-                            setArtists(response.data)
-                        })
-                        .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
+
+                if((confirmResult && isDirty)||(confirmResult && localFile)){
+
+                    let response = await api.patch('/artist/update', updateAristDocumentFormData)
+                    if(response.status === 200){
+                        toast.info(`Le document artiste de ${documentToDoAction?.artistName} a été bien modifié.`)
+                        api.get('/artist/get')
+                            .then((response) => {
+                                setArtists(response.data)
+                            })
+                            .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
+                    }
+
                 }
                 
             }
