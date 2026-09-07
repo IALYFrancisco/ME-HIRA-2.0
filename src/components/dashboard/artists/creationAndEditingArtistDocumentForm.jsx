@@ -33,20 +33,6 @@ export default function CreationAndEditingArtistDocumentForm({
     const watchAll = watch()
 
     useEffect(()=>{
-        if(watchAll.hostedFile){
-            setHostedFileIsDefined(true)
-        }else{
-            setHostedFileIsDefined(false)
-        }
-    
-        if(localFile){
-            setLocalFileIsDefined(true)
-        }else{
-            setLocalFileIsDefined(false)
-        }
-    },[localFile, watchAll])
-
-    useEffect(()=>{
 
         if(updatingSongFormIsActive){
 
