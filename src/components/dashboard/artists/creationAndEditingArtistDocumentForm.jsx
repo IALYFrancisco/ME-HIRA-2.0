@@ -157,6 +157,8 @@ export default function CreationAndEditingArtistDocumentForm({
             const clearedFields = new Array()
     
             const updateAristDocumentFormData = new FormData()
+
+            updateAristDocumentFormData.append("docId", documentToDoAction._id)
             
             if(documentToDoAction.name !== data.name){
                 if(data.name === ""){
