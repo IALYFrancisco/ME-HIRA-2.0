@@ -241,37 +241,6 @@ export default function CreationAndEditingArtistDocumentForm({
             
             const clearedFieldsUIText = clearedFields.map((cf)=>cf.UIText)
             
-            // let confirmResult
-            // if(clearedFieldsUIText.length > 0){
-            //     confirmResult = window.confirm(`Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFieldsUIText)} ?`)
-            // }
-    
-            // if(confirmResult || isDirty || localFile){
-
-            //     if(confirmResult){
-
-            //         clearedFields.filter((cl)=>{
-            //             updateAristDocumentFormData.append(cl.CodeText, '')
-            //         })
-
-            //     }
-
-            //     if((confirmResult && isDirty)||(confirmResult && localFile)){
-
-            //         let response = await api.patch('/artist/update', updateAristDocumentFormData)
-            //         if(response.status === 200){
-            //             toast.info(`Le document artiste de ${documentToDoAction?.artistName} a été bien modifié.`)
-            //             api.get('/artist/get')
-            //                 .then((response) => {
-            //                     setArtists(response.data)
-            //                 })
-            //                 .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
-            //         }
-
-            //     }
-                
-            // }
-
             let confirmResult = true
             
             if(clearedFieldsUIText.length > 0){
