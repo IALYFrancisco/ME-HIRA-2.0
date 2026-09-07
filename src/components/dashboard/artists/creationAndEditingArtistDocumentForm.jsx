@@ -290,6 +290,8 @@ export default function CreationAndEditingArtistDocumentForm({
         }
 
         setLocalFile(file)
+
+        setValue("hostedFile", "", { shouldDirty: true })
     }
 
     return(
