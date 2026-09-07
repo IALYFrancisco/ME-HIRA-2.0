@@ -244,7 +244,11 @@ export default function CreationAndEditingArtistDocumentForm({
                 confirmResult = window.confirm(`Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFieldsUIText)} ?`)
             }
     
-            if(confirmResult)
+            if(confirmResult){
+                clearedFields.filter((cl)=>{
+                    updateAristDocumentFormData.append(cl.CodeText, '')
+                })
+            }
 
             let response = await api.patch('/artist/update', updateAristDocumentFormData)
             if(response.status === 200){
