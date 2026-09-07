@@ -237,8 +237,6 @@ export default function CreationAndEditingArtistDocumentForm({
                 clearedFieldsUIText.push(cl.UIText)
             })
 
-            console.log(clearedFieldsUIText)
-
             if(clearedFieldsUIText.length > 0){
                 window.confirm(`Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFieldsUIText)} ?`)
             }
