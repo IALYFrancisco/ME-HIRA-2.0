@@ -265,6 +265,7 @@ export default function CreationAndEditingArtistDocumentForm({
                         .then((response)=>{
                             setArtists(response.data)
                             closeAddSongModal()
+                            reset()
                         })
                         .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
                 }
