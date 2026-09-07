@@ -190,14 +190,14 @@ export default function CreationAndEditingArtistDocumentForm({
                 }
             }
             if(documentToDoAction.contacts.phoneNumber !== data.phoneNumber){
-                if(data.contacts?.phoneNumber === ""){
+                if(data.phoneNumber === ""){
                     clearedFields.push({UIText: "Numéro téléphone", CodeText: "phoneNumber"})
                 }else{
                     updateAristDocumentFormData.append('phoneNumber', data.phoneNumber)
                 }
             }
             if(documentToDoAction.contacts.email !== data.email){
-                if(data.contacts?.email === ""){
+                if(data.email === ""){
                     clearedFields.push({UIText: "Adresse email", CodeText: "email"})
                 }else{
                     updateAristDocumentFormData.append('email', data.email)
