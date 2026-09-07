@@ -347,7 +347,11 @@ export default function CreationAndEditingArtistDocumentForm({
                                 }
                             })}
                         />
-                        <input disabled={hostedFileIsDefined} type="file" onChange={handleFileChange}/>
+                        <input
+                            disabled={!!watchAll.hostedFile}
+                            type="file"
+                            onChange={handleFileChange}
+                        />
                     </div>
                     <div className="form-element">
                         <label htmlFor="contacts">Contacts :</label>
