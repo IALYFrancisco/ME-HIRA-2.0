@@ -232,12 +232,14 @@ export default function CreationAndEditingArtistDocumentForm({
                 }
             }
 
-            const clearedFieldsName = []
+            const clearedFieldsUIText = []
             clearedFields.filter((cl)=>{
-                clearedFieldsName.push(cl.UIText)
+                clearedFieldsUIText.push(cl.UIText)
             })
 
-            console.log(clearedFieldsName)
+            console.log(clearedFieldsUIText)
+
+            if(clearedFieldsUIText)
     
             window.confirm(`Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFieldsName)} ?`)
 
