@@ -264,6 +264,7 @@ export default function CreationAndEditingArtistDocumentForm({
                     api.get('/artist/get')
                         .then((response)=>{
                             setArtists(response.data)
+                            closeAddSongModal()
                         })
                         .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
                 }
@@ -274,7 +275,6 @@ export default function CreationAndEditingArtistDocumentForm({
             toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
-            closeAddSongModal()
             setDocumentToDoAction(null)
             setLocalFile(null)
         }
