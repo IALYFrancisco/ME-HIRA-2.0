@@ -190,14 +190,14 @@ export default function CreationAndEditingArtistDocumentForm({
                 }
             }
             if(documentToDoAction.contacts.phoneNumber !== data.phoneNumber){
-                if(data.contacts.phoneNumber === ""){
+                if(data.contacts?.phoneNumber === ""){
                     clearedFields.push({UIText: "Numéro téléphone", CodeText: "phoneNumber"})
                 }else{
                     updateAristDocumentFormData.append('phoneNumber', data.phoneNumber)
                 }
             }
             if(documentToDoAction.contacts.email !== data.email){
-                if(data.contacts.email === ""){
+                if(data.contacts?.email === ""){
                     clearedFields.push({UIText: "Adresse email", CodeText: "email"})
                 }else{
                     updateAristDocumentFormData.append('email', data.email)
@@ -253,7 +253,8 @@ export default function CreationAndEditingArtistDocumentForm({
                     })
                     .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
             }
-        }catch{
+        }catch(e){
+            console.log(e)
             toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
