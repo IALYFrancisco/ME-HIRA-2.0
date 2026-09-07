@@ -275,6 +275,33 @@ export default function CreationAndEditingArtistDocumentForm({
                 
             // }
 
+            let confirmResult = true
+            
+            if(clearedFieldsUIText.length > 0){
+                confirmResult = window.confirm(Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFieldsUIText)} ?`)
+            }
+
+            if(confirmResult && (isDirty || localFile)){
+
+                if(clearedFields.length > 0){
+                    clearedFields.forEach((cf) => {
+                        updateAristDocumentFormData.append(cf.CodeText, '')
+                    })
+                }
+
+                const response = await api.patch('/artist/update', updateAristDocumentFormData)
+
+                if(response.status === 200){
+                    toast.info(`Le document artiste de ${documentToDoAction?.artistName} a été bien modifié.`)
+                    api.get('/artist/get')
+                        .then((response)=>{
+                            setArtists(response.data)
+                        })
+                        .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
+                }
+
+            }
+
         }catch{
             toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
         }finally{
