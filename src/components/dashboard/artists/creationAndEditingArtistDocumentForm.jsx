@@ -213,11 +213,14 @@ export default function CreationAndEditingArtistDocumentForm({
 
             // Début codes pour les champs images
             const localFileUrl = documentToDoAction.image ? documentToDoAction.image : ''
+            let formatedLocalFileUrl = ''
 
-            // let formatedLocalFileUrl = (
-            //     documentToDoAction.image?.startsWith('https://') ||
-            //     documentToDoAction.image?.startsWith('http://')
-            // ) ? documentToDoAction.image : process.env.NEXT_PUBLIC_API_BASE_URL+documentToDoAction.image
+            if(localFileUrl){
+                formatedLocalFileUrl = (
+                    localFileUrl.startsWith('https://') ||
+                    localFileUrl.startsWith('http://')
+                ) ? localFileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+localFileUrl
+            }
 
             console.log(localFileUrl !== data.hostedFile, localFileUrl, data.hostedFile, documentToDoAction.image)
     
