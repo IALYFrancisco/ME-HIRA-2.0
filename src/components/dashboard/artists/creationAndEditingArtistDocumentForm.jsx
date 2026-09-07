@@ -211,7 +211,6 @@ export default function CreationAndEditingArtistDocumentForm({
                 }
             }
 
-            // Début codes pour les champs images
             const localFileUrl = documentToDoAction.image ? documentToDoAction.image : ''
             let formatedLocalFileUrl = ''
 
@@ -222,8 +221,6 @@ export default function CreationAndEditingArtistDocumentForm({
                 ) ? localFileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+localFileUrl
             }
 
-            console.log(localFileUrl !== data.hostedFile, localFileUrl, data.hostedFile, documentToDoAction.image)
-    
             if(
                 (formatedLocalFileUrl !== data.hostedFile)
                 ||(localFile)
@@ -240,7 +237,6 @@ export default function CreationAndEditingArtistDocumentForm({
                     updateAristDocumentFormData.append('artistProfile', localFile)
                 }
             }
-            // Fin codes pour les champs images
             
             const clearedFieldsUIText = []
             clearedFields.filter((cl)=>{
