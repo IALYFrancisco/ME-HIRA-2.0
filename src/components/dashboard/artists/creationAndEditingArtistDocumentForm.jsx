@@ -231,8 +231,15 @@ export default function CreationAndEditingArtistDocumentForm({
                     updateAristDocumentFormData.append('artistProfile', localFile)
                 }
             }
+
+            const clearedFieldsName = []
+            clearedFields.filter((cl)=>{
+                clearedFieldsName.push(cl.UIText)
+            })
+
+            console.log(clearedFieldsName)
     
-            window.confirm(`Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFields)} ?`)
+            window.confirm(`Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFieldsName)} ?`)
 
             let response = await api.patch('/artist/update', updateAristDocumentFormData)
             if(response.status === 200){
