@@ -225,11 +225,11 @@ export default function CreationAndEditingArtistDocumentForm({
             console.log(localFileUrl !== data.hostedFile, localFileUrl, data.hostedFile, documentToDoAction.image)
     
             if(
-                (localFileUrl !== data.hostedFile)
+                (formatedLocalFileUrl !== data.hostedFile)
                 ||(localFile)
             ){    
 
-                if(localFileUrl !== data.hostedFile){
+                if(formatedLocalFileUrl !== data.hostedFile){
                     if(data.hostedFile === "" && !localFile){
                         clearedFields.push({UIText: "Photo", CodeText: "image"})
                     }else{
