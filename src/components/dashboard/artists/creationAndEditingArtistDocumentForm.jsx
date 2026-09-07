@@ -249,7 +249,7 @@ export default function CreationAndEditingArtistDocumentForm({
                 confirmResult = window.confirm(`Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFieldsUIText)} ?`)
             }
     
-            if(confirmResult || isDirty){
+            if(confirmResult || isDirty || localFile){
 
                 if(confirmResult){
 
