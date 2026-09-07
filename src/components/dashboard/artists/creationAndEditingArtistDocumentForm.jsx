@@ -224,6 +224,22 @@ export default function CreationAndEditingArtistDocumentForm({
             //         updateAristDocumentFormData.append('artistProfile', localFile)
             //     }
             // }
+
+            if(formatedLocalFileUrl !== data.hostedFile || localFile){
+
+                if(formatedLocalFileUrl !== data.hostedFile){
+                    if(data.hostedFile === "" && !localFile){
+                        clearedFields.push({ UIText: "Photo", CodeText: "image" })
+                    }else if(data.hostedFile){
+                        updateAristDocumentFormData.append("image", data.hostedFile)
+                    }
+                }
+
+                if(localFile){
+                    updateAristDocumentFormData.append("artistProfile", localFile)
+                }
+
+            }
             
             const clearedFieldsUIText = clearedFields.map((cf)=>cf.UIText)
             
