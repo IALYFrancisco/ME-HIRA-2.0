@@ -23,7 +23,7 @@ export default function CreationAndEditingArtistDocumentForm({
     creationAndEditingArtistDocumentFormState
 }){
 
-    const { register, handleSubmit, reset, watch, formState: { isDirty } } = useForm()
+    const { register, handleSubmit, reset, watch, setValue, formState: { isDirty } } = useForm()
 
     const [localFile, setLocalFile] = useState(null)
     const [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
