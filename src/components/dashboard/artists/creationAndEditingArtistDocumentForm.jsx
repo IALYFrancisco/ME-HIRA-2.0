@@ -223,9 +223,9 @@ export default function CreationAndEditingArtistDocumentForm({
                 if(localFileUrl !== data.hostedFile){
                     if(data.hostedFile === "" && !localFile){
                         clearedFields.push({UIText: "Photo", CodeText: "image"})
-                        return
+                    }else{
+                        updateAristDocumentFormData.append('image', data.hostedFile)
                     }
-                    updateAristDocumentFormData.append('image', data.hostedFile)
                 }
                 if(localFile){
                     updateAristDocumentFormData.append('artistProfile', localFile)
