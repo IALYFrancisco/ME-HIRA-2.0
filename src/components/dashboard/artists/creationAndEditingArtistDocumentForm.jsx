@@ -23,30 +23,14 @@ export default function CreationAndEditingArtistDocumentForm({
     creationAndEditingArtistDocumentFormState
 }){
 
-    const { register, handleSubmit, reset, watch, formState: { isDirty } } = useForm()
+    const { register, handleSubmit, reset, watch, setValue, formState: { isDirty } } = useForm()
 
     const [localFile, setLocalFile] = useState(null)
-    const [hostedFileIsDefined, setHostedFileIsDefined] = useState(false)
-    const [localFileIsDefined, setLocalFileIsDefined] = useState(false)
     const [createArtistDocumentIsLoading, setCreateArtistDocumentIsLoading] = useState(false)
 
     const isModified = isDirty || localFile
 
     const watchAll = watch()
-
-    useEffect(()=>{
-        if(watchAll.hostedFile){
-            setHostedFileIsDefined(true)
-        }else{
-            setHostedFileIsDefined(false)
-        }
-    
-        if(localFile){
-            setLocalFileIsDefined(true)
-        }else{
-            setLocalFileIsDefined(false)
-        }
-    },[localFile, watchAll])
 
     useEffect(()=>{
 
@@ -154,76 +138,128 @@ export default function CreationAndEditingArtistDocumentForm({
     const updateArtistDocument = async (data) => {
         try{
             setSongActionIsLoading(true)
+            const clearedFields = new Array()
     
-            const artist = new FormData()
-            const artistContact = new FormData()
-    
+            const updateAristDocumentFormData = new FormData()
+
+            updateAristDocumentFormData.append("docId", documentToDoAction._id)
+            
             if(documentToDoAction.name !== data.name){
-                artist.append('name', data.name)
+                if(data.name === ""){
+                    clearedFields.push({ UIText: "Nom", CodeText: "Name" })
+                }else{
+                    updateAristDocumentFormData.append('name', data.name)
+                }
             }
             if(documentToDoAction.artistName !== data.artistName){
-                artist.append('artistName', data.artistName)
+                updateAristDocumentFormData.append('artistName', data.artistName)
             }
             if(documentToDoAction.about !== data.about){
-                artist.append('about', data.about)
+                if(data.about === ""){
+                    clearedFields.push({UIText: "A propos", CodeText: "about"})
+                }else{
+                    updateAristDocumentFormData.append('about', data.about)
+                }
             }
             if(documentToDoAction.address !== data.address){
-                artist.append('address', data.address)
+                if(data.address === ""){
+                    clearedFields.push({UIText: "Adresse", CodeText: "address"})
+                }else{
+                    updateAristDocumentFormData.append('address', data.address)
+                }
             }
             if(documentToDoAction.birthDayAndPlace !== data.birthDayAndPlace){
-                artist.append('birthDayAndPlace', data.birthDayAndPlace)
+                if(data.birthDayAndPlace === ""){
+                    clearedFields.push({UIText: "Date et lieu de naissance", CodeText: "birthDayAndPlace"})
+                }else{
+                    updateAristDocumentFormData.append('birthDayAndPlace', data.birthDayAndPlace)
+                }
             }
-            if(documentToDoAction.contacts.phoneNumber !== data.phoneNumber){
-                artistContact.append('phoneNumber', data.phoneNumber)
+
+            const phoneNumber = documentToDoAction.contacts.phoneNumber ? documentToDoAction.contacts.phoneNumber : ''
+            if(phoneNumber !== data.phoneNumber){
+                if(data.phoneNumber === ""){
+                    clearedFields.push({UIText: "Numéro téléphone", CodeText: "phoneNumber"})
+                }else{
+                    updateAristDocumentFormData.append('phoneNumber', data.phoneNumber)
+                }
             }
-            if(documentToDoAction.contacts.email !== data.email){
-                artistContact.append('email', data.email)
+            
+            const email = documentToDoAction.contacts.email ? documentToDoAction.contacts.email : ''
+            if(email !== data.email){
+                if(data.email === ""){
+                    clearedFields.push({UIText: "Adresse email", CodeText: "email"})
+                }else{
+                    updateAristDocumentFormData.append('email', data.email)
+                }
             }
+            
             if(JoinArrayItems(documentToDoAction.roles) !== data.roles){
-                artist.append('roles', data.roles)
+                updateAristDocumentFormData.append('roles', data.roles)
             }
-            let localFileUrl = (
-                documentToDoAction.image?.startsWith('https://') ||
-                documentToDoAction.image?.startsWith('http://')
-            ) ? documentToDoAction.image : process.env.NEXT_PUBLIC_API_BASE_URL+documentToDoAction.image
-    
-            if(
-                (localFileUrl !== data.hostedFile)
-                ||(localFile)
-            ){    
-                if(localFileUrl !== data.hostedFile){
-                    artist.append('image', data.hostedFile)
+
+            const localFileUrl = documentToDoAction.image ? documentToDoAction.image : ''
+            let formatedLocalFileUrl = ''
+
+            if(localFileUrl){
+                formatedLocalFileUrl = (
+                    localFileUrl.startsWith('https://') ||
+                    localFileUrl.startsWith('http://')
+                ) ? localFileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+localFileUrl
+            }
+
+            if(formatedLocalFileUrl !== data.hostedFile || localFile){
+
+                if(formatedLocalFileUrl !== data.hostedFile){
+                    if(data.hostedFile === "" && !localFile){
+                        clearedFields.push({ UIText: "Photo", CodeText: "image" })
+                    }else if(data.hostedFile){
+                        updateAristDocumentFormData.append("image", data.hostedFile)
+                    }
                 }
+
                 if(localFile){
-                    artist.append('file', localFile)
+                    updateAristDocumentFormData.append("artistProfile", localFile)
                 }
+
             }
-    
-            let update = {}
-    
-            update.docId = documentToDoAction._id
-            if(Object.keys((formToJSON(artist))).length !== 0){
-                update.artist = formToJSON(artist)
+            
+            const clearedFieldsUIText = clearedFields.map((cf)=>cf.UIText)
+            
+            let confirmResult = true
+            
+            if(clearedFieldsUIText.length > 0){
+                confirmResult = window.confirm(`Etes-vous sûre de vouloir rendre vide la valeur des champs de saisie suivantes : ${JoinArrayItems(clearedFieldsUIText)} ?`)
             }
-            if(Object.keys(formToJSON(artistContact)).length !== 0){
-                update.artistContact = formToJSON(artistContact)
-            }
-    
-            let response = await api.patch('/artist/update', { update })
-            if(response.status === 200){
-                toast.info(`Le document artiste de ${documentToDoAction?.artistName} a été bien modifié.`)
-                api.get('/artist/get')
-                    .then((response) => {
-                        setArtists(response.data)
+
+            if(confirmResult && (isDirty || localFile)){
+
+                if(clearedFields.length > 0){
+                    clearedFields.forEach((cf) => {
+                        updateAristDocumentFormData.append(cf.CodeText, '')
                     })
-                    .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
+                }
+
+                const response = await api.patch('/artist/update', updateAristDocumentFormData)
+
+                if(response.status === 200){
+                    toast.info(`Le document artiste de ${documentToDoAction?.artistName} a été bien modifié.`)
+                    api.get('/artist/get')
+                        .then((response)=>{
+                            setArtists(response.data)
+                        })
+                        .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
+                }
+
             }
+
         }catch{
             toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
             closeAddSongModal()
             setDocumentToDoAction(null)
+            reset()
             setLocalFile(null)
         }
     }
@@ -253,6 +289,8 @@ export default function CreationAndEditingArtistDocumentForm({
         }
 
         setLocalFile(file)
+
+        setValue("hostedFile", "", { shouldDirty: true })
     }
 
     return(
@@ -295,8 +333,24 @@ export default function CreationAndEditingArtistDocumentForm({
                 <fieldset>
                     <div className="form-element">
                         <label htmlFor="hostedFile">Photo de l'artiste :</label>
-                        <input disabled={localFileIsDefined} type="text" id="hostedFile" placeholder="utilisez cet champ pour une photo déjà mis en ligne" {...register('hostedFile')}/>
-                        <input disabled={hostedFileIsDefined} type="file" onChange={handleFileChange}/>
+                        <input
+                            disabled={!!localFile}
+                            type="text"
+                            id="hostedFile"
+                            placeholder="utilisez cet champ pour une photo déjà mis en ligne"
+                            {...register('hostedFile', {
+                                onChange: (e) => {
+                                    if(e.target.value){
+                                        setLocalFile(null)
+                                    }
+                                }
+                            })}
+                        />
+                        <input
+                            disabled={!!watchAll.hostedFile}
+                            type="file"
+                            onChange={handleFileChange}
+                        />
                     </div>
                     <div className="form-element">
                         <label htmlFor="contacts">Contacts :</label>

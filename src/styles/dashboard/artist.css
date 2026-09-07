@@ -253,6 +253,7 @@
 .document-form-modal button:disabled {
     background-color: var(--gray);
     color: #656565;
+    cursor: initial;
 }
 
 .document-form-modal button img {
