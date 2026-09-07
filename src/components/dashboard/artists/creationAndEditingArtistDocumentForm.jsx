@@ -208,23 +208,6 @@ export default function CreationAndEditingArtistDocumentForm({
                 ) ? localFileUrl : process.env.NEXT_PUBLIC_API_BASE_URL+localFileUrl
             }
 
-            // if(
-            //     (formatedLocalFileUrl !== data.hostedFile)
-            //     ||(localFile)
-            // ){    
-
-            //     if(formatedLocalFileUrl !== data.hostedFile){
-            //         if(data.hostedFile === "" && !localFile){
-            //             clearedFields.push({UIText: "Photo", CodeText: "image"})
-            //         }else{
-            //             updateAristDocumentFormData.append('image', data.hostedFile)
-            //         }
-            //     }
-            //     if(localFile){
-            //         updateAristDocumentFormData.append('artistProfile', localFile)
-            //     }
-            // }
-
             if(formatedLocalFileUrl !== data.hostedFile || localFile){
 
                 if(formatedLocalFileUrl !== data.hostedFile){
