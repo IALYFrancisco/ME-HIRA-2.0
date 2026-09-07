@@ -239,10 +239,7 @@ export default function CreationAndEditingArtistDocumentForm({
                 }
             }
             
-            const clearedFieldsUIText = []
-            clearedFields.filter((cl)=>{
-                clearedFieldsUIText.push(cl.UIText)
-            })
+            const clearedFieldsUIText = clearedFields.map((cf)=>cf.UIText)
             
             // let confirmResult
             // if(clearedFieldsUIText.length > 0){
