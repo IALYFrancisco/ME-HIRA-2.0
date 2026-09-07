@@ -238,8 +238,6 @@ export default function CreationAndEditingArtistDocumentForm({
                 clearedFieldsUIText.push(cl.UIText)
             })
             
-            console.log(clearedFieldsUIText)
-
             if(clearedFieldsUIText.length > 0){
                 window.confirm(`Etes-vous sûre de vouloir laisser vide les champs de saisie suivantes : ${JoinArrayItems(clearedFieldsUIText)} ?`)
             }
@@ -253,8 +251,7 @@ export default function CreationAndEditingArtistDocumentForm({
                     })
                     .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
             }
-        }catch(e){
-            console.log(e)
+        }catch{
             toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
