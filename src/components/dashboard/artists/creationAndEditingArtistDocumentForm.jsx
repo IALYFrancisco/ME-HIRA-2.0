@@ -251,7 +251,7 @@ export default function CreationAndEditingArtistDocumentForm({
     
             if(confirmResult || isDirty){
 
-                if(isDirty){
+                if(confirmResult){
 
                     clearedFields.filter((cl)=>{
                         updateAristDocumentFormData.append(cl.CodeText, '')
