@@ -363,3 +363,12 @@
     margin-left: 5px;
     padding-left: 5px;
 }
+
+.document-form-modal .artist-roles-select + .ts-wrapper .ts-dropdown {
+    background-color: var(--popup-bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+    margin-top: 5px;
+    box-shadow: var(--popup-box-shadow);
+}
