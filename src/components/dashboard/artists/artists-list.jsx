@@ -14,9 +14,9 @@ import CreationAndEditingArtistDocumentForm from "./creationAndEditingArtistDocu
 import { useTheme } from "next-themes"
 
 const roleLabels = {
-    singer: "Chanteur",
-    songwriter: "Auteur",
-    composer: "Compositeur"
+    singer: "chanteur",
+    songwriter: "auteur",
+    composer: "compositeur"
 }
 
 const formatArtistRoles = (roles) => {
