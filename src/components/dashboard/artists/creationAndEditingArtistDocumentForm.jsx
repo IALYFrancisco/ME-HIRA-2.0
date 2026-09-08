@@ -99,7 +99,7 @@ export default function CreationAndEditingArtistDocumentForm({
             reset({
                 name: documentToDoAction.name,
                 artistName: documentToDoAction.artistName,
-                roles: JoinArrayItems(documentToDoAction.roles),
+                roles: documentToDoAction.roles || [],
                 about: documentToDoAction.about,
                 address: documentToDoAction.address,
                 hostedFile: hostedFileValue,
@@ -107,6 +107,11 @@ export default function CreationAndEditingArtistDocumentForm({
                 email: artistEmail ? artistEmail : "",
                 phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
             })
+
+            if(rolesTomSelectRef.current){
+                rolesTomSelectRef.current.clear(true)
+                rolesTomSelectRef.current.setValue(documentToDoAction.roles || [], true)
+            }
 
         }
         
