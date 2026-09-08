@@ -25,6 +25,12 @@ export default function CreationAndEditingArtistDocumentForm({
     creationAndEditingArtistDocumentFormState
 }){
 
+    const ARTIST_ROLES = [
+        { value: "singer", text: "Chanteur" },
+        { value: "songwriter", text: "Auteur" },
+        { value: "composer", text: "Compositeur" },
+    ]
+
     const { register, handleSubmit, reset, watch, setValue, formState: { isDirty } } = useForm()
 
     const [localFile, setLocalFile] = useState(null)
