@@ -306,6 +306,10 @@ export default function CreationAndEditingArtistDocumentForm({
                             setArtists(response.data)
                         })
                         .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
+                    closeAddSongModal()
+                    setDocumentToDoAction(null)
+                    reset()
+                    setLocalFile(null)
                 }
 
             }
@@ -314,10 +318,6 @@ export default function CreationAndEditingArtistDocumentForm({
             toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
-            closeAddSongModal()
-            setDocumentToDoAction(null)
-            reset()
-            setLocalFile(null)
         }
     }
 
