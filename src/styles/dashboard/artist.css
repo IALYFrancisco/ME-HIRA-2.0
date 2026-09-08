@@ -305,3 +305,9 @@
     height: auto;
     width: 10px;
 }
+
+/* Styles personnalisés pour le chanmp tom select */
+.document-form-modal .artist-roles-select + .ts-wrapper {
+    width: 100%;
+    margin-top: 10px;
+}
