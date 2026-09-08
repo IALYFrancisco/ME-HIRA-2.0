@@ -376,7 +376,7 @@ export default function CreationAndEditingArtistDocumentForm({
                     </div>
                     <div className="form-element">
                         <label htmlFor="roles">Rôles :</label>
-                        <select id="roles" ref={rolesSelectRef} multiple required />
+                        <select id="roles" ref={rolesSelectRef} className="artist-roles-select" multiple required />
                         <input type="hidden" { ...register("roles", {
                             required: true,
                             validate: value => value.length > 0 || "Veuillez sélectionner au moins un rôle."
