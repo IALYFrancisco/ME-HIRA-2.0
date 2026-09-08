@@ -318,7 +318,7 @@
     min-height: 40px;
     height: 40px;
     border-radius: 10px;
-    border: Apx solid var(--gray);
+    border: 1px solid var(--gray);
     background-color: var(--popup-bg-color);
     color: var(--text-color);
     box-shadow: none;
