@@ -316,7 +316,7 @@
 .document-form-modal .artist-roles-select + .ts-wrapper .ts-control {
     width: 100%;
     min-height: 40px;
-    height: 40px;
+    height: auto;
     border-radius: 10px;
     border: 1px solid var(--gray);
     background-color: var(--popup-bg-color);
