@@ -310,4 +310,19 @@
 .document-form-modal .artist-roles-select + .ts-wrapper {
     width: 100%;
     margin-top: 10px;
+    font-family: Lato;
+}
+
+.document-form-modal .artist-roles-select + .ts-wrapper .ts-control {
+    width: 100%;
+    min-height: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: Apx solid var(--gray);
+    background-color: var(--popup-bg-color);
+    color: var(--text-color);
+    box-shadow: none;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
 }
