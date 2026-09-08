@@ -124,7 +124,7 @@ export default function CreationAndEditingArtistDocumentForm({
             reset({
                 name: "",
                 artistName: "",
-                roles: "",
+                roles: [],
                 about: "",
                 address: "",
                 hostedFile: "",
@@ -132,6 +132,10 @@ export default function CreationAndEditingArtistDocumentForm({
                 email: "",
                 phoneNumber: "",
             })
+
+            if(rolesTomSelectRef.current){
+                rolesTomSelectRef.current.clear(true)
+            }
 
         }
 
