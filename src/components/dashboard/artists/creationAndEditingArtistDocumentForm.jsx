@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { formToJSON } from "axios";
 import { JoinArrayItems } from "@/helpers/song"
 import { toast } from "sonner";
@@ -30,6 +30,9 @@ export default function CreationAndEditingArtistDocumentForm({
         { value: "songwriter", text: "Auteur" },
         { value: "composer", text: "Compositeur" },
     ]
+
+    const rolesSelectRef = useRef(null)
+    const rolesTomSelectRef = useRef(null)
 
     const { register, handleSubmit, reset, watch, setValue, formState: { isDirty } } = useForm()
 
