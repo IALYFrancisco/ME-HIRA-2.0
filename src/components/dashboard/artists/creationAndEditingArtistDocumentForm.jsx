@@ -255,10 +255,6 @@ export default function CreationAndEditingArtistDocumentForm({
                 updateAristDocumentFormData.append("roles", JSON.stringify(data.roles) || [])
             }
             
-            // if(JoinArrayItems(documentToDoAction.roles) !== data.roles){
-            //     updateAristDocumentFormData.append('roles', data.roles)
-            // }
-
             const localFileUrl = documentToDoAction.image ? documentToDoAction.image : ''
             let formatedLocalFileUrl = ''
 
