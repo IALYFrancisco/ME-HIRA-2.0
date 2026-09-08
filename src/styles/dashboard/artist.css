@@ -207,7 +207,6 @@
 }
 
 .document-form-modal input:not([type='file'])
-/* , .document-form-modal select */
 {
     display: block;
     width: 100%;
