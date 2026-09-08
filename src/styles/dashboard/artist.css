@@ -344,3 +344,7 @@
     color: #757575;
     opacity: 1;
 }
+
+.document-form-modal .artist-roles-select + .ts-wrapper .ts-control.has-items > input::placeholder {
+    color: transparent;
+}
