@@ -13,6 +13,16 @@ import RemoveArtistDocumentModal from "./removeArtistDocumentModal"
 import CreationAndEditingArtistDocumentForm from "./creationAndEditingArtistDocumentForm"
 import { useTheme } from "next-themes"
 
+const roleLabels = {
+    singer: "Chanteur",
+    songwriter: "Auteur",
+    composer: "Compositeur"
+}
+
+const formatArtistRoles = (roles) => {
+    return roles.map( role => roleLabels[role] || role).join(", ")
+}
+
 export default function ArtistsList(){
 
     var [ contactPhoneNumberIsActif, setContactPhoneNumberIsActif ] = useState(false)
