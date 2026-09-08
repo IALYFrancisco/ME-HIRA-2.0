@@ -52,11 +52,30 @@ export default function CreationAndEditingArtistDocumentForm({
                 options: ARTIST_ROLES,
                 create: false,
                 maxItems: null,
-                placeholder: "sélectionnez un ou plusieurs rôles pour l'artiste"
+                placeholder: "sélectionnez un ou plusieurs rôles pour l'artiste",
+                plugins: {
+                    remove_button: {
+                        title: "Supprimer ce rôle."
+                    }
+                },
+                onChange: (values)=>{
+                    setValue("roles", values, {
+                        shouldDirty: true,
+                        shouldValidate: true
+                    })
+                }
             }
         )
 
-    }, [])
+        return () => {
+            if(rolesTomSelectRef.current){
+                rolesTomSelectRef.current.destroy()
+                rolesTomSelectRef.current = null
+            }
+        }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [setValue])
 
     useEffect(()=>{
 
