@@ -367,6 +367,11 @@ export default function CreationAndEditingArtistDocumentForm({
                         <input type="text" placeholder="les rôles dont occupe l'artiste dans le monde artistique" id="roles" { ...register('roles', {required:true}) } required/>
                     </div> */}
                     <div className="form-element">
+                        <label htmlFor="roles">Rôles :</label>
+                        <select name="roles" id="roles" ref={rolesSelectRef} multiple required />
+                        <input type="text" placeholder="les rôles dont occupe l'artiste dans le monde artistique" id="roles" { ...register('roles', {required:true}) } required/>
+                    </div>
+                    <div className="form-element">
                         <label htmlFor="address">Adresse (on vous sollicite de mettre une adresse complète) :</label>
                         <input type="text" placeholder="pays, province, région, quartier, logement, ..." id="address" {...register('address')} />
                     </div>
