@@ -7,6 +7,8 @@ import { formToJSON } from "axios";
 import { JoinArrayItems } from "@/helpers/song"
 import { toast } from "sonner";
 import { api } from "@/helpers/api";
+import TomSelect from "tom-select"
+import "tom-select/dist/css/tom-select.css"
 
 export default function CreationAndEditingArtistDocumentForm({
     setArtists,
