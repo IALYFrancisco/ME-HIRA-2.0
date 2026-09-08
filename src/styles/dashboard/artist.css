@@ -339,3 +339,8 @@
     padding: 0;
     height: 38px;
 }
+
+.document-form-modal .artist-roles-select + .ts-wrapper .ts-control > input::placeholder {
+    color: #757575;
+    opacity: 1;
+}
