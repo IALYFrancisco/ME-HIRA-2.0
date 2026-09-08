@@ -2,11 +2,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
-import { formToJSON } from "axios";
+import { useState, useEffect, useRef } from "react";
 import { JoinArrayItems } from "@/helpers/song"
 import { toast } from "sonner";
 import { api } from "@/helpers/api";
+import TomSelect from "tom-select"
+import "tom-select/dist/css/tom-select.css"
 
 export default function CreationAndEditingArtistDocumentForm({
     setArtists,
@@ -23,14 +24,58 @@ export default function CreationAndEditingArtistDocumentForm({
     creationAndEditingArtistDocumentFormState
 }){
 
+    const ARTIST_ROLES = [
+        { value: "singer", text: "Chanteur" },
+        { value: "songwriter", text: "Auteur" },
+        { value: "composer", text: "Compositeur" },
+    ]
+
+    const rolesSelectRef = useRef(null)
+    const rolesTomSelectRef = useRef(null)
+
     const { register, handleSubmit, reset, watch, setValue, formState: { isDirty } } = useForm()
+
+    const watchAll = watch()
 
     const [localFile, setLocalFile] = useState(null)
     const [createArtistDocumentIsLoading, setCreateArtistDocumentIsLoading] = useState(false)
 
     const isModified = isDirty || localFile
 
-    const watchAll = watch()
+    useEffect(()=>{
+
+        if(!rolesSelectRef.current) return;
+
+        rolesTomSelectRef.current = new TomSelect(
+            rolesSelectRef.current,
+            {
+                options: ARTIST_ROLES,
+                create: false,
+                maxItems: null,
+                placeholder: "un artiste doit avoir au mois un rôle",
+                plugins: {
+                    remove_button: {
+                        title: "Supprimer ce rôle."
+                    }
+                },
+                onChange: (values)=>{
+                    setValue("roles", values, {
+                        shouldDirty: true,
+                        shouldValidate: true
+                    })
+                }
+            }
+        )
+
+        return () => {
+            if(rolesTomSelectRef.current){
+                rolesTomSelectRef.current.destroy()
+                rolesTomSelectRef.current = null
+            }
+        }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [setValue])
 
     useEffect(()=>{
 
@@ -54,7 +99,7 @@ export default function CreationAndEditingArtistDocumentForm({
             reset({
                 name: documentToDoAction.name,
                 artistName: documentToDoAction.artistName,
-                roles: JoinArrayItems(documentToDoAction.roles),
+                roles: documentToDoAction.roles || [],
                 about: documentToDoAction.about,
                 address: documentToDoAction.address,
                 hostedFile: hostedFileValue,
@@ -62,6 +107,11 @@ export default function CreationAndEditingArtistDocumentForm({
                 email: artistEmail ? artistEmail : "",
                 phoneNumber: artistPhoneNumber ? artistPhoneNumber : ""
             })
+
+            if(rolesTomSelectRef.current){
+                rolesTomSelectRef.current.clear(true)
+                rolesTomSelectRef.current.setValue(documentToDoAction.roles || [], true)
+            }
 
         }
         
@@ -74,7 +124,7 @@ export default function CreationAndEditingArtistDocumentForm({
             reset({
                 name: "",
                 artistName: "",
-                roles: "",
+                roles: [],
                 about: "",
                 address: "",
                 hostedFile: "",
@@ -82,6 +132,10 @@ export default function CreationAndEditingArtistDocumentForm({
                 email: "",
                 phoneNumber: "",
             })
+
+            if(rolesTomSelectRef.current){
+                rolesTomSelectRef.current.clear(true)
+            }
 
         }
 
@@ -105,7 +159,7 @@ export default function CreationAndEditingArtistDocumentForm({
             // Artist document object création
             artistData.append('name', data.name)
             artistData.append('artistName', data.artistName)
-            artistData.append('roles', data.roles)
+            artistData.append('roles', JSON.stringify(data.roles))
             artistData.append('about', data.about)
             artistData.append('address', data.address)
             artistData.append('birthDayAndPlace', data.birthDayAndPlace)
@@ -193,11 +247,14 @@ export default function CreationAndEditingArtistDocumentForm({
                     updateAristDocumentFormData.append('email', data.email)
                 }
             }
-            
-            if(JoinArrayItems(documentToDoAction.roles) !== data.roles){
-                updateAristDocumentFormData.append('roles', data.roles)
-            }
 
+            const oldRoles = [ ...(documentToDoAction.roles || []) ].sort()
+            const newRoles = [ ...(data.roles || []) ].sort()
+            const rolesChanged = oldRoles.length !== newRoles.length || oldRoles.some((role, index)=> role !== newRoles[index])
+            if(rolesChanged){
+                updateAristDocumentFormData.append("roles", JSON.stringify(data.roles) || [])
+            }
+            
             const localFileUrl = documentToDoAction.image ? documentToDoAction.image : ''
             let formatedLocalFileUrl = ''
 
@@ -249,6 +306,10 @@ export default function CreationAndEditingArtistDocumentForm({
                             setArtists(response.data)
                         })
                         .catch(()=>toast.error("Erreur de récupération de la nouvelle liste des documents artiste."))
+                    closeAddSongModal()
+                    setDocumentToDoAction(null)
+                    reset()
+                    setLocalFile(null)
                 }
 
             }
@@ -257,10 +318,6 @@ export default function CreationAndEditingArtistDocumentForm({
             toast.error("Erreur de modification du document, veuillez réessayer plus tard.")
         }finally{
             setSongActionIsLoading(false)
-            closeAddSongModal()
-            setDocumentToDoAction(null)
-            reset()
-            setLocalFile(null)
         }
     }
 
@@ -319,7 +376,11 @@ export default function CreationAndEditingArtistDocumentForm({
                     </div>
                     <div className="form-element">
                         <label htmlFor="roles">Rôles :</label>
-                        <input type="text" placeholder="les rôles dont occupe l'artiste dans le monde artistique" id="roles" { ...register('roles', {required:true}) } required/>
+                        <select id="roles" ref={rolesSelectRef} className="artist-roles-select" multiple required />
+                        <input type="hidden" { ...register("roles", {
+                            required: true,
+                            validate: value => value.length > 0 || "Veuillez sélectionner au moins un rôle."
+                        }) } />
                     </div>
                     <div className="form-element">
                         <label htmlFor="address">Adresse (on vous sollicite de mettre une adresse complète) :</label>
