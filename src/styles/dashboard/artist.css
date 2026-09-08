@@ -372,3 +372,8 @@
     margin-top: 5px;
     box-shadow: var(--popup-box-shadow);
 }
+
+.document-form-modal .artist-roles-select + .ts-wrapper .ts-dropdown .option {
+    padding: 10px;
+    color: var(--text-color);
+}
