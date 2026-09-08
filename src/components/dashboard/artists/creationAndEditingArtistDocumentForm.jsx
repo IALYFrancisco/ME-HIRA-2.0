@@ -40,7 +40,21 @@ export default function CreationAndEditingArtistDocumentForm({
 
     const isModified = isDirty || localFile
 
-    const watchAll = watch()
+    useEffect(()=>{
+
+        if(!rolesSelectRef.current) return;
+
+        rolesTomSelectRef.current = new TomSelect(
+            rolesSelectRef.current,
+            {
+                options: ARTIST_ROLES,
+                create: false,
+                maxItems: null,
+                placeholder: "Sélectionnez un ou plusieurs rôles pour l'artiste"
+            }
+        )
+
+    }, [])
 
     useEffect(()=>{
 
