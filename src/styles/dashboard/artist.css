@@ -206,8 +206,9 @@
     border: none;
 }
 
-.document-form-modal input:not([type='file']),
-.document-form-modal select {
+.document-form-modal input:not([type='file'])
+/* , .document-form-modal select */
+{
     display: block;
     width: 100%;
     margin-top: 10px;
@@ -284,7 +285,7 @@
     transform: none;
 }
 
-/* .document-form-modal select {
+.document-form-modal select {
     display: block;
     width: 100%;
     height: 40px;
@@ -293,7 +294,7 @@
     padding: 0 10px;
     outline: none;
     margin-top: 10px;
-} */
+}
 
 .document-form-modal select:focus {
     border-color: var(--orange-base);
