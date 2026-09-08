@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/incompatible-library */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { api } from "@/helpers/api"
 import { JoinArrayItems } from "@/helpers/song"
