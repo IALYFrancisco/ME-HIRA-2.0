@@ -247,6 +247,13 @@ export default function CreationAndEditingArtistDocumentForm({
                     updateAristDocumentFormData.append('email', data.email)
                 }
             }
+
+            const oldRoles = [ ...(documentToDoAction.roles || []) ].sort()
+            const newRoles = [ ...(data.roles || []) ].sort()
+            const rolesChanged = oldRoles.length !== newRoles.length || oldRoles.some((role, index)=> role !== newRoles[index])
+            if(rolesChanged){
+                updateAristDocumentFormData.append("roles", JSON.stringify(data.roles) || [])
+            }
             
             // if(JoinArrayItems(documentToDoAction.roles) !== data.roles){
             //     updateAristDocumentFormData.append('roles', data.roles)
