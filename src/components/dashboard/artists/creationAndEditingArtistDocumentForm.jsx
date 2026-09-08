@@ -159,7 +159,7 @@ export default function CreationAndEditingArtistDocumentForm({
             // Artist document object création
             artistData.append('name', data.name)
             artistData.append('artistName', data.artistName)
-            artistData.append('roles', data.roles)
+            artistData.append('roles', JSON.stringify(data.roles))
             artistData.append('about', data.about)
             artistData.append('address', data.address)
             artistData.append('birthDayAndPlace', data.birthDayAndPlace)
