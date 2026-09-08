@@ -52,7 +52,7 @@ export default function CreationAndEditingArtistDocumentForm({
                 options: ARTIST_ROLES,
                 create: false,
                 maxItems: null,
-                placeholder: "Sélectionnez un ou plusieurs rôles pour l'artiste"
+                placeholder: "sélectionnez un ou plusieurs rôles pour l'artiste"
             }
         )
 
