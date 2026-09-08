@@ -25,9 +25,9 @@ export default function CreationAndEditingArtistDocumentForm({
 }){
 
     const ARTIST_ROLES = [
-        { value: "singer", text: "Chanteur" },
-        { value: "songwriter", text: "Auteur" },
-        { value: "composer", text: "Compositeur" },
+        { value: "singer", text: "chanteur" },
+        { value: "songwriter", text: "auteur" },
+        { value: "composer", text: "compositeur" },
     ]
 
     const rolesSelectRef = useRef(null)

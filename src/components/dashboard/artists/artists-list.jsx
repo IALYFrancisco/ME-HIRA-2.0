@@ -8,11 +8,20 @@ import { toast } from "sonner"
 import SongsListSkeleton from "@/components/skeleton-loaders/songsListSkeleton"
 import { useAuth } from "@/contexts/AuthContext"
 import { api } from "@/helpers/api"
-import { JoinArrayItems } from "@/helpers/song"
 import Overlay from "@/components/overlay"
 import RemoveArtistDocumentModal from "./removeArtistDocumentModal"
 import CreationAndEditingArtistDocumentForm from "./creationAndEditingArtistDocumentForm"
 import { useTheme } from "next-themes"
+
+const roleLabels = {
+    singer: "chanteur",
+    songwriter: "auteur",
+    composer: "compositeur"
+}
+
+const formatArtistRoles = (roles) => {
+    return roles.map( role => roleLabels[role] || role).join(", ")
+}
 
 export default function ArtistsList(){
 
@@ -187,7 +196,7 @@ export default function ArtistsList(){
                                     <tr key={artist._id}>
                                         <td>{artist.name}</td>
                                         <td>{artist.artistName}</td>
-                                        <td>{JoinArrayItems(artist.roles)}</td>
+                                        <td>{formatArtistRoles(artist.roles)}</td>
                                         <td>{artist.address}</td>
                                         <td>{artist.birthDayAndPlace}</td>
                                         <td className="actions">
