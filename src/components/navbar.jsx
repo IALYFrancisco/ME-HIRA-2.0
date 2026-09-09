@@ -104,7 +104,7 @@ export default function Navbar (){
                             </ul>
                         </div>
                         <button>
-                            { !searchIsLoading && <Image src="/images/search.png" priority alt="recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="search-icone" />}
+                            { !searchIsLoading && <Image src="/images/search-30.svg" priority alt="recherche des chansons selon leur titre et chanteurs" width={30} height={30} className="search-icone" />}
                             { searchIsLoading && <Image src="/images/spinner.svg" priority alt="chargement recherche des chansons selon leur titre et chanteurs" width={48} height={48} className="loader-search-icone" />}
                         </button>
                     </span>
