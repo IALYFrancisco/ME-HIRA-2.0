@@ -324,6 +324,9 @@ export default function MediaPlayer({
             orientation = "portrait"
         }
 
+        // Pour une vidép carrée ou presque carrée : il n'y aura pas d'orientation de lecture
+        if(!orientation) return
+
     }
 
     // Gestionnaire de lecture en plein écran
