@@ -356,7 +356,7 @@ export default function MediaPlayer({
                     // Cet bloc est pour les navigateurs Safari/iOS
                     // Support navigateurSafari iOS lorsque disponible
                     // le fullscreen et l'orientation seront gérés par le comportement natif du navigateur
-                    
+
                     mediaRef.current.webkitEnterFullscreen()
                 }
 
@@ -375,7 +375,8 @@ export default function MediaPlayer({
     useEffect(()=>{
 
         const handleFullscreenChange = () => {
-            setFullscreen(Boolean(document.fullscreenElement))
+            const isFullscreen = Boolean(document.fullscreenElement)
+            setFullscreen(isFullscreen)
         }
 
         document.addEventListener("fullscreenchange", handleFullscreenChange)
