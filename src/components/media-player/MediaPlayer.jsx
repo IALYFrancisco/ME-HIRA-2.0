@@ -347,6 +347,7 @@ export default function MediaPlayer({
             if( !document.fullscreenElement ){
                 
                 if(player.requestFullscreen){
+                    // C'est ici l'entrée en fullscreen du lécteur personnalisé
                     await player.requestFullscreen()
                 } else if (mediaRef.current?.webkitEnterFullscreen) {
                     // Support navigateurSafari iOS lorsque disponible
