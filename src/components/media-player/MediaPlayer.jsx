@@ -307,6 +307,12 @@ export default function MediaPlayer({
     // Fonction permettant d'améliorer le mode de lécture de chanson
     const lockFullscreenOrientation = async () => {
         if(!isVideo) return
+
+        const media = mediaRef.current
+
+        if(!media || !media.videoWidth || !media.videoHeight) return
+
+        
     }
 
     // Gestionnaire de lecture en plein écran
