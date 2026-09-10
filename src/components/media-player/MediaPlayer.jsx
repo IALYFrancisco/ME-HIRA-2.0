@@ -353,7 +353,10 @@ export default function MediaPlayer({
                     // et ici l'adaptation de l'orientation selon le ratio du vidéo
                     await lockFullscreenOrientation()
                 } else if (mediaRef.current?.webkitEnterFullscreen) {
+                    // Cet bloc est pour les navigateurs Safari/iOS
                     // Support navigateurSafari iOS lorsque disponible
+                    // le fullscreen et l'orientation seront gérés par le comportement natif du navigateur
+                    
                     mediaRef.current.webkitEnterFullscreen()
                 }
 
