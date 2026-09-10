@@ -304,6 +304,10 @@ export default function MediaPlayer({
 
     }
 
+    const lockFullscreenOrientation = async () => {
+        if(!isVideo) return
+    }
+
     // Gestionnaire de lecture en plein écran
     const toggleFullscreen = async () => {
 
