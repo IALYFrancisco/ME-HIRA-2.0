@@ -314,6 +314,15 @@ export default function MediaPlayer({
 
         if(!screen.orientation || !screen.orientation.lock) return
 
+        const ratio = media.videoWidth / media.videoHeight
+
+        let orientation = null
+
+        if(ratio > 1.05){
+            orientation = "landscape"
+        }else if(ratio < 0.95){
+            orientation = "portrait"
+        }
 
     }
 
