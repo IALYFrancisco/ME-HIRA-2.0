@@ -377,6 +377,17 @@ export default function MediaPlayer({
         const handleFullscreenChange = () => {
             const isFullscreen = Boolean(document.fullscreenElement)
             setFullscreen(isFullscreen)
+
+            // Libération de l'orientation quand l'utilisateur quitte le mode plein écran
+            if(!isFullscreen && screen.orientation && screen.orientation.lock){
+
+                try{
+                    screen.orientation.unlock()
+                }catch{
+                    // Certains navigateur peuvent refuser ou ne supporte pas cette opération
+                }
+
+            }
         }
 
         document.addEventListener("fullscreenchange", handleFullscreenChange)
