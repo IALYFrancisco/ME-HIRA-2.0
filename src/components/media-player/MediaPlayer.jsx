@@ -349,6 +349,9 @@ export default function MediaPlayer({
                 if(player.requestFullscreen){
                     // C'est ici l'entrée en fullscreen du lécteur personnalisé
                     await player.requestFullscreen()
+
+                    // et ici l'adaptation de l'orientation selon le ratio du vidéo
+                    await lockFullscreenOrientation()
                 } else if (mediaRef.current?.webkitEnterFullscreen) {
                     // Support navigateurSafari iOS lorsque disponible
                     mediaRef.current.webkitEnterFullscreen()
