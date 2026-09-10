@@ -312,7 +312,9 @@ export default function MediaPlayer({
 
         if(!media || !media.videoWidth || !media.videoHeight) return
 
-        
+        if(!screen.orientation || !screen.orientation.lock) return
+
+
     }
 
     // Gestionnaire de lecture en plein écran
