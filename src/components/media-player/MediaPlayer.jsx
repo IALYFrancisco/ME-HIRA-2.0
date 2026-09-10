@@ -327,6 +327,12 @@ export default function MediaPlayer({
         // Pour une vidép carrée ou presque carrée : il n'y aura pas d'orientation de lecture
         if(!orientation) return
 
+        try{
+            await screen.orientation.lock(orientation)
+        }catch{
+            // Certains navigateurs refusent le vérouillage même si l'api existe. Cela ne doit pas empêcher l'entrée en fullscreen
+        }
+
     }
 
     // Gestionnaire de lecture en plein écran
