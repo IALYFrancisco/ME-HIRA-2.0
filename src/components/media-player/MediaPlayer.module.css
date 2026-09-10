@@ -463,7 +463,9 @@
 .fullscreenPlayer {
     border-radius: 0;
     width: 100vw;
+    width: 100dvw;
     height: 100vh;
+    height: 100dvh;
     max-width: none;
     max-height: none;
 }

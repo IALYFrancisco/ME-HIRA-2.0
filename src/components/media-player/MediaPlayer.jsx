@@ -304,6 +304,37 @@ export default function MediaPlayer({
 
     }
 
+    // Fonction permettant d'améliorer le mode de lécture de chanson
+    const lockFullscreenOrientation = async () => {
+        if(!isVideo) return
+
+        const media = mediaRef.current
+
+        if(!media || !media.videoWidth || !media.videoHeight) return
+
+        if(!screen.orientation || !screen.orientation.lock) return
+
+        const ratio = media.videoWidth / media.videoHeight
+
+        let orientation = null
+
+        if(ratio > 1.05){
+            orientation = "landscape"
+        }else if(ratio < 0.95){
+            orientation = "portrait"
+        }
+
+        // Pour une vidép carrée ou presque carrée : il n'y aura pas d'orientation de lecture
+        if(!orientation) return
+
+        try{
+            await screen.orientation.lock(orientation)
+        }catch{
+            // Certains navigateurs refusent le vérouillage même si l'api existe. Cela ne doit pas empêcher l'entrée en fullscreen
+        }
+
+    }
+
     // Gestionnaire de lecture en plein écran
     const toggleFullscreen = async () => {
 
@@ -316,9 +347,16 @@ export default function MediaPlayer({
             if( !document.fullscreenElement ){
                 
                 if(player.requestFullscreen){
+                    // C'est ici l'entrée en fullscreen du lécteur personnalisé
                     await player.requestFullscreen()
+
+                    // et ici l'adaptation de l'orientation selon le ratio du vidéo
+                    await lockFullscreenOrientation()
                 } else if (mediaRef.current?.webkitEnterFullscreen) {
+                    // Cet bloc est pour les navigateurs Safari/iOS
                     // Support navigateurSafari iOS lorsque disponible
+                    // le fullscreen et l'orientation seront gérés par le comportement natif du navigateur
+
                     mediaRef.current.webkitEnterFullscreen()
                 }
 
@@ -337,7 +375,19 @@ export default function MediaPlayer({
     useEffect(()=>{
 
         const handleFullscreenChange = () => {
-            setFullscreen(Boolean(document.fullscreenElement))
+            const isFullscreen = Boolean(document.fullscreenElement)
+            setFullscreen(isFullscreen)
+
+            // Libération de l'orientation quand l'utilisateur quitte le mode plein écran
+            if(!isFullscreen && screen.orientation && screen.orientation.lock){
+
+                try{
+                    screen.orientation.unlock()
+                }catch{
+                    // Certains navigateur peuvent refuser ou ne supporte pas cette opération
+                }
+
+            }
         }
 
         document.addEventListener("fullscreenchange", handleFullscreenChange)
