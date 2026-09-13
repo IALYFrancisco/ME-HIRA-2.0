@@ -4,7 +4,7 @@ import SettingsMenu from "./SettingsMenu";
 
 import styles from "./MediaPlayer.module.css"
 import { useCallback, useEffect, useRef, useState } from "react";
-import { FormatSongDuration } from "@/helpers/song";
+import { FormatSongDuration, JoinArrayItems } from "@/helpers/song";
 
 function getMediaUrl(fileUrl){
 
@@ -453,7 +453,12 @@ export default function MediaPlayer({
         const img = new Image()
 
         img.onload = () => {
-            
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: song.title,
+                artist: JoinArrayItems(song.singer),
+                ...(song.album && { album: song.album }),
+                artwork: []
+            })
         }
     }, [])
 
