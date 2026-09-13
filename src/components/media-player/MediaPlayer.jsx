@@ -446,6 +446,17 @@ export default function MediaPlayer({
         }
     }, [clearControlsTimer])
 
+    // Contenus pour le centre de contrôle des médias des vagiateurs
+    useEffect(()=>{
+        if(!song || !("mediaSession" in navigator)) return;
+
+        const img = new Image()
+
+        img.onload = () => {
+            
+        }
+    }, [])
+
     // Gestionnaire des actions venant du clavier
     useEffect(() => {
 
