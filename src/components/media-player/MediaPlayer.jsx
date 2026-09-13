@@ -457,7 +457,11 @@ export default function MediaPlayer({
                 title: song.title,
                 artist: JoinArrayItems(song.singer),
                 ...(song.album && { album: song.album }),
-                artwork: []
+                artwork: [{
+                    src: (song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
+                        song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
+                                        
+                }]
             })
         }
     }, [])
