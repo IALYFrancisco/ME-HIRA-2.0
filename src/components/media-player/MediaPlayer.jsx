@@ -467,7 +467,8 @@ export default function MediaPlayer({
             })
         }
 
-        img.src = song.thumbnailUrl
+        img.src = (song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
+            song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
     }, [song])
 
     // Gestionnaire des actions venant du clavier
