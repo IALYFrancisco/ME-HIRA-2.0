@@ -459,12 +459,16 @@ export default function MediaPlayer({
                 ...(song.album && { album: song.album }),
                 artwork: [{
                     src: (song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
-                        song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
+                        song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`,
+                    sizes: `${img.naturalWidth}x${img.naturalHeight}`,
+                    type: "image/jpeg"
                                         
                 }]
             })
         }
-    }, [])
+
+        img.src = song.thumbnailUrl
+    }, [song])
 
     // Gestionnaire des actions venant du clavier
     useEffect(() => {
