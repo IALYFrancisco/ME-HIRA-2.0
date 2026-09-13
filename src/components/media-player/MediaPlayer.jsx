@@ -4,7 +4,7 @@ import SettingsMenu from "./SettingsMenu";
 
 import styles from "./MediaPlayer.module.css"
 import { useCallback, useEffect, useRef, useState } from "react";
-import { FormatSongDuration } from "@/helpers/song";
+import { FormatSongDuration, JoinArrayItems } from "@/helpers/song";
 
 function getMediaUrl(fileUrl){
 
@@ -445,6 +445,31 @@ export default function MediaPlayer({
             clearControlsTimer()
         }
     }, [clearControlsTimer])
+
+    // Contenus pour le centre de contrôle des médias des vagiateurs
+    useEffect(()=>{
+        if(!song || !("mediaSession" in navigator)) return;
+
+        const img = new Image()
+
+        img.onload = () => {
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: song.title,
+                artist: JoinArrayItems(song.singer),
+                ...(song.album && { album: song.album }),
+                artwork: [{
+                    src: (song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
+                        song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`,
+                    sizes: `${img.naturalWidth}x${img.naturalHeight}`,
+                    type: "image/jpeg"
+                                        
+                }]
+            })
+        }
+
+        img.src = (song.thumbnailUrl.startsWith('https://')||song.thumbnailUrl.startsWith('http://'))?
+            song.thumbnailUrl:`${process.env.NEXT_PUBLIC_API_BASE_URL}${song.thumbnailUrl}`
+    }, [song])
 
     // Gestionnaire des actions venant du clavier
     useEffect(() => {
