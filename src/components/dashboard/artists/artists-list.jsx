@@ -168,7 +168,7 @@ export default function ArtistsList(){
                             </div>
                             <span>
                                 <button onClick={openAddSongModal}>
-                                    <Image src="/images/plus.png" priority height={16} width={16} alt="ajout de chanson"/>
+                                    <Image src="/images/plus.png" priority height={16} width={16} alt="création de document artiste"/>
                                     Créer un document artiste 
                                 </button>
                             </span>
